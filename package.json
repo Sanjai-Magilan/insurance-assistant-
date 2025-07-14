@@ -1,0 +1,28 @@
+{
+  "name": "lic-claim-assistant",
+  "version": "1.0.0",
+  "description": "Intelligent LIC Claim Assistant with dynamic plan management and AI analysis",
+  "scripts": {
+    "check:type": "tsc --noEmit",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "plan-manager": "node dist/cli/planManager.js",
+    "setup": "mkdir -p data/plans data/questions data/knowledge-base data/documents"
+  },
+  "private": true,
+  "dependencies": {
+    "@botpress/client": "1.17.1",
+    "@botpress/sdk": "4.14.1",
+    "archiver": "^7.0.1",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^7.5.1",
+    "multer": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.67",
+    "typescript": "^5.6.3"
+  },
+  "bin": {
+    "lic-plan-manager": "./dist/cli/planManager.js"
+  }
+}

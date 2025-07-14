@@ -1,0 +1,98 @@
+{
+  "sourceFile": "Book5.csv",
+  "extractedAt": "2025-07-13T14:30:21.188Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "CARE",
+      "Plan Name": "CARE SUPREME",
+      "Adult Age Entry (MIN-MAX)": "18-99 YRS",
+      "Child  Age Entry": "91DAYS -24 YRS",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY MODE",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "upto 180 days",
+      "Emergency Ambulance": "LESS THAN 15 L - 10K, =>15L -",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "Upto 100% Sum Insured",
+      "Domicilary Expenses": "UPTO SI",
+      "Consumables": "YES",
+      "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 3YRS ( REDUCTION PED- 1/2/3."
+    },
+    "sub_limits": {
+      "Room Rent/day": "ACTUAL",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUAL"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "50 % MAX 100%",
+      "Free Health Check-up": "YES",
+      "Discounts": "10% TO 30% - WALKING STEPS -"
+    },
+    "special_features_others": {
+      "7": "OPTIONAL COVER CUMULATIVE BONUS SUPER-500%",
+      "Organ Donor Expenses": "Organ Donor Expenses UPTO SI",
+      "MODERN TREATMENT": "MODERN TREATMENT UPTO SI",
+      "SECOND MEDICAL OPINION": "AIR AMUBLANCE UPTO 5L",
+      "AIR AMBULANCE": "Bariatric Surgery UP TO SI",
+      "Rehabilitation and Pain Management": "UNLIMITED E-CONSULTATION",
+      "Home care treatment": "BE-FIT BENEFIT- GYM ACCESS- SPECIFIED CITIES"
+    }
+  },
+  "plan_details": {
+    "Company": "CARE",
+    "Plan Name": "CARE SUPREME",
+    "Adult Age Entry (MIN-MAX)": "18-99 YRS",
+    "Child  Age Entry": "91DAYS -24 YRS",
+    "Policy Duration": "1/2/3 YRS",
+    "payment mode (YLY/HLY/QLY/MLY)": "YLY MODE",
+    "Medical Screening Before Policy": "NO"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 60 days",
+    "Post-Hospitalization": "upto 180 days",
+    "Emergency Ambulance": "LESS THAN 15 L - 10K, =>15L -",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "Upto 100% Sum Insured",
+    "Domicilary Expenses": "UPTO SI",
+    "Consumables": "YES",
+    "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "FIRST 3YRS ( REDUCTION PED- 1/2/3."
+  },
+  "sub_limits": {
+    "Room Rent/day": "ACTUAL",
+    "ICU/day": "ACTUAL",
+    "Co - Pay": "NO",
+    "Cataract Limits": "ACTUAL"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "50 % MAX 100%",
+    "Free Health Check-up": "YES",
+    "Discounts": "10% TO 30% - WALKING STEPS -"
+  },
+  "special_features_others": {
+    "7": "OPTIONAL COVER CUMULATIVE BONUS SUPER-500%",
+    "Organ Donor Expenses": "Organ Donor Expenses UPTO SI",
+    "MODERN TREATMENT": "MODERN TREATMENT UPTO SI",
+    "SECOND MEDICAL OPINION": "AIR AMUBLANCE UPTO 5L",
+    "AIR AMBULANCE": "Bariatric Surgery UP TO SI",
+    "Rehabilitation and Pain Management": "UNLIMITED E-CONSULTATION",
+    "Home care treatment": "BE-FIT BENEFIT- GYM ACCESS- SPECIFIED CITIES"
+  },
+  "planName": "CARE SUPREME",
+  "company": "CARE",
+  "normalizedSumInsured": null,
+  "generatedFilename": "care_supreme_unknown.json"
+}

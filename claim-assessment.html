@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Assessment - Health Insurance Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .nav-button.active {
+            background: white;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 1rem;
+        }
+
+        .assessment-area {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-selector h3 {
+            margin-bottom: 1rem;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plan-selector select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            margin-bottom: 1rem;
+        }
+
+        .plan-info {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .plan-info h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-info p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .upload-section {
+            margin-bottom: 2rem;
+        }
+
+        .upload-section h3 {
+            margin-bottom: 1rem;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .upload-area {
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            background: #f7fafc;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            border-color: #667eea;
+            background: #edf2f7;
+        }
+
+        .upload-area.dragover {
+            border-color: #667eea;
+            background: #e6fffa;
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #a0aec0;
+        }
+
+        .upload-text {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-subtext {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .uploaded-files {
+            margin-top: 1rem;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .file-remove {
+            background: #fed7d7;
+            color: #c53030;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .assess-button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .assess-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .assess-button:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .results-section {
+            margin-top: 2rem;
+            flex: 1;
+        }
+
+        .results-section h3 {
+            margin-bottom: 1rem;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .assessment-result {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #48bb78;
+        }
+
+        .result-status {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .result-status.approved {
+            color: #38a169;
+        }
+
+        .result-status.rejected {
+            color: #e53e3e;
+        }
+
+        .result-status.pending {
+            color: #ed8936;
+        }
+
+        .result-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-item h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-item p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #a0aec0;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border: 3px solid #e2e8f0;
+            border-radius: 50%;
+            border-top-color: #667eea;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .status-indicator {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .status-connected {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .status-processing {
+            background: #fef5e7;
+            color: #744210;
+        }
+
+        .status-error {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0.5rem;
+            }
+
+            .nav-bar {
+                gap: 0.5rem;
+            }
+
+            .nav-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .result-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #a0aec0;
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-state h3 {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔍 Claim Assessment</h1>
+            <p>Upload documents and get instant AI-powered claim analysis based on your insurance plan</p>
+        </header>
+
+        <nav class="nav-bar">
+            <a href="/" class="nav-button">🏠 Home</a>
+            <a href="/plans" class="nav-button">📋 Plan Manager</a>
+            <a href="/chat-interface.html" class="nav-button">💬 Chat Assistant</a>
+            <a href="/claim-assessment.html" class="nav-button active">🔍 Claim Assessment</a>
+        </nav>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="plan-selector">
+                    <h3>📋 Select Insurance Plan</h3>
+                    <select id="planSelect" onchange="changePlan()">
+                        <option value="">Loading plans...</option>
+                    </select>
+                    <div class="plan-info" id="planInfo" style="display: none;">
+                        <h4>Plan Details</h4>
+                        <p id="planDescription"></p>
+                    </div>
+                </div>
+
+                <div class="status-indicator" id="statusIndicator">
+                    🔄 Initializing...
+                </div>
+
+                <div class="upload-section">
+                    <h3>📁 Upload Documents</h3>
+                    <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+                        <div class="upload-icon">📄</div>
+                        <div class="upload-text">Click to upload or drag files here</div>
+                        <div class="upload-subtext">PDF, JPG, PNG files up to 10MB</div>
+                    </div>
+                    <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png" onchange="handleFileSelect(event)">
+                    
+                    <div class="uploaded-files" id="uploadedFiles"></div>
+                </div>
+
+                <button class="assess-button" id="assessButton" onclick="startAssessment()" disabled>
+                    🔬 Start Assessment
+                </button>
+            </aside>
+
+            <main class="assessment-area">
+                <div class="results-section">
+                    <h3>📊 Assessment Results</h3>
+                    <div id="resultsContent">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">🔍</div>
+                            <h3>Ready for Assessment</h3>
+                            <p>Select an insurance plan and upload your claim documents to get started with AI-powered assessment.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let currentPlan = '';
+        let uploadedFiles = [];
+        const PLAN_INFO = {};
+
+        // Initialize the application
+        async function initializeApp() {
+            console.log('🔧 Claim Assessment initializing...');
+            await loadAvailablePlans();
+            showStatus('Ready', 'connected');
+            setupDragAndDrop();
+        }
+
+        // Load available plans from the plan manager API
+        async function loadAvailablePlans() {
+            console.log('🔄 Loading available plans...');
+            try {
+                const response = await fetch('/api/plans/list');
+                console.log('📡 API Response status:', response.status);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    const plans = data.plans || [];
+                    console.log('📋 Plans received:', plans.length);
+                    
+                    if (plans.length === 0) {
+                        console.warn('⚠️ No plans found in data');
+                        const planSelect = document.getElementById('planSelect');
+                        planSelect.innerHTML = `
+                            <option value="">No plans available - Create plans first</option>
+                        `;
+                        return;
+                    }
+                    
+                    // Clear existing options
+                    const planSelect = document.getElementById('planSelect');
+                    planSelect.innerHTML = '<option value="">Select your insurance plan...</option>';
+                    
+                    // Group plans by company
+                    const plansByCompany = {};
+                    plans.forEach(plan => {
+                        if (!plansByCompany[plan.company]) {
+                            plansByCompany[plan.company] = [];
+                        }
+                        plansByCompany[plan.company].push(plan);
+                    });
+                    
+                    console.log('🏢 Companies found:', Object.keys(plansByCompany));
+                    
+                    // Add plans grouped by company
+                    Object.keys(plansByCompany).sort().forEach(company => {
+                        const optgroup = document.createElement('optgroup');
+                        optgroup.label = company;
+                        
+                        plansByCompany[company]
+                            .sort((a, b) => a.planName.localeCompare(b.planName))
+                            .forEach(plan => {
+                                const planKey = `${plan.company}_${plan.planName}_${plan.sumInsuredRange}`;
+                                
+                                PLAN_INFO[planKey] = {
+                                    name: `${plan.planName} (${plan.sumInsuredRange})`,
+                                    company: plan.company,
+                                    sumInsured: plan.sumInsuredRange,
+                                    filePath: plan.filePath,
+                                    book: plan.book,
+                                    description: `${plan.company} - ${plan.planName} with ${plan.sumInsuredRange} coverage`,
+                                    fullData: null // Will be loaded when selected
+                                };
+                                
+                                const option = document.createElement('option');
+                                option.value = planKey;
+                                option.textContent = `${plan.planName} (${plan.sumInsuredRange})`;
+                                optgroup.appendChild(option);
+                            });
+                        
+                        planSelect.appendChild(optgroup);
+                    });
+                    
+                    console.log(`✅ Successfully loaded ${plans.length} insurance plans for claim assessment`);
+                    console.log(`📊 PLAN_INFO now contains ${Object.keys(PLAN_INFO).length} plans`);
+                    
+                } else {
+                    console.error('❌ Failed to load plans from API, status:', response.status);
+                    const planSelect = document.getElementById('planSelect');
+                    planSelect.innerHTML = `
+                        <option value="">Failed to load plans - Check server</option>
+                    `;
+                }
+            } catch (error) {
+                console.error('❌ Error loading plans:', error);
+                const planSelect = document.getElementById('planSelect');
+                planSelect.innerHTML = `
+                    <option value="">Error loading plans - Check connection</option>
+                `;
+            }
+        }
+
+        // Plan selection handler
+        async function changePlan() {
+            const planSelect = document.getElementById('planSelect');
+            const planInfo = document.getElementById('planInfo');
+            const planDescription = document.getElementById('planDescription');
+            
+            currentPlan = planSelect.value;
+            
+            if (currentPlan) {
+                const plan = PLAN_INFO[currentPlan];
+                
+                try {
+                    // Load full plan data if not already loaded
+                    if (!plan.fullData && plan.filePath) {
+                        showStatus('Loading plan details...', 'processing');
+                        const response = await fetch(`/api/plans/get?filePath=${encodeURIComponent(plan.filePath)}`);
+                        if (response.ok) {
+                            const planData = await response.json();
+                            plan.fullData = planData.data;
+                        }
+                    }
+                    
+                    planInfo.style.display = 'block';
+                    planDescription.innerHTML = `
+                        <strong>${plan.name}</strong><br>
+                        <strong>Company:</strong> ${plan.company}<br>
+                        <strong>Coverage:</strong> ${plan.sumInsured}<br>
+                        <strong>Book:</strong> ${plan.book}
+                    `;
+                    
+                    showStatus('Plan selected - Ready for assessment', 'connected');
+                    updateAssessButton();
+                    
+                } catch (error) {
+                    console.error('Error loading plan details:', error);
+                    showStatus('Plan selected but details unavailable', 'error');
+                }
+                
+            } else {
+                planInfo.style.display = 'none';
+                showStatus('Please select a plan', 'processing');
+                updateAssessButton();
+            }
+        }
+
+        // File handling
+        function setupDragAndDrop() {
+            const uploadArea = document.getElementById('uploadArea');
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+        }
+
+        function handleFileSelect(event) {
+            handleFiles(event.target.files);
+        }
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (file.size > 10 * 1024 * 1024) { // 10MB limit
+                    alert(`File ${file.name} is too large. Maximum size is 10MB.`);
+                    return;
+                }
+                
+                if (!['application/pdf', 'image/jpeg', 'image/png'].includes(file.type)) {
+                    alert(`File ${file.name} is not supported. Please upload PDF, JPG, or PNG files.`);
+                    return;
+                }
+                
+                uploadedFiles.push(file);
+                displayUploadedFile(file);
+            });
+            
+            updateAssessButton();
+        }
+
+        function displayUploadedFile(file) {
+            const uploadedFilesDiv = document.getElementById('uploadedFiles');
+            
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            fileItem.innerHTML = `
+                <div class="file-info">
+                    <span>📄</span>
+                    <span>${file.name}</span>
+                    <small>(${(file.size / 1024).toFixed(1)} KB)</small>
+                </div>
+                <button class="file-remove" onclick="removeFile('${file.name}')" title="Remove file">×</button>
+            `;
+            
+            uploadedFilesDiv.appendChild(fileItem);
+        }
+
+        function removeFile(fileName) {
+            uploadedFiles = uploadedFiles.filter(file => file.name !== fileName);
+            
+            const uploadedFilesDiv = document.getElementById('uploadedFiles');
+            Array.from(uploadedFilesDiv.children).forEach(item => {
+                if (item.querySelector('.file-info span:nth-child(2)').textContent === fileName) {
+                    item.remove();
+                }
+            });
+            
+            updateAssessButton();
+        }
+
+        function updateAssessButton() {
+            const assessButton = document.getElementById('assessButton');
+            const canAssess = currentPlan && uploadedFiles.length > 0;
+            
+            assessButton.disabled = !canAssess;
+            assessButton.textContent = canAssess ? '🔬 Start Assessment' : 
+                !currentPlan ? '📋 Select Plan First' : '📁 Upload Documents First';
+        }
+
+        // Assessment functionality
+        async function startAssessment() {
+            if (!currentPlan || uploadedFiles.length === 0) {
+                alert('Please select a plan and upload documents first.');
+                return;
+            }
+            
+            showStatus('Analyzing documents...', 'processing');
+            
+            const resultsContent = document.getElementById('resultsContent');
+            resultsContent.innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <h3>Analyzing Your Claim</h3>
+                    <p>Our AI is reviewing your documents and comparing them with your plan coverage...</p>
+                </div>
+            `;
+            
+            try {
+                // Simulate assessment process
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                
+                // Get plan details for assessment
+                const plan = PLAN_INFO[currentPlan];
+                const mockResult = generateMockAssessment(plan, uploadedFiles);
+                
+                displayAssessmentResult(mockResult);
+                showStatus('Assessment completed', 'connected');
+                
+            } catch (error) {
+                console.error('Assessment error:', error);
+                resultsContent.innerHTML = `
+                    <div class="assessment-result" style="border-left-color: #e53e3e;">
+                        <div class="result-status rejected">
+                            ❌ Assessment Failed
+                        </div>
+                        <p>There was an error processing your claim. Please try again or contact support.</p>
+                    </div>
+                `;
+                showStatus('Assessment failed', 'error');
+            }
+        }
+
+        function generateMockAssessment(plan, files) {
+            // This would be replaced with actual AI assessment logic
+            const isEligible = Math.random() > 0.3; // 70% approval rate for demo
+            const claimAmount = Math.floor(Math.random() * 50000) + 10000;
+            const coverageAmount = Math.min(claimAmount, parseInt(plan.sumInsured.replace(/[^\d]/g, '')) * 100000);
+            
+            return {
+                status: isEligible ? 'approved' : 'rejected',
+                confidence: Math.floor(Math.random() * 30) + 70,
+                claimAmount: claimAmount,
+                coverageAmount: coverageAmount,
+                copayment: Math.floor(coverageAmount * 0.1),
+                reasons: isEligible ? 
+                    ['All required documents provided', 'Claim within coverage limits', 'Policy active and valid'] :
+                    ['Missing required documents', 'Claim exceeds coverage limits', 'Pre-existing condition exclusion'],
+                requiredDocuments: ['Hospital discharge summary', 'Medical bills', 'Diagnostic reports', 'Pharmacy bills'],
+                processingTime: '7-10 business days'
+            };
+        }
+
+        function displayAssessmentResult(result) {
+            const resultsContent = document.getElementById('resultsContent');
+            
+            const statusClass = result.status === 'approved' ? 'approved' : 'rejected';
+            const statusIcon = result.status === 'approved' ? '✅' : '❌';
+            const statusText = result.status === 'approved' ? 'CLAIM APPROVED' : 'CLAIM REQUIRES REVIEW';
+            
+            resultsContent.innerHTML = `
+                <div class="assessment-result" style="border-left-color: ${result.status === 'approved' ? '#48bb78' : '#e53e3e'};">
+                    <div class="result-status ${statusClass}">
+                        ${statusIcon} ${statusText}
+                    </div>
+                    
+                    <div class="result-details">
+                        <div class="result-item">
+                            <h4>Confidence Score</h4>
+                            <p>${result.confidence}%</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Claim Amount</h4>
+                            <p>₹${result.claimAmount.toLocaleString('en-IN')}</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Coverage Amount</h4>
+                            <p>₹${result.coverageAmount.toLocaleString('en-IN')}</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Co-payment</h4>
+                            <p>₹${result.copayment.toLocaleString('en-IN')}</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="margin-bottom: 0.5rem;">Assessment Details:</h4>
+                        <ul style="margin-left: 1rem;">
+                            ${result.reasons.map(reason => `<li>${reason}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="margin-bottom: 0.5rem;">Required Documents:</h4>
+                        <ul style="margin-left: 1rem;">
+                            ${result.requiredDocuments.map(doc => `<li>${doc}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Processing Time:</h4>
+                        <p>${result.processingTime}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showStatus(message, type) {
+            const statusIndicator = document.getElementById('statusIndicator');
+            statusIndicator.textContent = message;
+            statusIndicator.className = `status-indicator status-${type}`;
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>

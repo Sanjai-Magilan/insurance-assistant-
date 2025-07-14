@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Claim Assistant - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .description {
+            font-size: 1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .interface-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interface-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .interface-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .card-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .card-features li {
+            padding: 0.3rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .card-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .stats-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .stat-item p {
+            opacity: 0.9;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            padding: 2rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .interface-card {
+                padding: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .version-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🛡️ Health Insurance Claim Assistant <span class="version-badge">v2.0</span></h1>
+            <p class="subtitle">Comprehensive AI-Powered Insurance Management Platform</p>
+            <p class="description">
+                Streamline your health insurance claims process with our advanced AI technology. 
+                Manage plans, analyze claims, and get instant guidance - all in one platform.
+            </p>
+        </header>
+
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 id="planCount">0</h3>
+                    <p>Insurance Plans</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="companyCount">0</h3>
+                    <p>Insurance Companies</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3</h3>
+                    <p>AI Providers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Available</p>
+                </div>
+            </div>
+        </section>
+
+        <main class="dashboard-grid">
+            <!-- Plan Manager Card -->
+            <div class="interface-card">
+                <span class="card-icon">📋</span>
+                <h2 class="card-title">Plan Manager</h2>
+                <p class="card-description">
+                    Create, edit, and manage insurance plans with comprehensive coverage details, 
+                    exclusions, and policy terms.
+                </p>
+                <ul class="card-features">
+                    <li>Create new insurance plans</li>
+                    <li>Edit existing plan details</li>
+                    <li>Manage coverage limits & exclusions</li>
+                    <li>Export/import plan data</li>
+                    <li>Validate JSON structure</li>
+                </ul>
+                <a href="/plans" class="card-button">
+                    🚀 Open Plan Manager
+                </a>
+            </div>
+
+            <!-- Chat Interface Card -->
+            <div class="interface-card">
+                <span class="card-icon">💬</span>
+                <h2 class="card-title">AI Chat Assistant</h2>
+                <p class="card-description">
+                    Interactive AI-powered chat interface for instant claim guidance, 
+                    policy questions, and personalized assistance.
+                </p>
+                <ul class="card-features">
+                    <li>Real-time AI conversations</li>
+                    <li>Plan-specific guidance</li>
+                    <li>Claim eligibility analysis</li>
+                    <li>Document requirements</li>
+                    <li>Multi-provider AI support</li>
+                </ul>
+                <a href="/chat-interface.html" class="card-button">
+                    💭 Start Chat
+                </a>
+            </div>
+
+            <!-- Claim Assessment Card -->
+            <div class="interface-card">
+                <span class="card-icon">🔍</span>
+                <h2 class="card-title">Claim Assessment</h2>
+                <p class="card-description">
+                    Upload documents and get detailed claim analysis with eligibility 
+                    determination and coverage calculations.
+                </p>
+                <ul class="card-features">
+                    <li>Document upload & analysis</li>
+                    <li>AI-powered eligibility check</li>
+                    <li>Coverage amount calculation</li>
+                    <li>Required documents list</li>
+                    <li>Detailed assessment reports</li>
+                </ul>
+                <a href="/claim-assessment.html" class="card-button">
+                    🔬 Assess Claim
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>
+                &copy; 2025 Health Insurance Claim Assistant. 
+                Built with ❤️ for better healthcare access.
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <a href="/plans">Plan Manager</a> • 
+                <a href="/chat-interface.html">Chat Assistant</a> • 
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Load statistics
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/plans/stats');
+                if (response.ok) {
+                    const stats = await response.json();
+                    
+                    // Animate counters
+                    animateCounter('planCount', stats.totalPlans || 0);
+                    animateCounter('companyCount', stats.uniqueCompanies || 0);
+                } else {
+                    // Fallback if API is not available
+                    document.getElementById('planCount').textContent = '--';
+                    document.getElementById('companyCount').textContent = '--';
+                }
+            } catch (error) {
+                console.log('Stats API not available:', error);
+                document.getElementById('planCount').textContent = '--';
+                document.getElementById('companyCount').textContent = '--';
+            }
+        }
+
+        function animateCounter(elementId, target) {
+            const element = document.getElementById(elementId);
+            const duration = 2000; // 2 seconds
+            const steps = 50;
+            const increment = target / steps;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, duration / steps);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🏠 Homepage loaded');
+            loadStats();
+            
+            // Add subtle animations
+            const cards = document.querySelectorAll('.interface-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch (e.key) {
+                    case '1':
+                        e.preventDefault();
+                        window.location.href = '/plans';
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        window.location.href = '/chat-interface.html';
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        window.location.href = '/claim-assessment.html';
+                        break;
+                }
+            }
+        });
+
+        // Add hover effects
+        document.querySelectorAll('.interface-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

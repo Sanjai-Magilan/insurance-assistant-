@@ -1,0 +1,86 @@
+{
+  "sourceFile": "Book5.csv",
+  "extractedAt": "2025-07-13T14:30:21.179Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "Health Gain FAMILY",
+      "Adult Age Entry (MIN-MAX)": "18-65 Yrs",
+      "Child  Age Entry": "91-25 YRS",
+      "Policy Duration": "1 YEAR",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "MAX 1% OF SI / DAY",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "SI 1&2L- 12K/YEAR,3L-upto 25k/per eye, rs 35k per policy,  4L-upto 30k/per eye, rs 45k per policy, 5L-upto 40k/per eye, rs 60k per policy"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "NO",
+      "Free Health Check-up": "NO",
+      "Discounts": "NO"
+    },
+    "special_features_others": {
+      "Organ Donor Expenses": "OUT PATIENT BENEFIT AVAILABLE ,FIXED PREMIUM"
+    }
+  },
+  "plan_details": {
+    "Company": "STAR",
+    "Plan Name": "Health Gain FAMILY",
+    "Adult Age Entry (MIN-MAX)": "18-65 Yrs",
+    "Child  Age Entry": "91-25 YRS",
+    "Policy Duration": "1 YEAR",
+    "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+    "Medical Screening Before Policy": "NO"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 30 days",
+    "Post-Hospitalization": "Upto 60 days",
+    "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "NO",
+    "Domicilary Expenses": "NO",
+    "Consumables": "NO",
+    "SI RESTORE /RECHARGE": "NO"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "FIRST 4 YEARS"
+  },
+  "sub_limits": {
+    "Room Rent/day": "MAX 1% OF SI / DAY",
+    "ICU/day": "ACTUAL",
+    "Co - Pay": ">60YEARS AGE ENTRY -20%",
+    "Cataract Limits": "SI 1&2L- 12K/YEAR,3L-upto 25k/per eye, rs 35k per policy,  4L-upto 30k/per eye, rs 45k per policy, 5L-upto 40k/per eye, rs 60k per policy"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "NO",
+    "Free Health Check-up": "NO",
+    "Discounts": "NO"
+  },
+  "special_features_others": {
+    "Organ Donor Expenses": "OUT PATIENT BENEFIT AVAILABLE ,FIXED PREMIUM"
+  },
+  "planName": "Health Gain FAMILY",
+  "company": "STAR",
+  "normalizedSumInsured": null,
+  "generatedFilename": "health_gain_family_unknown.json"
+}

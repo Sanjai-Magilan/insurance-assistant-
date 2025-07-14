@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Plan Management System</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .controls-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .controls-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .controls-header h2 {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .btn-success {
+            background: #28a745;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+
+        .search-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-control {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .plans-table-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-header {
+            background: #667eea;
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-header h3 {
+            margin: 0;
+        }
+
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .plans-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .plans-table th,
+        .plans-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .plans-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .plans-table tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-sm {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.8rem;
+            border-radius: 0.375rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            background: #667eea;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem 1rem 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+        }
+
+        .close {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .close:hover {
+            opacity: 0.7;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .json-editor {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            min-height: 400px;
+            resize: vertical;
+            width: 100%;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: white;
+        }
+
+        .page-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .plan-preview {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .plan-preview h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: #666;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            <span class="logo">🏥</span>
+            Plan Management System
+        </h1>
+        <div class="nav-buttons">
+            <a href="/health" class="nav-btn">
+                <span>🔍</span>
+                Claim Assessment
+            </a>
+            <a href="/" class="nav-btn">
+                <span>💬</span>
+                Chat Interface
+            </a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Dashboard Stats -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <span class="stat-number" id="totalPlans">-</span>
+                <div class="stat-label">Total Plans</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="totalCompanies">-</span>
+                <div class="stat-label">Insurance Companies</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="totalBooks">-</span>
+                <div class="stat-label">Plan Books</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="lastUpdated">-</span>
+                <div class="stat-label">Last Updated</div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+            <div class="controls-header">
+                <h2>Plan Management</h2>
+                <div class="btn-group">
+                    <button class="btn btn-success" onclick="showCreatePlanModal()">
+                        <span>➕</span>
+                        Create New Plan
+                    </button>
+                    <button class="btn btn-warning" onclick="exportAllPlans()">
+                        <span>📤</span>
+                        Export Plans
+                    </button>
+                    <button class="btn" onclick="refreshPlans()">
+                        <span>🔄</span>
+                        Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-filters">
+                <div class="form-group">
+                    <label for="searchInput">Search Plans</label>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search by plan name, company..." onkeyup="filterPlans()">
+                </div>
+                <div class="form-group">
+                    <label for="companyFilter">Filter by Company</label>
+                    <select id="companyFilter" class="form-control" onchange="filterPlans()">
+                        <option value="">All Companies</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookFilter">Filter by Book</label>
+                    <select id="bookFilter" class="form-control" onchange="filterPlans()">
+                        <option value="">All Books</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sumInsuredFilter">Filter by Sum Insured</label>
+                    <select id="sumInsuredFilter" class="form-control" onchange="filterPlans()">
+                        <option value="">All Coverage</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plans Table -->
+        <div class="plans-table-container">
+            <div class="table-header">
+                <h3>Insurance Plans</h3>
+                <span id="planCount">Loading...</span>
+            </div>
+            <div class="table-container">
+                <table class="plans-table">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Company</th>
+                            <th>Sum Insured</th>
+                            <th>Book</th>
+                            <th>Last Modified</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plansTableBody">
+                        <tr>
+                            <td colspan="6" class="loading">
+                                <div class="spinner"></div>
+                                Loading plans...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </div>
+
+    <!-- Plan Editor Modal -->
+    <div id="planModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Edit Plan</h2>
+                <button class="close" onclick="closePlanModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modalMessage"></div>
+                
+                <div class="form-group">
+                    <label for="planFileName">File Name</label>
+                    <input type="text" id="planFileName" class="form-control" placeholder="plan_name_coverage.json">
+                </div>
+
+                <div class="form-group">
+                    <label for="planBookSelect">Book Location</label>
+                    <select id="planBookSelect" class="form-control">
+                        <option value="book1">Book 1</option>
+                        <option value="book2">Book 2</option>
+                        <option value="book3">Book 3</option>
+                        <option value="book4">Book 4</option>
+                        <option value="book5">Book 5</option>
+                        <option value="book6">Book 6</option>
+                        <option value="book7">Book 7</option>
+                        <option value="book8">Book 8</option>
+                        <option value="book9">Book 9</option>
+                        <option value="book10">Book 10</option>
+                        <option value="book11">Book 11</option>
+                        <option value="book12">Book 12</option>
+                        <option value="book13">Book 13</option>
+                        <option value="book14">Book 14</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="planJsonEditor">Plan Data (JSON)</label>
+                    <textarea id="planJsonEditor" class="json-editor" placeholder="Enter plan JSON data..."></textarea>
+                </div>
+
+                <div class="plan-preview" id="planPreview" style="display: none;">
+                    <h4>Plan Preview</h4>
+                    <div id="planPreviewContent"></div>
+                </div>
+
+                <div class="btn-group" style="margin-top: 1.5rem;">
+                    <button class="btn btn-success" onclick="savePlan()">
+                        <span>💾</span>
+                        Save Plan
+                    </button>
+                    <button class="btn" onclick="validatePlanJson()">
+                        <span>✅</span>
+                        Validate JSON
+                    </button>
+                    <button class="btn btn-warning" onclick="previewPlan()">
+                        <span>👁</span>
+                        Preview
+                    </button>
+                    <button class="btn" onclick="closePlanModal()">
+                        <span>❌</span>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allPlans = [];
+        let filteredPlans = [];
+        let currentPage = 1;
+        const plansPerPage = 10;
+        let currentEditingPlan = null;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboardStats();
+            loadPlans();
+            loadFilters();
+        });
+
+        // Load dashboard statistics
+        async function loadDashboardStats() {
+            try {
+                const response = await fetch('/api/plans/stats');
+                const stats = await response.json();
+                
+                document.getElementById('totalPlans').textContent = stats.totalPlans || 0;
+                document.getElementById('totalCompanies').textContent = stats.totalCompanies || 0;
+                document.getElementById('totalBooks').textContent = stats.totalBooks || 0;
+                document.getElementById('lastUpdated').textContent = stats.lastUpdated || 'Unknown';
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+            }
+        }
+
+        // Load all plans
+        async function loadPlans() {
+            try {
+                showLoading();
+                const response = await fetch('/api/plans/list');
+                const data = await response.json();
+                
+                allPlans = data.plans || [];
+                filteredPlans = [...allPlans];
+                
+                updatePlanCount();
+                renderPlansTable();
+                renderPagination();
+                
+            } catch (error) {
+                console.error('Failed to load plans:', error);
+                showError('Failed to load plans. Please try again.');
+            }
+        }
+
+        // Load filter options
+        async function loadFilters() {
+            try {
+                // Load companies
+                const companiesResponse = await fetch('/api/health-plans/companies');
+                const companies = await companiesResponse.json();
+                
+                const companyFilter = document.getElementById('companyFilter');
+                companies.forEach(company => {
+                    const option = document.createElement('option');
+                    option.value = company;
+                    option.textContent = company;
+                    companyFilter.appendChild(option);
+                });
+
+                // Load books
+                const bookFilter = document.getElementById('bookFilter');
+                for (let i = 1; i <= 14; i++) {
+                    const option = document.createElement('option');
+                    option.value = `book${i}`;
+                    option.textContent = `Book ${i}`;
+                    bookFilter.appendChild(option);
+                }
+
+                // Load sum insured options
+                const sumInsuredFilter = document.getElementById('sumInsuredFilter');
+                const uniqueSumInsured = [...new Set(allPlans.map(plan => plan.sumInsuredRange))].sort();
+                uniqueSumInsured.forEach(coverage => {
+                    if (coverage) {
+                        const option = document.createElement('option');
+                        option.value = coverage;
+                        option.textContent = coverage;
+                        sumInsuredFilter.appendChild(option);
+                    }
+                });
+
+            } catch (error) {
+                console.error('Failed to load filters:', error);
+            }
+        }
+
+        // Filter plans based on search and filters
+        function filterPlans() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const companyFilter = document.getElementById('companyFilter').value;
+            const bookFilter = document.getElementById('bookFilter').value;
+            const sumInsuredFilter = document.getElementById('sumInsuredFilter').value;
+
+            filteredPlans = allPlans.filter(plan => {
+                const matchesSearch = !searchTerm || 
+                    plan.planName.toLowerCase().includes(searchTerm) ||
+                    plan.company.toLowerCase().includes(searchTerm);
+                
+                const matchesCompany = !companyFilter || plan.company === companyFilter;
+                const matchesBook = !bookFilter || plan.book === bookFilter;
+                const matchesSumInsured = !sumInsuredFilter || plan.sumInsuredRange === sumInsuredFilter;
+
+                return matchesSearch && matchesCompany && matchesBook && matchesSumInsured;
+            });
+
+            currentPage = 1;
+            updatePlanCount();
+            renderPlansTable();
+            renderPagination();
+        }
+
+        // Render plans table
+        function renderPlansTable() {
+            const tbody = document.getElementById('plansTableBody');
+            const startIndex = (currentPage - 1) * plansPerPage;
+            const endIndex = startIndex + plansPerPage;
+            const pageData = filteredPlans.slice(startIndex, endIndex);
+
+            if (pageData.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 2rem; color: #666;">
+                            No plans found matching your criteria.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = pageData.map(plan => `
+                <tr>
+                    <td><strong>${plan.planName}</strong></td>
+                    <td>${plan.company}</td>
+                    <td><span style="background: #e3f2fd; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.8rem;">${plan.sumInsuredRange}</span></td>
+                    <td>${plan.book}</td>
+                    <td>${plan.lastModified ? new Date(plan.lastModified).toLocaleDateString() : 'Unknown'}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn btn-sm" onclick="viewPlan('${plan.filePath}')" title="View">
+                                <span>👁</span>
+                            </button>
+                            <button class="btn btn-sm btn-warning" onclick="editPlan('${plan.filePath}')" title="Edit">
+                                <span>✏️</span>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="deletePlan('${plan.filePath}')" title="Delete">
+                                <span>🗑️</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            const totalPages = Math.ceil(filteredPlans.length / plansPerPage);
+
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '';
+
+            // Previous button
+            if (currentPage > 1) {
+                paginationHTML += `<button class="page-btn" onclick="changePage(${currentPage - 1})">Previous</button>`;
+            }
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === currentPage) {
+                    paginationHTML += `<button class="page-btn active">${i}</button>`;
+                } else {
+                    paginationHTML += `<button class="page-btn" onclick="changePage(${i})">${i}</button>`;
+                }
+            }
+
+            // Next button
+            if (currentPage < totalPages) {
+                paginationHTML += `<button class="page-btn" onclick="changePage(${currentPage + 1})">Next</button>`;
+            }
+
+            pagination.innerHTML = paginationHTML;
+        }
+
+        // Change page
+        function changePage(page) {
+            currentPage = page;
+            renderPlansTable();
+            renderPagination();
+        }
+
+        // Update plan count display
+        function updatePlanCount() {
+            const countText = `${filteredPlans.length} of ${allPlans.length} plans`;
+            document.getElementById('planCount').textContent = countText;
+        }
+
+        // Show loading state
+        function showLoading() {
+            const tbody = document.getElementById('plansTableBody');
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="6" class="loading">
+                        <div class="spinner"></div>
+                        Loading plans...
+                    </td>
+                </tr>
+            `;
+        }
+
+        // Show error message
+        function showError(message) {
+            const tbody = document.getElementById('plansTableBody');
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="6" style="text-align: center; padding: 2rem; color: #dc3545;">
+                        ⚠️ ${message}
+                    </td>
+                </tr>
+            `;
+        }
+
+        // Show success message in modal
+        function showModalMessage(message, type = 'success') {
+            const messageDiv = document.getElementById('modalMessage');
+            messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // View plan details
+        async function viewPlan(filePath) {
+            try {
+                const response = await fetch(`/api/plans/get?filePath=${encodeURIComponent(filePath)}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const planData = await response.json();
+                
+                document.getElementById('modalTitle').textContent = 'View Plan Details';
+                document.getElementById('planFileName').value = planData.filename || '';
+                document.getElementById('planFileName').disabled = true;
+                document.getElementById('planBookSelect').value = planData.book || 'book1';
+                document.getElementById('planBookSelect').disabled = true;
+                document.getElementById('planJsonEditor').value = JSON.stringify(planData.data, null, 2);
+                document.getElementById('planJsonEditor').disabled = true;
+                
+                currentEditingPlan = { filePath, mode: 'view' };
+                document.getElementById('planModal').style.display = 'block';
+                
+                // Hide save/edit buttons in view mode
+                const buttons = document.querySelector('.btn-group').children;
+                for (let i = 0; i < buttons.length - 1; i++) {
+                    buttons[i].style.display = 'none';
+                }
+                
+            } catch (error) {
+                console.error('Failed to view plan:', error);
+                alert(`Failed to load plan details: ${error.message}`);
+            }
+        }
+
+        // Edit plan
+        async function editPlan(filePath) {
+            try {
+                const response = await fetch(`/api/plans/get?filePath=${encodeURIComponent(filePath)}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const planData = await response.json();
+                
+                document.getElementById('modalTitle').textContent = 'Edit Plan';
+                document.getElementById('planFileName').value = planData.filename || '';
+                document.getElementById('planFileName').disabled = false;
+                document.getElementById('planBookSelect').value = planData.book || 'book1';
+                document.getElementById('planBookSelect').disabled = false;
+                document.getElementById('planJsonEditor').value = JSON.stringify(planData.data, null, 2);
+                document.getElementById('planJsonEditor').disabled = false;
+                
+                currentEditingPlan = { filePath, mode: 'edit', absolutePath: planData.absolutePath };
+                document.getElementById('planModal').style.display = 'block';
+                
+                // Show all buttons in edit mode
+                const buttons = document.querySelector('.btn-group').children;
+                for (let button of buttons) {
+                    button.style.display = 'flex';
+                }
+                
+            } catch (error) {
+                console.error('Failed to edit plan:', error);
+                alert(`Failed to load plan for editing: ${error.message}`);
+            }
+        }
+
+        // Delete plan with confirmation
+        async function deletePlan(filePath) {
+            const result = await Swal.fire({
+                icon: 'warning',
+                title: 'Delete Plan?',
+                html: `
+                    <div style="text-align: left; margin-top: 1rem;">
+                        <p><strong>⚠️ Warning:</strong> This action cannot be undone!</p>
+                        <p style="margin-top: 1rem;"><strong>File:</strong> ${filePath.split('\\').pop()}</p>
+                        <p><strong>Location:</strong> ${filePath.includes('\\') ? filePath.split('\\').slice(-2, -1)[0] : 'Unknown'}</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; color: #856404; border-radius: 0.5rem;">
+                            💡 Make sure you have a backup if needed!
+                        </div>
+                    </div>
+                `,
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: '🗑️ Yes, Delete',
+                cancelButtonText: '❌ Cancel',
+                width: '500px'
+            });
+
+            if (!result.isConfirmed) {
+                return;
+            }
+
+            // Show loading
+            Swal.fire({
+                title: 'Deleting Plan...',
+                text: 'Please wait while we delete the plan.',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            try {
+                const response = await fetch('/api/plans/delete', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ filePath })
+                });
+
+                const deleteResult = await response.json();
+                
+                if (deleteResult.success) {
+                    await Swal.fire({
+                        icon: 'success',
+                        title: 'Plan Deleted! 🗑️',
+                        text: 'The plan has been successfully removed.',
+                        confirmButtonColor: '#28a745',
+                        timer: 2000
+                    });
+                    
+                    loadPlans();
+                    loadDashboardStats();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Delete Failed ❌',
+                        text: 'Failed to delete plan: ' + deleteResult.error,
+                        confirmButtonColor: '#dc3545'
+                    });
+                }
+                
+            } catch (error) {
+                console.error('Failed to delete plan:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Unexpected Error ❌',
+                    text: 'Failed to delete plan: ' + error.message,
+                    confirmButtonColor: '#dc3545'
+                });
+            }
+        }
+
+        // Show create plan modal
+        function showCreatePlanModal() {
+            document.getElementById('modalTitle').textContent = 'Create New Plan';
+            document.getElementById('planFileName').value = '';
+            document.getElementById('planFileName').disabled = false;
+            document.getElementById('planBookSelect').value = 'book1';
+            document.getElementById('planBookSelect').disabled = false;
+            document.getElementById('planJsonEditor').value = JSON.stringify({
+                "sourceFile": "Manual Entry",
+                "extractedAt": new Date().toISOString(),
+                "rawData": {
+                    "plan_details": {
+                        "Company": "",
+                        "Plan Name": "",
+                        "Adult Age Entry (MIN-MAX)": "",
+                        "Child  Age Entry": "",
+                        "Sum Insured Range": "",
+                        "Policy Duration": "",
+                        "payment mode (YLY/HLY/QLY/MLY)": "",
+                        "Who all can be covered": "",
+                        "MID TERM INCLUSION": "",
+                        "Medical Screening Before Policy": ""
+                    },
+                    "basic_coverages": {
+                        "Pre-Hospitalization": "",
+                        "Post-Hospitalization": "",
+                        "Emergency Ambulance": "",
+                        "DAY CARE (PROCEDURE/SURGERY)": "",
+                        "Non-Allopathic Treatment (AYUSH)": "",
+                        "Domicilary Expenses": "",
+                        "Consumables": "",
+                        "SI RESTORE /RECHARGE": ""
+                    },
+                    "exclusions_waiting_periods": {
+                        "INITIAL WAITING": "",
+                        "SPECIFIC DISEASE": "",
+                        "Pre Existing Disease": ""
+                    },
+                    "sub_limits": {
+                        "Room Rent/day": "",
+                        "ICU/day": "",
+                        "Co - Pay": "",
+                        "Cataract Limits": "",
+                        "Other Sub Limits": ""
+                    },
+                    "renewal_benefits": {
+                        "No claim bonus": "",
+                        "Free Health Check-up": "",
+                        "Wellness Discount": ""
+                    },
+                    "special_features_others": {
+                        "1": "",
+                        "2": "",
+                        "3": "",
+                        "4": "",
+                        "5": ""
+                    },
+                    "maternity_cover": {
+                        "AVAILABLE CONDITION": "",
+                        "WAITING PERIOD 1st DELIVERY": "",
+                        "WAITING PERIOD 2nd DELIVERY": "",
+                        "Delivery charges (NORMAL)": "",
+                        "Delivery charges (Caesarean)": "",
+                        "NEW BORN BABY COVER": ""
+                    }
+                },
+                "plan_details": {
+                    "Company": "",
+                    "Plan Name": "",
+                    "Adult Age Entry (MIN-MAX)": "",
+                    "Sum Insured Range": "",
+                    "Policy Duration": "",
+                    "Who all can be covered": "",
+                    "Medical Screening Before Policy": ""
+                },
+                "basic_coverages": {
+                    "Pre-Hospitalization": "",
+                    "Post-Hospitalization": "",
+                    "Emergency Ambulance": "",
+                    "DAY CARE (PROCEDURE/SURGERY)": "",
+                    "Non-Allopathic Treatment (AYUSH)": "",
+                    "Domicilary Expenses": "",
+                    "Consumables": "",
+                    "SI RESTORE /RECHARGE": ""
+                },
+                "exclusions_waiting_periods": {
+                    "INITIAL WAITING": "",
+                    "SPECIFIC DISEASE": "",
+                    "Pre Existing Disease": ""
+                }
+            }, null, 2);
+            document.getElementById('planJsonEditor').disabled = false;
+            
+            currentEditingPlan = { mode: 'create' };
+            document.getElementById('planModal').style.display = 'block';
+            
+            // Show all buttons in create mode
+            const buttons = document.querySelector('.btn-group').children;
+            for (let button of buttons) {
+                button.style.display = 'flex';
+            }
+        }
+
+        // Close plan modal
+        function closePlanModal() {
+            document.getElementById('planModal').style.display = 'none';
+            document.getElementById('modalMessage').style.display = 'none';
+            document.getElementById('planPreview').style.display = 'none';
+            currentEditingPlan = null;
+        }
+
+        // Validate plan JSON with enhanced feedback
+        function validatePlanJson() {
+            try {
+                const jsonText = document.getElementById('planJsonEditor').value.trim();
+                
+                if (!jsonText) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Empty JSON',
+                        text: 'Please enter JSON data before validating.',
+                        confirmButtonColor: '#667eea'
+                    });
+                    return false;
+                }
+
+                const parsedJson = JSON.parse(jsonText);
+                
+                // Enhanced validation checks
+                const validationResults = performDetailedValidation(parsedJson);
+                
+                if (validationResults.isValid) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Valid JSON! ✅',
+                        html: `
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <p><strong>✅ JSON Syntax:</strong> Valid</p>
+                                <p><strong>✅ Required Fields:</strong> Present</p>
+                                <p><strong>✅ Plan Name:</strong> ${parsedJson.plan_details?.['Plan Name'] || parsedJson.rawData?.plan_details?.['Plan Name'] || 'N/A'}</p>
+                                <p><strong>✅ Company:</strong> ${parsedJson.plan_details?.Company || parsedJson.rawData?.plan_details?.Company || 'N/A'}</p>
+                                <p><strong>✅ Coverage:</strong> ${parsedJson.plan_details?.['Sum Insured Range'] || parsedJson.rawData?.plan_details?.['Sum Insured Range'] || 'N/A'}</p>
+                                <p><strong>📊 Structure:</strong> ${validationResults.structureType}</p>
+                            </div>
+                        `,
+                        confirmButtonColor: '#28a745',
+                        confirmButtonText: 'Great!'
+                    });
+                    return true;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Validation Failed ❌',
+                        html: `
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <p><strong>Issues found:</strong></p>
+                                <ul style="margin-left: 1rem;">
+                                    ${validationResults.errors.map(error => `<li style="color: #dc3545;">${error}</li>`).join('')}
+                                </ul>
+                                <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 0.5rem;">
+                                    <strong>💡 Validation Tips:</strong>
+                                    <ul style="margin-left: 1rem; font-size: 0.9rem;">
+                                        <li>Ensure all required sections are present</li>
+                                        <li>Check for missing quotes or brackets</li>
+                                        <li>Verify plan name and company are filled</li>
+                                        <li>Use "Validate JSON" button before saving</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        `,
+                        confirmButtonColor: '#dc3545',
+                        confirmButtonText: 'Fix Issues',
+                        width: '600px'
+                    });
+                    return false;
+                }
+                
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid JSON Syntax ❌',
+                    html: `
+                        <div style="text-align: left; margin-top: 1rem;">
+                            <p><strong>Syntax Error:</strong></p>
+                            <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 0.5rem; font-family: monospace; font-size: 0.9rem;">
+                                ${error.message}
+                            </div>
+                            <div style="margin-top: 1rem; padding: 1rem; background: #d4edda; color: #155724; border-radius: 0.5rem;">
+                                <strong>💡 Common JSON Issues:</strong>
+                                <ul style="margin-left: 1rem; font-size: 0.9rem;">
+                                    <li>Missing commas between objects</li>
+                                    <li>Unclosed brackets or braces</li>
+                                    <li>Missing quotes around keys</li>
+                                    <li>Trailing commas at the end</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `,
+                    confirmButtonColor: '#dc3545',
+                    confirmButtonText: 'Fix Syntax',
+                    width: '600px'
+                });
+                return false;
+            }
+        }
+
+        // Detailed validation function
+        function performDetailedValidation(planData) {
+            const errors = [];
+            let isValid = true;
+            let structureType = 'Unknown';
+
+            // Determine structure type
+            if (planData.rawData && planData.rawData.plan_details) {
+                structureType = 'Complex (with rawData)';
+            } else if (planData.plan_details) {
+                structureType = 'Standard (direct fields)';
+            }
+
+            // Check required top-level sections
+            const requiredSections = ['plan_details'];
+            
+            // For complex structure with rawData
+            if (planData.rawData) {
+                if (!planData.rawData.plan_details) {
+                    errors.push('Missing "plan_details" in rawData section');
+                    isValid = false;
+                }
+                
+                // Validate plan_details within rawData
+                if (planData.rawData.plan_details) {
+                    const requiredFields = ['Plan Name', 'Company', 'Sum Insured Range'];
+                    requiredFields.forEach(field => {
+                        if (!planData.rawData.plan_details[field] || planData.rawData.plan_details[field].trim() === '') {
+                            errors.push(`Missing or empty "${field}" in rawData.plan_details`);
+                            isValid = false;
+                        }
+                    });
+                }
+            } 
+            // For simple structure
+            else {
+                if (!planData.plan_details) {
+                    errors.push('Missing required section: "plan_details"');
+                    isValid = false;
+                } else {
+                    const requiredFields = ['Plan Name', 'Company', 'Sum Insured Range'];
+                    requiredFields.forEach(field => {
+                        if (!planData.plan_details[field] || planData.plan_details[field].trim() === '') {
+                            errors.push(`Missing or empty "${field}" in plan_details`);
+                            isValid = false;
+                        }
+                    });
+                }
+            }
+
+            // Check for reasonable data formats
+            const sumInsuredField = planData.rawData?.plan_details?.['Sum Insured Range'] || planData.plan_details?.['Sum Insured Range'];
+            if (sumInsuredField && !sumInsuredField.match(/\d+[LCR]|lakh|crore|L|CR/i)) {
+                errors.push('Sum Insured Range should contain a valid amount (e.g., "10L", "1CR", "5 Lakh")');
+            }
+
+            // Check for basic_coverages (warning, not error)
+            const basicCoverages = planData.rawData?.basic_coverages || planData.basic_coverages;
+            if (!basicCoverages) {
+                errors.push('⚠️ Warning: Missing "basic_coverages" section (recommended)');
+            }
+
+            return { isValid, errors, structureType };
+        }
+
+        // Preview plan
+        function previewPlan() {
+            if (!validatePlanJson()) {
+                return;
+            }
+            
+            try {
+                const jsonText = document.getElementById('planJsonEditor').value;
+                const planData = JSON.parse(jsonText);
+                
+                // Get plan details from either rawData or direct fields
+                const planDetails = planData.rawData?.plan_details || planData.plan_details || {};
+                const basicCoverages = planData.rawData?.basic_coverages || planData.basic_coverages || {};
+                const exclusions = planData.rawData?.exclusions_waiting_periods || planData.exclusions_waiting_periods || {};
+                
+                const previewDiv = document.getElementById('planPreview');
+                const contentDiv = document.getElementById('planPreviewContent');
+                
+                contentDiv.innerHTML = `
+                    <div class="plan-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Company:</span>
+                            <span class="detail-value">${planDetails.Company || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Plan Name:</span>
+                            <span class="detail-value">${planDetails['Plan Name'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Sum Insured:</span>
+                            <span class="detail-value">${planDetails['Sum Insured Range'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Age Entry:</span>
+                            <span class="detail-value">${planDetails['Adult Age Entry (MIN-MAX)'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Policy Duration:</span>
+                            <span class="detail-value">${planDetails['Policy Duration'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pre-Hospitalization:</span>
+                            <span class="detail-value">${basicCoverages['Pre-Hospitalization'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Post-Hospitalization:</span>
+                            <span class="detail-value">${basicCoverages['Post-Hospitalization'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Initial Waiting:</span>
+                            <span class="detail-value">${exclusions['INITIAL WAITING'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pre-Existing Disease:</span>
+                            <span class="detail-value">${exclusions['Pre Existing Disease'] || 'N/A'}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Who Can Be Covered:</span>
+                            <span class="detail-value">${planDetails['Who all can be covered'] || 'N/A'}</span>
+                        </div>
+                    </div>
+                `;
+                
+                previewDiv.style.display = 'block';
+                
+            } catch (error) {
+                showModalMessage(`Failed to preview plan: ${error.message}`, 'error');
+            }
+        }
+
+        // Save plan with enhanced feedback
+        async function savePlan() {
+            if (!validatePlanJson()) {
+                return;
+            }
+            
+            const fileName = document.getElementById('planFileName').value;
+            const book = document.getElementById('planBookSelect').value;
+            const jsonText = document.getElementById('planJsonEditor').value;
+            
+            if (!fileName) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Missing File Name',
+                    text: 'Please enter a file name before saving.',
+                    confirmButtonColor: '#ffc107'
+                });
+                return;
+            }
+            
+            // Show loading
+            Swal.fire({
+                title: 'Saving Plan...',
+                text: 'Please wait while we save your plan.',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+            
+            try {
+                const planData = JSON.parse(jsonText);
+                
+                const requestData = {
+                    fileName: fileName.endsWith('.json') ? fileName : fileName + '.json',
+                    book: book,
+                    data: planData
+                };
+                
+                if (currentEditingPlan.mode === 'edit') {
+                    requestData.originalFilePath = currentEditingPlan.absolutePath || currentEditingPlan.filePath;
+                }
+                
+                const endpoint = currentEditingPlan.mode === 'create' ? '/api/plans/create' : '/api/plans/update';
+                
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    const actionText = currentEditingPlan.mode === 'create' ? 'created' : 'updated';
+                    await Swal.fire({
+                        icon: 'success',
+                        title: `Plan ${actionText} successfully! 🎉`,
+                        html: `
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <p><strong>✅ File:</strong> ${requestData.fileName}</p>
+                                <p><strong>📁 Location:</strong> ${book}</p>
+                                <p><strong>🏥 Plan:</strong> ${planData.plan_details?.['Plan Name'] || planData.rawData?.plan_details?.['Plan Name'] || 'N/A'}</p>
+                                <p><strong>🏢 Company:</strong> ${planData.plan_details?.Company || planData.rawData?.plan_details?.Company || 'N/A'}</p>
+                            </div>
+                        `,
+                        confirmButtonColor: '#28a745',
+                        confirmButtonText: 'Great!',
+                        timer: 3000
+                    });
+                    
+                    closePlanModal();
+                    loadPlans();
+                    loadDashboardStats();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Save Failed ❌',
+                        html: `
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <p><strong>Error:</strong></p>
+                                <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 0.5rem;">
+                                    ${result.error}
+                                </div>
+                                <div style="margin-top: 1rem; padding: 1rem; background: #d4edda; color: #155724; border-radius: 0.5rem;">
+                                    <strong>💡 Try:</strong>
+                                    <ul style="margin-left: 1rem;">
+                                        <li>Check if file name is valid</li>
+                                        <li>Ensure you have write permissions</li>
+                                        <li>Validate JSON before saving</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        `,
+                        confirmButtonColor: '#dc3545',
+                        width: '500px'
+                    });
+                }
+                
+            } catch (error) {
+                console.error('Failed to save plan:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Unexpected Error ❌',
+                    html: `
+                        <div style="text-align: left; margin-top: 1rem;">
+                            <p><strong>Something went wrong:</strong></p>
+                            <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 0.5rem; font-family: monospace; font-size: 0.9rem;">
+                                ${error.message}
+                            </div>
+                        </div>
+                    `,
+                    confirmButtonColor: '#dc3545'
+                });
+            }
+        }
+
+        // Export all plans
+        async function exportAllPlans() {
+            try {
+                const response = await fetch('/api/plans/export');
+                const blob = await response.blob();
+                
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = `health_insurance_plans_${new Date().toISOString().split('T')[0]}.zip`;
+                
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                alert('Plans exported successfully!');
+                
+            } catch (error) {
+                console.error('Failed to export plans:', error);
+                alert('Failed to export plans.');
+            }
+        }
+
+        // Refresh plans
+        function refreshPlans() {
+            loadDashboardStats();
+            loadPlans();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('planModal');
+            if (event.target === modal) {
+                closePlanModal();
+            }
+        };
+    </script>
+</body>
+</html>

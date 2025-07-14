@@ -1,0 +1,89 @@
+{
+  "sourceFile": "Book4.csv",
+  "extractedAt": "2025-07-13T09:50:28.312Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "HEALTH ASSURE - INDIVIDUAL",
+      "Adult Age Entry (MIN-MAX)": "18 - 75 YRS",
+      "Child  Age Entry": "91DAYS -17YRS",
+      "Sum Insured Range": "5L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY) /YLY - 1/2/3 YRS",
+      "Who all can be covered": "6A+3C (HUSBAND+SPOUSE+2 PARENTS 2+ 2PARENT INLAWS +3 CHILDRENS)",
+      "MID TERM INCLUSION": "SPOUSE/CHILD WITHIN 45DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "UPTO 180 DAYS",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
+      "Domicilary Expenses": "UPTO SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 3YRS ( IF 3YRS POLICY 2.5YRS )"
+    },
+    "sub_limits": {
+      "Room Rent/day": "1% OF SI , MAX RS.5,000/-",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -10%",
+      "Cataract Limits": "ACTUAL",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "25% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY YEAR Rs.1,500 IRRESPECTIVE OF CLAIM",
+      "Discounts": "4-20% ON WELLNESS POINTS EARNED"
+    }
+  },
+  "plan_details": {
+    "Company": "STAR",
+    "Plan Name": "HEALTH ASSURE - INDIVIDUAL",
+    "Adult Age Entry (MIN-MAX)": "18 - 75 YRS",
+    "Child  Age Entry": "91DAYS -17YRS",
+    "Sum Insured Range": "5L",
+    "Policy Duration": "1/2/3 YRS",
+    "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY) /YLY - 1/2/3 YRS",
+    "Who all can be covered": "6A+3C (HUSBAND+SPOUSE+2 PARENTS 2+ 2PARENT INLAWS +3 CHILDRENS)",
+    "MID TERM INCLUSION": "SPOUSE/CHILD WITHIN 45DAYS",
+    "Medical Screening Before Policy": "NO"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 60 days",
+    "Post-Hospitalization": "UPTO 180 DAYS",
+    "Emergency Ambulance": "ACTUAL",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
+    "Domicilary Expenses": "UPTO SI",
+    "Consumables": "YES ( AS PER LIST 1)",
+    "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "FIRST 3YRS ( IF 3YRS POLICY 2.5YRS )"
+  },
+  "sub_limits": {
+    "Room Rent/day": "1% OF SI , MAX RS.5,000/-",
+    "ICU/day": "ACTUAL",
+    "Co - Pay": ">60YEARS AGE ENTRY -10%",
+    "Cataract Limits": "ACTUAL",
+    "Other Sub Limits": "NO"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "25% FOR EVERY CLAIM FREE YR MAX 100%",
+    "Free Health Check-up": "EVERY YEAR Rs.1,500 IRRESPECTIVE OF CLAIM",
+    "Discounts": "4-20% ON WELLNESS POINTS EARNED"
+  },
+  "planName": "HEALTH ASSURE - INDIVIDUAL",
+  "company": "STAR",
+  "sumInsuredRange": "5L",
+  "normalizedSumInsured": "5l",
+  "generatedFilename": "health_assure_individual_5l.json"
+}

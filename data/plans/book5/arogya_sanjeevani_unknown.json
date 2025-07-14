@@ -1,0 +1,86 @@
+{
+  "sourceFile": "Book5.csv",
+  "extractedAt": "2025-07-13T14:30:21.134Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "Arogya Sanjeevani",
+      "Adult Age Entry (MIN-MAX)": "18- 65 years",
+      "Child  Age Entry": "3Month - 25 yrs",
+      "Policy Duration": "1 YEAR",
+      "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY)",
+      "Medical Screening Before Policy": "ABOVE 50 YRS"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "Upto 100% Sum Insured",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "2% Of sum insured max Of Rs.5000",
+      "ICU/day": "5% Of sum insured max Of Rs.10000",
+      "Co - Pay": "5% of Co-pay for all claims",
+      "Cataract Limits": "upto Upto 25% pf sum insured or Rs.40000 whichever is lower per each eye in one policy year"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-5%,  MAX.-50%",
+      "Free Health Check-up": "NO",
+      "Discounts": "20%"
+    },
+    "special_features_others": {
+      "MODERN TREATMENT": "UP TO 50% SI"
+    }
+  },
+  "plan_details": {
+    "Company": "STAR",
+    "Plan Name": "Arogya Sanjeevani",
+    "Adult Age Entry (MIN-MAX)": "18- 65 years",
+    "Child  Age Entry": "3Month - 25 yrs",
+    "Policy Duration": "1 YEAR",
+    "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY)",
+    "Medical Screening Before Policy": "ABOVE 50 YRS"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 30 days",
+    "Post-Hospitalization": "Upto 60 days",
+    "Emergency Ambulance": "Rs.2000/- per hospitalization",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "Upto 100% Sum Insured",
+    "Domicilary Expenses": "NO",
+    "Consumables": "NO",
+    "SI RESTORE /RECHARGE": "NO"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "FIRST 4 YEARS"
+  },
+  "sub_limits": {
+    "Room Rent/day": "2% Of sum insured max Of Rs.5000",
+    "ICU/day": "5% Of sum insured max Of Rs.10000",
+    "Co - Pay": "5% of Co-pay for all claims",
+    "Cataract Limits": "upto Upto 25% pf sum insured or Rs.40000 whichever is lower per each eye in one policy year"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "FIRST YEAR-5%,  MAX.-50%",
+    "Free Health Check-up": "NO",
+    "Discounts": "20%"
+  },
+  "special_features_others": {
+    "MODERN TREATMENT": "UP TO 50% SI"
+  },
+  "planName": "Arogya Sanjeevani",
+  "company": "STAR",
+  "normalizedSumInsured": null,
+  "generatedFilename": "arogya_sanjeevani_unknown.json"
+}
