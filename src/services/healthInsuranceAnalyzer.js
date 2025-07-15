@@ -60,6 +60,23 @@ class HealthInsuranceClaimAnalyzer {
     return Array.from(companies).sort();
   }
 
+  // Get all available plans (for API endpoints)
+  getAllPlans() {
+    const allPlans = [];
+    this.availablePlans.forEach((plan, key) => {
+      allPlans.push({
+        company: plan.company,
+        planName: plan.planName,
+        sumInsuredRange: plan.normalizedSumInsured || 'Various',
+        filePath: plan.filePath,
+        book: plan.book,
+        key: key,
+        ...plan
+      });
+    });
+    return allPlans;
+  }
+
   // Get plans by company
   getPlansByCompany(company) {
     const plans = new Map();

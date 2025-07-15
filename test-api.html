@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test Page</h1>
+    <button onclick="testAPI()">Test API</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                console.log('Testing /api/health...');
+                const healthResponse = await fetch('/api/health');
+                const healthData = await healthResponse.json();
+                console.log('Health API:', healthData);
+                
+                console.log('Testing /api/plans/list...');
+                const plansResponse = await fetch('/api/plans/list');
+                console.log('Plans response status:', plansResponse.status);
+                
+                if (plansResponse.ok) {
+                    const plansData = await plansResponse.json();
+                    console.log('Plans API:', plansData);
+                    
+                    resultDiv.innerHTML = `
+                        <h3>API Test Results:</h3>
+                        <p><strong>Health API:</strong> ${JSON.stringify(healthData, null, 2)}</p>
+                        <p><strong>Plans Count:</strong> ${plansData.plans ? plansData.plans.length : 'No plans'}</p>
+                        <p><strong>Sample Plan:</strong> ${plansData.plans && plansData.plans[0] ? JSON.stringify(plansData.plans[0], null, 2) : 'None'}</p>
+                    `;
+                } else {
+                    const errorText = await plansResponse.text();
+                    resultDiv.innerHTML = `<p style="color: red;">Plans API Error: ${plansResponse.status} - ${errorText}</p>`;
+                }
+                
+            } catch (error) {
+                console.error('API Test Error:', error);
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -790,33 +790,26 @@
                         plansByCompany[plan.company].push(plan);
                     });
                     
-                    console.log('🏢 Companies found:', Object.keys(plansByCompany));
-                    
                     // Add grouped options
                     Object.keys(plansByCompany).sort().forEach(company => {
                         const optgroup = document.createElement('optgroup');
                         optgroup.label = company;
                         
-                        plansByCompany[company]
-                            .sort((a, b) => a.planName.localeCompare(b.planName))
-                            .forEach(plan => {
-                                const option = document.createElement('option');
-                                option.value = plan.planName;
-                                option.textContent = `${plan.planName} (${plan.sumInsuredRange || 'Various'})`;
-                                option.dataset.company = plan.company;
-                                option.dataset.filePath = plan.filePath;
-                                option.dataset.sumInsured = plan.sumInsuredRange;
-                                optgroup.appendChild(option);
-                            });
+                        plansByCompany[company].forEach(plan => {
+                            const option = document.createElement('option');
+                            option.value = plan.planName;
+                            option.textContent = `${plan.planName} (${plan.sumInsuredRange})`;
+                            option.dataset.company = plan.company;
+                            option.dataset.filePath = plan.filePath;
+                            optgroup.appendChild(option);
+                        });
                         
                         planSelect.appendChild(optgroup);
                     });
                     
                     console.log('✅ Plans loaded successfully');
                 } else {
-                    const errorText = await response.text();
-                    console.error('❌ API Error:', response.status, errorText);
-                    throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
             } catch (error) {
                 console.error('❌ Error loading plans:', error);
@@ -824,7 +817,7 @@
                 planSelect.innerHTML = `
                     <option value="">Error loading plans - Please refresh</option>
                 `;
-                showError(`Failed to load insurance plans: ${error.message}. Please refresh the page and try again.`);
+                showError('Failed to load insurance plans. Please refresh the page and try again.');
             }
         }
 

@@ -666,7 +666,7 @@
         async function loadFilters() {
             try {
                 // Load companies
-                const companiesResponse = await fetch('/api/health-plans/companies');
+                const companiesResponse = await fetch('/api/claims/companies');
                 const companies = await companiesResponse.json();
                 
                 const companyFilter = document.getElementById('companyFilter');
