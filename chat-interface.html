@@ -452,12 +452,25 @@
         <div class="main-content">
             <aside class="sidebar">
                 <div class="plan-selector">
-                    <div class="section-title">📋 Insurance Plan</div>
-                    <select id="planSelect" onchange="changePlan()">
-                        <option value="">Loading plans...</option>
+                    <div class="section-title">📋 Insurance Plan Selection</div>
+                    
+                    <label for="companySelect" style="font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; display: block;">Insurance Company</label>
+                    <select id="companySelect" onchange="handleCompanyChange()">
+                        <option value="">Select Insurance Company</option>
                     </select>
+                    
+                    <label for="planSelect" style="font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; margin-top: 1rem; display: block;">Plan Name</label>
+                    <select id="planSelect" onchange="handlePlanChange()" disabled>
+                        <option value="">First select insurance company</option>
+                    </select>
+                    
+                    <label for="variantSelect" style="font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; margin-top: 1rem; display: block;">Plan Variant (Sum Insured)</label>
+                    <select id="variantSelect" onchange="handleVariantChange()" disabled>
+                        <option value="">First select plan</option>
+                    </select>
+                    
                     <div class="plan-info" id="planInfo">
-                        <h4>Plan Details</h4>
+                        <h4>Selected Plan Details</h4>
                         <div id="planDescription"></div>
                     </div>
                 </div>
@@ -535,7 +548,7 @@
             adjustTextareaHeight();
         }
 
-        // Load available plans from the plan manager API
+        // Load available plans and organize hierarchically
         async function loadAvailablePlans() {
             console.log('🔄 Loading available plans...');
             try {
@@ -544,78 +557,195 @@
                 
                 if (response.ok) {
                     const data = await response.json();
-                    const plans = data.plans || [];
-                    console.log('📋 Plans received:', plans.length);
+                    const allPlans = data.plans || [];
+                    console.log('📋 Plans received:', allPlans.length);
                     
-                    if (plans.length === 0) {
+                    if (allPlans.length === 0) {
                         console.warn('⚠️ No plans found in data');
-                        const planSelect = document.getElementById('planSelect');
-                        planSelect.innerHTML = `
-                            <option value="">No plans available - Create plans first</option>
-                        `;
+                        document.getElementById('companySelect').innerHTML = `<option value="">No companies available</option>`;
                         return;
                     }
                     
-                    // Clear existing options
-                    const planSelect = document.getElementById('planSelect');
-                    planSelect.innerHTML = '<option value="">Select your insurance plan...</option>';
-                    
-                    // Group plans by company
-                    const plansByCompany = {};
-                    plans.forEach(plan => {
-                        if (!plansByCompany[plan.company]) {
-                            plansByCompany[plan.company] = [];
+                    // Organize data hierarchically
+                    const companies = {};
+                    allPlans.forEach(plan => {
+                        const companyName = plan.company;
+                        if (!companies[companyName]) {
+                            companies[companyName] = {};
                         }
-                        plansByCompany[plan.company].push(plan);
+                        
+                        const planName = plan.planName;
+                        if (!companies[companyName][planName]) {
+                            companies[companyName][planName] = [];
+                        }
+                        
+                        companies[companyName][planName].push({
+                            sumInsured: plan.sumInsuredRange || 'Unknown',
+                            filePath: plan.filePath,
+                            fullPlan: plan
+                        });
                     });
                     
-                    console.log('🏢 Companies found:', Object.keys(plansByCompany));
+                    // Store organized data globally
+                    window.chatPlanHierarchy = companies;
                     
-                    // Add plans grouped by company
-                    Object.keys(plansByCompany).sort().forEach(company => {
-                        const optgroup = document.createElement('optgroup');
-                        optgroup.label = company;
-                        
-                        plansByCompany[company]
-                            .sort((a, b) => a.planName.localeCompare(b.planName))
-                            .forEach(plan => {
-                                const planKey = `${plan.company}_${plan.planName}_${plan.sumInsuredRange}`;
-                                
-                                PLAN_INFO[planKey] = {
-                                    name: `${plan.planName} (${plan.sumInsuredRange})`,
-                                    company: plan.company,
-                                    sumInsured: plan.sumInsuredRange,
-                                    filePath: plan.filePath,
-                                    book: plan.book,
-                                    description: `${plan.company} - ${plan.planName} with ${plan.sumInsuredRange} coverage`,
-                                    fullData: null // Will be loaded when selected
-                                };
-                                
-                                const option = document.createElement('option');
-                                option.value = planKey;
-                                option.textContent = `${plan.planName} (${plan.sumInsuredRange})`;
-                                optgroup.appendChild(option);
-                            });
-                        
-                        planSelect.appendChild(optgroup);
-                    });
+                    // Populate company dropdown
+                    populateCompanies(Object.keys(companies).sort());
                     
-                    console.log(`✅ Successfully loaded ${plans.length} insurance plans for chat interface`);
-                    console.log(`📊 PLAN_INFO now contains ${Object.keys(PLAN_INFO).length} plans`);
+                    console.log('✅ Plans loaded and organized hierarchically');
+                    console.log('🏢 Companies:', Object.keys(companies));
                     
                 } else {
                     console.error('❌ Failed to load plans from API, status:', response.status);
-                    const planSelect = document.getElementById('planSelect');
-                    planSelect.innerHTML = `
-                        <option value="">Failed to load plans - Check server</option>
-                    `;
+                    document.getElementById('companySelect').innerHTML = `<option value="">Failed to load companies - Check server</option>`;
                 }
             } catch (error) {
                 console.error('❌ Error loading plans:', error);
-                const planSelect = document.getElementById('planSelect');
-                planSelect.innerHTML = `
-                    <option value="">Error loading plans - Check connection</option>
-                `;
+                document.getElementById('companySelect').innerHTML = `<option value="">Error loading companies - Check connection</option>`;
+            }
+        }
+
+        // Populate company dropdown
+        function populateCompanies(companies) {
+            const companySelect = document.getElementById('companySelect');
+            companySelect.innerHTML = '<option value="">Select Insurance Company</option>';
+            
+            companies.forEach(company => {
+                const option = document.createElement('option');
+                option.value = company;
+                option.textContent = company;
+                companySelect.appendChild(option);
+            });
+        }
+
+        // Handle company selection
+        function handleCompanyChange() {
+            const companySelect = document.getElementById('companySelect');
+            const planSelect = document.getElementById('planSelect');
+            const variantSelect = document.getElementById('variantSelect');
+            const selectedCompany = companySelect.value;
+            
+            if (!selectedCompany) {
+                planSelect.innerHTML = '<option value="">First select insurance company</option>';
+                planSelect.disabled = true;
+                variantSelect.innerHTML = '<option value="">First select plan</option>';
+                variantSelect.disabled = true;
+                hidePlanInfo();
+                return;
+            }
+            
+            const plans = window.chatPlanHierarchy[selectedCompany];
+            if (!plans) {
+                planSelect.innerHTML = '<option value="">No plans available for this company</option>';
+                planSelect.disabled = true;
+                return;
+            }
+            
+            // Populate plans dropdown
+            planSelect.innerHTML = '<option value="">Select Plan</option>';
+            Object.keys(plans).sort().forEach(planName => {
+                const option = document.createElement('option');
+                option.value = planName;
+                option.textContent = planName;
+                planSelect.appendChild(option);
+            });
+            
+            planSelect.disabled = false;
+            variantSelect.innerHTML = '<option value="">First select plan</option>';
+            variantSelect.disabled = true;
+            hidePlanInfo();
+            
+            console.log(`✅ Loaded ${Object.keys(plans).length} plans for ${selectedCompany}`);
+        }
+
+        // Handle plan selection
+        function handlePlanChange() {
+            const companySelect = document.getElementById('companySelect');
+            const planSelect = document.getElementById('planSelect');
+            const variantSelect = document.getElementById('variantSelect');
+            const selectedCompany = companySelect.value;
+            const selectedPlan = planSelect.value;
+            
+            if (!selectedCompany || !selectedPlan) {
+                variantSelect.innerHTML = '<option value="">First select plan</option>';
+                variantSelect.disabled = true;
+                hidePlanInfo();
+                return;
+            }
+            
+            const variants = window.chatPlanHierarchy[selectedCompany][selectedPlan];
+            if (!variants) {
+                variantSelect.innerHTML = '<option value="">No variants available for this plan</option>';
+                variantSelect.disabled = true;
+                return;
+            }
+            
+            // Populate variants dropdown
+            variantSelect.innerHTML = '<option value="">Select Plan Variant</option>';
+            variants.forEach(variant => {
+                const option = document.createElement('option');
+                option.value = variant.sumInsured;
+                option.textContent = `₹${variant.sumInsured}`;
+                option.dataset.filePath = variant.filePath;
+                option.dataset.company = selectedCompany;
+                option.dataset.planName = selectedPlan;
+                variantSelect.appendChild(option);
+            });
+            
+            variantSelect.disabled = false;
+            hidePlanInfo();
+            
+            console.log(`✅ Loaded ${variants.length} variants for ${selectedPlan}`);
+        }
+
+        // Handle variant selection
+        async function handleVariantChange() {
+            const companySelect = document.getElementById('companySelect');
+            const planSelect = document.getElementById('planSelect');
+            const variantSelect = document.getElementById('variantSelect');
+            
+            const selectedCompany = companySelect.value;
+            const selectedPlan = planSelect.value;
+            const selectedVariant = variantSelect.value;
+            
+            if (!selectedCompany || !selectedPlan || !selectedVariant) {
+                hidePlanInfo();
+                return;
+            }
+            
+            const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+            const planFilePath = selectedOption.dataset.filePath;
+            
+            // Update current plan info
+            currentPlan = {
+                company: selectedCompany,
+                planName: selectedPlan,
+                sumInsured: selectedVariant,
+                filePath: planFilePath
+            };
+            
+            // Show plan information
+            showPlanInfo(currentPlan);
+            
+            // Load full plan details
+            try {
+                showStatus('Loading plan details...', 'processing');
+                const response = await fetch(`/api/plans/get?filePath=${encodeURIComponent(planFilePath)}`);
+                if (response.ok) {
+                    const planData = await response.json();
+                    currentPlan.fullData = planData.data;
+                    showStatus('Plan loaded - Ready to chat', 'connected');
+                } else {
+                    showStatus('Plan selected - Limited data', 'error');
+                }
+            } catch (error) {
+                console.error('Error loading plan details:', error);
+                showStatus('Plan selected - Basic info only', 'error');
+            }
+            
+            // Add welcome message if this is the first plan selection
+            if (conversationHistory.length === 0) {
+                addBotMessage(generateWelcomeMessage(currentPlan), false);
             }
         }
 

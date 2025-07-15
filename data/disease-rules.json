@@ -1,0 +1,48 @@
+{
+  "covered": {
+    "cataract": { "waiting_period": 730, "requires_hospital": true, "risk_level": "low" },
+    "hernia": { "waiting_period": 730, "requires_hospital": true, "risk_level": "medium" },
+    "kidney stone": { "waiting_period": 730, "requires_hospital": true, "risk_level": "medium" },
+    "gallbladder": { "waiting_period": 730, "requires_hospital": true, "risk_level": "medium" },
+    "arthritis": { "waiting_period": 730, "requires_hospital": false, "risk_level": "medium" },
+    "diabetes": { "waiting_period": 1095, "requires_hospital": false, "risk_level": "high" },
+    "hypertension": { "waiting_period": 1095, "requires_hospital": false, "risk_level": "high" },
+    "heart disease": { "waiting_period": 730, "requires_hospital": true, "risk_level": "high" },
+    "cancer": { "waiting_period": 730, "requires_hospital": true, "risk_level": "high" },
+    "stroke": { "waiting_period": 730, "requires_hospital": true, "risk_level": "high" },
+    "tuberculosis": { "waiting_period": 365, "requires_hospital": true, "risk_level": "medium" },
+    "pneumonia": { "waiting_period": 30, "requires_hospital": true, "risk_level": "low" },
+    "appendicitis": { "waiting_period": 30, "requires_hospital": true, "risk_level": "low" },
+    "fracture": { "waiting_period": 0, "requires_hospital": true, "risk_level": "low" },
+    "fever": { "waiting_period": 30, "requires_hospital": false, "risk_level": "low" },
+    "surgery": { "waiting_period": 730, "requires_hospital": true, "risk_level": "medium" },
+    "accident": { "waiting_period": 0, "requires_hospital": true, "risk_level": "low" },
+    "maternity": { "waiting_period": 1095, "requires_hospital": true, "risk_level": "medium" },
+    "delivery": { "waiting_period": 1095, "requires_hospital": true, "risk_level": "medium" },
+    "piles": { "waiting_period": 730, "requires_hospital": true, "risk_level": "medium" },
+    "hemorrhoids": { "waiting_period": 730, "requires_hospital": true, "risk_level": "medium" },
+    "fistula": { "waiting_period": 730, "requires_hospital": true, "risk_level": "medium" }
+  },
+  "excluded": {
+    "cosmetic surgery": "Cosmetic procedures are not covered",
+    "dental treatment": "Dental treatments require separate coverage",
+    "dental surgery": "Dental surgical procedures are not covered",
+    "orthodontic": "Orthodontic treatments are excluded",
+    "infertility": "Infertility treatments are excluded",
+    "experimental treatment": "Experimental treatments are not covered",
+    "self-inflicted injury": "Self-inflicted injuries are excluded",
+    "substance abuse": "Substance abuse related treatments are excluded",
+    "war injury": "War-related injuries are excluded",
+    "suicide attempt": "Suicide attempts are excluded",
+    "aids": "AIDS and HIV-related conditions are excluded",
+    "hiv": "HIV infections and related treatments are excluded",
+    "congenital": "Congenital conditions present from birth are excluded",
+    "birth defect": "Birth defects are excluded",
+    "genetic disorder": "Hereditary and genetic disorders are excluded"
+  },
+  "conditional": {
+    "pre-existing condition": "Requires 3-4 year waiting period",
+    "chronic disease": "May require ongoing documentation",
+    "genetic disorder": "May require genetic counseling"
+  }
+}

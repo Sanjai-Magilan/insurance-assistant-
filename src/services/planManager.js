@@ -24,8 +24,11 @@ class PlanManager {
                         const content = await fs.readFile(filePath, 'utf-8');
                         const planData = JSON.parse(content);
 
+                        // Create relative path from plans directory for web use
+                        const relativePath = path.relative(this.plansBasePath, filePath).replace(/\\/g, '/');
+                        
                         plans.push({
-                            filePath: filePath.replace(/\\/g, '/'), // Normalize paths for web
+                            filePath: relativePath, // Relative path for web (e.g., "book1/health_assure_individual_10l.json")
                             absolutePath: filePath, // Keep original absolute path for file operations
                             filename: file,
                             book: book,
@@ -337,3 +340,4 @@ class PlanManager {
 }
 
 module.exports = { PlanManager };
+

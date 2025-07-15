@@ -8,6 +8,7 @@ const rateLimit = require('express-rate-limit');
 const { GroqAnalyzer } = require('./src/services/groqAnalyzer.js');
 const { HealthInsuranceClaimAnalyzer } = require('./src/services/healthInsuranceAnalyzer.js');
 const { PlanManager } = require('./src/services/planManager.js');
+const { ClaimEligibilityEngine } = require('./src/services/claimEligibilityEngine.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
 const groqAnalyzer = new GroqAnalyzer();
 const healthAnalyzer = new HealthInsuranceClaimAnalyzer();
 const planManager = new PlanManager();
+const claimEligibilityEngine = new ClaimEligibilityEngine();
 const conversationSessions = new Map();
 
 // ===== MAIN ROUTES - 4 CORE PAGES =====
@@ -52,12 +54,17 @@ app.get('/chat-interface.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'chat-interface.html'));
 });
 
-// 3. Claim Assessment
+// 3. Claim Assessment (New Enhanced Version)
 app.get('/claims', (req, res) => {
-  res.sendFile(path.join(__dirname, 'claim-assessment.html'));
+  res.sendFile(path.join(__dirname, 'claim-assessment-new.html'));
 });
 
 app.get('/claim-assessment.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'claim-assessment-new.html'));
+});
+
+// Legacy claim assessment (for backup)
+app.get('/claims-legacy', (req, res) => {
   res.sendFile(path.join(__dirname, 'claim-assessment.html'));
 });
 
@@ -201,16 +208,54 @@ app.delete('/api/chat/sessions/:sessionId', (req, res) => {
 // ===== PLANS API =====
 
 // Get all available plans (used by all interfaces)
-app.get('/api/plans/list', (req, res) => {
+app.get('/api/plans/list', async (req, res) => {
   try {
     console.log('📋 Getting all available plans...');
-    const allPlans = healthAnalyzer.getAllPlans();
+    const allPlans = await planManager.getAllPlans();
     
     console.log(`✅ Returning ${allPlans.length} plans`);
     res.json({ plans: allPlans });
   } catch (error) {
     console.error('❌ Error getting all plans:', error);
     res.status(500).json({ error: 'Failed to load plans' });
+  }
+});
+
+// Get dashboard statistics
+app.get('/api/plans/stats', async (req, res) => {
+  try {
+    console.log('📊 Getting dashboard statistics...');
+    const allPlans = await planManager.getAllPlans();
+    const companies = healthAnalyzer.getAvailableCompanies();
+    
+    // Get unique books
+    const books = [...new Set(allPlans.map(plan => plan.book))].filter(Boolean);
+    
+    // Get last updated date (most recent plan modification)
+    let lastUpdated = 'Unknown';
+    if (allPlans.length > 0) {
+      const sortedPlans = allPlans.sort((a, b) => {
+        const aDate = new Date(a.lastModified || 0);
+        const bDate = new Date(b.lastModified || 0);
+        return bDate - aDate;
+      });
+      if (sortedPlans[0] && sortedPlans[0].lastModified) {
+        lastUpdated = new Date(sortedPlans[0].lastModified).toLocaleDateString();
+      }
+    }
+    
+    const stats = {
+      totalPlans: allPlans.length,
+      totalCompanies: companies.length,
+      totalBooks: books.length,
+      lastUpdated: lastUpdated
+    };
+    
+    console.log('✅ Dashboard stats:', stats);
+    res.json(stats);
+  } catch (error) {
+    console.error('❌ Error getting dashboard stats:', error);
+    res.status(500).json({ error: 'Failed to load dashboard statistics' });
   }
 });
 
@@ -234,6 +279,82 @@ app.post('/api/plans/create', async (req, res) => {
   } catch (error) {
     console.error('❌ Error creating plan:', error);
     res.status(500).json({ error: 'Failed to create plan', message: error.message });
+  }
+});
+
+// Get specific plan for editing
+app.get('/api/plans/get', async (req, res) => {
+  try {
+    const { filePath } = req.query;
+    if (!filePath) {
+      return res.status(400).json({ error: 'filePath parameter is required' });
+    }
+    
+    console.log('📄 Getting plan for editing:', filePath);
+    const planData = await planManager.getPlan(filePath);
+    
+    console.log('✅ Plan data retrieved successfully');
+    res.json(planData);
+  } catch (error) {
+    console.error('❌ Error getting plan:', error);
+    res.status(500).json({ error: 'Failed to get plan', message: error.message });
+  }
+});
+
+// POST version for plan details (used by claim assessment)
+app.post('/api/plans/get', async (req, res) => {
+  try {
+    const { filePath } = req.body;
+    if (!filePath) {
+      return res.status(400).json({ error: 'filePath parameter is required' });
+    }
+    
+    console.log('📄 Getting plan details:', filePath);
+    const planData = await planManager.getPlan(filePath);
+    
+    console.log('✅ Plan details retrieved successfully');
+    res.json(planData);
+  } catch (error) {
+    console.error('❌ Error getting plan details:', error);
+    res.status(500).json({ error: 'Failed to get plan details', message: error.message });
+  }
+});
+
+// Update existing plan
+app.post('/api/plans/update', async (req, res) => {
+  try {
+    console.log('📝 Updating plan...');
+    const { originalFilePath, fileName, book, data } = req.body;
+    
+    if (!originalFilePath || !fileName || !book || !data) {
+      return res.status(400).json({ error: 'Missing required fields: originalFilePath, fileName, book, data' });
+    }
+    
+    const result = await planManager.updatePlan(originalFilePath, fileName, book, data);
+    console.log('✅ Plan updated successfully');
+    res.json(result);
+  } catch (error) {
+    console.error('❌ Error updating plan:', error);
+    res.status(500).json({ error: 'Failed to update plan', message: error.message });
+  }
+});
+
+// Delete plan
+app.post('/api/plans/delete', async (req, res) => {
+  try {
+    console.log('🗑️ Deleting plan...');
+    const { filePath } = req.body;
+    
+    if (!filePath) {
+      return res.status(400).json({ error: 'filePath is required' });
+    }
+    
+    const result = await planManager.deletePlan(filePath);
+    console.log('✅ Plan deleted successfully');
+    res.json(result);
+  } catch (error) {
+    console.error('❌ Error deleting plan:', error);
+    res.status(500).json({ error: 'Failed to delete plan', message: error.message });
   }
 });
 
@@ -292,10 +413,78 @@ app.post('/api/claims/analyze', async (req, res) => {
   }
 });
 
-// Analyze claim using questionnaire data with AI
+// New advanced claim eligibility analysis using intelligent engine
 app.post('/api/claims/analyze-questionnaire', async (req, res) => {
   try {
-    console.log('🔍 Received questionnaire-based claim analysis request...');
+    console.log('🔍 Received advanced claim analysis request...');
+    
+    const claimData = req.body;
+    
+    // Check if plan_file_path is provided (new hierarchical selection)
+    let planFilePath = claimData.plan_file_path;
+    
+    if (planFilePath) {
+      console.log('📋 Using provided plan file path:', planFilePath);
+    } else {
+      // Fallback: try to find plan by name (legacy support)
+      console.log('📋 No plan file path provided, attempting to find by plan name...');
+      
+      // Validate required fields for legacy mode
+      const requiredFields = ['plan_name', 'sum_insured', 'patient_name', 'patient_age'];
+      for (const field of requiredFields) {
+        if (!claimData[field]) {
+          return res.status(400).json({ error: `Missing required field: ${field}` });
+        }
+      }
+
+      // Find the plan file path based on plan name
+      const allPlans = await planManager.getAllPlans();
+      const selectedPlan = allPlans.find(plan =>
+        plan.planName.toLowerCase() === claimData.plan_name.toLowerCase() ||
+        plan.planName.toLowerCase().includes(claimData.plan_name.toLowerCase())
+      );
+
+      if (!selectedPlan) {
+        return res.status(400).json({
+          error: 'Plan not found',
+          message: `Could not find plan: ${claimData.plan_name}. Please use the hierarchical selection to choose your plan.`
+        });
+      }
+
+      planFilePath = selectedPlan.filePath;
+      console.log('📋 Found plan:', selectedPlan.planName, 'from file:', planFilePath);
+    }
+
+    // Use the intelligent claim eligibility engine
+    const analysisResult = await claimEligibilityEngine.analyzeClaimEligibility(claimData, planFilePath);
+    
+    // Add chat support flag for eligible claims
+    if (analysisResult.eligible) {
+      analysisResult.chat_support_available = true;
+      analysisResult.chat_context = {
+        plan_name: claimData.plan_name,
+        claim_amount: claimData.claim_amount,
+        medical_condition: claimData.medical_condition,
+        eligibility_confirmed: true
+      };
+    }
+
+    console.log('✅ Advanced claim analysis completed:', analysisResult.eligible ? 'ELIGIBLE' : 'NOT ELIGIBLE');
+    res.json(analysisResult);
+    
+  } catch (error) {
+    console.error('❌ Advanced claim analysis failed:', error);
+    res.status(500).json({
+      error: 'Claim analysis failed',
+      message: error.message
+    });
+  }
+});
+
+// Legacy AI-based analysis endpoint (fallback)
+app.post('/api/claims/analyze-questionnaire-ai', async (req, res) => {
+  try {
+    console.log('🔍 Received AI-based claim analysis request...');
     
     const claimData = req.body;
     
@@ -332,65 +521,7 @@ CLAIM DETAILS:
 - Consumables Required: ${claimData.consumables_required ? 'Yes' : 'No'}
 - Additional Info: ${claimData.additional_info}
 
-WAITING PERIOD ANALYSIS:
-- Initial Waiting Period: 30 days (Standard)
-- Specific Disease Waiting: 2 years (Standard)
-- Pre-existing Disease Waiting: 3-4 years (Standard)
-
-ELIGIBILITY CRITERIA TO CHECK:
-1. Initial waiting period (30 days from policy start)
-2. Specific disease waiting period (2 years for specific conditions)
-3. Pre-existing disease waiting period (3-4 years)
-4. Age limits and coverage
-5. Treatment type coverage
-6. Claim amount vs sum insured
-7. Emergency vs planned treatment rules
-
-Please provide a detailed analysis in the following JSON format:
-
-{
-  "eligible": true/false,
-  "summary": "Brief summary of eligibility status",
-  "patient_name": "${claimData.patient_name}",
-  "patient_age": ${claimData.patient_age},
-  "medical_condition": "${claimData.medical_condition}",
-  "treatment_type": "${claimData.treatment_type}",
-  "claim_amount": ${claimData.claim_amount},
-  "sum_insured": "${claimData.sum_insured}",
-  "financial_breakdown": {
-    "total_claim": ${claimData.claim_amount},
-    "sum_insured": "${claimData.sum_insured}",
-    "copay_amount": 0,
-    "copay_percentage": 0,
-    "final_amount": ${claimData.claim_amount}
-  },
-  "coverage_details": {
-    "pre_hospitalization": "60 days",
-    "post_hospitalization": "180 days",
-    "room_rent_limit": "1% of SI",
-    "consumables": "Yes/No",
-    "emergency_ambulance": "Actual"
-  },
-  "rejection_reasons": ["reason1", "reason2"] or null,
-  "waiting_periods": {
-    "initial_waiting": "X days remaining",
-    "specific_disease": "X days remaining",
-    "pre_existing_disease": "X days remaining"
-  } or null,
-  "recommendations": ["recommendation1", "recommendation2"] or null,
-  "important_notes": "Any important notes about the claim"
-}
-
-IMPORTANT ANALYSIS RULES:
-1. If policy age < 30 days: NOT ELIGIBLE (Initial waiting period)
-2. If pre-existing disease and policy age < 3 years: NOT ELIGIBLE
-3. If specific disease and policy age < 2 years: Check if emergency
-4. Emergency treatments may have relaxed waiting periods
-5. Check if claim amount exceeds sum insured
-6. Consider patient age for co-pay calculations (10% for >60 years)
-7. Maternity coverage requires 2-year waiting period
-
-Provide detailed, accurate analysis based on standard insurance practices.
+Please provide a detailed analysis in JSON format with eligibility decision and reasoning.
 `;
 
     // Get AI analysis using Groq
@@ -399,7 +530,6 @@ Provide detailed, accurate analysis based on standard insurance practices.
     // Try to parse JSON response from AI
     let analysisResult;
     try {
-      // Extract JSON from AI response if it's wrapped in text
       const jsonMatch = aiResponse.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
         analysisResult = JSON.parse(jsonMatch[0]);
@@ -408,8 +538,6 @@ Provide detailed, accurate analysis based on standard insurance practices.
       }
     } catch (parseError) {
       console.log('Failed to parse AI JSON response, creating structured response...');
-      
-      // Fallback: Create structured response based on business rules
       analysisResult = analyzeClaimWithBusinessRules(claimData, policyAgeDays, aiResponse);
     }
 
@@ -421,14 +549,14 @@ Provide detailed, accurate analysis based on standard insurance practices.
     analysisResult.claim_amount = claimData.claim_amount;
     analysisResult.sum_insured = claimData.sum_insured;
 
-    console.log('✅ Questionnaire-based claim analysis completed');
+    console.log('✅ AI-based claim analysis completed');
     res.json(analysisResult);
     
   } catch (error) {
-    console.error('❌ Questionnaire claim analysis failed:', error);
-    res.status(500).json({ 
-      error: 'Claim analysis failed', 
-      message: error.message 
+    console.error('❌ AI claim analysis failed:', error);
+    res.status(500).json({
+      error: 'Claim analysis failed',
+      message: error.message
     });
   }
 });
@@ -572,7 +700,11 @@ async function startServer() {
       console.log(`- POST /api/claims/analyze - Analyze claims (legacy)`);
       console.log(`- POST /api/claims/analyze-questionnaire - New questionnaire-based analysis`);
       console.log(`- GET  /api/plans/list - Get all plans`);
+      console.log(`- GET  /api/plans/stats - Get dashboard statistics`);
+      console.log(`- GET  /api/plans/get - Get specific plan for editing`);
       console.log(`- POST /api/plans/create - Create new plan`);
+      console.log(`- POST /api/plans/update - Update existing plan`);
+      console.log(`- POST /api/plans/delete - Delete plan`);
       console.log(`- POST /api/test-connection - Test AI connection`);
     });
   } catch (error) {
