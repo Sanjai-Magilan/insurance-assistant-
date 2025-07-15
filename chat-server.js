@@ -9,6 +9,7 @@ const { GroqAnalyzer } = require('./src/services/groqAnalyzer.js');
 const { HealthInsuranceClaimAnalyzer } = require('./src/services/healthInsuranceAnalyzer.js');
 const { PlanManager } = require('./src/services/planManager.js');
 const { ClaimEligibilityEngine } = require('./src/services/claimEligibilityEngine.js');
+const { ConversationalClaimAnalyzer } = require('./src/services/conversationalClaimAnalyzer.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,6 +37,7 @@ const groqAnalyzer = new GroqAnalyzer();
 const healthAnalyzer = new HealthInsuranceClaimAnalyzer();
 const planManager = new PlanManager();
 const claimEligibilityEngine = new ClaimEligibilityEngine();
+const conversationalAnalyzer = new ConversationalClaimAnalyzer();
 const conversationSessions = new Map();
 
 // ===== MAIN ROUTES - 4 CORE PAGES =====
@@ -45,12 +47,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// 2. Chat Interface
+// 2. Chat Interface - Enhanced Version
 app.get('/chat', (req, res) => {
+  res.sendFile(path.join(__dirname, 'enhanced-chat-interface.html'));
+});
+
+app.get('/enhanced-chat', (req, res) => {
+  res.sendFile(path.join(__dirname, 'enhanced-chat-interface.html'));
+});
+
+// Legacy chat interface
+app.get('/chat-interface.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'chat-interface.html'));
 });
 
-app.get('/chat-interface.html', (req, res) => {
+app.get('/chat-legacy', (req, res) => {
   res.sendFile(path.join(__dirname, 'chat-interface.html'));
 });
 
@@ -557,6 +568,252 @@ Please provide a detailed analysis in JSON format with eligibility decision and 
     res.status(500).json({
       error: 'Claim analysis failed',
       message: error.message
+
+// ===== ENHANCED CONVERSATIONAL CLAIM ASSESSMENT API =====
+
+// Enhanced conversational claim analysis endpoint
+app.post('/api/claims/conversational-analysis', async (req, res) => {
+  try {
+    console.log('🗣️ Received conversational claim analysis request...');
+    
+    const { 
+      sessionId = `session_${Date.now()}`,
+      userInput,
+      planFilePath = null,
+      claimData = {},
+      options = {}
+    } = req.body;
+
+    // Validate required fields
+    if (!userInput || !userInput.trim()) {
+      return res.status(400).json({ 
+        error: 'userInput is required',
+        message: 'Please provide your message or question about the claim'
+      });
+    }
+
+    // Use the conversational analyzer
+    const response = await conversationalAnalyzer.analyzeClaimConversational(
+      sessionId,
+      userInput.trim(),
+      { planFilePath, claimData, ...options }
+    );
+
+    console.log(`✅ Conversational analysis completed for session: ${sessionId}`);
+    res.json(response);
+    
+  } catch (error) {
+    console.error('❌ Conversational claim analysis failed:', error);
+    res.status(500).json({
+      error: 'Conversational analysis failed',
+      message: error.message,
+      sessionId: req.body.sessionId || null
+    });
+  }
+});
+
+// Get conversation session details
+app.get('/api/claims/conversation/:sessionId', async (req, res) => {
+  try {
+    const { sessionId } = req.params;
+    const session = conversationalAnalyzer.getSession(sessionId);
+    
+    if (!session) {
+      return res.status(404).json({ 
+        error: 'Session not found',
+        sessionId: sessionId
+      });
+    }
+
+    // Return sanitized session data
+    const sessionData = {
+      sessionId: session.id,
+      stage: session.stage,
+      createdAt: session.createdAt,
+      lastActivity: session.lastActivity,
+      totalInteractions: session.totalInteractions,
+      planDetails: {
+        hasPlans: !!session.planFilePath,
+        planName: session.planDetails?.data?.plan_details?.['Plan Name'] || 'Not selected',
+        company: session.planDetails?.data?.plan_details?.Company || 'Not selected'
+      },
+      claimData: {
+        condition: session.claimData.medical_condition || 'Not specified',
+        patientAge: session.claimData.patient_age || null,
+        claimAmount: session.claimData.claim_amount || null
+      },
+      eligibilityResult: session.eligibilityResult ? {
+        eligible: session.eligibilityResult.eligible,
+        summary: session.eligibilityResult.summary
+      } : null,
+      pendingClarifications: session.pendingClarifications?.length || 0
+    };
+
+    res.json(sessionData);
+    
+  } catch (error) {
+    console.error('❌ Error retrieving conversation session:', error);
+    res.status(500).json({
+      error: 'Failed to retrieve session',
+      message: error.message
+    });
+  }
+});
+
+// Clear conversation session
+app.delete('/api/claims/conversation/:sessionId', async (req, res) => {
+  try {
+    const { sessionId } = req.params;
+    const cleared = conversationalAnalyzer.clearSession(sessionId);
+    
+    if (cleared) {
+      res.json({ 
+        message: 'Session cleared successfully',
+        sessionId: sessionId
+      });
+    } else {
+      res.status(404).json({
+        error: 'Session not found',
+        sessionId: sessionId
+      });
+    }
+    
+  } catch (error) {
+    console.error('❌ Error clearing conversation session:', error);
+    res.status(500).json({
+      error: 'Failed to clear session',
+      message: error.message
+    });
+  }
+});
+
+// Get all active conversation sessions (for monitoring)
+app.get('/api/claims/conversations', async (req, res) => {
+  try {
+    const sessions = conversationalAnalyzer.contextManager.getActiveSessions();
+    const stats = conversationalAnalyzer.contextManager.getSessionStats();
+    
+    res.json({
+      activeSessions: sessions,
+      statistics: stats,
+      timestamp: new Date().toISOString()
+    });
+    
+  } catch (error) {
+    console.error('❌ Error retrieving active sessions:', error);
+    res.status(500).json({
+      error: 'Failed to retrieve sessions',
+      message: error.message
+    });
+  }
+});
+
+// Plan selection helper for conversational flow
+app.post('/api/claims/conversation/select-plan', async (req, res) => {
+  try {
+    const { sessionId, planFilePath, userSelection } = req.body;
+    
+    if (!sessionId) {
+      return res.status(400).json({ error: 'sessionId is required' });
+    }
+
+    let selectedPlanPath = planFilePath;
+    
+    // If user provided selection criteria instead of direct path
+    if (!selectedPlanPath && userSelection) {
+      const allPlans = await planManager.getAllPlans();
+      
+      // Find plan based on user selection
+      const matchedPlan = allPlans.find(plan => {
+        const selection = userSelection.toLowerCase();
+        return (
+          plan.planName.toLowerCase().includes(selection) ||
+          plan.company.toLowerCase().includes(selection) ||
+          plan.filename.toLowerCase().includes(selection)
+        );
+      });
+
+      if (matchedPlan) {
+        selectedPlanPath = matchedPlan.filePath;
+      } else {
+        return res.status(404).json({
+          error: 'Plan not found',
+          message: `Could not find plan matching: ${userSelection}`,
+          availablePlans: allPlans.slice(0, 10).map(p => ({
+            company: p.company,
+            planName: p.planName,
+            filePath: p.filePath
+          }))
+        });
+      }
+    }
+
+    // Continue conversation with plan selection
+    const response = await conversationalAnalyzer.analyzeClaimConversational(
+      sessionId,
+      `I selected ${selectedPlanPath}`,
+      { planFilePath: selectedPlanPath }
+    );
+
+    res.json(response);
+    
+  } catch (error) {
+    console.error('❌ Error in plan selection:', error);
+    res.status(500).json({
+      error: 'Plan selection failed',
+      message: error.message
+    });
+  }
+});
+
+// Test endpoint for conversational features
+app.post('/api/claims/conversation/test', async (req, res) => {
+  try {
+    const testSessionId = `test_${Date.now()}`;
+    const testPlan = 'data/plans/book1/health_assure_individual_5l.json';
+    
+    // Simulate a conversation flow
+    const responses = [];
+    
+    // Step 1: Initial contact
+    const step1 = await conversationalAnalyzer.analyzeClaimConversational(
+      testSessionId,
+      "I need help with my cataract surgery claim",
+      { planFilePath: testPlan }
+    );
+    responses.push({ step: 1, description: 'Initial contact', response: step1 });
+
+    // Step 2: Provide details
+    const step2 = await conversationalAnalyzer.analyzeClaimConversational(
+      testSessionId,
+      "I am 65 years old and need cataract surgery costing 1 lakh rupees"
+    );
+    responses.push({ step: 2, description: 'Claim details', response: step2 });
+
+    // Step 3: Answer clarification
+    if (step2.stage === 'clarification') {
+      const step3 = await conversationalAnalyzer.analyzeClaimConversational(
+        testSessionId,
+        "It's age-related cataract"
+      );
+      responses.push({ step: 3, description: 'Clarification response', response: step3 });
+    }
+
+    res.json({
+      message: 'Conversational test completed',
+      testSessionId: testSessionId,
+      steps: responses,
+      finalStage: responses[responses.length - 1]?.response?.stage
+    });
+    
+  } catch (error) {
+    console.error('❌ Conversational test failed:', error);
+    res.status(500).json({
+      error: 'Test failed',
+      message: error.message
+    });
+  }
+});
     });
   }
 });
