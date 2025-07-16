@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Interface - Health Insurance Assistant</title>
+    <title>Plan Information & AI Assistant - Health Insurance Assistant</title>
     <style>
         * {
             margin: 0;
@@ -99,6 +99,32 @@
             overflow: hidden;
         }
 
+        .structured-response {
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .response-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .response-section {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .response-section:last-of-type {
+            border-bottom: none;
+        }
+
         .section-title {
             font-size: 1rem;
             font-weight: 600;
@@ -107,7 +133,119 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
         }
+
+        .response-footer {
+            background: #f8fafc;
+            padding: 1rem 1.5rem;
+            font-style: italic;
+            color: #4a5568;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Enhanced table styling */
+        .structured-response table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .structured-response table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .structured-response table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+
+        .structured-response table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .structured-response table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        /* Enhanced message styling */
+        .message.bot .message-content {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .message.bot .message-content p {
+            padding: 1rem 1.5rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Code and technical content styling */
+        .structured-response code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e53e3e;
+        }
+
+        .structured-response pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+        }
+
+        /* Status indicators */
+        .status-success {
+            color: #38a169;
+            font-weight: 600;
+        }
+
+        .status-warning {
+            color: #d69e2e;
+            font-weight: 600;
+        }
+
+        .status-error {
+            color: #e53e3e;
+            font-weight: 600;
+        }
+
+        /* Enhanced plan info styling */
 
         .plan-selector select {
             width: 100%;
@@ -444,8 +582,8 @@
             <nav class="nav-bar">
                 <a href="/" class="nav-button">🏠 Home</a>
                 <a href="/plans" class="nav-button">📋 Plans</a>
-                <a href="/chat-interface.html" class="nav-button active">💬 Chat</a>
-                <a href="/claim-assessment.html" class="nav-button">🔍 Assessment</a>
+                <a href="/chat" class="nav-button active">💬 Chat</a>
+                <a href="/claims" class="nav-button">🔍 Assessment</a>
             </nav>
         </header>
 
@@ -546,6 +684,66 @@
             loadConversationHistory();
             showStatus('Ready to chat', 'connected');
             adjustTextareaHeight();
+            
+            // Check for claim context in URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const claimContext = urlParams.get('claimContext');
+            
+            if (claimContext) {
+                try {
+                    const claimData = JSON.parse(decodeURIComponent(claimContext));
+                    handleClaimContext(claimData);
+                } catch (error) {
+                    console.error('Error parsing claim context:', error);
+                }
+            } else {
+                // Show general welcome message if no conversation history
+                if (conversationHistory.length === 0) {
+                    clearEmptyState();
+                    addBotMessage(generateClaimContextWelcome(), false, false);
+                }
+            }
+        }
+        
+        // Handle claim context from URL
+        function handleClaimContext(claimData) {
+            // Add a welcome message with claim context
+            const welcomeMessage = `
+                <div class="structured-response">
+                    <div class="response-header">
+                        🎉 <strong>Welcome from Claim Assessment!</strong>
+                    </div>
+                    <div class="response-section">
+                        <div class="section-title">📋 Your Claim Details</div>
+                        <p><strong>Patient:</strong> ${claimData.patientName}</p>
+                        <p><strong>Plan:</strong> ${claimData.planName}</p>
+                        <p><strong>Condition:</strong> ${claimData.medicalCondition}</p>
+                        <p><strong>Claim Amount:</strong> ₹${claimData.claimAmount?.toLocaleString()}</p>
+                        <p><strong>Status:</strong> ${claimData.eligible ? '✅ Eligible' : '❌ Not Eligible'}</p>
+                    </div>
+                    <div class="response-section">
+                        <div class="section-title">💡 How I can help</div>
+                        <p>I have context about your recent claim assessment. Ask me about:</p>
+                        <ul class="feature-list">
+                            <li>📋 Documentation requirements</li>
+                            <li>🏥 Hospital network information</li>
+                            <li>⏱️ Claim processing steps</li>
+                            <li>📞 Next steps and recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="response-footer">
+                        What would you like to know about your claim?
+                    </div>
+                </div>
+            `;
+            
+            // Clear any existing conversation and add welcome message
+            conversationHistory = [];
+            clearEmptyState();
+            addBotMessage(welcomeMessage, false, true);
+            
+            // Store claim context for use in API calls
+            window.claimContext = claimData;
         }
 
         // Load available plans and organize hierarchically
@@ -847,6 +1045,8 @@
             
             if (!message || isProcessing) return;
             
+            console.log('📤 Sending message:', message);
+            
             // Clear empty chat state
             clearEmptyState();
             
@@ -861,11 +1061,13 @@
             
             try {
                 // Get AI response
+                console.log('🤖 Requesting AI response...');
                 const response = await getAIResponse(message);
+                console.log('📥 Received AI response:', response);
                 addBotMessage(response);
             } catch (error) {
+                console.error('❌ Chat error:', error);
                 addBotMessage('I apologize, but I encountered an error processing your request. Please try again or contact support if the issue persists.', true);
-                console.error('AI response error:', error);
             } finally {
                 showTypingIndicator(false);
                 isProcessing = false;
@@ -938,6 +1140,121 @@
         function scrollToBottom() {
             const chatMessages = document.getElementById('chatMessages');
             chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Plan info display functions
+        function showPlanInfo(planData) {
+            const planInfo = document.getElementById('planInfo');
+            const planDescription = document.getElementById('planDescription');
+            
+            if (planInfo && planDescription && planData) {
+                planInfo.style.display = 'block';
+                planDescription.innerHTML = `
+                    <p><strong>Company:</strong> ${planData.company || 'N/A'}</p>
+                    <p><strong>Plan:</strong> ${planData.planName || 'N/A'}</p>
+                    <p><strong>Coverage:</strong> ₹${planData.sumInsured || 'N/A'}</p>
+                    ${planData.fullData ? '<p><strong>Status:</strong> ✅ Full plan data loaded</p>' : '<p><strong>Status:</strong> Basic info only</p>'}
+                `;
+            }
+        }
+
+        function hidePlanInfo() {
+            const planInfo = document.getElementById('planInfo');
+            if (planInfo) {
+                planInfo.style.display = 'none';
+            }
+        }
+
+        // Generate welcome message for selected plan
+        function generateWelcomeMessage(planData) {
+            if (!planData) return '';
+            
+            return `
+                <div class="structured-response">
+                    <div class="response-header">
+                        🎉 <strong>Welcome to Your AI Assistant!</strong>
+                    </div>
+                    <div class="response-section">
+                        <div class="section-title">✅ Your Selected Plan</div>
+                        <table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+                            <tr><th>Detail</th><th>Information</th></tr>
+                            <tr><td><strong>Company</strong></td><td>${planData.company}</td></tr>
+                            <tr><td><strong>Plan</strong></td><td>${planData.planName}</td></tr>
+                            <tr><td><strong>Coverage</strong></td><td>₹${planData.sumInsured}</td></tr>
+                            <tr><td><strong>Status</strong></td><td>${planData.fullData ? '✅ Full plan data loaded' : '📊 Basic info available'}</td></tr>
+                        </table>
+                    </div>
+                    <div class="response-section">
+                        <div class="section-title">🤖 What I Can Help You With</div>
+                        <table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+                            <tr><th>Category</th><th>Examples</th></tr>
+                            <tr><td>🏥 <strong>Insurance & Claims</strong></td><td>Claim eligibility, policy terms, coverage details</td></tr>
+                            <tr><td>💊 <strong>Health & Medical</strong></td><td>Medical conditions, treatments, health advice</td></tr>
+                            <tr><td>💻 <strong>Technology</strong></td><td>Programming, software, troubleshooting</td></tr>
+                            <tr><td>� <strong>Education</strong></td><td>Learning resources, explanations, research</td></tr>
+                            <tr><td>💰 <strong>Finance</strong></td><td>Financial planning, investments, budgeting</td></tr>
+                            <tr><td>🌟 <strong>General Knowledge</strong></td><td>Science, history, current events, facts</td></tr>
+                        </table>
+                    </div>
+                    <div class="response-section">
+                        <div class="section-title">💡 Quick Start Examples</div>
+                        <ul class="feature-list">
+                            <li>💬 "What is covered under my insurance plan?"</li>
+                            <li>🔍 "How do I file a claim for surgery?"</li>
+                            <li>🏥 "What are the symptoms of diabetes?"</li>
+                            <li>� "How do I learn Python programming?"</li>
+                            <li>📈 "What are good investment options?"</li>
+                            <li>🌍 "Tell me about climate change effects"</li>
+                        </ul>
+                    </div>
+                    <div class="response-footer">
+                        Ask me anything! I'm designed to provide structured, comprehensive answers on a wide range of topics.
+                    </div>
+                </div>
+            `;
+        }
+
+        // Enhanced welcome message for claim context
+        function generateClaimContextWelcome() {
+            return `
+                <div class="structured-response">
+                    <div class="response-header">
+                        🤖 <strong>Plan Information & AI Assistant</strong>
+                    </div>
+                    <div class="response-section">
+                        <div class="section-title">💼 <strong>Insurance Plan Assistance</strong></div>
+                        <p>I specialize in helping you understand <strong>insurance plan details</strong> and provide <strong>general AI assistance</strong> for any topic.</p>
+                        
+                        <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                            <strong>📋 Note:</strong> For <strong>claim assessment and eligibility</strong>, please use the dedicated 
+                            <a href="/claims" target="_blank" style="color: #007bff; text-decoration: underline;">Claim Assessment Tool</a>
+                        </div>
+                        
+                        <table border="1" style="border-collapse: collapse; width: 100%; margin: 15px 0;">
+                            <tr><th style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px;">Service Type</th><th style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px;">What I Can Help With</th></tr>
+                            <tr><td>📋 <strong>Plan Information</strong></td><td>Coverage details, benefits, terms, plan comparison</td></tr>
+                            <tr><td>💰 <strong>Insurance Guidance</strong></td><td>Policy features, waiting periods, sum insured options</td></tr>
+                            <tr><td>💻 <strong>Technology Help</strong></td><td>Programming, software, apps, troubleshooting</td></tr>
+                            <tr><td>📚 <strong>Education & Learning</strong></td><td>Explanations, research, academic help</td></tr>
+                            <tr><td>� <strong>Finance & Business</strong></td><td>Investments, budgeting, business advice</td></tr>
+                            <tr><td>🌍 <strong>General Knowledge</strong></td><td>Science, history, current events, any topic</td></tr>
+                        </table>
+                    </div>
+                    <div class="response-section">
+                        <div class="section-title">💡 Sample Questions</div>
+                        <ul class="feature-list">
+                            <li>🔍 <strong>Plans:</strong> "What are the key features of Health Assure plans?"</li>
+                            <li>💊 <strong>Coverage:</strong> "Compare individual vs family floater plans"</li>
+                            <li>💻 <strong>Tech:</strong> "How do I create a website?"</li>
+                            <li>📊 <strong>Learning:</strong> "Explain machine learning concepts"</li>
+                            <li>🌟 <strong>General:</strong> "What's the latest in renewable energy?"</li>
+                        </ul>
+                    </div>
+                    <div class="response-footer">
+                        🚀 Ask me about plan details or any topic you need help with! I'll provide structured, detailed responses.
+                    </div>
+                </div>
+            `;
         }
 
         function escapeHtml(text) {
@@ -1078,102 +1395,85 @@
             }
         }
 
-        // AI Response simulation (replace with actual AI integration)
+        // AI Response function - connects to actual backend API
         async function getAIResponse(message) {
-            // Simulate AI processing delay
-            await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
-            
-            if (!currentPlan) {
+            try {
+                // Prepare request data
+                const requestData = {
+                    message: message,
+                    sessionId: 'chat-session-' + Date.now(),
+                    llmProvider: 'groq',
+                    conversationHistory: conversationHistory.map(msg => ({
+                        role: msg.role,
+                        content: msg.content
+                    }))
+                };
+
+                // Add plan context if available
+                if (currentPlan && currentPlan.filePath) {
+                    requestData.planId = currentPlan.filePath;
+                    requestData.planContext = {
+                        company: currentPlan.company,
+                        planName: currentPlan.planName,
+                        sumInsured: currentPlan.sumInsured
+                    };
+                }
+
+                // Add claim context if available
+                if (window.claimContext) {
+                    requestData.claimContext = window.claimContext;
+                }
+
+                console.log('🚀 Sending chat request:', requestData);
+
+                // Make API call to backend
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestData)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('✅ Chat response received:', result);
+
+                // Return the formatted response
+                return result.response || result.message || 'I received your message but had trouble generating a response.';
+
+            } catch (error) {
+                console.error('❌ Chat API error:', error);
+                
+                // Fallback response with helpful error information
                 return `
                     <div class="structured-response">
                         <div class="response-header">
-                            ⚠️ <strong>Plan Selection Required</strong>
+                            ⚠️ <strong>Connection Issue</strong>
                         </div>
                         <div class="response-section">
-                            <p>To provide accurate guidance about your insurance policy, please select your plan from the dropdown in the sidebar first.</p>
-                        </div>
-                        <div class="response-footer">
-                            Select a plan to get personalized assistance
-                        </div>
-                    </div>
-                `;
-            }
-            
-            const plan = PLAN_INFO[currentPlan];
-            
-            // Simple response based on message content
-            if (message.toLowerCase().includes('claim')) {
-                return `
-                    <div class="structured-response">
-                        <div class="response-header">
-                            🔍 <strong>Claim Information for ${plan.name}</strong>
+                            <p>I encountered an error while processing your request:</p>
+                            <p style="color: #ef4444; font-family: monospace; font-size: 0.9rem;">${error.message}</p>
                         </div>
                         <div class="response-section">
-                            <div class="section-title">📋 Required Documents</div>
+                            <div class="section-title">💡 What you can try</div>
                             <ul class="feature-list">
-                                <li>📄 Hospital discharge summary</li>
-                                <li>💰 Medical bills and invoices</li>
-                                <li>🔬 Diagnostic reports</li>
-                                <li>💊 Pharmacy bills</li>
-                                <li>📋 Claim form (duly filled)</li>
+                                <li>🔄 Try sending your message again</li>
+                                <li>🔌 Check your internet connection</li>
+                                <li>🔧 Refresh the page if the issue persists</li>
+                                <li>� Contact support if problems continue</li>
                             </ul>
                         </div>
-                        <div class="response-section">
-                            <div class="section-title">⏱️ Processing Timeline</div>
-                            <p>Claims are typically processed within 7-14 business days after submission of complete documents.</p>
-                        </div>
                         <div class="response-footer">
-                            Need help with a specific claim type? Just ask!
+                            I'm here to help once the connection is restored
                         </div>
                     </div>
                 `;
             }
-            
-            if (message.toLowerCase().includes('coverage') || message.toLowerCase().includes('limit')) {
-                return `
-                    <div class="structured-response">
-                        <div class="response-header">
-                            💰 <strong>Coverage Details for ${plan.name}</strong>
-                        </div>
-                        <div class="response-section">
-                            <div class="section-title">🏥 Coverage Information</div>
-                            <p><strong>Sum Insured:</strong> ${plan.sumInsured}</p>
-                            <p><strong>Company:</strong> ${plan.company}</p>
-                            <p><strong>Plan Type:</strong> ${plan.description}</p>
-                        </div>
-                        <div class="response-section">
-                            <div class="section-title">💡 Important Notes</div>
-                            <p>Coverage details include hospitalization, pre and post hospitalization expenses, and other benefits as per your policy terms.</p>
-                        </div>
-                        <div class="response-footer">
-                            For detailed coverage breakdown, check your policy document
-                        </div>
-                    </div>
-                `;
-            }
-            
-            // Default response
-            return `
-                <div class="structured-response">
-                    <div class="response-header">
-                        🤖 <strong>AI Assistant Response</strong>
-                    </div>
-                    <div class="response-section">
-                        <p>I understand you're asking about: "${message}"</p>
-                        <p>Based on your selected plan (${plan.name}), I can help you with:</p>
-                        <ul class="feature-list">
-                            <li>🔍 Claim eligibility and requirements</li>
-                            <li>📄 Document requirements</li>
-                            <li>💰 Coverage limits and benefits</li>
-                            <li>⏱️ Processing timelines</li>
-                            <li>❓ Policy terms and conditions</li>
-                        </ul>
-                    </div>
-                    <div class="response-footer">
-                        Try asking about "claims", "coverage", or specific policy questions
-                    </div>
-                </div>
-            `;
         }
 
         // Initialize when page loads

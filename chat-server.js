@@ -98,8 +98,12 @@ app.post('/api/chat', async (req, res) => {
       sessionId = 'default',
       llmProvider = 'groq',
       planId = '',
+      planContext = null,
       conversationHistory = []
     } = req.body;
+
+    console.log('🔍 Received chat request with planId:', planId);
+    console.log('🔍 Plan context received:', planContext);
 
     if (!message || !message.trim()) {
       return res.status(400).json({ error: 'Message is required' });
@@ -112,13 +116,15 @@ app.post('/api/chat', async (req, res) => {
         id: sessionId,
         history: [],
         planId: planId,
+        planContext: planContext,
         createdAt: new Date().toISOString()
       };
       conversationSessions.set(sessionId, session);
     }
 
-    // Update session
+    // Update session with latest plan info
     session.planId = planId || session.planId;
+    session.planContext = planContext || session.planContext;
     session.history.push({
       role: 'user',
       content: message,
@@ -661,6 +667,336 @@ function analyzeClaimWithBusinessRules(claimData, policyAgeDays, aiSummary) {
       'Ensure all required documents are submitted and follow hospital network guidelines' :
       'Please wait for the required waiting period to complete before filing the claim'
   };
+}
+
+// ===== CHAT HELPER FUNCTIONS =====
+
+/**
+ * Determine if the user message is requesting claim analysis
+ */
+function isClaimAnalysisRequest(message, conversationHistory) {
+  const claimKeywords = [
+    'claim', 'coverage', 'eligible', 'eligibility', 'analyze', 'assessment',
+    'medical condition', 'treatment', 'hospital', 'insurance', 'policy',
+    'pre-existing', 'waiting period', 'copay', 'deductible', 'reimburse',
+    'claim status', 'file claim', 'submit claim', 'reimbursement'
+  ];
+  
+  const messageLower = message.toLowerCase();
+  
+  // Check if message contains claim-related keywords
+  const hasClaimKeywords = claimKeywords.some(keyword => messageLower.includes(keyword));
+  
+  // Check if user explicitly asks for claim analysis
+  const explicitClaimRequest = /\b(analyze|check|verify|assess|file|submit)\b.*\b(claim|coverage|eligibility|reimbursement)\b/i.test(message);
+  
+  return hasClaimKeywords || explicitClaimRequest;
+}
+
+/**
+ * Perform detailed claim analysis using AI
+ */
+async function performClaimAnalysis(message, session, llmProvider = 'groq') {
+  try {
+    console.log('🔍 Performing claim analysis...');
+    
+    // Get plan details if available
+    let planContext = '';
+    if (session.planId) {
+      try {
+        const planDetails = await planManager.getPlan(session.planId);
+        if (planDetails && planDetails.data) {
+          planContext = `\n\nPlan Context:\n${JSON.stringify(planDetails.data, null, 2)}`;
+        }
+      } catch (error) {
+        console.warn('Could not load plan details for analysis:', error.message);
+      }
+    }
+    
+    // Build conversation context
+    const conversationContext = session.history
+      .slice(-10) // Last 10 messages for context
+      .map(msg => `${msg.role}: ${msg.content}`)
+      .join('\n');
+    
+    const systemPrompt = `You are an expert insurance advisor specializing in health insurance claims and policy guidance. 
+
+Your expertise includes:
+- Health insurance claim eligibility assessment
+- Policy terms and conditions explanation
+- Documentation requirements for claims
+- Waiting periods and exclusions
+- Coverage limits and benefits
+- Hospital network guidance
+- Step-by-step claim processing guidance
+
+RESPONSE FORMAT REQUIREMENTS:
+- Use HTML formatting for structured responses
+- Include appropriate headers, lists, and tables
+- Use <div class="structured-response"> wrapper
+- Break down complex information into sections
+- Use emojis for visual appeal
+- Provide actionable next steps
+
+Example structure:
+<div class="structured-response">
+    <div class="response-header">🏥 <strong>Claim Analysis Results</strong></div>
+    <div class="response-section">
+        <div class="section-title">📋 Key Information</div>
+        <p>Your detailed analysis here...</p>
+        <table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+            <tr><th>Category</th><th>Details</th></tr>
+            <tr><td>Eligibility</td><td>Status here</td></tr>
+        </table>
+    </div>
+    <div class="response-footer">Next steps: Contact your provider</div>
+</div>
+
+Guidelines:
+- Provide accurate, helpful information based on standard insurance practices
+- Be empathetic and supportive when dealing with claim concerns
+- Explain complex insurance terms in simple language
+- Always mention that final decisions depend on specific policy terms
+- Suggest practical next steps when appropriate
+- Use structured HTML formatting for clarity
+
+${planContext}
+
+Conversation History:
+${conversationContext}
+
+Please respond to the user's inquiry about their insurance claim or policy question with properly structured HTML formatting.`;
+
+    // Use Groq API for AI response
+    const aiResponse = await groqAnalyzer.analyzeQuery(systemPrompt + '\n\nUser Question: ' + message, {
+      temperature: 0.2,
+      maxTokens: 2048
+    });
+    
+    console.log('✅ Claim analysis completed');
+    return aiResponse;
+    
+  } catch (error) {
+    console.error('❌ Claim analysis error:', error);
+    return formatErrorResponse('Claim Analysis Error', 
+      'I encountered an error while analyzing your claim request. Please provide more specific details about your medical condition, treatment type, and any specific questions about your insurance coverage.',
+      [
+        'Provide your medical condition details',
+        'Specify the treatment type required',
+        'Include your policy/plan information',
+        'Ask specific questions about coverage'
+      ]
+    );
+  }
+}
+
+/**
+ * Get general conversational response - Enhanced for multi-purpose use
+ */
+async function getGeneralResponse(message, session, llmProvider = 'groq') {
+  try {
+    console.log('💬 Generating general response...');
+    
+    // Load plan data if planId is available
+    let planData = null;
+    let planContext = '';
+    
+    if (session.planId) {
+      try {
+        console.log('📋 Loading plan data for:', session.planId);
+        const planInfo = await planManager.getPlan(session.planId);
+        planData = planInfo.data;
+        
+        if (planData) {
+          // Extract key plan information from the specific JSON structure
+          const planDetails = planData.plan_details || {};
+          const basicCoverages = planData.basic_coverages || {};
+          const exclusionsWaiting = planData.exclusions_waiting_periods || {};
+          const subLimits = planData.sub_limits || {};
+          const renewalBenefits = planData.renewal_benefits || {};
+          const specialFeatures = planData.special_features_others || {};
+          
+          planContext = `\n=== SELECTED INSURANCE PLAN DETAILS ===
+Plan Name: ${planDetails['Plan Name'] || 'N/A'}
+Company: ${planDetails['Company'] || 'N/A'}
+Sum Insured: ${planDetails['Sum Insured Range'] || 'N/A'}
+Policy Duration: ${planDetails['Policy Duration'] || 'N/A'}
+Age Entry (Adult): ${planDetails['Adult Age Entry (MIN-MAX)'] || 'N/A'}
+Age Entry (Child): ${planDetails['Child  Age Entry'] || 'N/A'}
+Who Can Be Covered: ${planDetails['Who all can be covered'] || 'N/A'}
+Payment Mode: ${planDetails['payment mode (YLY/HLY/QLY/MLY)'] || 'N/A'}
+
+=== BASIC COVERAGES ===
+Pre-Hospitalization: ${basicCoverages['Pre-Hospitalization'] || 'N/A'}
+Post-Hospitalization: ${basicCoverages['Post-Hospitalization'] || 'N/A'}
+Emergency Ambulance: ${basicCoverages['Emergency Ambulance'] || 'N/A'}
+Day Care Procedures: ${basicCoverages['DAY CARE (PROCEDURE/SURGERY)'] || 'N/A'}
+AYUSH Treatment: ${basicCoverages['Non-Allopathic Treatment (AYUSH)'] || 'N/A'}
+Domiciliary Expenses: ${basicCoverages['Domicilary Expenses'] || 'N/A'}
+Consumables: ${basicCoverages['Consumables'] || 'N/A'}
+Sum Insured Restore: ${basicCoverages['SI RESTORE /RECHARGE'] || 'N/A'}
+Modern Treatments: ${basicCoverages['MODERN TREATMENTS'] || 'N/A'}
+Organ Donor Expenses: ${basicCoverages['ORGAN DONOR EXPENSES'] || 'N/A'}
+
+=== WAITING PERIODS & EXCLUSIONS ===
+Initial Waiting Period: ${exclusionsWaiting['INITIAL WAITING'] || 'N/A'}
+Specific Disease Waiting: ${exclusionsWaiting['SPECIFIC DISEASE'] || 'N/A'}
+Pre-Existing Disease Waiting: ${exclusionsWaiting['Pre Existing Disease'] || 'N/A'}
+
+=== SUB-LIMITS ===
+Room Rent: ${subLimits['Room Rent/day'] || 'N/A'}
+ICU Charges: ${subLimits['ICU/day'] || 'N/A'}
+Co-Payment: ${subLimits['Co - Pay'] || 'N/A'}
+Cataract Limits: ${subLimits['Cataract Limits'] || 'N/A'}
+Other Sub Limits: ${subLimits['Other Sub Limits'] || 'N/A'}
+
+=== RENEWAL BENEFITS ===
+No Claim Bonus: ${renewalBenefits['No claim bonus'] || 'N/A'}
+Free Health Check-up: ${renewalBenefits['Free Health Check-up'] || 'N/A'}
+Wellness Discount: ${renewalBenefits['Wellness Discount'] || 'N/A'}
+
+=== SPECIAL FEATURES ===
+${Object.entries(specialFeatures).map(([key, value]) => `${key}: ${value}`).join('\n')}
+
+CRITICAL INSTRUCTIONS FOR AI:
+1. You MUST use ONLY the information from the plan data above when answering questions about this plan
+2. When asked about "features" - refer to the Basic Coverages and Special Features sections
+3. When asked about "benefits" - refer to the Basic Coverages and Renewal Benefits sections
+4. When asked about "coverage" - refer to the Basic Coverages section
+5. When asked about "waiting periods" - refer to the Waiting Periods & Exclusions section
+6. When asked about "eligibility" or "age limits" - refer to the Plan Details section
+7. Always mention the specific plan name "${planDetails['Plan Name'] || 'N/A'}" by ${planDetails['Company'] || 'N/A'}
+8. If specific information is not available in the plan data, clearly state "This information is not specified in the ${planDetails['Plan Name'] || 'this'} plan"
+9. Use exact values from the plan data - don't generalize or make assumptions
+10. Provide structured HTML responses with tables when showing plan details`;
+          
+          console.log('✅ Plan data loaded successfully for response generation');
+          console.log('📊 Plan details:', planDetails['Plan Name'], 'by', planDetails['Company']);
+        }
+      } catch (error) {
+        console.error('❌ Error loading plan data:', error);
+      }
+    } else {
+      console.log('ℹ️ No plan selected - providing general assistance');
+    }
+    
+    // Build conversation context
+    const conversationContext = session.history
+      .slice(-8) // Last 8 messages for context
+      .map(msg => `${msg.role}: ${msg.content}`)
+      .join('\n');
+    
+    // Determine the category of question
+    const questionCategory = categorizeQuestion(message);
+    
+    const systemPrompt = `You are an insurance plan analysis expert specializing in explaining health insurance plans in detail.
+
+${planContext}
+
+RESPONSE STRATEGY:
+${planContext ? `
+PLAN-SPECIFIC MODE: A specific insurance plan is selected. You MUST provide information ONLY from the plan data provided above.
+
+MANDATORY RULES:
+1. Extract information directly from the plan data sections provided
+2. When asked about "features" - list items from Basic Coverages and Special Features
+3. When asked about "benefits" - detail items from Basic Coverages and Renewal Benefits  
+4. When asked about "coverage" - explain the Basic Coverages section
+5. When asked about "waiting periods" - reference the Waiting Periods & Exclusions section
+6. Always mention the specific plan name and company
+7. Format responses in structured HTML with tables for plan details
+8. If information isn't in the plan data, state "Not specified in this plan"
+` : `
+GENERAL MODE: No specific plan selected. Provide general insurance guidance and multi-topic assistance.
+`}
+
+RESPONSE FORMAT REQUIREMENTS:
+- Use structured HTML formatting with div class="structured-response"
+- Include appropriate headers and sections
+- Use tables for plan comparisons and feature lists
+- Use proper HTML tags: strong, ul, li, table, tr, td, th
+- Include relevant emojis for visual appeal
+
+Current Question Category: ${questionCategory}
+Conversation History: ${conversationContext}
+
+Provide a comprehensive, well-structured HTML response that directly addresses the user's question using the plan data when available.`;
+
+    // Use Groq API for AI response
+    const aiResponse = await groqAnalyzer.analyzeQuery(systemPrompt + '\n\nUser Question: ' + message, {
+      temperature: 0.3,
+      maxTokens: 2048
+    });
+    
+    console.log('✅ General response completed');
+    return aiResponse;
+    
+  } catch (error) {
+    console.error('❌ General response error:', error);
+    return formatErrorResponse('Assistant Unavailable', 
+      'I apologize, but I\'m experiencing technical difficulties. However, I\'m designed to help with a wide range of topics!',
+      [
+        'Try rephrasing your question',
+        'Ask about insurance, health, technology, education, or general knowledge',
+        'Check your internet connection',
+        'Contact support if the issue persists'
+      ]
+    );
+  }
+}
+
+/**
+ * Categorize the user's question to provide contextual responses
+ */
+function categorizeQuestion(message) {
+  const categories = {
+    'insurance': ['insurance', 'policy', 'coverage', 'claim', 'premium', 'deductible', 'copay'],
+    'health': ['health', 'medical', 'doctor', 'hospital', 'medicine', 'treatment', 'diagnosis', 'symptoms'],
+    'technology': ['programming', 'code', 'software', 'hardware', 'computer', 'app', 'website', 'tech'],
+    'finance': ['money', 'investment', 'loan', 'bank', 'finance', 'budget', 'savings', 'credit'],
+    'education': ['learn', 'study', 'education', 'school', 'university', 'course', 'exam', 'homework'],
+    'business': ['business', 'marketing', 'sales', 'management', 'strategy', 'startup', 'company'],
+    'travel': ['travel', 'trip', 'vacation', 'flight', 'hotel', 'destination', 'tourism'],
+    'science': ['science', 'research', 'experiment', 'theory', 'physics', 'chemistry', 'biology'],
+    'lifestyle': ['lifestyle', 'fitness', 'diet', 'hobby', 'personal', 'relationship', 'self-help']
+  };
+  
+  const messageLower = message.toLowerCase();
+  
+  for (const [category, keywords] of Object.entries(categories)) {
+    if (keywords.some(keyword => messageLower.includes(keyword))) {
+      return category;
+    }
+  }
+  
+  return 'general';
+}
+
+/**
+ * Format error responses consistently
+ */
+function formatErrorResponse(title, message, suggestions = []) {
+  return `
+    <div class="structured-response">
+        <div class="response-header">
+            ⚠️ <strong>${title}</strong>
+        </div>
+        <div class="response-section">
+            <p>${message}</p>
+        </div>
+        ${suggestions.length > 0 ? `
+        <div class="response-section">
+            <div class="section-title">💡 What you can try</div>
+            <ul class="feature-list">
+                ${suggestions.map(suggestion => `<li>🔄 ${suggestion}</li>`).join('')}
+            </ul>
+        </div>
+        ` : ''}
+        <div class="response-footer">
+            I'm here to help with any questions you have!
+        </div>
+    </div>
+  `;
 }
 
 // ===== ERROR HANDLING =====

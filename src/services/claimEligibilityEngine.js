@@ -181,25 +181,51 @@ class ClaimEligibilityEngine {
             // Domestic Accident Logic
             const accidentDate = new Date(claimData.accident_date);
             const policyStartDate = new Date(claimData.policy_start_date || Date.now());
-            const daysSinceAccident = Math.floor((accidentDate - policyStartDate) / (1000 * 60 * 60 * 24));
-
-            // Check if accident occurred within 30 days of policy start
-            if (daysSinceAccident < 30) {
+            
+            console.log('🏠 Domestic accident analysis:');
+            console.log('  📅 Accident Date:', accidentDate.toISOString().split('T')[0]);
+            console.log('  📋 Policy Start Date:', policyStartDate.toISOString().split('T')[0]);
+            
+            // Check if accident occurred before policy start
+            if (accidentDate < policyStartDate) {
+                console.log('  ❌ Accident occurred before policy start');
+                result.eligible = false;
+                result.rejection_reasons.push('Accident occurred before policy start date');
+                result.risk_level = 'high';
+            }
+            
+            // Check if policy had minimum 30 days before accident (waiting period check)
+            const daysBetweenPolicyAndAccident = Math.floor((accidentDate - policyStartDate) / (1000 * 60 * 60 * 24));
+            console.log('  ⏰ Days between policy start and accident:', daysBetweenPolicyAndAccident);
+            
+            if (daysBetweenPolicyAndAccident < 30) {
+                console.log('  ❌ Waiting period violation (less than 30 days)');
                 result.eligible = false;
                 result.rejection_reasons.push('Domestic accidents within 30 days of policy start are not covered');
                 result.risk_level = 'high';
+            } else {
+                console.log('  ✅ Waiting period satisfied (30+ days)');
             }
 
             // Check documentation requirements
+            console.log('  🏥 Medical consultation:', claimData.medical_consultation);
+            console.log('  📄 Medical records:', claimData.medical_records);
+            
             if (claimData.medical_consultation === 'No' || claimData.medical_records === 'No') {
+                console.log('  ❌ Documentation requirements not met');
                 result.eligible = false;
                 result.rejection_reasons.push('Domestic accidents require medical consultation and proper documentation');
                 result.risk_level = 'high';
+            } else {
+                console.log('  ✅ Documentation requirements satisfied');
             }
 
             if (result.eligible) {
+                console.log('  ✅ Domestic accident claim approved');
                 result.risk_level = 'medium';
                 result.summary = 'Domestic accident with proper documentation and timing - eligible with caution';
+            } else {
+                console.log('  ❌ Domestic accident claim rejected');
             }
         }
 

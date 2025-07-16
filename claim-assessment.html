@@ -823,7 +823,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Expected Claim Amount (₹)</label>
-                                    <input type="number" class="form-input" id="rtaClaimAmount" name="claim_amount" min="1" placeholder="Total treatment cost in rupees">
+                                    <input type="number" class="form-input" id="rtaClaimAmount" name="rta_claim_amount" min="1" placeholder="Total treatment cost in rupees">
                                 </div>
                             </div>
 
@@ -836,7 +836,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Expected Claim Amount (₹)</label>
-                                        <input type="number" class="form-input" id="domesticClaimAmount" name="claim_amount" min="1" placeholder="Total treatment cost in rupees">
+                                        <input type="number" class="form-input" id="domesticClaimAmount" name="domestic_claim_amount" min="1" placeholder="Total treatment cost in rupees">
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -889,7 +889,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Expected Claim Amount (₹)</label>
-                                    <input type="number" class="form-input" id="claimAmount" name="claim_amount" min="1" placeholder="Total treatment cost in rupees">
+                                    <input type="number" class="form-input" id="illnessClaimAmount" name="illness_claim_amount" min="1" placeholder="Total treatment cost in rupees">
                                 </div>
                             </div>
 
@@ -1272,7 +1272,7 @@
             if (formData.get('claim_type') === 'Accident') {
                 detailsComplete = formData.get('accident_type');
             } else if (formData.get('claim_type') === 'Illness') {
-                detailsComplete = formData.get('illness_type') || formData.get('claim_amount');
+                detailsComplete = formData.get('illness_type') || formData.get('illness_claim_amount');
             }
             
             updateStepStatus('step1', basicComplete);
@@ -1302,7 +1302,15 @@
                     return;
                 }
                 
-                if (selectedClaimType === 'Illness' && !validationFormData.get('illness_type') && !validationFormData.get('claim_amount')) {
+                // Validate domestic accident specific fields
+                if (selectedClaimType === 'Accident' && validationFormData.get('accident_type') === 'Domestic') {
+                    if (!validationFormData.get('accident_date')) {
+                        showError('Please provide the accident date for domestic accidents.');
+                        return;
+                    }
+                }
+                
+                if (selectedClaimType === 'Illness' && !validationFormData.get('illness_type') && !validationFormData.get('illness_claim_amount')) {
                     showError('Please provide either the illness type or expected claim amount.');
                     return;
                 }
@@ -1368,11 +1376,19 @@
                 
                 // Extract claim amount and medical condition based on flow
                 if (claimType === 'Accident') {
-                    claimAmount = parseFloat(formData.get('claim_amount')) || 50000; // Default accident amount if not provided
+                    // Get the appropriate accident claim amount based on accident type
+                    const accidentType = formData.get('accident_type');
+                    if (accidentType === 'RTA') {
+                        claimAmount = parseFloat(formData.get('rta_claim_amount')) || 50000;
+                    } else if (accidentType === 'Domestic') {
+                        claimAmount = parseFloat(formData.get('domestic_claim_amount')) || 50000;
+                    } else {
+                        claimAmount = 50000; // Default for accidents
+                    }
                     medicalCondition = formData.get('accident_type') || 'Accident';
                     treatmentType = 'Emergency'; // Accidents are typically emergency
                 } else if (claimType === 'Illness') {
-                    claimAmount = parseFloat(formData.get('claim_amount')) || 0; // No default for illness
+                    claimAmount = parseFloat(formData.get('illness_claim_amount')) || 0; // No default for illness
                     medicalCondition = formData.get('illness_type') || 'Illness';
                     treatmentType = 'Planned Surgery'; // Illness is typically planned
                 } else {
@@ -1439,6 +1455,9 @@
 
                 console.log('🔍 Submitting claim data:', claimData);
                 console.log('📄 Using plan file:', planFilePath);
+                console.log('💰 Final claim amount:', claimAmount);
+                console.log('🏥 Medical condition:', medicalCondition);
+                console.log('⚕️ Treatment type:', treatmentType);
 
                 // Call the advanced analysis API with proper plan file path
                 const response = await fetch('/api/claims/analyze-questionnaire', {
@@ -1786,7 +1805,7 @@
             if (analysisResult && analysisResult.chat_support_available) {
                 // Create a session with claim context
                 const chatUrl = `/chat?claimContext=${encodeURIComponent(JSON.stringify({
-                    eligibile: analysisResult.eligible,
+                    eligible: analysisResult.eligible,
                     planName: analysisResult.plan_details?.plan_name,
                     claimAmount: analysisResult.claim_amount,
                     medicalCondition: analysisResult.medical_condition,
