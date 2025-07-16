@@ -574,6 +574,9 @@ Please provide a detailed analysis in JSON format with eligibility decision and 
     res.status(500).json({
       error: 'Claim analysis failed',
       message: error.message
+    });
+  }
+});
 
 // ===== ENHANCED CONVERSATIONAL CLAIM ASSESSMENT API =====
 
@@ -817,9 +820,6 @@ app.post('/api/claims/conversation/test', async (req, res) => {
     res.status(500).json({
       error: 'Test failed',
       message: error.message
-    });
-  }
-});
     });
   }
 });
