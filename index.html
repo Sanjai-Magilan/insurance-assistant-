@@ -3,19 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Insurance Claim Assistant - Dashboard</title>
+    <title>Twins Consultancy - ASSISTANT MK</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 25%, #40407a 50%, #2c2c54 75%, #0984e3 100%);
+            margin: 0;
+            padding: 0;
+            position: relative;
+            color: #333;
+            scroll-behavior: smooth;
+            transition: background-color 0.1s ease;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
+        /* Blurred content style */
+        .blurred-content {
+            filter: blur(0px);
+            user-select: none;
+        }
+        
+        /* Enhanced Navbar styles with better transitions */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .logo-img {
+            width: 400px;
+            height: auto;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .navbar-brand:hover .logo-img {
+            transform: rotate(2deg) scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            padding: 8px 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff6b9d;
+            left: 0;
+            bottom: 0;
+            transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 120%;
+            height: 0;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: rgba(255, 107, 157, 0.2);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: -1;
+        }
+        
+        .nav-link:hover {
+            color: #ff6b9d;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link:hover:before {
+            height: 300%;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: #ff6b9d;
+            background: rgba(255, 107, 157, 0.1);
+            box-shadow: 0 1px 8px rgba(255, 107, 157, 0.2);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-btn {
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .login-btn {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .login-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: -1;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .login-btn:hover:before {
+            left: 0;
+        }
+        
+        .register-btn {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .register-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #e84393, #a29bfe);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: -1;
+        }
+        
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 107, 157, 0.4);
+        }
+        
+        .register-btn:hover:before {
+            opacity: 1;
+        }
+        
+        /* Parallax wrapper and items */
+        .parallax-wrapper {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            perspective: 1500px;
+            z-index: -1;
+        }
+        
+        .parallax-item {
+            position: absolute;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%);
+            will-change: transform;
+            pointer-events: none;
+        }
+        
+        .parallax-element {
+            display: block;
+            width: 100%;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            font-weight: 600;
+            padding: 15px 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            white-space: nowrap;
         }
 
         .container {
@@ -213,6 +449,667 @@
             }
         }
 
+        /* Animations for elements */
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            33% {
+                transform: translateY(-15px) rotate(5deg) scale(1.05);
+            }
+            66% {
+                transform: translateY(10px) rotate(-3deg) scale(0.95);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+        }
+        
+        @keyframes float-reverse {
+            0% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            33% {
+                transform: translateY(15px) rotate(-5deg) scale(0.95);
+            }
+            66% {
+                transform: translateY(-10px) rotate(3deg) scale(1.05);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+        
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(196, 69, 105, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+            }
+        }
+        
+        /* Apply animations to elements */
+        .parallax-item.element-1 .parallax-element {
+            animation: float 12s ease-in-out infinite;
+        }
+        
+        .parallax-item.element-2 .parallax-element {
+            animation: float-reverse 10s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+        
+        .parallax-item.element-3 .parallax-element {
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .parallax-item.element-4 .parallax-element {
+            animation: float-reverse 14s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+        
+        .parallax-item.element-5 .parallax-element {
+            animation: float 9s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        .parallax-item.element-6 .parallax-element {
+            animation: pulse 15s ease-in-out infinite;
+        }
+        
+        .parallax-item.element-7 .parallax-element {
+            animation: float-reverse 13s ease-in-out infinite;
+            animation-delay: 1.2s;
+        }
+        
+        .parallax-item.element-8 .parallax-element {
+            animation: float 11s ease-in-out infinite;
+            animation-delay: 0.7s;
+        }
+        
+        .parallax-item.element-9 .parallax-element {
+            animation: float-reverse 15s ease-in-out infinite;
+            animation-delay: 0.3s;
+        }
+        
+        .parallax-item.element-10 .parallax-element {
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 2.5s;
+        }
+        
+        .parallax-item.element-11 .parallax-element {
+            animation: pulse 12s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .parallax-item.element-12 .parallax-element {
+            animation: float 8.5s ease-in-out infinite;
+            animation-delay: 0.2s;
+        }
+        
+        .parallax-item.element-13 .parallax-element {
+            animation: float-reverse 14s ease-in-out infinite;
+            animation-delay: 1.7s;
+        }
+        
+        .parallax-item.element-14 .parallax-element {
+            animation: float 9s ease-in-out infinite;
+            animation-delay: 0.8s;
+        }
+        
+        .parallax-item.element-15 .parallax-element {
+            animation: pulse 16s ease-in-out infinite;
+            animation-delay: 2.2s;
+        }
+        
+        .parallax-item.element-16 .parallax-element {
+            animation: float-reverse 11s ease-in-out infinite;
+            animation-delay: 1.3s;
+        }
+        
+        .parallax-item.element-17 .parallax-element {
+            animation: float 13s ease-in-out infinite;
+            animation-delay: 0.4s;
+        }
+        
+        .parallax-item.element-18 .parallax-element {
+            animation: pulse 10s ease-in-out infinite;
+            animation-delay: 1.8s;
+        }
+        
+        /* Position and size for elements */
+        .parallax-item.element-1 {
+            width: 180px;
+            top: 15%;
+            left: 20%;
+            z-index: -2;
+        }
+        .parallax-item.element-2 {
+            width: 150px;
+            top: 75%;
+            left: 85%;
+            z-index: -3;
+        }
+        .parallax-item.element-3 {
+            width: 120px;
+            top: 65%;
+            left: 25%;
+            z-index: -4;
+        }
+        .parallax-item.element-4 {
+            width: 170px;
+            top: 25%;
+            left: 80%;
+            z-index: -5;
+        }
+        .parallax-item.element-5 {
+            width: 140px;
+            top: 45%;
+            left: 15%;
+            z-index: -6;
+        }
+        .parallax-item.element-6 {
+            width: 200px;
+            top: 85%;
+            left: 55%;
+            z-index: -7;
+        }
+        .parallax-item.element-7 {
+            width: 130px;
+            top: 20%;
+            left: 45%;
+            z-index: -8;
+        }
+        .parallax-item.element-8 {
+            width: 160px;
+            top: 60%;
+            left: 90%;
+            z-index: -2;
+        }
+        .parallax-item.element-9 {
+            width: 150px;
+            top: 70%;
+            left: 40%;
+            z-index: -3;
+        }
+        .parallax-item.element-10 {
+            width: 120px;
+            top: 30%;
+            left: 65%;
+            z-index: -4;
+        }
+        .parallax-item.element-11 {
+            width: 180px;
+            top: 50%;
+            left: 75%;
+            z-index: -5;
+        }
+        .parallax-item.element-12 {
+            width: 140px;
+            top: 40%;
+            left: 30%;
+            z-index: -6;
+        }
+        .parallax-item.element-13 {
+            width: 160px;
+            top: 10%;
+            left: 10%;
+            z-index: -7;
+        }
+        .parallax-item.element-14 {
+            width: 180px;
+            top: 35%;
+            left: 5%;
+            z-index: -8;
+        }
+        .parallax-item.element-15 {
+            width: 140px;
+            top: 80%;
+            left: 15%;
+            z-index: -9;
+        }
+        .parallax-item.element-16 {
+            width: 160px;
+            top: 55%;
+            left: 95%;
+            z-index: -10;
+        }
+        .parallax-item.element-17 {
+            width: 150px;
+            top: 5%;
+            left: 75%;
+            z-index: -11;
+        }
+        .parallax-item.element-18 {
+            width: 140px;
+            top: 90%;
+            left: 85%;
+            z-index: -12;
+        }
+
+        /* Main content styles with improved transitions */
+        .main-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            max-width: 1000px;
+            margin: 120px auto 40px;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                        box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .main-container:hover {
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .header .logo-img {
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #ff6b9d, #c44569);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .content-section {
+            margin-bottom: 60px;
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+            padding-top: 80px;
+            margin-top: -80px;
+            scroll-margin-top: 80px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #ff6b9d, #c44569);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Enhanced features section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+            padding-top: 80px;
+            margin-top: -80px;
+            scroll-margin-top: 80px;
+        }
+        
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(180deg, rgba(255, 107, 157, 0.2) 0%, rgba(196, 69, 105, 0.1) 100%);
+            transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: -1;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-box:hover:before {
+            height: 100%;
+        }
+        
+        .feature-box h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+            display: inline-block;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .feature-box h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #ff6b9d;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        
+        .feature-box:hover h3:after {
+            width: 60px;
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .feature-box:hover .feature-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Stats section */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+        
+        .stat-item p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Dashboard grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .interface-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .interface-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .interface-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b9d, #c44569);
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .card-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .card-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .card-features li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            padding-left: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b9d;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+        }
+        
+        .card-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.5);
+            background: linear-gradient(135deg, #e84393, #a29bfe);
+        }
+
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 30px 0;
+            margin-top: 50px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .footer a {
+            color: #ff6b9d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-container {
+                margin: 100px 20px 20px;
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .interface-card {
+                padding: 30px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+        }
+
         .loading {
             display: inline-block;
             width: 20px;
@@ -228,124 +1125,285 @@
         }
 
         .version-badge {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 107, 157, 0.3);
             color: white;
-            padding: 0.25rem 0.75rem;
+            padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
-            margin-left: 1rem;
+            margin-left: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
         }
     </style>
 </head>
 <body>
+
+<div class="parallax-wrapper">
+    <div class="parallax-item element-1" data-speedx="-0.03" data-speedy="0.02" data-speedz="0.5" data-rotation="0.8">
+        <div class="parallax-element">🏥 Health Coverage</div>
+    </div>
+    <div class="parallax-item element-2" data-speedx="0.04" data-speedy="-0.02" data-speedz="1" data-rotation="-0.5">
+        <div class="parallax-element">📋 Plan Management</div>
+    </div>
+    <div class="parallax-item element-3" data-speedx="-0.02" data-speedy="0.04" data-speedz="1.5" data-rotation="1">
+        <div class="parallax-element">💊 Medical Benefits</div>
+    </div>
+    <div class="parallax-item element-4" data-speedx="0.05" data-speedy="0.01" data-speedz="0.8" data-rotation="-0.7">
+        <div class="parallax-element">🛡️ Insurance Protection</div>
+    </div>
+    <div class="parallax-item element-5" data-speedx="-0.04" data-speedy="-0.03" data-speedz="1.2" data-rotation="0.6">
+        <div class="parallax-element">💰 Cost Optimization</div>
+    </div>
+    <div class="parallax-item element-6" data-speedx="0.03" data-speedy="0.05" data-speedz="0.7" data-rotation="-0.3">
+        <div class="parallax-element">🔍 Claim Analysis</div>
+    </div>
+    <div class="parallax-item element-7" data-speedx="-0.05" data-speedy="-0.01" data-speedz="1.1" data-rotation="0.4">
+        <div class="parallax-element">📊 Smart Analytics</div>
+    </div>
+    <div class="parallax-item element-8" data-speedx="0.02" data-speedy="-0.04" data-speedz="0.9" data-rotation="-0.9">
+        <div class="parallax-element">💬 AI Assistant</div>
+    </div>
+    <div class="parallax-item element-9" data-speedx="-0.01" data-speedy="0.03" data-speedz="1.3" data-rotation="0.2">
+        <div class="parallax-element">📑 Policy Documents</div>
+    </div>
+    <div class="parallax-item element-10" data-speedx="0.04" data-speedy="-0.03" data-speedz="1.4" data-rotation="0.5">
+        <div class="parallax-element">🏦 Provider Network</div>
+    </div>
+    <div class="parallax-item element-11" data-speedx="-0.03" data-speedy="0.01" data-speedz="0.6" data-rotation="-0.4">
+        <div class="parallax-element">⚕️ Healthcare Solutions</div>
+    </div>
+    <div class="parallax-item element-12" data-speedx="0.01" data-speedy="-0.05" data-speedz="1.2" data-rotation="0.7">
+        <div class="parallax-element">📈 Premium Calculator</div>
+    </div>
+    <div class="parallax-item element-13" data-speedx="-0.02" data-speedy="0.03" data-speedz="0.5" data-rotation="-0.6">
+        <div class="parallax-element">🎯 Target Benefits</div>
+    </div>
+    <div class="parallax-item element-14" data-speedx="0.03" data-speedy="-0.01" data-speedz="0.9" data-rotation="0.3">
+        <div class="parallax-element">🚀 Digital Innovation</div>
+    </div>
+    <div class="parallax-item element-15" data-speedx="-0.01" data-speedy="0.04" data-speedz="1.1" data-rotation="-0.2">
+        <div class="parallax-element">🔒 Secure Data</div>
+    </div>
+    <div class="parallax-item element-16" data-speedx="0.02" data-speedy="-0.02" data-speedz="0.6" data-rotation="0.9">
+        <div class="parallax-element">⭐ Premium Service</div>
+    </div>
+    <div class="parallax-item element-17" data-speedx="-0.04" data-speedy="0.02" data-speedz="1.3" data-rotation="-0.4">
+        <div class="parallax-element">🌟 Excellence</div>
+    </div>
+    <div class="parallax-item element-18" data-speedx="0.01" data-speedy="-0.03" data-speedz="0.8" data-rotation="0.6">
+        <div class="parallax-element">💎 Quality Care</div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <a href="#" class="navbar-brand">
+        <img src="assets/twins-logo.svg" alt="Twins Consultancy Logo" class="logo-img">
+        ASSISTANT MK
+    </a>
+    <div class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#services" class="nav-link">Services</a>
+    </div>
+    <div class="nav-buttons">
+        <a href="/plans" class="nav-btn login-btn">Plans</a>
+        <a href="/chat" class="nav-btn register-btn">AI Chat</a>
+    </div>
+</nav>
+
     <div class="container">
-        <header class="header">
-            <h1>🛡️ Health Insurance Claim Assistant <span class="version-badge">v2.0</span></h1>
-            <p class="subtitle">Comprehensive AI-Powered Insurance Management Platform</p>
-            <p class="description">
-                Streamline your health insurance claims process with our advanced AI technology. 
-                Manage plans, analyze claims, and get instant guidance - all in one platform.
-            </p>
-        </header>
-
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 id="planCount">0</h3>
-                    <p>Insurance Plans</p>
-                </div>
-                <div class="stat-item">
-                    <h3 id="companyCount">0</h3>
-                    <p>Insurance Companies</p>
-                </div>
-                <div class="stat-item">
-                    <h3>3</h3>
-                    <p>AI Providers</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Available</p>
-                </div>
-            </div>
-        </section>
-
-        <main class="dashboard-grid">
-            <!-- Plan Manager Card -->
-            <div class="interface-card">
-                <span class="card-icon">📋</span>
-                <h2 class="card-title">Plan Manager</h2>
-                <p class="card-description">
-                    Create, edit, and manage insurance plans with comprehensive coverage details, 
-                    exclusions, and policy terms.
+        <div class="main-container" id="home">
+            <div class="header">
+                <h1>
+                    <img src="assets/twins-logo.svg" alt="Twins Consultancy Logo" class="logo-img" style="width: 150px; height: auto; vertical-align: middle; margin-right: 15px;">
+                    ASSISTANT MK 
+                    <span class="version-badge">v3.0</span>
+                </h1>
+                <div class="tagline">by Twins Consultancy - Advanced AI-Powered Health Insurance Management Platform</div>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-top: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+                    Revolutionizing healthcare access with intelligent insurance solutions, comprehensive plan management, and seamless claim processing.
                 </p>
-                <ul class="card-features">
-                    <li>Create new insurance plans</li>
-                    <li>Edit existing plan details</li>
-                    <li>Manage coverage limits & exclusions</li>
-                    <li>Export/import plan data</li>
-                    <li>Validate JSON structure</li>
-                </ul>
-                <a href="/plans" class="card-button">
-                    🚀 Open Plan Manager
-                </a>
             </div>
 
-            <!-- Chat Interface Card -->
-            <div class="interface-card">
-                <span class="card-icon">💬</span>
-                <h2 class="card-title">AI Chat Assistant</h2>
-                <p class="card-description">
-                    Interactive AI-powered chat interface for instant claim guidance, 
-                    policy questions, and personalized assistance.
+
+
+            <main class="dashboard-grid" id="services">
+                <!-- Plan Manager Card -->
+                <div class="interface-card">
+                    <span class="card-icon">📋</span>
+                    <h2 class="card-title">Smart Plan Manager</h2>
+                    <p class="card-description">
+                        Comprehensive insurance plan management with intelligent coverage analysis, 
+                        policy optimization, and detailed benefit breakdowns.
+                    </p>
+                    <ul class="card-features">
+                        <li>Dynamic plan creation & editing</li>
+                        <li>Coverage optimization analysis</li>
+                        <li>Premium calculation engine</li>
+                        <li>Policy comparison tools</li>
+                        <li>Real-time plan validation</li>
+                    </ul>
+                    <a href="/plans" class="card-button">
+                        🚀 Launch Plan Manager
+                    </a>
+                </div>
+
+                <!-- AI Chat Interface Card -->
+                <div class="interface-card">
+                    <span class="card-icon">💬</span>
+                    <h2 class="card-title">AI Insurance Assistant</h2>
+                    <p class="card-description">
+                        Intelligent conversational AI providing instant insurance guidance, 
+                        policy explanations, and personalized recommendations.
+                    </p>
+                    <ul class="card-features">
+                        <li>Natural language processing</li>
+                        <li>Plan-specific consultations</li>
+                        <li>Instant policy clarifications</li>
+                        <li>Coverage recommendations</li>
+                        <li>Multi-provider AI support</li>
+                    </ul>
+                    <a href="/chat" class="card-button">
+                        💭 Start AI Consultation
+                    </a>
+                </div>
+
+                <!-- Claim Assessment Card -->
+                <div class="interface-card">
+                    <span class="card-icon">🔍</span>
+                    <h2 class="card-title">Smart Claim Analysis</h2>
+                    <p class="card-description">
+                        Advanced document analysis with AI-powered eligibility assessment, 
+                        coverage calculations, and automated claim processing.
+                    </p>
+                    <ul class="card-features">
+                        <li>Document OCR & analysis</li>
+                        <li>Eligibility verification</li>
+                        <li>Coverage amount calculation</li>
+                        <li>Pre-approval estimates</li>
+                        <li>Detailed assessment reports</li>
+                    </ul>
+                    <a href="/claims" class="card-button">
+                        🔬 Analyze Claims
+                    </a>
+                </div>
+            </main>
+
+            <div class="features" id="features">
+                <div class="feature-box">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Comprehensive Coverage</h3>
+                    <p>Complete insurance solutions covering health, maternity, critical illness, and specialized treatments with detailed benefit analysis.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Intelligence</h3>
+                    <p>Advanced machine learning algorithms for policy analysis, claim prediction, and personalized insurance recommendations.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📊</div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Real-time insights into coverage utilization, claim trends, and policy performance with interactive dashboards.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Processing</h3>
+                    <p>Lightning-fast claim processing with automated document verification and real-time eligibility assessment.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Compliant</h3>
+                    <p>Enterprise-grade security with HIPAA compliance, data encryption, and privacy protection protocols.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multi-Provider Support</h3>
+                    <p>Seamless integration with multiple insurance providers and healthcare networks for comprehensive coverage options.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="about">
+                <h2>About Twins Consultancy</h2>
+                <p>Twins Consultancy is at the forefront of healthcare technology innovation, specializing in AI-driven insurance management solutions. Our ASSISTANT MK platform combines cutting-edge artificial intelligence with deep insurance industry expertise to deliver unparalleled service excellence.</p>
+                <p>We empower individuals and organizations to make informed healthcare decisions through intelligent policy analysis, automated claim processing, and personalized insurance recommendations. Our mission is to simplify complex insurance processes while maximizing coverage benefits for our clients.</p>
+                <p>With a commitment to innovation, security, and customer success, Twins Consultancy is transforming the healthcare insurance landscape one intelligent solution at a time.</p>
+            </div>
+
+            <footer class="footer">
+                <p>
+                    &copy; 2025 Twins Consultancy. 
+                    Pioneering the future of intelligent healthcare insurance with ASSISTANT MK.
                 </p>
-                <ul class="card-features">
-                    <li>Real-time AI conversations</li>
-                    <li>Plan-specific guidance</li>
-                    <li>Claim eligibility analysis</li>
-                    <li>Document requirements</li>
-                    <li>Multi-provider AI support</li>
-                </ul>
-                <a href="/chat-interface.html" class="card-button">
-                    💭 Start Chat
-                </a>
-            </div>
-
-            <!-- Claim Assessment Card -->
-            <div class="interface-card">
-                <span class="card-icon">🔍</span>
-                <h2 class="card-title">Claim Assessment</h2>
-                <p class="card-description">
-                    Upload documents and get detailed claim analysis with eligibility 
-                    determination and coverage calculations.
+                <p style="margin-top: 10px; font-size: 0.9rem;">
+                    <a href="/plans">Plan Manager</a> • 
+                    <a href="/chat">AI Assistant</a> • 
+                    <a href="/claims">Claim Analysis</a> •
+                    <a href="https://github.com" target="_blank">GitHub</a>
                 </p>
-                <ul class="card-features">
-                    <li>Document upload & analysis</li>
-                    <li>AI-powered eligibility check</li>
-                    <li>Coverage amount calculation</li>
-                    <li>Required documents list</li>
-                    <li>Detailed assessment reports</li>
-                </ul>
-                <a href="/claim-assessment.html" class="card-button">
-                    🔬 Assess Claim
-                </a>
-            </div>
-        </main>
-
-        <footer class="footer">
-            <p>
-                &copy; 2025 Health Insurance Claim Assistant. 
-                Built with ❤️ for better healthcare access.
-            </p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                <a href="/plans">Plan Manager</a> • 
-                <a href="/chat-interface.html">Chat Assistant</a> • 
-                <a href="https://github.com" target="_blank">GitHub</a>
-            </p>
-        </footer>
+            </footer>
+        </div>
     </div>
 
     <script>
-        // Load statistics
+        // Parallax effect for mouse movement
+        const parallaxItems = document.querySelectorAll('.parallax-item');
+        document.addEventListener('mousemove', e => {
+            let xValue = e.clientX - window.innerWidth / 2;
+            let yValue = e.clientY - window.innerHeight / 2;
+
+            parallaxItems.forEach(el => {
+                let speedx = parseFloat(el.dataset.speedx);
+                let speedy = parseFloat(el.dataset.speedy);
+                let speedz = parseFloat(el.dataset.speedz);
+                let rotation = parseFloat(el.dataset.rotation);
+                
+                let isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
+                let zValue = (e.clientX - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
+
+                el.style.transform = `
+                    perspective(1500px)
+                    translateZ(${zValue * speedz}px)
+                    rotateY(${xValue * rotation * 0.01}deg)
+                    translateX(calc(-50% + ${-xValue * speedx}px))
+                    translateY(calc(-50% + ${-yValue * speedy}px))
+                `;
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Update the active nav link based on scroll position
+            const sections = document.querySelectorAll('.content-section, #features, #home, #services');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbarHeight = navbar.offsetHeight;
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbarHeight - 100;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Load statistics with animation
         async function loadStats() {
             try {
                 const response = await fetch('/api/plans/stats');
@@ -385,23 +1443,57 @@
             }, duration / steps);
         }
 
+        // Smooth scrolling for navigation links with navbar height offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Get navbar height to use as offset
+                    const navbar = document.querySelector('.navbar');
+                    const navbarHeight = navbar.offsetHeight;
+                    
+                    // Calculate the scroll position
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 20;
+                    
+                    // Scroll to the adjusted position
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('🏠 Homepage loaded');
+            console.log('🏢 ASSISTANT MK by Twins Consultancy - Insurance Platform Loaded');
             loadStats();
             
-            // Add subtle animations
-            const cards = document.querySelectorAll('.interface-card');
+            // Add staggered animations to cards
+            const cards = document.querySelectorAll('.interface-card, .feature-box');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+                card.style.transform = 'translateY(30px)';
                 
                 setTimeout(() => {
-                    card.style.transition = 'all 0.6s ease';
+                    card.style.transition = 'all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)';
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, index * 200);
+                }, index * 150);
             });
+
+            // Add background gradient animation
+            let gradientAngle = 135;
+            setInterval(() => {
+                gradientAngle += 0.5;
+                document.body.style.background = `linear-gradient(${gradientAngle}deg, #ff6b9d 0%, #c44569 25%, #40407a 50%, #2c2c54 75%, #0984e3 100%)`;
+            }, 100);
         });
 
         // Add keyboard shortcuts
@@ -414,26 +1506,85 @@
                         break;
                     case '2':
                         e.preventDefault();
-                        window.location.href = '/chat-interface.html';
+                        window.location.href = '/chat';
                         break;
                     case '3':
                         e.preventDefault();
-                        window.location.href = '/claim-assessment.html';
+                        window.location.href = '/claims';
                         break;
                 }
             }
         });
 
-        // Add hover effects
-        document.querySelectorAll('.interface-card').forEach(card => {
+        // Enhanced hover effects for cards
+        document.querySelectorAll('.interface-card, .feature-box').forEach(card => {
             card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-5px) scale(1.02)';
+                card.style.transform = 'translateY(-15px) scale(1.02)';
             });
             
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+        // Add interactive particle effect on click
+        document.addEventListener('click', (e) => {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = e.clientX + 'px';
+            particle.style.top = e.clientY + 'px';
+            particle.style.width = '6px';
+            particle.style.height = '6px';
+            particle.style.background = '#ff6b9d';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '1000';
+            particle.style.animation = 'particleExplosion 0.6s ease-out forwards';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 600);
+        });
+
+        // Add CSS for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particleExplosion {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(3);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Dynamic title animation
+        let titleIndex = 0;
+        const titles = [
+            'ASSISTANT MK',
+            'AI Insurance Platform',
+            'Smart Healthcare Solutions',
+            'Intelligent Claim Processing'
+        ];
+        
+        // Uncomment below for dynamic title rotation (optional)
+        /*
+        setInterval(() => {
+            const titleElement = document.querySelector('.navbar-brand');
+            titleIndex = (titleIndex + 1) % titles.length;
+            titleElement.style.opacity = '0';
+            setTimeout(() => {
+                titleElement.innerHTML = `🏢 ${titles[titleIndex]}`;
+                titleElement.style.opacity = '1';
+            }, 300);
+        }, 4000);
+        */
     </script>
 </body>
 </html>

@@ -65,6 +65,11 @@
             transform: translateY(-2px);
         }
 
+        .nav-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            font-weight: 600;
+        }
+
         .main-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -426,6 +431,216 @@
         .detail-value {
             color: #333;
         }
+
+        /* Interactive Editor Styles */
+        .interactive-editor {
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background: white;
+        }
+
+        .editor-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-right: 1px solid #ddd;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn:hover {
+            background: #e9ecef;
+        }
+
+        .tab-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .editor-tab {
+            display: none;
+            padding: 1.5rem;
+            min-height: 400px;
+        }
+
+        .editor-tab.active {
+            display: block;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .form-section h4 {
+            margin: 0 0 1rem 0;
+            color: #495057;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-row {
+            margin-bottom: 1rem;
+        }
+
+        .form-row label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .age-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .age-group label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 0.25rem;
+        }
+
+        .dynamic-list {
+            border: 1px solid #e9ecef;
+            border-radius: 0.25rem;
+            background: white;
+            margin-bottom: 1rem;
+        }
+
+        .list-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr auto;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: #e9ecef;
+            font-weight: 500;
+            color: #495057;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .list-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr auto;
+            gap: 1rem;
+            padding: 0.75rem;
+            border-bottom: 1px solid #f8f9fa;
+            align-items: center;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item input {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .json-editor-toolbar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 0.25rem;
+        }
+
+        .validation-result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .validation-result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .validation-result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .plan-preview-content {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            min-height: 300px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .premium-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .list-header,
+            .list-item {
+                grid-template-columns: 1fr auto;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -435,13 +650,21 @@
             Plan Management System
         </h1>
         <div class="nav-buttons">
-            <a href="/health" class="nav-btn">
+            <a href="/" class="nav-btn">
+                <span>🏠</span>
+                Home
+            </a>
+            <a href="/claims" class="nav-btn">
                 <span>🔍</span>
                 Claim Assessment
             </a>
-            <a href="/" class="nav-btn">
+            <a href="/chat" class="nav-btn">
                 <span>💬</span>
                 Chat Interface
+            </a>
+            <a href="/plans" class="nav-btn active">
+                <span>📋</span>
+                Plan Management
             </a>
         </div>
     </div>
@@ -582,13 +805,122 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="planJsonEditor">Plan Data (JSON)</label>
-                    <textarea id="planJsonEditor" class="json-editor" placeholder="Enter plan JSON data..."></textarea>
-                </div>
+                    <label for="planJsonEditor">Plan Data</label>
+                    
+                    <!-- Interactive Form Editor -->
+                    <div id="interactiveEditor" class="interactive-editor">
+                        <div class="editor-tabs">
+                            <button type="button" class="tab-btn active" onclick="switchEditorTab('form')">📝 Form Editor</button>
+                            <button type="button" class="tab-btn" onclick="switchEditorTab('json')">🗂️ JSON Editor</button>
+                            <button type="button" class="tab-btn" onclick="switchEditorTab('preview')">👁️ Preview</button>
+                        </div>
 
-                <div class="plan-preview" id="planPreview" style="display: none;">
-                    <h4>Plan Preview</h4>
-                    <div id="planPreviewContent"></div>
+                        <!-- Form Editor Tab -->
+                        <div id="formEditorTab" class="editor-tab active">
+                            <div class="form-grid">
+                                <div class="form-section">
+                                    <h4>📋 Basic Information</h4>
+                                    <div class="form-row">
+                                        <label>Plan Name</label>
+                                        <input type="text" id="form_planName" class="form-control" placeholder="Enter plan name">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Company</label>
+                                        <input type="text" id="form_company" class="form-control" placeholder="Insurance company">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Sum Insured Range</label>
+                                        <input type="text" id="form_sumInsured" class="form-control" placeholder="e.g., 10 Lakh">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Plan Type</label>
+                                        <select id="form_planType" class="form-control">
+                                            <option value="Individual">Individual</option>
+                                            <option value="Family Floater">Family Floater</option>
+                                            <option value="Group">Group</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h4>💰 Premium Details</h4>
+                                    <div class="premium-grid">
+                                        <div class="age-group">
+                                            <label>Age 18-25</label>
+                                            <input type="number" id="form_premium_18_25" class="form-control" placeholder="Premium">
+                                        </div>
+                                        <div class="age-group">
+                                            <label>Age 26-35</label>
+                                            <input type="number" id="form_premium_26_35" class="form-control" placeholder="Premium">
+                                        </div>
+                                        <div class="age-group">
+                                            <label>Age 36-45</label>
+                                            <input type="number" id="form_premium_36_45" class="form-control" placeholder="Premium">
+                                        </div>
+                                        <div class="age-group">
+                                            <label>Age 46-55</label>
+                                            <input type="number" id="form_premium_46_55" class="form-control" placeholder="Premium">
+                                        </div>
+                                        <div class="age-group">
+                                            <label>Age 56-65</label>
+                                            <input type="number" id="form_premium_56_65" class="form-control" placeholder="Premium">
+                                        </div>
+                                        <div class="age-group">
+                                            <label>Age 66+</label>
+                                            <input type="number" id="form_premium_66_plus" class="form-control" placeholder="Premium">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h4>🏥 Coverage Features</h4>
+                                    <div id="coverageFeatures" class="dynamic-list">
+                                        <div class="list-header">
+                                            <span>Feature</span>
+                                            <span>Coverage Limit</span>
+                                            <span>Actions</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline" onclick="addCoverageFeature()">
+                                        ➕ Add Coverage Feature
+                                    </button>
+                                </div>
+
+                                <div class="form-section">
+                                    <h4>🚫 Exclusions</h4>
+                                    <div id="exclusionsList" class="dynamic-list">
+                                        <div class="list-header">
+                                            <span>Exclusion</span>
+                                            <span>Actions</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline" onclick="addExclusion()">
+                                        ➕ Add Exclusion
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- JSON Editor Tab -->
+                        <div id="jsonEditorTab" class="editor-tab">
+                            <div class="json-editor-toolbar">
+                                <button type="button" class="btn btn-sm" onclick="formatJson()">🎨 Format</button>
+                                <button type="button" class="btn btn-sm" onclick="validatePlanJson()">✅ Validate</button>
+                                <button type="button" class="btn btn-sm" onclick="syncFromForm()">📝➡️🗂️ Sync from Form</button>
+                                <button type="button" class="btn btn-sm" onclick="syncToForm()">🗂️➡️📝 Sync to Form</button>
+                            </div>
+                            <textarea id="planJsonEditor" class="json-editor" placeholder="Enter plan JSON data..."></textarea>
+                            <div id="jsonValidationResult" class="validation-result"></div>
+                        </div>
+
+                        <!-- Preview Tab -->
+                        <div id="previewTab" class="editor-tab">
+                            <div id="planPreviewContent" class="plan-preview-content">
+                                <p class="text-muted">Click "Update Preview" to see plan details</p>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="updatePreview()">🔄 Update Preview</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="btn-group" style="margin-top: 1.5rem;">
@@ -619,6 +951,268 @@
         let currentPage = 1;
         const plansPerPage = 10;
         let currentEditingPlan = null;
+
+        // Interactive Editor Functions
+        function switchEditorTab(tabName) {
+            // Remove active class from all tabs and buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.editor-tab').forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to selected tab and button
+            document.querySelector(`[onclick="switchEditorTab('${tabName}')"]`).classList.add('active');
+            
+            if (tabName === 'form') {
+                document.getElementById('formEditorTab').classList.add('active');
+            } else if (tabName === 'json') {
+                document.getElementById('jsonEditorTab').classList.add('active');
+            } else if (tabName === 'preview') {
+                document.getElementById('previewTab').classList.add('active');
+                updatePreview();
+            }
+        }
+
+        function syncFromForm() {
+            try {
+                const planData = {
+                    plan_details: {
+                        "Plan Name": document.getElementById('form_planName').value || "",
+                        "Company": document.getElementById('form_company').value || "",
+                        "Sum Insured Range": document.getElementById('form_sumInsured').value || "",
+                        "Plan Type": document.getElementById('form_planType').value || "Individual"
+                    },
+                    premium_details: {},
+                    coverage_features: {},
+                    exclusions: []
+                };
+
+                // Add premium details
+                const premiumAgeGroups = ['18_25', '26_35', '36_45', '46_55', '56_65', '66_plus'];
+                premiumAgeGroups.forEach(group => {
+                    const value = document.getElementById(`form_premium_${group}`).value;
+                    if (value) {
+                        planData.premium_details[group.replace('_', '-')] = parseFloat(value);
+                    }
+                });
+
+                // Add coverage features
+                document.querySelectorAll('#coverageFeatures .list-item').forEach(item => {
+                    const feature = item.querySelector('input[placeholder="Feature name"]').value;
+                    const limit = item.querySelector('input[placeholder="Coverage limit"]').value;
+                    if (feature) {
+                        planData.coverage_features[feature] = limit || "Covered";
+                    }
+                });
+
+                // Add exclusions
+                document.querySelectorAll('#exclusionsList .list-item').forEach(item => {
+                    const exclusion = item.querySelector('input').value;
+                    if (exclusion) {
+                        planData.exclusions.push(exclusion);
+                    }
+                });
+
+                document.getElementById('planJsonEditor').value = JSON.stringify(planData, null, 2);
+                showNotification('✅ Form data synced to JSON editor', 'success');
+            } catch (error) {
+                showNotification('❌ Error syncing form data: ' + error.message, 'error');
+            }
+        }
+
+        function syncToForm() {
+            try {
+                const jsonValue = document.getElementById('planJsonEditor').value;
+                if (!jsonValue.trim()) return;
+
+                const planData = JSON.parse(jsonValue);
+                
+                // Sync basic details
+                const details = planData.plan_details || {};
+                document.getElementById('form_planName').value = details['Plan Name'] || '';
+                document.getElementById('form_company').value = details['Company'] || '';
+                document.getElementById('form_sumInsured').value = details['Sum Insured Range'] || '';
+                document.getElementById('form_planType').value = details['Plan Type'] || 'Individual';
+
+                // Sync premium details
+                const premiums = planData.premium_details || {};
+                Object.entries(premiums).forEach(([ageGroup, premium]) => {
+                    const fieldId = `form_premium_${ageGroup.replace('-', '_')}`;
+                    const field = document.getElementById(fieldId);
+                    if (field) {
+                        field.value = premium;
+                    }
+                });
+
+                // Sync coverage features
+                const coverageContainer = document.getElementById('coverageFeatures');
+                coverageContainer.querySelectorAll('.list-item').forEach(item => item.remove());
+                
+                const features = planData.coverage_features || {};
+                Object.entries(features).forEach(([feature, limit]) => {
+                    addCoverageFeature(feature, limit);
+                });
+
+                // Sync exclusions
+                const exclusionsContainer = document.getElementById('exclusionsList');
+                exclusionsContainer.querySelectorAll('.list-item').forEach(item => item.remove());
+                
+                const exclusions = planData.exclusions || [];
+                exclusions.forEach(exclusion => {
+                    addExclusion(exclusion);
+                });
+
+                showNotification('✅ JSON data synced to form editor', 'success');
+            } catch (error) {
+                showNotification('❌ Error syncing JSON data: ' + error.message, 'error');
+            }
+        }
+
+        function addCoverageFeature(featureName = '', coverageLimit = '') {
+            const container = document.getElementById('coverageFeatures');
+            const item = document.createElement('div');
+            item.className = 'list-item';
+            item.innerHTML = `
+                <input type="text" placeholder="Feature name" value="${featureName}" class="form-control">
+                <input type="text" placeholder="Coverage limit" value="${coverageLimit}" class="form-control">
+                <button type="button" class="btn btn-sm btn-danger" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            container.appendChild(item);
+        }
+
+        function addExclusion(exclusionText = '') {
+            const container = document.getElementById('exclusionsList');
+            const item = document.createElement('div');
+            item.className = 'list-item';
+            item.innerHTML = `
+                <input type="text" placeholder="Exclusion description" value="${exclusionText}" class="form-control">
+                <button type="button" class="btn btn-sm btn-danger" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            container.appendChild(item);
+        }
+
+        function formatJson() {
+            try {
+                const jsonValue = document.getElementById('planJsonEditor').value;
+                const parsed = JSON.parse(jsonValue);
+                document.getElementById('planJsonEditor').value = JSON.stringify(parsed, null, 2);
+                showNotification('✅ JSON formatted successfully', 'success');
+            } catch (error) {
+                showNotification('❌ Invalid JSON: ' + error.message, 'error');
+            }
+        }
+
+        function updatePreview() {
+            try {
+                const jsonValue = document.getElementById('planJsonEditor').value;
+                if (!jsonValue.trim()) {
+                    document.getElementById('planPreviewContent').innerHTML = '<p class="text-muted">No data to preview</p>';
+                    return;
+                }
+
+                const planData = JSON.parse(jsonValue);
+                const preview = generatePlanPreviewHTML(planData);
+                document.getElementById('planPreviewContent').innerHTML = preview;
+            } catch (error) {
+                document.getElementById('planPreviewContent').innerHTML = `<p class="text-danger">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        function generatePlanPreviewHTML(planData) {
+            const details = planData.plan_details || {};
+            const premiums = planData.premium_details || {};
+            const features = planData.coverage_features || {};
+            const exclusions = planData.exclusions || [];
+
+            return `
+                <div class="plan-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Plan Name:</span>
+                        <span class="detail-value">${details['Plan Name'] || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Company:</span>
+                        <span class="detail-value">${details['Company'] || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Sum Insured:</span>
+                        <span class="detail-value">${details['Sum Insured Range'] || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Plan Type:</span>
+                        <span class="detail-value">${details['Plan Type'] || 'N/A'}</span>
+                    </div>
+                </div>
+                
+                ${Object.keys(premiums).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">💰 Premium Details</h5>
+                <div class="plan-details">
+                    ${Object.entries(premiums).map(([age, premium]) => `
+                        <div class="detail-item">
+                            <span class="detail-label">Age ${age}:</span>
+                            <span class="detail-value">₹${premium}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${Object.keys(features).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">🏥 Coverage Features</h5>
+                <div class="plan-details">
+                    ${Object.entries(features).map(([feature, limit]) => `
+                        <div class="detail-item">
+                            <span class="detail-label">${feature}:</span>
+                            <span class="detail-value">${limit}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${exclusions.length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">🚫 Exclusions</h5>
+                <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                    ${exclusions.map(exclusion => `<li>${exclusion}</li>`).join('')}
+                </ul>
+                ` : ''}
+            `;
+        }
+
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                color: white;
+                font-weight: 500;
+                z-index: 10000;
+                max-width: 300px;
+                background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#667eea'};
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
 
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
@@ -871,6 +1465,10 @@
                 document.getElementById('planJsonEditor').value = JSON.stringify(planData.data, null, 2);
                 document.getElementById('planJsonEditor').disabled = true;
                 
+                // Sync data to form editor and switch to preview tab
+                syncToForm();
+                switchEditorTab('preview');
+                
                 currentEditingPlan = { filePath, mode: 'view' };
                 document.getElementById('planModal').style.display = 'block';
                 
@@ -882,7 +1480,7 @@
                 
             } catch (error) {
                 console.error('Failed to view plan:', error);
-                alert(`Failed to load plan details: ${error.message}`);
+                showNotification('❌ Failed to load plan details: ' + error.message, 'error');
             }
         }
 
@@ -903,6 +1501,12 @@
                 document.getElementById('planJsonEditor').value = JSON.stringify(planData.data, null, 2);
                 document.getElementById('planJsonEditor').disabled = false;
                 
+                // Sync data to form editor
+                syncToForm();
+                
+                // Switch to form editor by default
+                switchEditorTab('form');
+                
                 currentEditingPlan = { filePath, mode: 'edit', absolutePath: planData.absolutePath };
                 document.getElementById('planModal').style.display = 'block';
                 
@@ -914,7 +1518,7 @@
                 
             } catch (error) {
                 console.error('Failed to edit plan:', error);
-                alert(`Failed to load plan for editing: ${error.message}`);
+                showNotification('❌ Failed to load plan for editing: ' + error.message, 'error');
             }
         }
 
@@ -1341,6 +1945,12 @@
 
         // Save plan with enhanced feedback
         async function savePlan() {
+            // First sync form data to JSON editor if form editor is active
+            const activeTab = document.querySelector('.tab-btn.active');
+            if (activeTab && activeTab.textContent.includes('Form Editor')) {
+                syncFromForm();
+            }
+            
             if (!validatePlanJson()) {
                 return;
             }

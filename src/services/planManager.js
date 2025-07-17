@@ -206,9 +206,25 @@ class PlanManager {
     }
 
     // Delete plan
-    async deletePlan(filePath) {
+    async deletePlan(requestedFilePath) {
         try {
-            await fs.unlink(filePath);
+            // Handle both relative and absolute paths
+            let actualFilePath = requestedFilePath;
+            
+            // If it's a relative path (doesn't start with drive letter or root), make it absolute
+            if (!path.isAbsolute(requestedFilePath)) {
+                actualFilePath = path.join(this.plansBasePath, requestedFilePath);
+            } else {
+                // If absolute path doesn't exist, try treating it as relative
+                try {
+                    await fs.access(requestedFilePath);
+                } catch {
+                    const normalizedPath = requestedFilePath.replace(/^.*[\\\/]data[\\\/]plans[\\\/]/, '');
+                    actualFilePath = path.join(this.plansBasePath, normalizedPath);
+                }
+            }
+
+            await fs.unlink(actualFilePath);
             return {
                 success: true,
                 message: 'Plan deleted successfully'

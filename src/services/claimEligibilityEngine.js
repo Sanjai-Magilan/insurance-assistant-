@@ -564,7 +564,13 @@ class ClaimEligibilityEngine {
     /**
      * Check age-related restrictions
      */
+    /**
+     * Check age restrictions and eligibility
+     */
     checkAgeRestrictions(result, claimData, plan) {
+        console.log(`👤 Checking age restrictions for patient age: ${claimData.patient_age}`);
+        
+        // Check plan age entry limits
         const ageEntry = plan.plan_details?.['Adult Age Entry (MIN-MAX)'] || '';
         const ageMatch = ageEntry.match(/(\d+)(?:\s*-\s*(\d+))?/);
         
@@ -572,16 +578,30 @@ class ClaimEligibilityEngine {
             const minAge = parseInt(ageMatch[1]);
             const maxAge = ageMatch[2] ? parseInt(ageMatch[2]) : 100;
             
+            console.log(`📋 Plan age limits: ${minAge}-${maxAge} years`);
+            
             if (claimData.patient_age < minAge || claimData.patient_age > maxAge) {
+                console.log(`❌ Patient age ${claimData.patient_age} is outside plan coverage range`);
                 result.eligible = false;
                 result.rejection_reasons.push(`Patient age (${claimData.patient_age}) is outside plan coverage range (${minAge}-${maxAge} years)`);
                 result.risk_level = 'high';
+                return;
+            } else {
+                console.log(`✅ Patient age ${claimData.patient_age} is within plan coverage range`);
             }
         }
 
-        // Age-based co-pay check
+        // Age-based risk assessment
         if (claimData.patient_age > 60) {
+            console.log(`⚠️ Patient age > 60, adjusting risk level`);
             result.risk_level = result.risk_level === 'low' ? 'medium' : result.risk_level;
+        }
+
+        // Log co-pay eligibility check
+        const subLimits = plan.sub_limits || {};
+        const planCopay = subLimits['Co - Pay'];
+        if (planCopay && planCopay !== 'NO' && planCopay !== 'Co - Pay') {
+            console.log(`💰 Co-pay rule found: "${planCopay}" - will be evaluated in financial breakdown`);
         }
     }
 
@@ -649,27 +669,38 @@ class ClaimEligibilityEngine {
     }
 
     /**
-     * Calculate financial breakdown including co-pay
+     * Calculate financial breakdown including co-pay with enhanced age-based logic
      */
     calculateFinancialBreakdown(result, claimData, plan) {
         let copayPercentage = 0;
         let copayAmount = 0;
+        let copayReason = '';
         
-        // Age-based co-pay (common in insurance)
-        if (claimData.patient_age > 60) {
-            copayPercentage = 10; // 10% co-pay for age > 60
-            copayAmount = Math.round(claimData.claim_amount * 0.1);
+        console.log(`💰 Calculating financial breakdown for patient age: ${claimData.patient_age}`);
+        
+        // Plan-specific co-pay check with enhanced age-based parsing
+        const subLimits = plan.sub_limits || {};
+        const planCopay = subLimits['Co - Pay'];
+        
+        if (planCopay && planCopay !== 'NO' && planCopay !== 'Co - Pay') {
+            console.log(`📋 Plan co-pay rule: "${planCopay}"`);
+            
+            // Parse age-based co-pay conditions
+            const ageBasedCopay = this.parseAgeBasedCopay(planCopay, claimData.patient_age);
+            if (ageBasedCopay.applies) {
+                copayPercentage = ageBasedCopay.percentage;
+                copayReason = ageBasedCopay.reason;
+                console.log(`✅ Age-based co-pay applied: ${copayPercentage}% (${copayReason})`);
+            } else {
+                console.log(`✅ No age-based co-pay applicable for age ${claimData.patient_age}`);
+            }
+        } else {
+            console.log('📋 No plan-specific co-pay rules found or co-pay is disabled');
         }
         
-        // Plan-specific co-pay check
-        const subLimits = plan.sub_limits || {};
-        if (subLimits['Co - Pay'] && subLimits['Co - Pay'] !== 'NO') {
-            // Extract co-pay percentage if specified
-            const copayMatch = subLimits['Co - Pay'].match(/(\d+)%/);
-            if (copayMatch) {
-                copayPercentage = Math.max(copayPercentage, parseInt(copayMatch[1]));
-                copayAmount = Math.round(claimData.claim_amount * (copayPercentage / 100));
-            }
+        // Calculate co-pay amount
+        if (copayPercentage > 0) {
+            copayAmount = Math.round(claimData.claim_amount * (copayPercentage / 100));
         }
         
         const finalAmount = claimData.claim_amount - copayAmount;
@@ -679,7 +710,122 @@ class ClaimEligibilityEngine {
             sum_insured: claimData.sum_insured,
             copay_amount: copayAmount,
             copay_percentage: copayPercentage,
-            final_amount: finalAmount
+            copay_reason: copayReason,
+            final_amount: finalAmount,
+            patient_age: claimData.patient_age
+        };
+        
+        console.log(`💰 Financial breakdown calculated:`, result.financial_breakdown);
+    }
+
+    /**
+     * Parse age-based co-pay conditions from plan data
+     * @param {string} copayRule - The co-pay rule from plan (e.g., ">60YEARS AGE ENTRY -10%")
+     * @param {number} patientAge - The patient's age
+     * @returns {Object} - { applies: boolean, percentage: number, reason: string }
+     */
+    parseAgeBasedCopay(copayRule, patientAge) {
+        const rule = copayRule.toString().toUpperCase();
+        console.log(`🔍 Parsing co-pay rule: "${rule}" for patient age: ${patientAge}`);
+        
+        // Pattern 1: ">60YEARS AGE ENTRY -10%" or similar
+        const ageGreaterPattern = />(\d+)\s*YEARS?\s*.*?(\d+)%/i;
+        const ageGreaterMatch = rule.match(ageGreaterPattern);
+        
+        if (ageGreaterMatch) {
+            const ageThreshold = parseInt(ageGreaterMatch[1]);
+            const percentage = parseInt(ageGreaterMatch[2]);
+            
+            console.log(`📊 Found age threshold rule: age > ${ageThreshold} = ${percentage}% co-pay`);
+            
+            if (patientAge > ageThreshold) {
+                return {
+                    applies: true,
+                    percentage: percentage,
+                    reason: `Age-based co-pay for patients above ${ageThreshold} years`
+                };
+            } else {
+                return {
+                    applies: false,
+                    percentage: 0,
+                    reason: `Patient age ${patientAge} is below co-pay threshold of ${ageThreshold} years`
+                };
+            }
+        }
+        
+        // Pattern 2: ">=60YEARS -10%" or similar
+        const ageGreaterEqualPattern = />=(\d+)\s*YEARS?\s*.*?(\d+)%/i;
+        const ageGreaterEqualMatch = rule.match(ageGreaterEqualPattern);
+        
+        if (ageGreaterEqualMatch) {
+            const ageThreshold = parseInt(ageGreaterEqualMatch[1]);
+            const percentage = parseInt(ageGreaterEqualMatch[2]);
+            
+            console.log(`📊 Found age threshold rule: age >= ${ageThreshold} = ${percentage}% co-pay`);
+            
+            if (patientAge >= ageThreshold) {
+                return {
+                    applies: true,
+                    percentage: percentage,
+                    reason: `Age-based co-pay for patients ${ageThreshold} years and above`
+                };
+            } else {
+                return {
+                    applies: false,
+                    percentage: 0,
+                    reason: `Patient age ${patientAge} is below co-pay threshold of ${ageThreshold} years`
+                };
+            }
+        }
+        
+        // Pattern 3: Age range patterns like "60-70YEARS 10%" or "ABOVE 60 YEARS 10%"
+        const ageRangePattern = /(?:ABOVE\s+)?(\d+)(?:\s*-\s*(\d+))?\s*YEARS?\s*.*?(\d+)%/i;
+        const ageRangeMatch = rule.match(ageRangePattern);
+        
+        if (ageRangeMatch) {
+            const minAge = parseInt(ageRangeMatch[1]);
+            const maxAge = ageRangeMatch[2] ? parseInt(ageRangeMatch[2]) : 999;
+            const percentage = parseInt(ageRangeMatch[3]);
+            
+            console.log(`📊 Found age range rule: ${minAge}-${maxAge === 999 ? '∞' : maxAge} years = ${percentage}% co-pay`);
+            
+            if (patientAge >= minAge && patientAge <= maxAge) {
+                return {
+                    applies: true,
+                    percentage: percentage,
+                    reason: maxAge === 999 ? 
+                        `Age-based co-pay for patients above ${minAge} years` :
+                        `Age-based co-pay for patients between ${minAge}-${maxAge} years`
+                };
+            } else {
+                return {
+                    applies: false,
+                    percentage: 0,
+                    reason: `Patient age ${patientAge} is outside co-pay age range (${minAge}-${maxAge === 999 ? '∞' : maxAge} years)`
+                };
+            }
+        }
+        
+        // Pattern 4: Simple percentage without age condition
+        const simplePercentPattern = /(\d+)%/i;
+        const simplePercentMatch = rule.match(simplePercentPattern);
+        
+        if (simplePercentMatch && !rule.includes('YEAR') && !rule.includes('AGE')) {
+            const percentage = parseInt(simplePercentMatch[1]);
+            console.log(`📊 Found universal co-pay rule: ${percentage}% for all ages`);
+            
+            return {
+                applies: true,
+                percentage: percentage,
+                reason: `Universal co-pay applicable to all ages`
+            };
+        }
+        
+        console.log(`⚠️ Could not parse co-pay rule: "${copayRule}"`);
+        return {
+            applies: false,
+            percentage: 0,
+            reason: `Could not parse co-pay rule format`
         };
     }
 
@@ -740,8 +886,21 @@ class ClaimEligibilityEngine {
             recommendations.push('Inform insurance company within 24-48 hours of hospitalization');
             recommendations.push('Keep all original bills and medical reports');
             
+            // Enhanced co-pay recommendations
             if (result.financial_breakdown.copay_amount > 0) {
                 recommendations.push(`Be prepared for co-pay amount of ₹${result.financial_breakdown.copay_amount.toLocaleString()}`);
+                if (result.financial_breakdown.copay_reason) {
+                    recommendations.push(`Co-pay applicable: ${result.financial_breakdown.copay_reason}`);
+                }
+                recommendations.push(`Your out-of-pocket expense will be ${result.financial_breakdown.copay_percentage}% of the claim amount`);
+            } else {
+                recommendations.push('No co-pay applicable for your age and selected plan');
+            }
+            
+            // Age-specific recommendations
+            if (result.patient_age > 60) {
+                recommendations.push('As a senior patient, ensure all medical documentation is comprehensive');
+                recommendations.push('Consider getting pre-authorization for major treatments');
             }
         } else {
             // Flow-specific rejection guidance

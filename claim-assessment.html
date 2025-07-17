@@ -1697,7 +1697,18 @@
                         <span class="detail-label">Co-pay (${result.financial_breakdown.copay_percentage}%):</span>
                         <span class="detail-value">₹${result.financial_breakdown.copay_amount?.toLocaleString()}</span>
                     </div>
+                    ${result.financial_breakdown.copay_reason ? `
+                    <div class="detail-row">
+                        <span class="detail-label">Co-pay Reason:</span>
+                        <span class="detail-value" style="font-size: 0.9rem; color: var(--text-secondary);">${result.financial_breakdown.copay_reason}</span>
+                    </div>
                     ` : ''}
+                    ` : `
+                    <div class="detail-row" style="background: rgba(16, 185, 129, 0.1); margin: 0 -1rem; padding: 0.5rem 1rem; border-radius: 8px;">
+                        <span class="detail-label">Co-pay Status:</span>
+                        <span class="detail-value" style="color: var(--success-color); font-weight: 600;">✅ No co-pay applicable for age ${result.patient_age}</span>
+                    </div>
+                    `}
                     <div class="detail-row" style="border-top: 2px solid var(--success-color); font-weight: 700; background: rgba(16, 185, 129, 0.1); margin: 1rem -1rem -1rem -1rem; padding: 1rem;">
                         <span class="detail-label">Expected Payout:</span>
                         <span class="detail-value amount" style="font-size: 1.3rem;">₹${result.financial_breakdown?.final_amount?.toLocaleString() || result.claim_amount?.toLocaleString()}</span>
@@ -2001,54 +2012,80 @@
             document.body.insertAdjacentHTML('beforeend', modalHTML);
         }
 
-        // Generate comprehensive plan details HTML
+        // Generate comprehensive plan details HTML - DYNAMIC VERSION
         function generatePlanDetailsHTML(plan) {
             let html = '';
-
-            // Plan Overview
-            if (plan.plan_details) {
+            
+            // Define metadata fields to exclude from display
+            const excludeKeys = ['planName', 'company', 'sumInsuredRange', 'normalizedSumInsured', 'generatedFilename', 'sourceFile', 'extractedAt', 'updatedAt'];
+            
+            // Section icons mapping for better UI
+            const sectionIcons = {
+                'plan_details': '🏥',
+                'basic_coverages': '✅',
+                'exclusions_waiting_periods': '⏰',
+                'sub_limits': '📊',
+                'renewal_benefits': '🎁',
+                'special_features_others': '⭐',
+                'maternity_cover': '🤱',
+                'premium_details': '💰',
+                'coverage_features': '🛡️'
+            };
+            
+            // Function to get section title and icon
+            const getSectionDisplay = (sectionKey) => {
+                const icon = sectionIcons[sectionKey] || '📋';
+                const title = sectionKey
+                    .replace(/_/g, ' ')
+                    .replace(/\b\w/g, char => char.toUpperCase());
+                return `${icon} ${title}`;
+            };
+            
+            // Function to format value with color coding
+            const formatValue = (value) => {
+                if (typeof value === 'string') {
+                    const lowerValue = value.toLowerCase();
+                    if (lowerValue === 'yes' || lowerValue === 'covered' || lowerValue === 'actual') {
+                        return `<span style="color: var(--success-color)">${value}</span>`;
+                    } else if (lowerValue === 'no' || lowerValue === 'not covered') {
+                        return `<span style="color: var(--danger-color)">${value}</span>`;
+                    }
+                }
+                return value;
+            };
+            
+            // Dynamically generate sections for all plan data
+            for (const [sectionKey, sectionData] of Object.entries(plan)) {
+                // Skip metadata fields and non-object sections
+                if (excludeKeys.includes(sectionKey) || typeof sectionData !== 'object' || sectionData === null) {
+                    continue;
+                }
+                
                 html += `
                     <div class="detail-card" style="margin-bottom: 2rem;">
-                        <h3>🏥 Plan Overview</h3>
-                        ${Object.entries(plan.plan_details).map(([key, value]) => `
+                        <h3>${getSectionDisplay(sectionKey)}</h3>
+                        ${Object.entries(sectionData).map(([key, value]) => `
                             <div class="detail-row">
                                 <span class="detail-label">${key}:</span>
-                                <span class="detail-value">${value}</span>
+                                <span class="detail-value">${formatValue(value)}</span>
                             </div>
                         `).join('')}
                     </div>
                 `;
             }
-
-            // Basic Coverages
-            if (plan.basic_coverages) {
-                html += `
-                    <div class="detail-card" style="margin-bottom: 2rem;">
-                        <h3>✅ Basic Coverages</h3>
-                        ${Object.entries(plan.basic_coverages).map(([key, value]) => `
-                            <div class="detail-row">
-                                <span class="detail-label">${key}:</span>
-                                <span class="detail-value" style="color: ${value === 'YES' ? 'var(--success-color)' : value === 'NO' ? 'var(--danger-color)' : 'var(--text-primary)'}">${value}</span>
-                            </div>
-                        `).join('')}
+            
+            // If no sections found, show message
+            if (!html) {
+                html = `
+                    <div class="detail-card">
+                        <p style="text-align: center; color: var(--text-secondary);">
+                            No detailed plan information available.
+                        </p>
                     </div>
                 `;
             }
-
-            // Sub Limits
-            if (plan.sub_limits) {
-                html += `
-                    <div class="detail-card" style="margin-bottom: 2rem;">
-                        <h3>📊 Sub Limits & Restrictions</h3>
-                        ${Object.entries(plan.sub_limits).map(([key, value]) => `
-                            <div class="detail-row">
-                                <span class="detail-label">${key}:</span>
-                                <span class="detail-value">${value}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            }
+            
+            return html;
 
             // Waiting Periods
             if (plan.waiting_periods) {

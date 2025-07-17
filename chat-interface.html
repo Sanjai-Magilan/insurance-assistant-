@@ -101,23 +101,38 @@
 
         .structured-response {
             background: linear-gradient(135deg, #f8fafc, #ffffff);
-            border-radius: 12px;
+            border-radius: 16px;
             border: 1px solid #e2e8f0;
             overflow: hidden;
-            margin: 10px 0;
+            margin: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        .structured-response:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
         }
 
         .response-header {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 1rem 1.5rem;
-            font-size: 1.1rem;
+            padding: 1.25rem 1.75rem;
+            font-size: 1.15rem;
             font-weight: 600;
             border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .response-header .header-icon {
+            font-size: 1.5rem;
+            opacity: 0.9;
         }
 
         .response-section {
-            padding: 1.5rem;
+            padding: 1.75rem;
             border-bottom: 1px solid #f1f5f9;
         }
 
@@ -126,123 +141,541 @@
         }
 
         .section-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             color: #2d3748;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding-bottom: 0.5rem;
+            gap: 0.75rem;
+            padding-bottom: 0.75rem;
             border-bottom: 2px solid #e2e8f0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
         .response-footer {
-            background: #f8fafc;
-            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #f8fafc, #edf2f7);
+            padding: 1.25rem 1.75rem;
             font-style: italic;
             color: #4a5568;
             border-top: 1px solid #e2e8f0;
+            font-size: 0.95rem;
         }
 
         .feature-list {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: grid;
+            gap: 0.75rem;
         }
 
         .feature-list li {
-            padding: 0.5rem 0;
+            padding: 1rem;
             border-bottom: 1px solid #f1f5f9;
             color: #4a5568;
-            line-height: 1.5;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateX(4px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .feature-list li:last-child {
             border-bottom: none;
         }
 
-        /* Enhanced table styling */
-        .structured-response table {
+        /* Enhanced table styling with modern look - Support for proper HTML structure */
+        .structured-response table, 
+        .plan-table,
+        table.plan-table,
+        .structured-response .plan-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            font-size: 0.95rem;
+            border: 2px solid #e2e8f0;
+            outline: 1px solid #cbd5e0;
         }
 
-        .structured-response table th {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .structured-response table thead th, 
+        .plan-table thead th,
+        table.plan-table thead th,
+        .structured-response .plan-table thead th,
+        .structured-response table th, 
+        .plan-table th,
+        table.plan-table th,
+        .structured-response .plan-table th {
+            background: linear-gradient(135deg, #4299e1, #667eea);
             color: white;
-            padding: 1rem;
+            padding: 1.25rem 1rem;
             text-align: left;
             font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 3px solid #2b6cb0;
         }
 
-        .structured-response table td {
-            padding: 1rem;
+        .structured-response table tbody td,
+        .plan-table tbody td,
+        table.plan-table tbody td,
+        .structured-response .plan-table tbody td,
+        .structured-response table td, 
+        .plan-table td,
+        table.plan-table td,
+        .structured-response .plan-table td {
+            padding: 1.25rem 1rem;
             border-bottom: 1px solid #e2e8f0;
             color: #4a5568;
+            line-height: 1.5;
+            vertical-align: top;
         }
 
-        .structured-response table tr:last-child td {
+        .structured-response table tbody tr:last-child td, 
+        .plan-table tbody tr:last-child td,
+        table.plan-table tbody tr:last-child td,
+        .structured-response .plan-table tbody tr:last-child td,
+        .structured-response table tr:last-child td, 
+        .plan-table tr:last-child td,
+        table.plan-table tr:last-child td,
+        .structured-response .plan-table tr:last-child td {
             border-bottom: none;
         }
 
-        .structured-response table tr:nth-child(even) {
-            background: #f8fafc;
+        .structured-response table tbody tr:nth-child(even), 
+        .plan-table tbody tr:nth-child(even),
+        table.plan-table tbody tr:nth-child(even),
+        .structured-response .plan-table tbody tr:nth-child(even),
+        .structured-response table tr:nth-child(even), 
+        .plan-table tr:nth-child(even),
+        table.plan-table tr:nth-child(even),
+        .structured-response .plan-table tr:nth-child(even) {
+            background: linear-gradient(135deg, #f8fafc, #edf2f7);
         }
 
-        /* Enhanced message styling */
+        .structured-response table tbody tr:hover, 
+        .plan-table tbody tr:hover,
+        table.plan-table tbody tr:hover,
+        .structured-response .plan-table tbody tr:hover,
+        .structured-response table tr:hover, 
+        .plan-table tr:hover,
+        table.plan-table tr:hover,
+        .structured-response .plan-table tr:hover {
+            background: linear-gradient(135deg, #e6fffa, #f0fff4) !important;
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        /* Comparison table specific styling */
+        .comparison-table {
+            border: 2px solid #667eea;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            text-align: center;
+        }
+
+        .comparison-table td {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Table caption styling */
+        .table-title {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            padding: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0;
+            caption-side: top;
+        }
+
+        /* Enhanced message styling with better visual hierarchy */
         .message.bot .message-content {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 0;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .message.bot .message-content:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .message.bot .message-content p {
-            padding: 1rem 1.5rem;
+            padding: 1.5rem 1.75rem;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.7;
+            color: #2d3748;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
         }
 
         /* Code and technical content styling */
         .structured-response code {
-            background: #f1f5f9;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            color: #e53e3e;
+            background: #e6fffa;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            color: #2c7a7b;
+            font-size: 0.9rem;
+            border: 1px solid #b2f5ea;
         }
 
         .structured-response pre {
-            background: #2d3748;
+            background: linear-gradient(135deg, #2d3748, #4a5568);
             color: #e2e8f0;
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 1.5rem;
+            border-radius: 12px;
             overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            line-height: 1.4;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            line-height: 1.6;
+            border: 1px solid #4a5568;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Status indicators */
+        /* Enhanced status indicators with icons */
         .status-success {
             color: #38a169;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-success::before {
+            content: '✅';
+            font-size: 1.1rem;
         }
 
         .status-warning {
             color: #d69e2e;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-warning::before {
+            content: '⚠️';
+            font-size: 1.1rem;
         }
 
         .status-error {
             color: #e53e3e;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-error::before {
+            content: '❌';
+            font-size: 1.1rem;
+        }
+
+        /* Enhanced highlighting for important information */
+        .highlight-box {
+            background: linear-gradient(135deg, #bee3f8, #e6fffa);
+            border-left: 4px solid #4299e1;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fef5e7, #fffbeb);
+            border-left-color: #f6ad55;
+        }
+
+        .highlight-box.success {
+            background: linear-gradient(135deg, #f0fff4, #e6fffa);
+            border-left-color: #68d391;
+        }
+
+        .highlight-box.error {
+            background: linear-gradient(135deg, #fed7d7, #fef2f2);
+            border-left-color: #fc8181;
+        }
+
+        /* Enhanced data visualization */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .data-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-card .data-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-card .data-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        /* Enhanced content highlighting */
+        .highlight-amount {
+            background: linear-gradient(135deg, #c6f6d5, #9ae6b4);
+            color: #22543d;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid #9ae6b4;
+        }
+
+        .highlight-percentage {
+            background: linear-gradient(135deg, #fef5e7, #ffd89b);
+            color: #744210;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid #ffd89b;
+        }
+
+        /* Enhanced table animations - Support for proper HTML structure */
+        .enhanced-table,
+        table.enhanced-table,
+        .structured-response .enhanced-table {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .enhanced-table tr,
+        table.enhanced-table tr,
+        .structured-response .enhanced-table tr,
+        .enhanced-table tbody tr,
+        table.enhanced-table tbody tr,
+        .structured-response .enhanced-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .enhanced-table tr:hover,
+        table.enhanced-table tr:hover,
+        .structured-response .enhanced-table tr:hover,
+        .enhanced-table tbody tr:hover,
+        table.enhanced-table tbody tr:hover,
+        .structured-response .enhanced-table tbody tr:hover {
+            background: linear-gradient(135deg, #e6fffa, #f0fff4) !important;
+            transform: scale(1.02);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced list animations */
+        .enhanced-list li {
+            animation: slideInLeft 0.4s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .enhanced-list li:nth-child(1) { animation-delay: 0.1s; }
+        .enhanced-list li:nth-child(2) { animation-delay: 0.2s; }
+        .enhanced-list li:nth-child(3) { animation-delay: 0.3s; }
+        .enhanced-list li:nth-child(4) { animation-delay: 0.4s; }
+        .enhanced-list li:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Interactive elements */
+        .interactive-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-element:hover {
+            animation: pulse 0.6s ease-in-out;
+        }
+
+        /* Loading states */
+        .loading-shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .sidebar {
+                position: static;
+                margin-bottom: 1rem;
+                padding: 1rem;
+            }
+
+            .structured-response {
+                margin: 10px 0;
+            }
+
+            .response-header {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .response-section {
+                padding: 1rem;
+            }
+
+            .structured-response table th,
+            .structured-response table td,
+            .plan-table th,
+            .plan-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list li {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .header {
+                padding: 0.75rem 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.25rem;
+            }
+
+            .nav-button {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .structured-response table {
+                font-size: 0.8rem;
+            }
+
+            .structured-response table th,
+            .structured-response table td {
+                padding: 0.5rem 0.25rem;
+            }
+        }
+
+        /* Accessibility Improvements */
+        .structured-response:focus-within {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .enhanced-table tr:focus {
+            outline: 2px solid #4299e1;
+            outline-offset: -1px;
+        }
+
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
 
         /* Enhanced plan info styling */
@@ -1100,15 +1533,31 @@
         function addBotMessage(message, isError = false, saveHistory = true) {
             const chatMessages = document.getElementById('chatMessages');
             
+            // Enhance the message content for better display
+            const enhancedMessage = enhanceMessageContent(message);
+            
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message bot';
             messageDiv.innerHTML = `
                 <div class="message-avatar">🤖</div>
-                <div class="message-content ${isError ? 'error' : ''}">${message}</div>
+                <div class="message-content ${isError ? 'error' : ''}">${enhancedMessage}</div>
             `;
             
             chatMessages.appendChild(messageDiv);
-            scrollToBottom();
+            
+            // Add smooth scroll animation
+            setTimeout(() => {
+                scrollToBottom();
+                // Add entrance animation
+                messageDiv.style.opacity = '0';
+                messageDiv.style.transform = 'translateY(20px)';
+                messageDiv.style.transition = 'all 0.3s ease';
+                
+                requestAnimationFrame(() => {
+                    messageDiv.style.opacity = '1';
+                    messageDiv.style.transform = 'translateY(0)';
+                });
+            }, 100);
             
             if (saveHistory) {
                 conversationHistory.push({
@@ -1118,6 +1567,175 @@
                 });
                 saveConversationHistory();
             }
+        }
+
+        // Enhanced message content processing
+        function enhanceMessageContent(message) {
+            if (!message) return message;
+            
+            // If already contains HTML table structure from backend, preserve it
+            if (message.includes('<table') && message.includes('class="plan-table"')) {
+                return enhanceExistingHtmlTable(message);
+            }
+            
+            // If already structured response, return as is
+            if (message.includes('structured-response')) {
+                return enhanceStructuredResponse(message);
+            }
+            
+            // Auto-detect and enhance different content types
+            if (message.includes('|') && message.includes('---')) {
+                return enhanceTableContent(message);
+            }
+            
+            if (message.includes('•') || message.includes('*') || message.includes('-')) {
+                return enhanceListContent(message);
+            }
+            
+            // Enhance plain text with better formatting
+            return enhancePlainTextContent(message);
+        }
+
+        // Enhance existing HTML tables from backend
+        function enhanceExistingHtmlTable(content) {
+            console.log('🎨 Enhancing existing HTML table from backend');
+            
+            // Add enhanced-table class to existing tables
+            let enhanced = content.replace(/<table([^>]*class="[^"]*plan-table[^"]*"[^>]*)>/g, 
+                '<table$1 class="plan-table enhanced-table">');
+            
+            // If not already wrapped in structured-response, wrap it
+            if (!enhanced.includes('structured-response')) {
+                // Check if it's a standalone table
+                if (enhanced.trim().startsWith('<table')) {
+                    enhanced = `<div class="structured-response">
+                        <div class="response-header">
+                            <span class="header-icon">📊</span><strong>Plan Information</strong>
+                        </div>
+                        <div class="response-section">
+                            ${enhanced}
+                        </div>
+                    </div>`;
+                }
+            }
+            
+            return enhanced;
+        }
+
+        // Enhance structured responses with better animations and interactivity
+        function enhanceStructuredResponse(content) {
+            // Add interaction handlers to tables if present
+            let enhanced = content.replace(/<table[^>]*>/g, (match) => {
+                return match.replace('>', ' class="enhanced-table">');
+            });
+            
+            // Add hover effects to feature lists
+            enhanced = enhanced.replace(/<ul class="feature-list">/g, '<ul class="feature-list enhanced-list">');
+            
+            return enhanced;
+        }
+
+        // Convert markdown-style tables to enhanced HTML tables
+        function enhanceTableContent(content) {
+            const tableRegex = /(\|[^|\n]+\|[^|\n]*\n)(\|[-\s|:]+\|[^|\n]*\n)((?:\|[^|\n]+\|[^|\n]*\n?)+)/g;
+            
+            return content.replace(tableRegex, (match, header, separator, rows) => {
+                const headerCells = header.split('|').slice(1, -1).map(cell => cell.trim());
+                const rowsArray = rows.trim().split('\n').map(row => 
+                    row.split('|').slice(1, -1).map(cell => cell.trim())
+                );
+                
+                let html = '<div class="structured-response">';
+                html += '<div class="response-header"><span class="header-icon">📊</span><strong>Data Summary</strong></div>';
+                html += '<div class="response-section">';
+                html += '<table class="plan-table enhanced-table">';
+                html += '<thead><tr>';
+                headerCells.forEach(cell => {
+                    html += `<th>${cell}</th>`;
+                });
+                html += '</tr></thead><tbody>';
+                
+                rowsArray.forEach((row, index) => {
+                    html += '<tr>';
+                    row.forEach(cell => {
+                        html += `<td>${formatCellContent(cell)}</td>`;
+                    });
+                    html += '</tr>';
+                });
+                
+                html += '</tbody></table>';
+                html += '</div></div>';
+                return html;
+            });
+        }
+
+        // Enhance list content with better visual structure
+        function enhanceListContent(content) {
+            // Convert bullet points to structured list
+            let enhanced = content.replace(/[•\*\-]\s*([^\n]+)/g, '<li>$1</li>');
+            
+            if (enhanced.includes('<li>')) {
+                enhanced = enhanced.replace(/(<li>.*<\/li>)/s, (match) => {
+                    return `<div class="structured-response">
+                        <div class="response-section">
+                            <ul class="feature-list enhanced-list">${match}</ul>
+                        </div>
+                    </div>`;
+                });
+            }
+            
+            return enhanced;
+        }
+
+        // Enhance plain text with better typography and highlighting
+        function enhancePlainTextContent(content) {
+            let enhanced = content;
+            
+            // Highlight important numbers (amounts, percentages)
+            enhanced = enhanced.replace(/₹[\d,]+/g, '<span class="highlight-amount">$&</span>');
+            enhanced = enhanced.replace(/\d+%/g, '<span class="highlight-percentage">$&</span>');
+            
+            // Highlight status indicators
+            enhanced = enhanced.replace(/\b(Eligible|Covered|Approved)\b/g, '<span class="status-success">$1</span>');
+            enhanced = enhanced.replace(/\b(Not Eligible|Not Covered|Rejected|Excluded)\b/g, '<span class="status-error">$1</span>');
+            enhanced = enhanced.replace(/\b(Partial|Conditional|Under Review)\b/g, '<span class="status-warning">$1</span>');
+            
+            // Convert to structured response for longer content
+            if (enhanced.length > 200) {
+                enhanced = `<div class="structured-response">
+                    <div class="response-section">
+                        <p>${enhanced}</p>
+                    </div>
+                </div>`;
+            }
+            
+            return enhanced;
+        }
+
+        // Format individual cell content with appropriate styling
+        function formatCellContent(content) {
+            if (!content) return '';
+            
+            // Format currency
+            if (content.match(/^\d+$/) && content.length > 3) {
+                return `₹${parseInt(content).toLocaleString()}`;
+            }
+            
+            // Format percentages
+            if (content.includes('%')) {
+                return `<span class="highlight-percentage">${content}</span>`;
+            }
+            
+            // Format status values
+            if (['Yes', 'Covered', 'Eligible', 'Available'].includes(content)) {
+                return `<span class="status-success">${content}</span>`;
+            }
+            
+            if (['No', 'Not Covered', 'Excluded', 'Not Available'].includes(content)) {
+                return `<span class="status-error">${content}</span>`;
+            }
+            
+            return content;
         }
 
         function clearEmptyState() {
