@@ -1,48 +1,42 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "chat-server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/chat-server.js"
-    },
-    {
-      "src": "/chat",
-      "dest": "/chat-server.js"
-    },
-    {
-      "src": "/claims",
-      "dest": "/chat-server.js"
-    },
-    {
-      "src": "/plans",
-      "dest": "/chat-server.js"
-    },
-    {
-      "src": "/chat-interface.html",
-      "dest": "/chat-server.js"
-    },
-    {
-      "src": "/claim-assessment.html",
-      "dest": "/chat-server.js"
-    },
-    {
-      "src": "/plan-management-interface.html",
-      "dest": "/chat-server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/chat-server.js"
-    }
-  ],
   "functions": {
     "chat-server.js": {
       "maxDuration": 30
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/chat-server.js"
+    },
+    {
+      "source": "/chat",
+      "destination": "/chat-server.js"
+    },
+    {
+      "source": "/claims",
+      "destination": "/chat-server.js"
+    },
+    {
+      "source": "/plans",
+      "destination": "/chat-server.js"
+    },
+    {
+      "source": "/chat-interface.html",
+      "destination": "/chat-server.js"
+    },
+    {
+      "source": "/claim-assessment.html",
+      "destination": "/chat-server.js"
+    },
+    {
+      "source": "/plan-management-interface.html",
+      "destination": "/chat-server.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/chat-server.js"
+    }
+  ]
 }
