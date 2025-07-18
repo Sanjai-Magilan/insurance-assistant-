@@ -124,3 +124,6 @@ build/
 config/keys.js
 config/config.json
 .env*
+
+# Vercel
+.vercel

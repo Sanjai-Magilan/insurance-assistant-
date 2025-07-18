@@ -643,42 +643,52 @@ async function startServer() {
     const plans = await planManager.getAllPlans();
     console.log(`✅ Loaded ${plans.length} health insurance plans`);
     
-    app.listen(PORT, () => {
-      console.log(`🚀 Health Insurance Assistant (Modular) running on http://localhost:${PORT}`);
-      console.log(`📱 Available Interfaces:`);
-      console.log(`   🏠 Homepage: http://localhost:${PORT}`);
-      console.log(`   📋 Plan Manager: http://localhost:${PORT}/plans`);
-      console.log(`   💬 Chat Assistant: http://localhost:${PORT}/chat`);
-      console.log(`   🔍 Claim Assessment: http://localhost:${PORT}/claims`);
-      console.log(``);
-      console.log(`🔧 Enhanced Modular Features:`);
-      console.log(`   • Complete plan data integration`);
-      console.log(`   • Dynamic response formatting`);
-      console.log(`   • Table-structured output`);
-      console.log(`   • Robust error handling`);
-      console.log(`   • Session management`);
-      console.log(``);
-      console.log(`API Endpoints:`);
-      console.log(`- GET  /api/health - Health check`);
-      console.log(`- POST /api/chat - Modular chat with AI`);
-      console.log(`- GET  /api/chat/sessions/:id - Get session info`);
-      console.log(`- DELETE /api/chat/sessions/:id - Clear session`);
-      console.log(`- GET  /api/chat/stats - Chat system statistics`);
-      console.log(`- GET  /api/claims/companies - Get insurance companies`);
-      console.log(`- POST /api/claims/analyze - Analyze claims (legacy)`);
-      console.log(`- POST /api/claims/analyze-questionnaire - New questionnaire-based analysis`);
-      console.log(`- GET  /api/plans/list - Get all plans`);
-      console.log(`- GET  /api/plans/stats - Get dashboard statistics`);
-      console.log(`- GET  /api/plans/get - Get specific plan for editing`);
-      console.log(`- POST /api/plans/create - Create new plan`);
-      console.log(`- POST /api/plans/update - Update existing plan`);
-      console.log(`- POST /api/plans/delete - Delete plan`);
-      console.log(`- POST /api/test-connection - Test AI connection`);
-    });
+    // Only start listening if not in Vercel environment
+    if (!process.env.VERCEL) {
+      app.listen(PORT, () => {
+        console.log(`🚀 Health Insurance Assistant (Modular) running on http://localhost:${PORT}`);
+        console.log(`📱 Available Interfaces:`);
+        console.log(`   🏠 Homepage: http://localhost:${PORT}`);
+        console.log(`   📋 Plan Manager: http://localhost:${PORT}/plans`);
+        console.log(`   💬 Chat Assistant: http://localhost:${PORT}/chat`);
+        console.log(`   🔍 Claim Assessment: http://localhost:${PORT}/claims`);
+        console.log(``);
+        console.log(`🔧 Enhanced Modular Features:`);
+        console.log(`   • Complete plan data integration`);
+        console.log(`   • Dynamic response formatting`);
+        console.log(`   • Table-structured output`);
+        console.log(`   • Robust error handling`);
+        console.log(`   • Session management`);
+        console.log(``);
+        console.log(`API Endpoints:`);
+        console.log(`- GET  /api/health - Health check`);
+        console.log(`- POST /api/chat - Modular chat with AI`);
+        console.log(`- GET  /api/chat/sessions/:id - Get session info`);
+        console.log(`- DELETE /api/chat/sessions/:id - Clear session`);
+        console.log(`- GET  /api/chat/stats - Chat system statistics`);
+        console.log(`- GET  /api/claims/companies - Get insurance companies`);
+        console.log(`- POST /api/claims/analyze - Analyze claims (legacy)`);
+        console.log(`- POST /api/claims/analyze-questionnaire - New questionnaire-based analysis`);
+        console.log(`- GET  /api/plans/list - Get all plans`);
+        console.log(`- GET  /api/plans/stats - Get dashboard statistics`);
+        console.log(`- GET  /api/plans/get - Get specific plan for editing`);
+        console.log(`- POST /api/plans/create - Create new plan`);
+        console.log(`- POST /api/plans/update - Update existing plan`);
+        console.log(`- POST /api/plans/delete - Delete plan`);
+        console.log(`- POST /api/test-connection - Test AI connection`);
+      });
+    } else {
+      console.log('🚀 Health Insurance Assistant (Modular) initialized for Vercel');
+    }
   } catch (error) {
     console.error('❌ Failed to start server:', error);
-    process.exit(1);
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
   }
 }
 
 startServer();
+
+// Export the Express app for Vercel
+module.exports = app;

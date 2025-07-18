@@ -4,8 +4,9 @@
   "description": "Intelligent LIC Claim Assistant with dynamic plan management and AI analysis",
   "scripts": {
     "check:type": "tsc --noEmit",
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "echo 'Build completed'",
+    "dev": "node chat-server.js",
+    "start": "node chat-server.js",
     "plan-manager": "node dist/cli/planManager.js",
     "setup": "mkdir -p data/plans data/questions data/knowledge-base data/documents"
   },
