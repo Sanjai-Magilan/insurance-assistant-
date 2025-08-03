@@ -1,0 +1,1134 @@
+[
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.050Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "Company",
+        "Plan Name": "Plan Name",
+        "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+        "Child  Age Entry": "Child  Age Entry",
+        "Sum Insured Range": "Sum Insured Range",
+        "Policy Duration": "Policy Duration",
+        "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+        "Who all can be covered": "Who all can be covered",
+        "MID TERM INCLUSION": "MID TERM INCLUSION",
+        "Medical Screening Before Policy": "Medical Screening Before Policy"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Pre-Hospitalization",
+        "Post-Hospitalization": "Post-Hospitalization",
+        "Emergency Ambulance": "Emergency Ambulance",
+        "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+        "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+        "Domicilary Expenses": "Domicilary Expenses",
+        "Consumables": "Consumables",
+        "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+        "MODERN TREATMENTS": "MODERN TREATMENTS",
+        "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "INITIAL WAITING",
+        "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+        "Pre Existing Disease": "Pre Existing Disease"
+      },
+      "sub_limits": {
+        "Room Rent/day": "Room Rent/day",
+        "ICU/day": "ICU/day",
+        "Co - Pay": "Co - Pay",
+        "Cataract Limits": "Cataract Limits",
+        "Other Sub Limits": "Other Sub Limits"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "No claim bonus",
+        "Free Health Check-up": "Free Health Check-up",
+        "Discounts": "Discounts"
+      },
+      "special_features_others": {
+        "Organ Donor Expenses": "Organ Donor Expenses"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "AVAILABLE CONDITION",
+        "WAITING PERIOD 1st DELIVERY": "WAITING PERIOD 1st DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "WAITING PERIOD 2nd DELIVERY",
+        "Delivery charges (NORMAL)": "Delivery charges (NORMAL)",
+        "Delivery charges (Caesarean)": "Delivery charges (Caesarean)",
+        "NEW BORN BABY COVER": "NEW BORN BABY COVER",
+        "Vaccination Exp For Child": "Vaccination Exp For Child",
+        "Pediatrician Consultations for child": "Pediatrician Consultations for child",
+        "Metabolic Screening": "Metabolic Screening",
+        "INFERTILITY / ASSTREPRODUCTION": "INFERTILITY / ASST.REPRODUCTION",
+        "Miscarriage due to Accident": "Miscarriage due to Accident",
+        "In Utero Fetal Surgery / Repair": "In Utero Fetal Surgery / Repair",
+        "Ante-Natal Care": "Ante-Natal Care",
+        "Voluntary Sterilization Exp.": "Voluntary Sterilization Exp."
+      }
+    },
+    "plan_details": {
+      "Company": "Company",
+      "Plan Name": "Plan Name",
+      "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+      "Child  Age Entry": "Child  Age Entry",
+      "Sum Insured Range": "Sum Insured Range",
+      "Policy Duration": "Policy Duration",
+      "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+      "Who all can be covered": "Who all can be covered",
+      "MID TERM INCLUSION": "MID TERM INCLUSION",
+      "Medical Screening Before Policy": "Medical Screening Before Policy"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Pre-Hospitalization",
+      "Post-Hospitalization": "Post-Hospitalization",
+      "Emergency Ambulance": "Emergency Ambulance",
+      "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+      "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+      "Domicilary Expenses": "Domicilary Expenses",
+      "Consumables": "Consumables",
+      "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+      "MODERN TREATMENTS": "MODERN TREATMENTS",
+      "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "INITIAL WAITING",
+      "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+      "Pre Existing Disease": "Pre Existing Disease"
+    },
+    "sub_limits": {
+      "Room Rent/day": "Room Rent/day",
+      "ICU/day": "ICU/day",
+      "Co - Pay": "Co - Pay",
+      "Cataract Limits": "Cataract Limits",
+      "Other Sub Limits": "Other Sub Limits"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "No claim bonus",
+      "Free Health Check-up": "Free Health Check-up",
+      "Discounts": "Discounts"
+    },
+    "special_features_others": {
+      "Organ Donor Expenses": "Organ Donor Expenses"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "AVAILABLE CONDITION",
+      "WAITING PERIOD 1st DELIVERY": "WAITING PERIOD 1st DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "WAITING PERIOD 2nd DELIVERY",
+      "Delivery charges (NORMAL)": "Delivery charges (NORMAL)",
+      "Delivery charges (Caesarean)": "Delivery charges (Caesarean)",
+      "NEW BORN BABY COVER": "NEW BORN BABY COVER",
+      "Vaccination Exp For Child": "Vaccination Exp For Child",
+      "Pediatrician Consultations for child": "Pediatrician Consultations for child",
+      "Metabolic Screening": "Metabolic Screening",
+      "INFERTILITY / ASSTREPRODUCTION": "INFERTILITY / ASST.REPRODUCTION",
+      "Miscarriage due to Accident": "Miscarriage due to Accident",
+      "In Utero Fetal Surgery / Repair": "In Utero Fetal Surgery / Repair",
+      "Ante-Natal Care": "Ante-Natal Care",
+      "Voluntary Sterilization Exp.": "Voluntary Sterilization Exp."
+    },
+    "planName": "Plan Name",
+    "company": "Company",
+    "sumInsuredRange": "Sum Insured Range",
+    "normalizedSumInsured": "sum insured range",
+    "generatedFilename": "plan_name_suminsuredrange.json"
+  },
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.142Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+        "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+        "Child  Age Entry": "91day -25 yrs",
+        "Sum Insured Range": "100L",
+        "Policy Duration": "1/2/3 YRS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+        "Domicilary Expenses": "upto  SI",
+        "Consumables": "YES ( AS PER LIST 1)",
+        "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEAR",
+        "Pre Existing Disease": "FIRST 2 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "NO"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+        "Discounts": "Up to 10% WELLNESS DISCOUNT"
+      },
+      "special_features_others": {
+        "2": "MODERN TREATMENT Upto 30% OF SI",
+        "3": "NO",
+        "4": "AIR AMBULANCE UPTO  10% OF SI",
+        "5": "Rehabilitation and Pain Management Upto 10% of SI",
+        "7": "Bariatric Surgery Upto Rs. 5L",
+        "8": "OP Consultations (for Females) Upto Rs.5,000/YR",
+        "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+        "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+        "Organ Donor Expenses": "Upto SI"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+        "WAITING PERIOD 1st DELIVERY": "1 YR",
+        "WAITING PERIOD 2nd DELIVERY": "NO",
+        "Delivery charges (NORMAL)": "AFTER 12 MONTHS 1 LAKH / DELIVERY MAX 2 DELIVERIES",
+        "Delivery charges (Caesarean)": "AFTER 12 MONTHS 1 LAKH / DELIVERY MAX 2 DELIVERIES",
+        "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+        "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+        "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+        "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+        "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+        "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.40,000/-",
+        "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+        "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+        "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+      "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+      "Child  Age Entry": "91day -25 yrs",
+      "Sum Insured Range": "100L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+      "Domicilary Expenses": "upto  SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEAR",
+      "Pre Existing Disease": "FIRST 2 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+      "Discounts": "Up to 10% WELLNESS DISCOUNT"
+    },
+    "special_features_others": {
+      "2": "MODERN TREATMENT Upto 30% OF SI",
+      "3": "NO",
+      "4": "AIR AMBULANCE UPTO  10% OF SI",
+      "5": "Rehabilitation and Pain Management Upto 10% of SI",
+      "7": "Bariatric Surgery Upto Rs. 5L",
+      "8": "OP Consultations (for Females) Upto Rs.5,000/YR",
+      "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+      "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+      "Organ Donor Expenses": "Upto SI"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+      "WAITING PERIOD 1st DELIVERY": "1 YR",
+      "WAITING PERIOD 2nd DELIVERY": "NO",
+      "Delivery charges (NORMAL)": "AFTER 12 MONTHS 1 LAKH / DELIVERY MAX 2 DELIVERIES",
+      "Delivery charges (Caesarean)": "AFTER 12 MONTHS 1 LAKH / DELIVERY MAX 2 DELIVERIES",
+      "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+      "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+      "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+      "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+      "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+      "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.40,000/-",
+      "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+      "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+      "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+    },
+    "planName": "STAR WOMEN CARE INSURANCE POLCIY",
+    "company": "STAR",
+    "sumInsuredRange": "100L",
+    "normalizedSumInsured": "100l",
+    "generatedFilename": "star_women_care_insurance_polciy_100l.json"
+  },
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.081Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+        "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+        "Child  Age Entry": "91day -25 yrs",
+        "Sum Insured Range": "10L",
+        "Policy Duration": "1/2/3 YRS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+        "Domicilary Expenses": "upto  SI",
+        "Consumables": "YES ( AS PER LIST 1)",
+        "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEAR",
+        "Pre Existing Disease": "FIRST 2 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "NO"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+        "Discounts": "Up to 10% WELLNESS DISCOUNT"
+      },
+      "special_features_others": {
+        "2": "MODERN TREATMENT Upto50% OF SI",
+        "3": "NO",
+        "4": "AIR AMBULANCE UPTO  10% OF SI",
+        "5": "Rehabilitation and Pain Management Upto 10% of SI",
+        "7": "Bariatric Surgery Upto Rs. 2.50L",
+        "8": "OP Consultations (for Females) Upto Rs.2,500/YR",
+        "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+        "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+        "Organ Donor Expenses": "Upto SI"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+        "WAITING PERIOD 1st DELIVERY": "2 YRS",
+        "WAITING PERIOD 2nd DELIVERY": "NO",
+        "Delivery charges (NORMAL)": "AFTER 24 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+        "Delivery charges (Caesarean)": "AFTER 24 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+        "NEW BORN BABY COVER": "DAY 1 COVER AFTER 24 MONTHS UPTO 25% of SI",
+        "Vaccination Exp For Child": "2,500 for New Born (up to 12 months from birth)",
+        "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+        "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+        "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.1,00,00/-",
+        "Miscarriage due to Accident": "AFTER 24 MONTHS LUMPSUM OF Rs.25,000/-",
+        "In Utero Fetal Surgery / Repair": "AFTER 24 MONTHS UPTO SI",
+        "Ante-Natal Care": "AFTER 24 MONTHS UPTO Rs.2500/-",
+        "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+      "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+      "Child  Age Entry": "91day -25 yrs",
+      "Sum Insured Range": "10L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+      "Domicilary Expenses": "upto  SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEAR",
+      "Pre Existing Disease": "FIRST 2 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+      "Discounts": "Up to 10% WELLNESS DISCOUNT"
+    },
+    "special_features_others": {
+      "2": "MODERN TREATMENT Upto50% OF SI",
+      "3": "NO",
+      "4": "AIR AMBULANCE UPTO  10% OF SI",
+      "5": "Rehabilitation and Pain Management Upto 10% of SI",
+      "7": "Bariatric Surgery Upto Rs. 2.50L",
+      "8": "OP Consultations (for Females) Upto Rs.2,500/YR",
+      "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+      "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+      "Organ Donor Expenses": "Upto SI"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+      "WAITING PERIOD 1st DELIVERY": "2 YRS",
+      "WAITING PERIOD 2nd DELIVERY": "NO",
+      "Delivery charges (NORMAL)": "AFTER 24 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+      "Delivery charges (Caesarean)": "AFTER 24 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+      "NEW BORN BABY COVER": "DAY 1 COVER AFTER 24 MONTHS UPTO 25% of SI",
+      "Vaccination Exp For Child": "2,500 for New Born (up to 12 months from birth)",
+      "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+      "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+      "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.1,00,00/-",
+      "Miscarriage due to Accident": "AFTER 24 MONTHS LUMPSUM OF Rs.25,000/-",
+      "In Utero Fetal Surgery / Repair": "AFTER 24 MONTHS UPTO SI",
+      "Ante-Natal Care": "AFTER 24 MONTHS UPTO Rs.2500/-",
+      "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+    },
+    "planName": "STAR WOMEN CARE INSURANCE POLCIY",
+    "company": "STAR",
+    "sumInsuredRange": "10L",
+    "normalizedSumInsured": "10l",
+    "generatedFilename": "star_women_care_insurance_polciy_10l.json"
+  },
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.098Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+        "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+        "Child  Age Entry": "91day -25 yrs",
+        "Sum Insured Range": "15L",
+        "Policy Duration": "1/2/3 YRS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+        "Domicilary Expenses": "upto  SI",
+        "Consumables": "YES ( AS PER LIST 1)",
+        "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEAR",
+        "Pre Existing Disease": "FIRST 2 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "NO"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+        "Discounts": "Up to 10% WELLNESS DISCOUNT"
+      },
+      "special_features_others": {
+        "2": "MODERN TREATMENT Upto50% OF SI",
+        "3": "NO",
+        "4": "AIR AMBULANCE UPTO  10% OF SI",
+        "5": "Rehabilitation and Pain Management Upto 10% of SI",
+        "7": "Bariatric Surgery Upto Rs. 2.50L",
+        "8": "OP Consultations (for Females) Upto Rs.2,500/YR",
+        "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+        "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+        "Organ Donor Expenses": "Upto SI"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+        "WAITING PERIOD 1st DELIVERY": "1 YR",
+        "WAITING PERIOD 2nd DELIVERY": "NO",
+        "Delivery charges (NORMAL)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+        "Delivery charges (Caesarean)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+        "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+        "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+        "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+        "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+        "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.1,50,00/-",
+        "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.25,000/-",
+        "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+        "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.2500/-",
+        "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+      "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+      "Child  Age Entry": "91day -25 yrs",
+      "Sum Insured Range": "15L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+      "Domicilary Expenses": "upto  SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEAR",
+      "Pre Existing Disease": "FIRST 2 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+      "Discounts": "Up to 10% WELLNESS DISCOUNT"
+    },
+    "special_features_others": {
+      "2": "MODERN TREATMENT Upto50% OF SI",
+      "3": "NO",
+      "4": "AIR AMBULANCE UPTO  10% OF SI",
+      "5": "Rehabilitation and Pain Management Upto 10% of SI",
+      "7": "Bariatric Surgery Upto Rs. 2.50L",
+      "8": "OP Consultations (for Females) Upto Rs.2,500/YR",
+      "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+      "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+      "Organ Donor Expenses": "Upto SI"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+      "WAITING PERIOD 1st DELIVERY": "1 YR",
+      "WAITING PERIOD 2nd DELIVERY": "NO",
+      "Delivery charges (NORMAL)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+      "Delivery charges (Caesarean)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+      "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+      "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+      "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+      "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+      "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.1,50,00/-",
+      "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.25,000/-",
+      "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+      "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.2500/-",
+      "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+    },
+    "planName": "STAR WOMEN CARE INSURANCE POLCIY",
+    "company": "STAR",
+    "sumInsuredRange": "15L",
+    "normalizedSumInsured": "15l",
+    "generatedFilename": "star_women_care_insurance_polciy_15l.json"
+  },
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.110Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+        "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+        "Child  Age Entry": "91day -25 yrs",
+        "Sum Insured Range": "20L",
+        "Policy Duration": "1/2/3 YRS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+        "Domicilary Expenses": "upto  SI",
+        "Consumables": "YES ( AS PER LIST 1)",
+        "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEAR",
+        "Pre Existing Disease": "FIRST 2 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "NO"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+        "Discounts": "Up to 10% WELLNESS DISCOUNT"
+      },
+      "special_features_others": {
+        "2": "MODERN TREATMENT Upto 40% OF SI",
+        "3": "NO",
+        "4": "AIR AMBULANCE UPTO  10% OF SI",
+        "5": "Rehabilitation and Pain Management Upto 10% of SI",
+        "7": "Bariatric Surgery Upto Rs. 5L",
+        "8": "OP Consultations (for Females) Upto Rs.3,500/YR",
+        "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+        "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+        "Organ Donor Expenses": "Upto SI"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+        "WAITING PERIOD 1st DELIVERY": "1 YR",
+        "WAITING PERIOD 2nd DELIVERY": "NO",
+        "Delivery charges (NORMAL)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+        "Delivery charges (Caesarean)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+        "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+        "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+        "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+        "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+        "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+        "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.35,000/-",
+        "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+        "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+        "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+      "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+      "Child  Age Entry": "91day -25 yrs",
+      "Sum Insured Range": "20L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+      "Domicilary Expenses": "upto  SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEAR",
+      "Pre Existing Disease": "FIRST 2 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+      "Discounts": "Up to 10% WELLNESS DISCOUNT"
+    },
+    "special_features_others": {
+      "2": "MODERN TREATMENT Upto 40% OF SI",
+      "3": "NO",
+      "4": "AIR AMBULANCE UPTO  10% OF SI",
+      "5": "Rehabilitation and Pain Management Upto 10% of SI",
+      "7": "Bariatric Surgery Upto Rs. 5L",
+      "8": "OP Consultations (for Females) Upto Rs.3,500/YR",
+      "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+      "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+      "Organ Donor Expenses": "Upto SI"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+      "WAITING PERIOD 1st DELIVERY": "1 YR",
+      "WAITING PERIOD 2nd DELIVERY": "NO",
+      "Delivery charges (NORMAL)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+      "Delivery charges (Caesarean)": "AFTER 12 MONTHS 50,000/ DELIVERY MAX 2 DELIVERIES",
+      "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+      "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+      "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+      "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+      "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+      "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.35,000/-",
+      "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+      "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+      "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+    },
+    "planName": "STAR WOMEN CARE INSURANCE POLCIY",
+    "company": "STAR",
+    "sumInsuredRange": "20L",
+    "normalizedSumInsured": "20l",
+    "generatedFilename": "star_women_care_insurance_polciy_20l.json"
+  },
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.120Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+        "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+        "Child  Age Entry": "91day -25 yrs",
+        "Sum Insured Range": "25L",
+        "Policy Duration": "1/2/3 YRS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+        "Domicilary Expenses": "upto  SI",
+        "Consumables": "YES ( AS PER LIST 1)",
+        "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEAR",
+        "Pre Existing Disease": "FIRST 2 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "NO"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+        "Discounts": "Up to 10% WELLNESS DISCOUNT"
+      },
+      "special_features_others": {
+        "2": "MODERN TREATMENT Upto 40% OF SI",
+        "3": "NO",
+        "4": "AIR AMBULANCE UPTO  10% OF SI",
+        "5": "Rehabilitation and Pain Management Upto 10% of SI",
+        "7": "Bariatric Surgery Upto Rs. 5L",
+        "8": "OP Consultations (for Females) Upto Rs.3,500/YR",
+        "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+        "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+        "Organ Donor Expenses": "Upto SI"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+        "WAITING PERIOD 1st DELIVERY": "1 YR",
+        "WAITING PERIOD 2nd DELIVERY": "NO",
+        "Delivery charges (NORMAL)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+        "Delivery charges (Caesarean)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+        "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+        "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+        "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+        "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+        "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+        "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.35,000/-",
+        "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+        "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+        "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+      "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+      "Child  Age Entry": "91day -25 yrs",
+      "Sum Insured Range": "25L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+      "Domicilary Expenses": "upto  SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEAR",
+      "Pre Existing Disease": "FIRST 2 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+      "Discounts": "Up to 10% WELLNESS DISCOUNT"
+    },
+    "special_features_others": {
+      "2": "MODERN TREATMENT Upto 40% OF SI",
+      "3": "NO",
+      "4": "AIR AMBULANCE UPTO  10% OF SI",
+      "5": "Rehabilitation and Pain Management Upto 10% of SI",
+      "7": "Bariatric Surgery Upto Rs. 5L",
+      "8": "OP Consultations (for Females) Upto Rs.3,500/YR",
+      "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+      "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+      "Organ Donor Expenses": "Upto SI"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+      "WAITING PERIOD 1st DELIVERY": "1 YR",
+      "WAITING PERIOD 2nd DELIVERY": "NO",
+      "Delivery charges (NORMAL)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+      "Delivery charges (Caesarean)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+      "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+      "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+      "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+      "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+      "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+      "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.35,000/-",
+      "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+      "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+      "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+    },
+    "planName": "STAR WOMEN CARE INSURANCE POLCIY",
+    "company": "STAR",
+    "sumInsuredRange": "25L",
+    "normalizedSumInsured": "25l",
+    "generatedFilename": "star_women_care_insurance_polciy_25l.json"
+  },
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.132Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+        "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+        "Child  Age Entry": "91day -25 yrs",
+        "Sum Insured Range": "50L",
+        "Policy Duration": "1/2/3 YRS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+        "Domicilary Expenses": "upto  SI",
+        "Consumables": "YES ( AS PER LIST 1)",
+        "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEAR",
+        "Pre Existing Disease": "FIRST 2 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "NO"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+        "Discounts": "Up to 10% WELLNESS DISCOUNT"
+      },
+      "special_features_others": {
+        "2": "MODERN TREATMENT Upto 40% OF SI",
+        "3": "NO",
+        "4": "AIR AMBULANCE UPTO  10% OF SI",
+        "5": "Rehabilitation and Pain Management Upto 10% of SI",
+        "7": "Bariatric Surgery Upto Rs. 5L",
+        "8": "OP Consultations (for Females) Upto Rs.5,000/YR",
+        "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+        "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+        "Organ Donor Expenses": "Upto SI"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+        "WAITING PERIOD 1st DELIVERY": "1 YR",
+        "WAITING PERIOD 2nd DELIVERY": "NO",
+        "Delivery charges (NORMAL)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+        "Delivery charges (Caesarean)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+        "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+        "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+        "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+        "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+        "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+        "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.40,000/-",
+        "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+        "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+        "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+      "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+      "Child  Age Entry": "91day -25 yrs",
+      "Sum Insured Range": "50L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+      "Domicilary Expenses": "upto  SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEAR",
+      "Pre Existing Disease": "FIRST 2 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+      "Discounts": "Up to 10% WELLNESS DISCOUNT"
+    },
+    "special_features_others": {
+      "2": "MODERN TREATMENT Upto 40% OF SI",
+      "3": "NO",
+      "4": "AIR AMBULANCE UPTO  10% OF SI",
+      "5": "Rehabilitation and Pain Management Upto 10% of SI",
+      "7": "Bariatric Surgery Upto Rs. 5L",
+      "8": "OP Consultations (for Females) Upto Rs.5,000/YR",
+      "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+      "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+      "Organ Donor Expenses": "Upto SI"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+      "WAITING PERIOD 1st DELIVERY": "1 YR",
+      "WAITING PERIOD 2nd DELIVERY": "NO",
+      "Delivery charges (NORMAL)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+      "Delivery charges (Caesarean)": "AFTER 12 MONTHS 75,000/ DELIVERY MAX 2 DELIVERIES",
+      "NEW BORN BABY COVER": "DAY 1 AFTER 12 MONTHS UPTO 25% of SI",
+      "Vaccination Exp For Child": "3,500 for New Born (up to 12 months from birth)",
+      "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+      "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+      "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.2,00,00/-",
+      "Miscarriage due to Accident": "AFTER 12 MONTHS LUMPSUM OF Rs.40,000/-",
+      "In Utero Fetal Surgery / Repair": "AFTER 12 MONTHS UPTO SI",
+      "Ante-Natal Care": "AFTER 12 MONTHS UPTO Rs.5,000/-",
+      "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+    },
+    "planName": "STAR WOMEN CARE INSURANCE POLCIY",
+    "company": "STAR",
+    "sumInsuredRange": "50L",
+    "normalizedSumInsured": "50l",
+    "generatedFilename": "star_women_care_insurance_polciy_50l.json"
+  },
+  {
+    "sourceFile": "Book7.csv",
+    "extractedAt": "2025-07-13T14:31:16.066Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+        "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+        "Child  Age Entry": "91day -25 yrs (FEMALE-30Y)",
+        "Sum Insured Range": "5L",
+        "Policy Duration": "1/2/3 YRS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+        "Domicilary Expenses": "upto  SI",
+        "Consumables": "YES ( AS PER LIST 1)",
+        "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEAR",
+        "Pre Existing Disease": "FIRST 2 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "1% OF SI , MAX RS.5,000/-",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "NO"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+        "Discounts": "Up to 10% WELLNESS DISCOUNT"
+      },
+      "special_features_others": {
+        "2": "MODERN TREATMENT Upto50% OF SI",
+        "3": "NO",
+        "4": "NO",
+        "5": "Rehabilitation and Pain Management Upto 10% of SI",
+        "7": "Bariatric Surgery Upto Rs. 2.50L",
+        "8": "OP Consultations (for Females) Upto Rs.2,500/YR",
+        "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+        "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+        "Organ Donor Expenses": "Upto SI"
+      },
+      "maternity_cover": {
+        "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+        "WAITING PERIOD 1st DELIVERY": "2 YRS",
+        "WAITING PERIOD 2nd DELIVERY": "NO",
+        "Delivery charges (NORMAL)": "AFTER 24 MONTHS 25,000/ DELIVERY MAX 2 DELIVERIES",
+        "Delivery charges (Caesarean)": "AFTER 24 MONTHS 25,000/ DELIVERY MAX 2 DELIVERIES",
+        "NEW BORN BABY COVER": "DAY 1 COVER AFTER 24 MONTHS UPTO 25% of SI",
+        "Vaccination Exp For Child": "2,500 for New Born (up to 12 months from birth)",
+        "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+        "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+        "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.50,00/-",
+        "Miscarriage due to Accident": "AFTER 24 MONTHS LUMPSUM OF Rs.25,000/-",
+        "In Utero Fetal Surgery / Repair": "AFTER 24 MONTHS UPTO SI",
+        "Ante-Natal Care": "AFTER 24 MONTHS UPTO Rs.2500/-",
+        "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "STAR WOMEN CARE INSURANCE POLCIY",
+      "Adult Age Entry (MIN-MAX)": "18 -75 yrs",
+      "Child  Age Entry": "91day -25 yrs (FEMALE-30Y)",
+      "Sum Insured Range": "5L",
+      "Policy Duration": "1/2/3 YRS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "one female/husband and wife/upto 2A +3C",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "upto  SI",
+      "Domicilary Expenses": "upto  SI",
+      "Consumables": "YES ( AS PER LIST 1)",
+      "SI RESTORE /RECHARGE": "100% USE SAME CLAIM"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEAR",
+      "Pre Existing Disease": "FIRST 2 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "1% OF SI , MAX RS.5,000/-",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "NO"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "RS.1,000 TO RS.5,000 FOR EVERY YEAR",
+      "Discounts": "Up to 10% WELLNESS DISCOUNT"
+    },
+    "special_features_others": {
+      "2": "MODERN TREATMENT Upto50% OF SI",
+      "3": "NO",
+      "4": "NO",
+      "5": "Rehabilitation and Pain Management Upto 10% of SI",
+      "7": "Bariatric Surgery Upto Rs. 2.50L",
+      "8": "OP Consultations (for Females) Upto Rs.2,500/YR",
+      "9": "Insured Child (<12 yrs) admits in ICU, exp. for Mother\u2019s stay @ hospital up to Single Pvt. AC Room is payable",
+      "10": "Dependent child Covers till 30 years if unmarried and dependent on parents",
+      "Organ Donor Expenses": "Upto SI"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "EITHER IND/ FAMILY",
+      "WAITING PERIOD 1st DELIVERY": "2 YRS",
+      "WAITING PERIOD 2nd DELIVERY": "NO",
+      "Delivery charges (NORMAL)": "AFTER 24 MONTHS 25,000/ DELIVERY MAX 2 DELIVERIES",
+      "Delivery charges (Caesarean)": "AFTER 24 MONTHS 25,000/ DELIVERY MAX 2 DELIVERIES",
+      "NEW BORN BABY COVER": "DAY 1 COVER AFTER 24 MONTHS UPTO 25% of SI",
+      "Vaccination Exp For Child": "2,500 for New Born (up to 12 months from birth)",
+      "Pediatrician Consultations for child": "RS.500/ PER CONSULTATION, MAX. 4 TIMES UPTO 12YEARS",
+      "Metabolic Screening": "RS.3,500/- FOR EVERY NEW BORN",
+      "INFERTILITY / ASSTREPRODUCTION": "AFTER 36 MONTHS UPTO Rs.50,00/-",
+      "Miscarriage due to Accident": "AFTER 24 MONTHS LUMPSUM OF Rs.25,000/-",
+      "In Utero Fetal Surgery / Repair": "AFTER 24 MONTHS UPTO SI",
+      "Ante-Natal Care": "AFTER 24 MONTHS UPTO Rs.2500/-",
+      "Voluntary Sterilization Exp.": "AFTER 24 MONTHS UPTO SI"
+    },
+    "planName": "STAR WOMEN CARE INSURANCE POLCIY",
+    "company": "STAR",
+    "sumInsuredRange": "5L",
+    "normalizedSumInsured": "5l",
+    "generatedFilename": "star_women_care_insurance_polciy_5l.json"
+  }
+]

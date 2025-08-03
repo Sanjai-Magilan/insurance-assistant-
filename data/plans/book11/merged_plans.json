@@ -1,0 +1,901 @@
+[
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.907Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "Company",
+        "Plan Name": "Plan Name",
+        "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+        "Child  Age Entry": "Child  Age Entry",
+        "Sum Insured Range": "Sum Insured Range",
+        "Policy Duration": "Policy Duration",
+        "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+        "Who all can be covered": "Who all can be covered",
+        "MID TERM INCLUSION": "MID TERM INCLUSION",
+        "Medical Screening Before Policy": "Medical Screening Before Policy"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Pre-Hospitalization",
+        "Post-Hospitalization": "Post-Hospitalization",
+        "Emergency Ambulance": "Emergency Ambulance",
+        "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+        "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+        "Domicilary Expenses": "Domicilary Expenses",
+        "Consumables": "Consumables",
+        "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+        "MODERN TREATMENTS": "MODERN TREATMENTS",
+        "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "INITIAL WAITING",
+        "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+        "Pre Existing Disease": "Pre Existing Disease"
+      },
+      "sub_limits": {
+        "Room Rent/day": "Room Rent/day",
+        "ICU/day": "ICU/day",
+        "Co - Pay": "Co - Pay",
+        "Cataract Limits": "Cataract Limits",
+        "Other Sub Limits": "Other Sub Limits"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "No claim bonus",
+        "Free Health Check-up": "Free Health Check-up",
+        "Discounts": "Discounts"
+      },
+      "special_features_others": {
+        "Organ Donor Expenses": "Organ Donor Expenses",
+        "MODERN TREATMENT": "MODERN TREATMENT",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "AIR AMBULANCE",
+        "Rehabilitation and Pain Management": "Rehabilitation and Pain Management",
+        "Home care treatment": "Home care treatment"
+      }
+    },
+    "plan_details": {
+      "Company": "Company",
+      "Plan Name": "Plan Name",
+      "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+      "Child  Age Entry": "Child  Age Entry",
+      "Sum Insured Range": "Sum Insured Range",
+      "Policy Duration": "Policy Duration",
+      "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+      "Who all can be covered": "Who all can be covered",
+      "MID TERM INCLUSION": "MID TERM INCLUSION",
+      "Medical Screening Before Policy": "Medical Screening Before Policy"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Pre-Hospitalization",
+      "Post-Hospitalization": "Post-Hospitalization",
+      "Emergency Ambulance": "Emergency Ambulance",
+      "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+      "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+      "Domicilary Expenses": "Domicilary Expenses",
+      "Consumables": "Consumables",
+      "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+      "MODERN TREATMENTS": "MODERN TREATMENTS",
+      "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "INITIAL WAITING",
+      "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+      "Pre Existing Disease": "Pre Existing Disease"
+    },
+    "sub_limits": {
+      "Room Rent/day": "Room Rent/day",
+      "ICU/day": "ICU/day",
+      "Co - Pay": "Co - Pay",
+      "Cataract Limits": "Cataract Limits",
+      "Other Sub Limits": "Other Sub Limits"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "No claim bonus",
+      "Free Health Check-up": "Free Health Check-up",
+      "Discounts": "Discounts"
+    },
+    "special_features_others": {
+      "Organ Donor Expenses": "Organ Donor Expenses",
+      "MODERN TREATMENT": "MODERN TREATMENT",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "AIR AMBULANCE",
+      "Rehabilitation and Pain Management": "Rehabilitation and Pain Management",
+      "Home care treatment": "Home care treatment"
+    },
+    "planName": "Plan Name",
+    "company": "Company",
+    "sumInsuredRange": "Sum Insured Range",
+    "normalizedSumInsured": "sum insured range",
+    "generatedFilename": "plan_name_suminsuredrange.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.965Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "10L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.3,500/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "10L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.3,500/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL -  GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "10L",
+    "normalizedSumInsured": "10l",
+    "generatedFilename": "young_star_individual_gold_10l.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.929Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "3L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.1,500/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "3L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.1,500/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL -  GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "3L",
+    "normalizedSumInsured": "3l",
+    "generatedFilename": "young_star_individual_gold_3l.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.949Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "5L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.2,000/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "5L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.2,000/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL -  GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "5L",
+    "normalizedSumInsured": "5l",
+    "generatedFilename": "young_star_individual_gold_5l.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.980Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "15/20/25/50/75L/1Cr",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.3,500/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL -  GOLD",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "15/20/25/50/75L/1Cr",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.3,500/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "7": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL -  GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "15/20/25/50/75L/1Cr",
+    "normalizedSumInsured": "75l",
+    "generatedFilename": "young_star_individual_gold_75l.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.957Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "10L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.3,000/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "7": "NO",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "10L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.3,000/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "7": "NO",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL  - SILVER",
+    "company": "STAR",
+    "sumInsuredRange": "10L",
+    "normalizedSumInsured": "10l",
+    "generatedFilename": "young_star_individual_silver_10l.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.921Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "3L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.2,000/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "3L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.2,000/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL  - SILVER",
+    "company": "STAR",
+    "sumInsuredRange": "3L",
+    "normalizedSumInsured": "3l",
+    "generatedFilename": "young_star_individual_silver_3l.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.939Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "5L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.2,000/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "7": "NO",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "5L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.2,000/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "7": "NO",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL  - SILVER",
+    "company": "STAR",
+    "sumInsuredRange": "5L",
+    "normalizedSumInsured": "5l",
+    "generatedFilename": "young_star_individual_silver_5l.json"
+  },
+  {
+    "sourceFile": "Book11.csv",
+    "extractedAt": "2025-07-13T14:37:02.972Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "NO",
+        "Sum Insured Range": "15/20/25/50/75L/1Cr",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "INDIVIDUAL",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUALS",
+        "Co - Pay": "NO",
+        "Cataract Limits": "NO",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.3,500/- IRRESPECTIVE OF CLAIM",
+        "Discounts": "2- 10%"
+      },
+      "special_features_others": {
+        "7": "NO",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR INDIVIDUAL  - SILVER",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "NO",
+      "Sum Insured Range": "15/20/25/50/75L/1Cr",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "INDIVIDUAL",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUALS",
+      "Co - Pay": "NO",
+      "Cataract Limits": "NO",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.3,500/- IRRESPECTIVE OF CLAIM",
+      "Discounts": "2- 10%"
+    },
+    "special_features_others": {
+      "7": "NO",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS"
+    },
+    "planName": "YOUNG STAR INDIVIDUAL  - SILVER",
+    "company": "STAR",
+    "sumInsuredRange": "15/20/25/50/75L/1Cr",
+    "normalizedSumInsured": "75l",
+    "generatedFilename": "young_star_individual_silver_75l.json"
+  }
+]

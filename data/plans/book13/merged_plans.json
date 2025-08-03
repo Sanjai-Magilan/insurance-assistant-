@@ -1,0 +1,1202 @@
+[
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.054Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC- BASE",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "10/15L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "30 DAYS",
+        "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+        "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "2%OF SI, MAX RS.5K/DAY",
+        "ICU/day": "NO",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.30K/ EYE MAX 40K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+        "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+        "Discounts": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC- BASE",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "10/15L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "30 DAYS",
+      "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+      "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "2%OF SI, MAX RS.5K/DAY",
+      "ICU/day": "NO",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.30K/ EYE MAX 40K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+      "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+      "Discounts": "NO"
+    },
+    "planName": "MEDICLASSIC- BASE",
+    "company": "STAR",
+    "sumInsuredRange": "10/15L",
+    "normalizedSumInsured": "15l",
+    "generatedFilename": "mediclassic_base_15l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.037Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC- BASE",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "2L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "30 DAYS",
+        "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+        "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "RS.4,000/DAY",
+        "ICU/day": "NO",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.12K / YEAR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+        "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+        "Discounts": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC- BASE",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "2L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "30 DAYS",
+      "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+      "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "RS.4,000/DAY",
+      "ICU/day": "NO",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.12K / YEAR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+      "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+      "Discounts": "NO"
+    },
+    "planName": "MEDICLASSIC- BASE",
+    "company": "STAR",
+    "sumInsuredRange": "2L",
+    "normalizedSumInsured": "2l",
+    "generatedFilename": "mediclassic_base_2l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.029Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC- BASE",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "1.5L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "30 DAYS",
+        "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+        "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "RS.3,000/DAY",
+        "ICU/day": "NO",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.12K / YEAR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+        "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+        "Discounts": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC- BASE",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "1.5L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "30 DAYS",
+      "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+      "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "RS.3,000/DAY",
+      "ICU/day": "NO",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.12K / YEAR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+      "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+      "Discounts": "NO"
+    },
+    "planName": "MEDICLASSIC- BASE",
+    "company": "STAR",
+    "sumInsuredRange": "1.5L",
+    "normalizedSumInsured": "5l",
+    "generatedFilename": "mediclassic_base_5l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.045Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC- BASE",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "3/4/5 L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "30 DAYS",
+        "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+        "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "2%OF SI, MAX RS.5K/DAY",
+        "ICU/day": "NO",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.20K/ EYE MAX 30K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+        "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+        "Discounts": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC- BASE",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "3/4/5 L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "30 DAYS",
+      "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
+      "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "2%OF SI, MAX RS.5K/DAY",
+      "ICU/day": "NO",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.20K/ EYE MAX 30K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
+      "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+      "Discounts": "NO"
+    },
+    "planName": "MEDICLASSIC- BASE",
+    "company": "STAR",
+    "sumInsuredRange": "3/4/5 L",
+    "normalizedSumInsured": "5l",
+    "generatedFilename": "mediclassic_base_5l_v1.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.086Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC - GOLD",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "10L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 30 days",
+        "Post-Hospitalization": "Upto 60 days",
+        "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE STD AC",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.40K/ EYE NOT EXCEEDING 50K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+        "Free Health Check-up": "Rs.2500/YEAR",
+        "Discounts": "5%"
+      },
+      "special_features_others": {
+        "1": "SUPER RESTORATION 100%",
+        "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+        "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+        "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "10L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE STD AC",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.40K/ EYE NOT EXCEEDING 50K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.2500/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    },
+    "planName": "MEDICLASSIC - GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "10L",
+    "normalizedSumInsured": "10l",
+    "generatedFilename": "mediclassic_gold_10l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.094Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC - GOLD",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "15 L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 30 days",
+        "Post-Hospitalization": "Upto 60 days",
+        "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE STD AC",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.40K/ EYE NOT EXCEEDING 50K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+        "Free Health Check-up": "Rs.2500/YEAR",
+        "Discounts": "5%"
+      },
+      "special_features_others": {
+        "1": "SUPER RESTORATION 100%",
+        "2": "SHARED ACCOMMODATION Rs.1,000/DAY/MAXIMUM RS.6,000/HOSPITALIZATION",
+        "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+        "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "15 L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE STD AC",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.40K/ EYE NOT EXCEEDING 50K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.2500/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.1,000/DAY/MAXIMUM RS.6,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    },
+    "planName": "MEDICLASSIC - GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "15 L",
+    "normalizedSumInsured": "15l",
+    "generatedFilename": "mediclassic_gold_15l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.102Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC - GOLD",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "20L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 30 days",
+        "Post-Hospitalization": "Upto 60 days",
+        "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE STD AC",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.45K/ EYE NOT EXCEEDING 60K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+        "Free Health Check-up": "Rs.5,000/YEAR",
+        "Discounts": "5%"
+      },
+      "special_features_others": {
+        "1": "SUPER RESTORATION 100%",
+        "2": "SHARED ACCOMMODATION Rs.1,000/DAY/MAXIMUM RS.6,000/HOSPITALIZATION",
+        "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+        "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "20L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE STD AC",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.45K/ EYE NOT EXCEEDING 60K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.5,000/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.1,000/DAY/MAXIMUM RS.6,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    },
+    "planName": "MEDICLASSIC - GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "20L",
+    "normalizedSumInsured": "20l",
+    "generatedFilename": "mediclassic_gold_20l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.109Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC - GOLD",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "25L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 30 days",
+        "Post-Hospitalization": "Upto 60 days",
+        "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE STD AC",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.45K/ EYE NOT EXCEEDING 60K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+        "Free Health Check-up": "Rs.5,000/YEAR",
+        "Discounts": "5%"
+      },
+      "special_features_others": {
+        "1": "SUPER RESTORATION 100%",
+        "2": "SHARED ACCOMMODATION Rs.1,000/DAY/MAXIMUM RS.6,000/HOSPITALIZATION",
+        "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+        "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "25L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE STD AC",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.45K/ EYE NOT EXCEEDING 60K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.5,000/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.1,000/DAY/MAXIMUM RS.6,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    },
+    "planName": "MEDICLASSIC - GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "25L",
+    "normalizedSumInsured": "25l",
+    "generatedFilename": "mediclassic_gold_25l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.061Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC - GOLD",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "3L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 30 days",
+        "Post-Hospitalization": "Upto 60 days",
+        "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "RS.5,OOO/DAY INCLUDING NURSING FEES",
+        "ICU/day": "NO",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+        "Free Health Check-up": "Rs.1500/YEAR",
+        "Discounts": "5%"
+      },
+      "special_features_others": {
+        "1": "SUPER RESTORATION 100%",
+        "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+        "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+        "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "3L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "RS.5,OOO/DAY INCLUDING NURSING FEES",
+      "ICU/day": "NO",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.1500/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    },
+    "planName": "MEDICLASSIC - GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "3L",
+    "normalizedSumInsured": "3l",
+    "generatedFilename": "mediclassic_gold_3l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.069Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC - GOLD",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "4L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 30 days",
+        "Post-Hospitalization": "Upto 60 days",
+        "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "RS.5,OOO/DAY INCLUDING NURSING FEES",
+        "ICU/day": "NO",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+        "Free Health Check-up": "Rs.1500/YEAR",
+        "Discounts": "5%"
+      },
+      "special_features_others": {
+        "1": "SUPER RESTORATION 100%",
+        "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+        "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+        "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "4L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "RS.5,OOO/DAY INCLUDING NURSING FEES",
+      "ICU/day": "NO",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.1500/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    },
+    "planName": "MEDICLASSIC - GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "4L",
+    "normalizedSumInsured": "4l",
+    "generatedFilename": "mediclassic_gold_4l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.077Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "MEDICLASSIC - GOLD",
+        "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+        "Child  Age Entry": "5MONTHS",
+        "Sum Insured Range": "5 L",
+        "Policy Duration": "1/2 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+        "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+        "MID TERM INCLUSION": "NO",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 30 days",
+        "Post-Hospitalization": "Upto 60 days",
+        "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+        "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+        "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+        "Domicilary Expenses": "YES",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+        "MODERN TREATMENTS": "NO",
+        "ORGAN DONOR EXPENSES": "NO"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 2 YEARS",
+        "Pre Existing Disease": "FIRST 4 YEARS"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE STD AC",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": ">60YEARS AGE ENTRY -20%",
+        "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+        "Free Health Check-up": "Rs.1500/YEAR",
+        "Discounts": "5%"
+      },
+      "special_features_others": {
+        "1": "SUPER RESTORATION 100%",
+        "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+        "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+        "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "5 L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE STD AC",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.1500/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    },
+    "planName": "MEDICLASSIC - GOLD",
+    "company": "STAR",
+    "sumInsuredRange": "5 L",
+    "normalizedSumInsured": "5l",
+    "generatedFilename": "mediclassic_gold_5l.json"
+  },
+  {
+    "sourceFile": "Book13.csv",
+    "extractedAt": "2025-07-13T14:38:29.018Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "Company",
+        "Plan Name": "Plan Name",
+        "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+        "Child  Age Entry": "Child  Age Entry",
+        "Sum Insured Range": "Sum Insured Range",
+        "Policy Duration": "Policy Duration",
+        "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+        "Who all can be covered": "Who all can be covered",
+        "MID TERM INCLUSION": "MID TERM INCLUSION",
+        "Medical Screening Before Policy": "Medical Screening Before Policy"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Pre-Hospitalization",
+        "Post-Hospitalization": "Post-Hospitalization",
+        "Emergency Ambulance": "Emergency Ambulance",
+        "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+        "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+        "Domicilary Expenses": "Domicilary Expenses",
+        "Consumables": "Consumables",
+        "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+        "MODERN TREATMENTS": "MODERN TREATMENTS",
+        "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "INITIAL WAITING",
+        "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+        "Pre Existing Disease": "Pre Existing Disease"
+      },
+      "sub_limits": {
+        "Room Rent/day": "Room Rent/day",
+        "ICU/day": "ICU/day",
+        "Co - Pay": "Co - Pay",
+        "Cataract Limits": "Cataract Limits",
+        "Other Sub Limits": "Other Sub Limits"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "No claim bonus",
+        "Free Health Check-up": "Free Health Check-up",
+        "Discounts": "Discounts"
+      }
+    },
+    "plan_details": {
+      "Company": "Company",
+      "Plan Name": "Plan Name",
+      "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+      "Child  Age Entry": "Child  Age Entry",
+      "Sum Insured Range": "Sum Insured Range",
+      "Policy Duration": "Policy Duration",
+      "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+      "Who all can be covered": "Who all can be covered",
+      "MID TERM INCLUSION": "MID TERM INCLUSION",
+      "Medical Screening Before Policy": "Medical Screening Before Policy"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Pre-Hospitalization",
+      "Post-Hospitalization": "Post-Hospitalization",
+      "Emergency Ambulance": "Emergency Ambulance",
+      "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+      "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+      "Domicilary Expenses": "Domicilary Expenses",
+      "Consumables": "Consumables",
+      "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+      "MODERN TREATMENTS": "MODERN TREATMENTS",
+      "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "INITIAL WAITING",
+      "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+      "Pre Existing Disease": "Pre Existing Disease"
+    },
+    "sub_limits": {
+      "Room Rent/day": "Room Rent/day",
+      "ICU/day": "ICU/day",
+      "Co - Pay": "Co - Pay",
+      "Cataract Limits": "Cataract Limits",
+      "Other Sub Limits": "Other Sub Limits"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "No claim bonus",
+      "Free Health Check-up": "Free Health Check-up",
+      "Discounts": "Discounts"
+    },
+    "planName": "Plan Name",
+    "company": "Company",
+    "sumInsuredRange": "Sum Insured Range",
+    "normalizedSumInsured": "sum insured range",
+    "generatedFilename": "plan_name_suminsuredrange.json"
+  }
+]

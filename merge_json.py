@@ -2,8 +2,8 @@ import os
 import json
 
 # Correct path to Data/plans
-plans_dir = "Data/plans"
-output_file = "Data/merged_plans.json"
+plans_dir = "Data/plans/book14"
+output_file = "Data/plans/book14/merged_plans.json"
 
 all_plans = []
 

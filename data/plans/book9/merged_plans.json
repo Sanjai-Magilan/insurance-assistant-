@@ -1,0 +1,1343 @@
+[
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.387Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "Company",
+        "Plan Name": "Plan Name",
+        "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+        "Child  Age Entry": "Child  Age Entry",
+        "Sum Insured Range": "Sum Insured Range",
+        "Policy Duration": "Policy Duration",
+        "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+        "Who all can be covered": "Who all can be covered",
+        "MID TERM INCLUSION": "MID TERM INCLUSION",
+        "Medical Screening Before Policy": "Medical Screening Before Policy"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Pre-Hospitalization",
+        "Post-Hospitalization": "Post-Hospitalization",
+        "Emergency Ambulance": "Emergency Ambulance",
+        "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+        "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+        "Domicilary Expenses": "Domicilary Expenses",
+        "Consumables": "Consumables",
+        "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+        "MODERN TREATMENTS": "MODERN TREATMENTS",
+        "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "INITIAL WAITING",
+        "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+        "Pre Existing Disease": "Pre Existing Disease"
+      },
+      "sub_limits": {
+        "Room Rent/day": "Room Rent/day",
+        "ICU/day": "ICU/day",
+        "Co - Pay": "Co - Pay",
+        "Cataract Limits": "Cataract Limits",
+        "Other Sub Limits": "Other Sub Limits"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "No claim bonus",
+        "Free Health Check-up": "Free Health Check-up",
+        "Discounts": "Discounts"
+      },
+      "special_features_others": {
+        "Organ Donor Expenses": "Organ Donor Expenses",
+        "MODERN TREATMENT": "MODERN TREATMENT",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "AIR AMBULANCE",
+        "Rehabilitation and Pain Management": "Rehabilitation and Pain Management",
+        "Home care treatment": "Home care treatment"
+      },
+      "maternity_cover": {
+        "WAITING PERIOD": "WAITING PERIOD",
+        "Delivery charges (NORMAL)": "Delivery charges (NORMAL)",
+        "Delivery charges (Caesarean)": "Delivery charges (Caesarean)",
+        "PRE/POST NATAL": "PRE/POST NATAL",
+        "NEW BORN BABY COVER": "NEW BORN BABY COVER",
+        "Child Vaccination Cover": "Child Vaccination Cover",
+        "Infertility Treatment": "Infertility Treatment",
+        "AVAILABLE CONDITION": "AVAILABLE CONDITION",
+        "WAITING PERIOD 1st DELIVERY": "WAITING PERIOD 1st DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "WAITING PERIOD 2nd DELIVERY",
+        "Vaccination Exp For Child": "Vaccination Exp For Child",
+        "Pediatrician Consultations for child": "Pediatrician Consultations for child",
+        "Metabolic Screening": "Metabolic Screening",
+        "INFERTILITY / ASSTREPRODUCTION": "INFERTILITY / ASST.REPRODUCTION",
+        "Miscarriage due to Accident": "Miscarriage due to Accident",
+        "In Utero Fetal Surgery / Repair": "In Utero Fetal Surgery / Repair",
+        "Ante-Natal Care": "Ante-Natal Care",
+        "Voluntary Sterilization Exp.": "Voluntary Sterilization Exp."
+      }
+    },
+    "plan_details": {
+      "Company": "Company",
+      "Plan Name": "Plan Name",
+      "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+      "Child  Age Entry": "Child  Age Entry",
+      "Sum Insured Range": "Sum Insured Range",
+      "Policy Duration": "Policy Duration",
+      "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+      "Who all can be covered": "Who all can be covered",
+      "MID TERM INCLUSION": "MID TERM INCLUSION",
+      "Medical Screening Before Policy": "Medical Screening Before Policy"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Pre-Hospitalization",
+      "Post-Hospitalization": "Post-Hospitalization",
+      "Emergency Ambulance": "Emergency Ambulance",
+      "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+      "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+      "Domicilary Expenses": "Domicilary Expenses",
+      "Consumables": "Consumables",
+      "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+      "MODERN TREATMENTS": "MODERN TREATMENTS",
+      "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "INITIAL WAITING",
+      "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+      "Pre Existing Disease": "Pre Existing Disease"
+    },
+    "sub_limits": {
+      "Room Rent/day": "Room Rent/day",
+      "ICU/day": "ICU/day",
+      "Co - Pay": "Co - Pay",
+      "Cataract Limits": "Cataract Limits",
+      "Other Sub Limits": "Other Sub Limits"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "No claim bonus",
+      "Free Health Check-up": "Free Health Check-up",
+      "Discounts": "Discounts"
+    },
+    "special_features_others": {
+      "Organ Donor Expenses": "Organ Donor Expenses",
+      "MODERN TREATMENT": "MODERN TREATMENT",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "AIR AMBULANCE",
+      "Rehabilitation and Pain Management": "Rehabilitation and Pain Management",
+      "Home care treatment": "Home care treatment"
+    },
+    "maternity_cover": {
+      "WAITING PERIOD": "WAITING PERIOD",
+      "Delivery charges (NORMAL)": "Delivery charges (NORMAL)",
+      "Delivery charges (Caesarean)": "Delivery charges (Caesarean)",
+      "PRE/POST NATAL": "PRE/POST NATAL",
+      "NEW BORN BABY COVER": "NEW BORN BABY COVER",
+      "Child Vaccination Cover": "Child Vaccination Cover",
+      "Infertility Treatment": "Infertility Treatment",
+      "AVAILABLE CONDITION": "AVAILABLE CONDITION",
+      "WAITING PERIOD 1st DELIVERY": "WAITING PERIOD 1st DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "WAITING PERIOD 2nd DELIVERY",
+      "Vaccination Exp For Child": "Vaccination Exp For Child",
+      "Pediatrician Consultations for child": "Pediatrician Consultations for child",
+      "Metabolic Screening": "Metabolic Screening",
+      "INFERTILITY / ASSTREPRODUCTION": "INFERTILITY / ASST.REPRODUCTION",
+      "Miscarriage due to Accident": "Miscarriage due to Accident",
+      "In Utero Fetal Surgery / Repair": "In Utero Fetal Surgery / Repair",
+      "Ante-Natal Care": "Ante-Natal Care",
+      "Voluntary Sterilization Exp.": "Voluntary Sterilization Exp."
+    },
+    "planName": "Plan Name",
+    "company": "Company",
+    "sumInsuredRange": "Sum Insured Range",
+    "normalizedSumInsured": "sum insured range",
+    "generatedFilename": "plan_name_suminsuredrange.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.415Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "10L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.4,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "10L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.4,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "10L",
+    "normalizedSumInsured": "10l",
+    "generatedFilename": "young_star_10l.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.428Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "15L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "15L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "15L",
+    "normalizedSumInsured": "15l",
+    "generatedFilename": "young_star_15l.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.485Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "1Cr",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "1Cr",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "1Cr",
+    "normalizedSumInsured": "1cr",
+    "generatedFilename": "young_star_1cr.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.440Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "20L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "20L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "20L",
+    "normalizedSumInsured": "20l",
+    "generatedFilename": "young_star_20l.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.450Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "25L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "25L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "25L",
+    "normalizedSumInsured": "25l",
+    "generatedFilename": "young_star_25l.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.462Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "50L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "50L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "50L",
+    "normalizedSumInsured": "50l",
+    "generatedFilename": "young_star_50l.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.404Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "5L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.3,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "5L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.3,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "5L",
+    "normalizedSumInsured": "5l",
+    "generatedFilename": "young_star_5l.json"
+  },
+  {
+    "sourceFile": "Book9.csv",
+    "extractedAt": "2025-07-13T14:32:52.473Z",
+    "rawData": {
+      "plan_details": {
+        "Company": "STAR",
+        "Plan Name": "YOUNG STAR",
+        "Adult Age Entry (MIN-MAX)": "18- 40 years",
+        "Child  Age Entry": "91days - 25 yrs",
+        "Sum Insured Range": "75L",
+        "Policy Duration": "1/2/3 YEARS",
+        "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+        "Who all can be covered": "family upto 2 adults and 3 children",
+        "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+        "Medical Screening Before Policy": "NO"
+      },
+      "basic_coverages": {
+        "Pre-Hospitalization": "Upto 60 days",
+        "Post-Hospitalization": "Upto 90 days",
+        "Emergency Ambulance": "ACTUAL",
+        "DAY CARE (PROCEDURE/SURGERY)": "YES",
+        "Non-Allopathic Treatment (AYUSH)": "NO",
+        "Domicilary Expenses": "NO",
+        "Consumables": "NO",
+        "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+      },
+      "exclusions_waiting_periods": {
+        "INITIAL WAITING": "FIRST 30 DAYS",
+        "SPECIFIC DISEASE": "FIRST 1 YEAR",
+        "Pre Existing Disease": "FIRST 1 YEAR"
+      },
+      "sub_limits": {
+        "Room Rent/day": "SINGLE PVT AC ROOM",
+        "ICU/day": "ACTUAL",
+        "Co - Pay": "NO",
+        "Cataract Limits": "ACTUALS",
+        "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+      },
+      "renewal_benefits": {
+        "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+        "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+        "Discounts": "UPTO 10%"
+      },
+      "special_features_others": {
+        "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+        "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+        "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+        "Organ Donor Expenses": "NO",
+        "MODERN TREATMENT": "NO",
+        "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+        "AIR AMBULANCE": "NO",
+        "Rehabilitation and Pain Management": "NO",
+        "Home care treatment": "NO"
+      },
+      "maternity_cover": {
+        "PRE/POST NATAL": "NO",
+        "NEW BORN BABY COVER": "NO",
+        "Child Vaccination Cover": "NO",
+        "Infertility Treatment": "NO",
+        "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+        "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+        "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+        "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+        "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+        "Vaccination Exp For Child": "NO",
+        "Pediatrician Consultations for child": "NO",
+        "Metabolic Screening": "NO",
+        "INFERTILITY / ASSTREPRODUCTION": "NO",
+        "Miscarriage due to Accident": "NO",
+        "In Utero Fetal Surgery / Repair": "NO",
+        "Ante-Natal Care": "NO",
+        "Voluntary Sterilization Exp.": "NO"
+      }
+    },
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "YOUNG STAR",
+      "Adult Age Entry (MIN-MAX)": "18- 40 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Sum Insured Range": "75L",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY",
+      "Who all can be covered": "family upto 2 adults and 3 children",
+      "MID TERM INCLUSION": "SPOUSE WITHIN 45DAYS, CHILD WITHIN 90DAYS",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "YES",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 1 YEAR",
+      "Pre Existing Disease": "FIRST 1 YEAR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE PVT AC ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": "NO",
+      "Cataract Limits": "ACTUALS",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT / CATEGORY"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
+      "Free Health Check-up": "EVERY RENEWAL RS.5,000 IRRESPECTIVE OF CLAIM",
+      "Discounts": "UPTO 10%"
+    },
+    "special_features_others": {
+      "7": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+      "8": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+      "9": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "PRE/POST NATAL": "NO",
+      "NEW BORN BABY COVER": "NO",
+      "Child Vaccination Cover": "NO",
+      "Infertility Treatment": "NO",
+      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 3 YEARS",
+      "WAITING PERIOD 1st DELIVERY": "AFTER 36 MONTHS, MAX 2 DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "24 MONTHS AFTER 1st DELIVERY",
+      "Delivery charges (NORMAL)": "UPTO-Rs.30,000/-",
+      "Delivery charges (Caesarean)": "UPTO-Rs.30,000/-",
+      "Vaccination Exp For Child": "NO",
+      "Pediatrician Consultations for child": "NO",
+      "Metabolic Screening": "NO",
+      "INFERTILITY / ASSTREPRODUCTION": "NO",
+      "Miscarriage due to Accident": "NO",
+      "In Utero Fetal Surgery / Repair": "NO",
+      "Ante-Natal Care": "NO",
+      "Voluntary Sterilization Exp.": "NO"
+    },
+    "planName": "YOUNG STAR",
+    "company": "STAR",
+    "sumInsuredRange": "75L",
+    "normalizedSumInsured": "75l",
+    "generatedFilename": "young_star_75l.json"
+  }
+]
