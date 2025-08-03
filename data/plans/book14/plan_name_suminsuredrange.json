@@ -1,0 +1,93 @@
+{
+  "sourceFile": "Book14.csv",
+  "extractedAt": "2025-07-13T14:38:54.232Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "Company",
+      "Plan Name": "Plan Name",
+      "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+      "Child  Age Entry": "Child  Age Entry",
+      "Sum Insured Range": "Sum Insured Range",
+      "Policy Duration": "Policy Duration",
+      "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+      "Who all can be covered": "Who all can be covered",
+      "MID TERM INCLUSION": "MID TERM INCLUSION",
+      "Medical Screening Before Policy": "Medical Screening Before Policy"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Pre-Hospitalization",
+      "Post-Hospitalization": "Post-Hospitalization",
+      "Emergency Ambulance": "Emergency Ambulance",
+      "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+      "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+      "Domicilary Expenses": "Domicilary Expenses",
+      "Consumables": "Consumables",
+      "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+      "MODERN TREATMENTS": "MODERN TREATMENTS",
+      "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "INITIAL WAITING",
+      "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+      "Pre Existing Disease": "Pre Existing Disease"
+    },
+    "sub_limits": {
+      "Room Rent/day": "Room Rent/day",
+      "ICU/day": "ICU/day",
+      "Co - Pay": "Co - Pay",
+      "Cataract Limits": "Cataract Limits",
+      "Other Sub Limits": "Other Sub Limits"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "No claim bonus",
+      "Free Health Check-up": "Free Health Check-up",
+      "Discounts": "Discounts"
+    }
+  },
+  "plan_details": {
+    "Company": "Company",
+    "Plan Name": "Plan Name",
+    "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+    "Child  Age Entry": "Child  Age Entry",
+    "Sum Insured Range": "Sum Insured Range",
+    "Policy Duration": "Policy Duration",
+    "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+    "Who all can be covered": "Who all can be covered",
+    "MID TERM INCLUSION": "MID TERM INCLUSION",
+    "Medical Screening Before Policy": "Medical Screening Before Policy"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Pre-Hospitalization",
+    "Post-Hospitalization": "Post-Hospitalization",
+    "Emergency Ambulance": "Emergency Ambulance",
+    "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+    "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+    "Domicilary Expenses": "Domicilary Expenses",
+    "Consumables": "Consumables",
+    "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+    "MODERN TREATMENTS": "MODERN TREATMENTS",
+    "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "INITIAL WAITING",
+    "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+    "Pre Existing Disease": "Pre Existing Disease"
+  },
+  "sub_limits": {
+    "Room Rent/day": "Room Rent/day",
+    "ICU/day": "ICU/day",
+    "Co - Pay": "Co - Pay",
+    "Cataract Limits": "Cataract Limits",
+    "Other Sub Limits": "Other Sub Limits"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "No claim bonus",
+    "Free Health Check-up": "Free Health Check-up",
+    "Discounts": "Discounts"
+  },
+  "planName": "Plan Name",
+  "company": "Company",
+  "sumInsuredRange": "Sum Insured Range",
+  "normalizedSumInsured": "sum insured range",
+  "generatedFilename": "plan_name_suminsuredrange.json"
+}

@@ -1,0 +1,149 @@
+{
+  "sourceFile": "Book9.csv",
+  "extractedAt": "2025-07-13T14:32:52.387Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "Company",
+      "Plan Name": "Plan Name",
+      "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+      "Child  Age Entry": "Child  Age Entry",
+      "Sum Insured Range": "Sum Insured Range",
+      "Policy Duration": "Policy Duration",
+      "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+      "Who all can be covered": "Who all can be covered",
+      "MID TERM INCLUSION": "MID TERM INCLUSION",
+      "Medical Screening Before Policy": "Medical Screening Before Policy"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Pre-Hospitalization",
+      "Post-Hospitalization": "Post-Hospitalization",
+      "Emergency Ambulance": "Emergency Ambulance",
+      "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+      "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+      "Domicilary Expenses": "Domicilary Expenses",
+      "Consumables": "Consumables",
+      "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+      "MODERN TREATMENTS": "MODERN TREATMENTS",
+      "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "INITIAL WAITING",
+      "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+      "Pre Existing Disease": "Pre Existing Disease"
+    },
+    "sub_limits": {
+      "Room Rent/day": "Room Rent/day",
+      "ICU/day": "ICU/day",
+      "Co - Pay": "Co - Pay",
+      "Cataract Limits": "Cataract Limits",
+      "Other Sub Limits": "Other Sub Limits"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "No claim bonus",
+      "Free Health Check-up": "Free Health Check-up",
+      "Discounts": "Discounts"
+    },
+    "special_features_others": {
+      "Organ Donor Expenses": "Organ Donor Expenses",
+      "MODERN TREATMENT": "MODERN TREATMENT",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "AIR AMBULANCE",
+      "Rehabilitation and Pain Management": "Rehabilitation and Pain Management",
+      "Home care treatment": "Home care treatment"
+    },
+    "maternity_cover": {
+      "WAITING PERIOD": "WAITING PERIOD",
+      "Delivery charges (NORMAL)": "Delivery charges (NORMAL)",
+      "Delivery charges (Caesarean)": "Delivery charges (Caesarean)",
+      "PRE/POST NATAL": "PRE/POST NATAL",
+      "NEW BORN BABY COVER": "NEW BORN BABY COVER",
+      "Child Vaccination Cover": "Child Vaccination Cover",
+      "Infertility Treatment": "Infertility Treatment",
+      "AVAILABLE CONDITION": "AVAILABLE CONDITION",
+      "WAITING PERIOD 1st DELIVERY": "WAITING PERIOD 1st DELIVERY",
+      "WAITING PERIOD 2nd DELIVERY": "WAITING PERIOD 2nd DELIVERY",
+      "Vaccination Exp For Child": "Vaccination Exp For Child",
+      "Pediatrician Consultations for child": "Pediatrician Consultations for child",
+      "Metabolic Screening": "Metabolic Screening",
+      "INFERTILITY / ASSTREPRODUCTION": "INFERTILITY / ASST.REPRODUCTION",
+      "Miscarriage due to Accident": "Miscarriage due to Accident",
+      "In Utero Fetal Surgery / Repair": "In Utero Fetal Surgery / Repair",
+      "Ante-Natal Care": "Ante-Natal Care",
+      "Voluntary Sterilization Exp.": "Voluntary Sterilization Exp."
+    }
+  },
+  "plan_details": {
+    "Company": "Company",
+    "Plan Name": "Plan Name",
+    "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+    "Child  Age Entry": "Child  Age Entry",
+    "Sum Insured Range": "Sum Insured Range",
+    "Policy Duration": "Policy Duration",
+    "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+    "Who all can be covered": "Who all can be covered",
+    "MID TERM INCLUSION": "MID TERM INCLUSION",
+    "Medical Screening Before Policy": "Medical Screening Before Policy"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Pre-Hospitalization",
+    "Post-Hospitalization": "Post-Hospitalization",
+    "Emergency Ambulance": "Emergency Ambulance",
+    "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+    "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+    "Domicilary Expenses": "Domicilary Expenses",
+    "Consumables": "Consumables",
+    "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+    "MODERN TREATMENTS": "MODERN TREATMENTS",
+    "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "INITIAL WAITING",
+    "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+    "Pre Existing Disease": "Pre Existing Disease"
+  },
+  "sub_limits": {
+    "Room Rent/day": "Room Rent/day",
+    "ICU/day": "ICU/day",
+    "Co - Pay": "Co - Pay",
+    "Cataract Limits": "Cataract Limits",
+    "Other Sub Limits": "Other Sub Limits"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "No claim bonus",
+    "Free Health Check-up": "Free Health Check-up",
+    "Discounts": "Discounts"
+  },
+  "special_features_others": {
+    "Organ Donor Expenses": "Organ Donor Expenses",
+    "MODERN TREATMENT": "MODERN TREATMENT",
+    "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+    "AIR AMBULANCE": "AIR AMBULANCE",
+    "Rehabilitation and Pain Management": "Rehabilitation and Pain Management",
+    "Home care treatment": "Home care treatment"
+  },
+  "maternity_cover": {
+    "WAITING PERIOD": "WAITING PERIOD",
+    "Delivery charges (NORMAL)": "Delivery charges (NORMAL)",
+    "Delivery charges (Caesarean)": "Delivery charges (Caesarean)",
+    "PRE/POST NATAL": "PRE/POST NATAL",
+    "NEW BORN BABY COVER": "NEW BORN BABY COVER",
+    "Child Vaccination Cover": "Child Vaccination Cover",
+    "Infertility Treatment": "Infertility Treatment",
+    "AVAILABLE CONDITION": "AVAILABLE CONDITION",
+    "WAITING PERIOD 1st DELIVERY": "WAITING PERIOD 1st DELIVERY",
+    "WAITING PERIOD 2nd DELIVERY": "WAITING PERIOD 2nd DELIVERY",
+    "Vaccination Exp For Child": "Vaccination Exp For Child",
+    "Pediatrician Consultations for child": "Pediatrician Consultations for child",
+    "Metabolic Screening": "Metabolic Screening",
+    "INFERTILITY / ASSTREPRODUCTION": "INFERTILITY / ASST.REPRODUCTION",
+    "Miscarriage due to Accident": "Miscarriage due to Accident",
+    "In Utero Fetal Surgery / Repair": "In Utero Fetal Surgery / Repair",
+    "Ante-Natal Care": "Ante-Natal Care",
+    "Voluntary Sterilization Exp.": "Voluntary Sterilization Exp."
+  },
+  "planName": "Plan Name",
+  "company": "Company",
+  "sumInsuredRange": "Sum Insured Range",
+  "normalizedSumInsured": "sum insured range",
+  "generatedFilename": "plan_name_suminsuredrange.json"
+}

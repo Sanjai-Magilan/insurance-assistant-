@@ -1,0 +1,102 @@
+{
+  "sourceFile": "Book5.csv",
+  "extractedAt": "2025-07-13T14:30:21.167Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "Comprehensive",
+      "Adult Age Entry (MIN-MAX)": "18- 65 years",
+      "Child  Age Entry": "91days - 25 yrs",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY) /YLY - 1/2/3 YRS",
+      "Medical Screening Before Policy": "YES"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 60 days",
+      "Post-Hospitalization": "Upto 90 days",
+      "Emergency Ambulance": "ACTUAL",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "UPTO Rs.15,000/-",
+      "Domicilary Expenses": "YES",
+      "Consumables": "No",
+      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 3 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "SINGLE A/C ROOM",
+      "ICU/day": "ACTUAL",
+      "Co - Pay": ">60YEARS AGE ENTRY -10%",
+      "Cataract Limits": "UPTO SUM INSURED"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "50% EACH YEAR MAXIMUM 100%",
+      "Free Health Check-up": "Rs.2,000",
+      "Discounts": "2-10%"
+    },
+    "special_features_others": {
+      "7": "Bariatric Surgery Rs.2,50,000/-",
+      "8": "PERSONAL ACCIDENT COVER ANY ONE ADULT IN EQUAL  BASIC SI",
+      "9": "OUT PATIENT DENTAL/ OPTHAL COVERAGE UPTO Rs.5,000/- (3 YRS OF CONTINUOUS RENEWAL)",
+      "Organ Donor Expenses": "Upto SI",
+      "MODERN TREATMENT": "YES",
+      "SECOND MEDICAL OPINION": "YES",
+      "AIR AMBULANCE": "UPTO Rs.2.5L/HOSPITALISATION MAX.Rs.5L",
+      "Rehabilitation and Pain Management": "OP CONSULTATION UPTO Rs.1,200/-(per consultation limit Rs.300/-)",
+      "Home care treatment": "NO"
+    }
+  },
+  "plan_details": {
+    "Company": "STAR",
+    "Plan Name": "Comprehensive",
+    "Adult Age Entry (MIN-MAX)": "18- 65 years",
+    "Child  Age Entry": "91days - 25 yrs",
+    "Policy Duration": "1/2/3 YEARS",
+    "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY) /YLY - 1/2/3 YRS",
+    "Medical Screening Before Policy": "YES"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 60 days",
+    "Post-Hospitalization": "Upto 90 days",
+    "Emergency Ambulance": "ACTUAL",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "UPTO Rs.15,000/-",
+    "Domicilary Expenses": "YES",
+    "Consumables": "No",
+    "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "FIRST 3 YEARS"
+  },
+  "sub_limits": {
+    "Room Rent/day": "SINGLE A/C ROOM",
+    "ICU/day": "ACTUAL",
+    "Co - Pay": ">60YEARS AGE ENTRY -10%",
+    "Cataract Limits": "UPTO SUM INSURED"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "50% EACH YEAR MAXIMUM 100%",
+    "Free Health Check-up": "Rs.2,000",
+    "Discounts": "2-10%"
+  },
+  "special_features_others": {
+    "7": "Bariatric Surgery Rs.2,50,000/-",
+    "8": "PERSONAL ACCIDENT COVER ANY ONE ADULT IN EQUAL  BASIC SI",
+    "9": "OUT PATIENT DENTAL/ OPTHAL COVERAGE UPTO Rs.5,000/- (3 YRS OF CONTINUOUS RENEWAL)",
+    "Organ Donor Expenses": "Upto SI",
+    "MODERN TREATMENT": "YES",
+    "SECOND MEDICAL OPINION": "YES",
+    "AIR AMBULANCE": "UPTO Rs.2.5L/HOSPITALISATION MAX.Rs.5L",
+    "Rehabilitation and Pain Management": "OP CONSULTATION UPTO Rs.1,200/-(per consultation limit Rs.300/-)",
+    "Home care treatment": "NO"
+  },
+  "planName": "Comprehensive",
+  "company": "STAR",
+  "normalizedSumInsured": null,
+  "generatedFilename": "comprehensive_unknown.json"
+}

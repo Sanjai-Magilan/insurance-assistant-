@@ -1,0 +1,105 @@
+{
+  "sourceFile": "Book13.csv",
+  "extractedAt": "2025-07-13T14:38:29.069Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "MEDICLASSIC - GOLD",
+      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+      "Child  Age Entry": "5MONTHS",
+      "Sum Insured Range": "4L",
+      "Policy Duration": "1/2 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+      "MID TERM INCLUSION": "NO",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "Upto 60 days",
+      "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+      "Domicilary Expenses": "YES",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+      "MODERN TREATMENTS": "NO",
+      "ORGAN DONOR EXPENSES": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "FIRST 4 YEARS"
+    },
+    "sub_limits": {
+      "Room Rent/day": "RS.5,OOO/DAY INCLUDING NURSING FEES",
+      "ICU/day": "NO",
+      "Co - Pay": ">60YEARS AGE ENTRY -20%",
+      "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+      "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+      "Free Health Check-up": "Rs.1500/YEAR",
+      "Discounts": "5%"
+    },
+    "special_features_others": {
+      "1": "SUPER RESTORATION 100%",
+      "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+      "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+      "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+    }
+  },
+  "plan_details": {
+    "Company": "STAR",
+    "Plan Name": "MEDICLASSIC - GOLD",
+    "Adult Age Entry (MIN-MAX)": "18-65YEARS",
+    "Child  Age Entry": "5MONTHS",
+    "Sum Insured Range": "4L",
+    "Policy Duration": "1/2 YEARS",
+    "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+    "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+    "MID TERM INCLUSION": "NO",
+    "Medical Screening Before Policy": "NO"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 30 days",
+    "Post-Hospitalization": "Upto 60 days",
+    "Emergency Ambulance": "Rs.2,000/- per hospitalization",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+    "Domicilary Expenses": "YES",
+    "Consumables": "NO",
+    "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%",
+    "MODERN TREATMENTS": "NO",
+    "ORGAN DONOR EXPENSES": "NO"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "FIRST 4 YEARS"
+  },
+  "sub_limits": {
+    "Room Rent/day": "RS.5,OOO/DAY INCLUDING NURSING FEES",
+    "ICU/day": "NO",
+    "Co - Pay": ">60YEARS AGE ENTRY -20%",
+    "Cataract Limits": "RS.30K/ EYE NOT EXCEEDING 40K/POLICY YR",
+    "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "FIRST YEAR-25%,  SUBSEQUENT YEAR 20% MAX.-100%",
+    "Free Health Check-up": "Rs.1500/YEAR",
+    "Discounts": "5%"
+  },
+  "special_features_others": {
+    "1": "SUPER RESTORATION 100%",
+    "2": "SHARED ACCOMMODATION Rs.500/DAY/MAXIMUM RS.3,000/HOSPITALIZATION",
+    "3": "PATIENT CARE RS.400/DAY, MAX 5 DAYS/HOSPITALIZATION 14 DAYS /POLICY",
+    "4": "ADDITIONAL SI FOR RTA 50% OF SI"
+  },
+  "planName": "MEDICLASSIC - GOLD",
+  "company": "STAR",
+  "sumInsuredRange": "4L",
+  "normalizedSumInsured": "4l",
+  "generatedFilename": "mediclassic_gold_4l.json"
+}
