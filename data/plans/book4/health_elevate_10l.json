@@ -1,77 +1,29 @@
 {
-  "sourceFile": "Book4.csv",
-  "extractedAt": "2025-07-13T09:50:28.336Z",
-  "rawData": {
-    "plan_details": {
-      "Company": "ICICI LOMBARD",
-      "Plan Name": "HEALTH ELEVATE",
-      "Adult Age Entry (MIN-MAX)": "18- 99 years",
-      "Child  Age Entry": "91days - 30 yrs",
-      "Sum Insured Range": "10L",
-      "Policy Duration": "1 / 2 /3 YEARS",
-      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
-      "Who all can be covered": "IND/ UPTO 2A+ 3C",
-      "MID TERM INCLUSION": "NO",
-      "Medical Screening Before Policy": ">=1Cr"
-    },
-    "basic_coverages": {
-      "Pre-Hospitalization": "Upto 90 days",
-      "Post-Hospitalization": "Upto 180 days",
-      "Emergency Ambulance": "1% of SI, Max.10K/claim",
-      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
-      "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
-      "Domicilary Expenses": "UPTO SI",
-      "Consumables": "OPTIONAL",
-      "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
-    },
-    "exclusions_waiting_periods": {
-      "INITIAL WAITING": "FIRST 30 DAYS",
-      "SPECIFIC DISEASE": "FIRST 2 YEARS",
-      "Pre Existing Disease": "FIRST 2 YEARS"
-    },
-    "sub_limits": {
-      "Room Rent/day": "ANY ROOM (OPTIONAL)",
-      "ICU/day": "ACTUALS",
-      "Co - Pay": "No",
-      "Cataract Limits": "ACTUAL",
-      "Other Sub Limits": "No"
-    },
-    "renewal_benefits": {
-      "No claim bonus": "Every  year 20% -MAX-100% no reduction on  claim",
-      "Free Health Check-up": "EVERY RENEWAL 0.5% SI MAX 10K (OPTIONAL)",
-      "Discounts": "UPTO 5%"
-    },
-    "special_features_others": {
-      "1": "ANIMAL BITE UPTO Rs.10,000/-",
-      "2": "CONVALESCENCE Rs,20,000/- IF HOSPITALISED MORE THAN 10 DAYS",
-      "3": "HOME CARE TREATMENT UPTO 5%OF SI MAX  Rs.25,000/",
-      "4": "OPTIONAL COVER FOR SI PROTECT (INFLATION BASED COVER INCREASE)",
-      "5": "BARIATRIC SURGERY UPTO 50% OF SI  >=10L SI  ONLY  AFTER 3 YEARS",
-      "6": "ORGAN DONAR EXPENSES UPTO SI",
-      "7": "WORDWIDE COVER SI 25L AND ABOVE"
-    }
-  },
+  "sourceFile": "book1",
+  "extractedAt": "2025-07-18T08:30:00.000Z",
   "plan_details": {
     "Company": "ICICI LOMBARD",
     "Plan Name": "HEALTH ELEVATE",
-    "Adult Age Entry (MIN-MAX)": "18- 99 years",
-    "Child  Age Entry": "91days - 30 yrs",
+    "Adult Age Entry (MIN-MAX)": "18 - 99 YEARS",
+    "Child Age Entry": "91 DAYS - 30 YRS",
     "Sum Insured Range": "10L",
-    "Policy Duration": "1 / 2 /3 YEARS",
+    "Policy Duration": "1/2/3 YEARS",
     "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
-    "Who all can be covered": "IND/ UPTO 2A+ 3C",
+    "Who all can be covered": "IND/UPTO 2A+3C",
     "MID TERM INCLUSION": "NO",
     "Medical Screening Before Policy": ">=1Cr"
   },
   "basic_coverages": {
-    "Pre-Hospitalization": "Upto 90 days",
-    "Post-Hospitalization": "Upto 180 days",
-    "Emergency Ambulance": "1% of SI, Max.10K/claim",
+    "Pre-Hospitalization": "UPTO 90 DAYS",
+    "Post-Hospitalization": "UPTO 180 DAYS",
+    "Emergency Ambulance": "1% OF SI, MAX Rs.10,000/CLAIM",
     "DAY CARE (PROCEDURE/SURGERY)": "ALL",
     "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
     "Domicilary Expenses": "UPTO SI",
     "Consumables": "OPTIONAL",
-    "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
+    "SI RESTORE /RECHARGE": "REINSTATEMENT 100%",
+    "MODERN TREATMENTS": "NO",
+    "ORGAN DONOR EXPENSES": "NO"
   },
   "exclusions_waiting_periods": {
     "INITIAL WAITING": "FIRST 30 DAYS",
@@ -81,23 +33,47 @@
   "sub_limits": {
     "Room Rent/day": "ANY ROOM (OPTIONAL)",
     "ICU/day": "ACTUALS",
-    "Co - Pay": "No",
+    "Co - Pay": "NO",
     "Cataract Limits": "ACTUAL",
-    "Other Sub Limits": "No"
+    "Other Sub Limits": "NO"
   },
   "renewal_benefits": {
-    "No claim bonus": "Every  year 20% -MAX-100% no reduction on  claim",
-    "Free Health Check-up": "EVERY RENEWAL 0.5% SI MAX 10K (OPTIONAL)",
+    "No claim bonus": "EVERY YEAR 20% - MAX 100% (NO REDUCTION ON CLAIM)",
+    "Free Health Check-up": "EVERY RENEWAL 0.5% OF SI MAX Rs.10,000 (OPTIONAL)",
     "Discounts": "UPTO 5%"
   },
   "special_features_others": {
     "1": "ANIMAL BITE UPTO Rs.10,000/-",
-    "2": "CONVALESCENCE Rs,20,000/- IF HOSPITALISED MORE THAN 10 DAYS",
-    "3": "HOME CARE TREATMENT UPTO 5%OF SI MAX  Rs.25,000/",
+    "2": "CONVALESCENCE Rs.20,000/- IF HOSPITALISED MORE THAN 10 DAYS",
+    "3": "HOME CARE TREATMENT UPTO 5% OF SI MAX Rs.25,000/-",
     "4": "OPTIONAL COVER FOR SI PROTECT (INFLATION BASED COVER INCREASE)",
-    "5": "BARIATRIC SURGERY UPTO 50% OF SI  >=10L SI  ONLY  AFTER 3 YEARS",
-    "6": "ORGAN DONAR EXPENSES UPTO SI",
-    "7": "WORDWIDE COVER SI 25L AND ABOVE"
+    "5": "BARIATRIC SURGERY UPTO 50% OF SI >=10L SI ONLY AFTER 3 YEARS",
+    "6": "ORGAN DONOR EXPENSES UPTO SI",
+    "7": "WORLDWIDE COVER SI 25L AND ABOVE",
+    "8": "NO",
+    "9": "NO",
+    "10": "NO",
+    "11": "NO",
+    "12": "NO",
+    "13": "NO",
+    "14": "NO",
+    "15": "NO"
+  },
+  "maternity_cover": {
+    "AVAILABLE CONDITION": "NO",
+    "WAITING PERIOD 1st DELIVERY": "NO",
+    "WAITING PERIOD 2nd DELIVERY": "NO",
+    "Delivery charges (NORMAL)": "NO",
+    "Delivery charges (Caesarean)": "NO",
+    "NEW BORN BABY COVER": "NO",
+    "Vaccination Exp For Child": "NO",
+    "Pediatrician Consultations for child": "NO",
+    "Metabolic Screening": "NO",
+    "INFERTILITY / ASST.REPRODUCTION": "NO",
+    "Miscarriage due to Accident": "NO",
+    "In Utero Fetal Surgery / Repair": "NO",
+    "Ante-Natal Care": "NO",
+    "Voluntary Sterilization Exp.": "NO"
   },
   "planName": "HEALTH ELEVATE",
   "company": "ICICI LOMBARD",

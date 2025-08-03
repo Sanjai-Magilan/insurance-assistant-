@@ -167,5 +167,105 @@ app.post('/api/claims/analyze-questionnaire', async (req, res) => {
   }
 });
 
+// Plan Management APIs
+app.post('/api/plans/create', async (req, res) => {
+  try {
+    const { fileName, book, data } = req.body;
+
+    // Validate required fields
+    if (!fileName) {
+      return res.status(400).json({ error: 'Missing required field: fileName' });
+    }
+    if (!book) {
+      return res.status(400).json({ error: 'Missing required field: book' });
+    }
+    if (!data) {
+      return res.status(400).json({ error: 'Missing required field: data' });
+    }
+
+    // Validate plan data structure
+    if (!data.plan_details) {
+      return res.status(400).json({ error: 'Missing required field: plan_details' });
+    }
+
+    const requiredPlanFields = ['Company', 'Plan Name', 'Sum Insured Range'];
+    for (const field of requiredPlanFields) {
+      if (!data.plan_details[field] || data.plan_details[field].trim() === '') {
+        return res.status(400).json({ error: `Missing required field: ${field.toLowerCase()}` });
+      }
+    }
+
+    // Add metadata if missing
+    if (!data.planName) data.planName = data.plan_details['Plan Name'];
+    if (!data.company) data.company = data.plan_details['Company'];
+    if (!data.sumInsuredRange) data.sumInsuredRange = data.plan_details['Sum Insured Range'];
+    if (!data.updatedAt) data.updatedAt = new Date().toISOString();
+
+    const result = await planManager.createPlan(fileName, book, data);
+    
+    res.json({
+      success: true,
+      message: 'Plan created successfully',
+      filePath: result.filePath,
+      fileName: fileName
+    });
+
+  } catch (error) {
+    console.error('❌ Error creating plan:', error);
+    res.status(500).json({ 
+      error: 'Failed to create plan',
+      message: error.message 
+    });
+  }
+});
+
+app.post('/api/plans/update', async (req, res) => {
+  try {
+    const { fileName, book, data, originalFilePath } = req.body;
+
+    // Validate required fields
+    if (!fileName) {
+      return res.status(400).json({ error: 'Missing required field: fileName' });
+    }
+    if (!data) {
+      return res.status(400).json({ error: 'Missing required field: data' });
+    }
+
+    // Validate plan data structure
+    if (!data.plan_details) {
+      return res.status(400).json({ error: 'Missing required field: plan_details' });
+    }
+
+    const requiredPlanFields = ['Company', 'Plan Name', 'Sum Insured Range'];
+    for (const field of requiredPlanFields) {
+      if (!data.plan_details[field] || data.plan_details[field].trim() === '') {
+        return res.status(400).json({ error: `Missing required field: ${field.toLowerCase()}` });
+      }
+    }
+
+    // Add metadata if missing
+    if (!data.planName) data.planName = data.plan_details['Plan Name'];
+    if (!data.company) data.company = data.plan_details['Company'];
+    if (!data.sumInsuredRange) data.sumInsuredRange = data.plan_details['Sum Insured Range'];
+    data.updatedAt = new Date().toISOString();
+
+    const result = await planManager.updatePlan(originalFilePath, fileName, book, data);
+    
+    res.json({
+      success: true,
+      message: 'Plan updated successfully',
+      filePath: result.filePath,
+      fileName: fileName
+    });
+
+  } catch (error) {
+    console.error('❌ Error updating plan:', error);
+    res.status(500).json({ 
+      error: 'Failed to update plan',
+      message: error.message 
+    });
+  }
+});
+
 // Export for Vercel
 module.exports = app;

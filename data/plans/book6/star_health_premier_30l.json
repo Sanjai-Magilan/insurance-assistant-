@@ -1,80 +1,29 @@
 {
-  "sourceFile": "Book6.csv",
-  "extractedAt": "2025-07-13T14:30:51.037Z",
-  "rawData": {
-    "plan_details": {
-      "Company": "Star",
-      "Plan Name": "Star Health Premier",
-      "Adult Age Entry (MIN-MAX)": "50Y - Whole Life",
-      "Child  Age Entry": "Min - 91 days & Max - Up to 25 years",
-      "Sum Insured Range": "Rs.30 LAKHS",
-      "Policy Duration": "1 / 2 /3YEARS",
-      "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
-      "Who all can be covered": "2A+3C",
-      "MID TERM INCLUSION": "Yes",
-      "Medical Screening Before Policy": "No"
-    },
-    "basic_coverages": {
-      "Pre-Hospitalization": "Upto 60 days",
-      "Post-Hospitalization": "Upto 90 days",
-      "Emergency Ambulance": "ACTUALS",
-      "DAY CARE (PROCEDURE/SURGERY)": "All",
-      "Non-Allopathic Treatment (AYUSH)": "100%",
-      "Domicilary Expenses": "Yes",
-      "Consumables": "Yes",
-      "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
-    },
-    "exclusions_waiting_periods": {
-      "INITIAL WAITING": "FIRST 30 DAYS",
-      "SPECIFIC DISEASE": "FIRST 2 YEARS",
-      "Pre Existing Disease": "FIRST 2 YEARS"
-    },
-    "sub_limits": {
-      "Room Rent/day": "MAX Rs.20,000/-",
-      "ICU/day": "ACTUALS",
-      "Co - Pay": ">65YEARS AGE ENTRY -20%",
-      "Cataract Limits": "upto 50k/eye, rs 80k/policy",
-      "Other Sub Limits": "NO"
-    },
-    "renewal_benefits": {
-      "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
-      "Free Health Check-up": "IND-4.5K FLOATER-6.5K In Every Claim Free Year",
-      "Discounts": "2-10%"
-    },
-    "special_features_others": {
-      "7": "Hospice Care:  up to 10% of SI",
-      "8": "Outpatient Medical Expenses: IND-4.5K FLOATER-6.5K",
-      "9": "Bariatric Surgery upto 5L",
-      "10": "Younger Age Discount: 10%  if Spouse Age < 50Y",
-      "11": "10 % Discount in premium for submitting health checkup reports",
-      "Organ Donor Expenses": "Organ Donor Expenses UPTO SI",
-      "MODERN TREATMENT": "upto 50% of SI",
-      "AIR AMBULANCE": "UPTO Rs.2.5L/HOSPITALISATION MAX.Rs.5L",
-      "Rehabilitation and Pain Management": "Upto 10% Of SI",
-      "Home care treatment": "Upto 10% Of SI"
-    }
-  },
+  "sourceFile": "book1",
+  "extractedAt": "2025-07-18T12:00:00.000Z",
   "plan_details": {
-    "Company": "Star",
-    "Plan Name": "Star Health Premier",
+    "Company": "STAR",
+    "Plan Name": "STAR HEALTH PREMIER",
     "Adult Age Entry (MIN-MAX)": "50Y - Whole Life",
-    "Child  Age Entry": "Min - 91 days & Max - Up to 25 years",
+    "Child Age Entry": "91 DAYS - 25 YEARS",
     "Sum Insured Range": "Rs.30 LAKHS",
-    "Policy Duration": "1 / 2 /3YEARS",
-    "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
+    "Policy Duration": "1 / 2 / 3 YEARS",
+    "payment mode (YLY/HLY/QLY/MLY)": "YLY / HLY / QLY",
     "Who all can be covered": "2A+3C",
-    "MID TERM INCLUSION": "Yes",
-    "Medical Screening Before Policy": "No"
+    "MID TERM INCLUSION": "YES",
+    "Medical Screening Before Policy": "NO"
   },
   "basic_coverages": {
     "Pre-Hospitalization": "Upto 60 days",
     "Post-Hospitalization": "Upto 90 days",
     "Emergency Ambulance": "ACTUALS",
-    "DAY CARE (PROCEDURE/SURGERY)": "All",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
     "Non-Allopathic Treatment (AYUSH)": "100%",
-    "Domicilary Expenses": "Yes",
-    "Consumables": "Yes",
-    "SI RESTORE /RECHARGE": "100% Refill Use Same claim"
+    "Domicilary Expenses": "YES",
+    "Consumables": "YES",
+    "SI RESTORE /RECHARGE": "100% Refill Use Same Claim",
+    "MODERN TREATMENTS": "NO",
+    "ORGAN DONOR EXPENSES": "NO"
   },
   "exclusions_waiting_periods": {
     "INITIAL WAITING": "FIRST 30 DAYS",
@@ -84,30 +33,47 @@
   "sub_limits": {
     "Room Rent/day": "MAX Rs.20,000/-",
     "ICU/day": "ACTUALS",
-    "Co - Pay": ">65YEARS AGE ENTRY -20%",
-    "Cataract Limits": "upto 50k/eye, rs 80k/policy",
+    "Co - Pay": ">65 YEARS AGE ENTRY - 20%",
+    "Cataract Limits": "Upto Rs.50,000 per eye, Rs.80,000 per policy",
     "Other Sub Limits": "NO"
   },
   "renewal_benefits": {
-    "No claim bonus": "20% FOR EVERY CLAIM FREE YR MAX 100%",
-    "Free Health Check-up": "IND-4.5K FLOATER-6.5K In Every Claim Free Year",
-    "Discounts": "2-10%"
+    "No claim bonus": "20% FOR EVERY CLAIM FREE YEAR, MAX 100%",
+    "Free Health Check-up": "IND: Rs.4,500 / Floater: Rs.6,500 every claim-free year",
+    "Discounts": "2% to 10%"
   },
   "special_features_others": {
-    "7": "Hospice Care:  up to 10% of SI",
-    "8": "Outpatient Medical Expenses: IND-4.5K FLOATER-6.5K",
-    "9": "Bariatric Surgery upto 5L",
-    "10": "Younger Age Discount: 10%  if Spouse Age < 50Y",
-    "11": "10 % Discount in premium for submitting health checkup reports",
-    "Organ Donor Expenses": "Organ Donor Expenses UPTO SI",
-    "MODERN TREATMENT": "upto 50% of SI",
-    "AIR AMBULANCE": "UPTO Rs.2.5L/HOSPITALISATION MAX.Rs.5L",
-    "Rehabilitation and Pain Management": "Upto 10% Of SI",
-    "Home care treatment": "Upto 10% Of SI"
+    "1": "Organ Donor Expenses Upto SI",
+    "2": "MODERN TREATMENT Upto 50% of SI",
+    "3": "SECOND MEDICAL OPINION - NO",
+    "4": "AIR AMBULANCE Up to Rs.2.5L per hospitalisation, max Rs.5L",
+    "5": "Rehabilitation and Pain Management Upto 10% of SI",
+    "6": "Home care treatment Upto 10% of SI",
+    "7": "Hospice Care Upto 10% of SI",
+    "8": "Outpatient Medical Expenses IND-4.5K / Floater-6.5K",
+    "9": "Bariatric Surgery Upto Rs.5L",
+    "10": "Younger Age Discount 10% if Spouse Age <50Y",
+    "11": "10% Premium Discount for submitting health checkup reports"
   },
-  "planName": "Star Health Premier",
-  "company": "Star",
-  "sumInsuredRange": "Rs.30 LAKHS",
+  "maternity_cover": {
+    "AVAILABLE CONDITION": "NO",
+    "WAITING PERIOD 1st DELIVERY": "NO",
+    "WAITING PERIOD 2nd DELIVERY": "NO",
+    "Delivery charges (NORMAL)": "NO",
+    "Delivery charges (Caesarean)": "NO",
+    "NEW BORN BABY COVER": "NO",
+    "Vaccination Exp For Child": "NO",
+    "Pediatrician Consultations for child": "NO",
+    "Metabolic Screening": "NO",
+    "INFERTILITY / ASST.REPRODUCTION": "NO",
+    "Miscarriage due to Accident": "NO",
+    "In Utero Fetal Surgery / Repair": "NO",
+    "Ante-Natal Care": "NO",
+    "Voluntary Sterilization Exp.": "NO"
+  },
+  "planName": "STAR HEALTH PREMIER",
+  "company": "STAR",
+  "sumInsuredRange": "30L",
   "normalizedSumInsured": "30l",
   "generatedFilename": "star_health_premier_30l.json"
 }

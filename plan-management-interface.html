@@ -71,7 +71,7 @@
         }
 
         .main-container {
-            max-width: 1400px;
+            max-width: 1800px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -283,8 +283,8 @@
             margin: 2% auto;
             padding: 0;
             border-radius: 1rem;
-            width: 90%;
-            max-width: 800px;
+            width: 95%;
+            max-width: 1200px;
             max-height: 90vh;
             overflow-y: auto;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -818,85 +818,233 @@
                         <!-- Form Editor Tab -->
                         <div id="formEditorTab" class="editor-tab active">
                             <div class="form-grid">
+                                <!-- Plan Details Section -->
                                 <div class="form-section">
-                                    <h4>📋 Basic Information</h4>
+                                    <h4>📋 Plan Details</h4>
                                     <div class="form-row">
-                                        <label>Plan Name</label>
-                                        <input type="text" id="form_planName" class="form-control" placeholder="Enter plan name">
+                                        <label>Company <span style="color: red;">*</span></label>
+                                        <input type="text" id="form_company" class="form-control" placeholder="e.g., STAR HEALTH" required>
                                     </div>
                                     <div class="form-row">
-                                        <label>Company</label>
-                                        <input type="text" id="form_company" class="form-control" placeholder="Insurance company">
+                                        <label>Plan Name <span style="color: red;">*</span></label>
+                                        <input type="text" id="form_planName" class="form-control" placeholder="e.g., HEALTH ASSURE - INDIVIDUAL" required>
                                     </div>
                                     <div class="form-row">
-                                        <label>Sum Insured Range</label>
-                                        <input type="text" id="form_sumInsured" class="form-control" placeholder="e.g., 10 Lakh">
+                                        <label>Adult Age Entry (MIN-MAX)</label>
+                                        <input type="text" id="form_adultAgeEntry" class="form-control" placeholder="e.g., 18 - 75 YRS">
                                     </div>
                                     <div class="form-row">
-                                        <label>Plan Type</label>
-                                        <select id="form_planType" class="form-control">
-                                            <option value="Individual">Individual</option>
-                                            <option value="Family Floater">Family Floater</option>
-                                            <option value="Group">Group</option>
+                                        <label>Child Age Entry</label>
+                                        <input type="text" id="form_childAgeEntry" class="form-control" placeholder="e.g., 91DAYS -17YRS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Sum Insured Range <span style="color: red;">*</span></label>
+                                        <input type="text" id="form_sumInsured" class="form-control" placeholder="e.g., 1 Cr/ 2 Cr" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Policy Duration</label>
+                                        <input type="text" id="form_policyDuration" class="form-control" placeholder="e.g., 1/2/3 YRS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Payment Mode (YLY/HLY/QLY/MLY)</label>
+                                        <input type="text" id="form_paymentMode" class="form-control" placeholder="e.g., QLY / HLY / 1 YEAR MODE ONLY">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Who all can be covered</label>
+                                        <input type="text" id="form_whoCanBeCovered" class="form-control" placeholder="e.g., 6A+3C (HUSBAND+SPOUSE+2 PARENTS...)">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Mid Term Inclusion</label>
+                                        <input type="text" id="form_midTermInclusion" class="form-control" placeholder="e.g., SPOUSE/CHILD WITHIN 45DAYS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Medical Screening Before Policy</label>
+                                        <select id="form_medicalScreening" class="form-control">
+                                            <option value="">Select...</option>
+                                            <option value="NO">NO</option>
+                                            <option value="YES">YES</option>
                                         </select>
                                     </div>
                                 </div>
 
+                                <!-- Basic Coverages Section -->
                                 <div class="form-section">
-                                    <h4>💰 Premium Details</h4>
-                                    <div class="premium-grid">
-                                        <div class="age-group">
-                                            <label>Age 18-25</label>
-                                            <input type="number" id="form_premium_18_25" class="form-control" placeholder="Premium">
-                                        </div>
-                                        <div class="age-group">
-                                            <label>Age 26-35</label>
-                                            <input type="number" id="form_premium_26_35" class="form-control" placeholder="Premium">
-                                        </div>
-                                        <div class="age-group">
-                                            <label>Age 36-45</label>
-                                            <input type="number" id="form_premium_36_45" class="form-control" placeholder="Premium">
-                                        </div>
-                                        <div class="age-group">
-                                            <label>Age 46-55</label>
-                                            <input type="number" id="form_premium_46_55" class="form-control" placeholder="Premium">
-                                        </div>
-                                        <div class="age-group">
-                                            <label>Age 56-65</label>
-                                            <input type="number" id="form_premium_56_65" class="form-control" placeholder="Premium">
-                                        </div>
-                                        <div class="age-group">
-                                            <label>Age 66+</label>
-                                            <input type="number" id="form_premium_66_plus" class="form-control" placeholder="Premium">
-                                        </div>
+                                    <h4>🏥 Basic Coverages</h4>
+                                    <div class="form-row">
+                                        <label>Pre-Hospitalization</label>
+                                        <input type="text" id="form_preHospitalization" class="form-control" placeholder="e.g., Upto 60 days">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Post-Hospitalization</label>
+                                        <input type="text" id="form_postHospitalization" class="form-control" placeholder="e.g., UPTO 180 DAYS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Emergency Ambulance</label>
+                                        <input type="text" id="form_emergencyAmbulance" class="form-control" placeholder="e.g., ACTUAL">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Day Care (Procedure/Surgery)</label>
+                                        <input type="text" id="form_dayCare" class="form-control" placeholder="e.g., ALL">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Non-Allopathic Treatment (AYUSH)</label>
+                                        <input type="text" id="form_ayush" class="form-control" placeholder="e.g., UPTO SI">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Domicilary Expenses</label>
+                                        <input type="text" id="form_domicilary" class="form-control" placeholder="e.g., UPTO SI">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Consumables</label>
+                                        <input type="text" id="form_consumables" class="form-control" placeholder="e.g., YES ( AS PER LIST 1)">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>SI Restore/Recharge</label>
+                                        <input type="text" id="form_siRestore" class="form-control" placeholder="e.g., REINSTATEMENT 100%">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Modern Treatments</label>
+                                        <input type="text" id="form_modernTreatments" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Organ Donor Expenses</label>
+                                        <input type="text" id="form_organDonor" class="form-control" placeholder="e.g., NO">
                                     </div>
                                 </div>
 
+                                <!-- Exclusions & Waiting Periods Section -->
                                 <div class="form-section">
-                                    <h4>🏥 Coverage Features</h4>
-                                    <div id="coverageFeatures" class="dynamic-list">
+                                    <h4>⏱️ Exclusions & Waiting Periods</h4>
+                                    <div class="form-row">
+                                        <label>Initial Waiting</label>
+                                        <input type="text" id="form_initialWaiting" class="form-control" placeholder="e.g., FIRST 30 DAYS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Specific Disease</label>
+                                        <input type="text" id="form_specificDisease" class="form-control" placeholder="e.g., FIRST 2 YEARS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Pre Existing Disease</label>
+                                        <input type="text" id="form_preExistingDisease" class="form-control" placeholder="e.g., FIRST 3YRS ( IF 3YRS POLICY 2.5YRS )">
+                                    </div>
+                                </div>
+
+                                <!-- Sub Limits Section -->
+                                <div class="form-section">
+                                    <h4>💰 Sub Limits</h4>
+                                    <div class="form-row">
+                                        <label>Room Rent/day</label>
+                                        <input type="text" id="form_roomRent" class="form-control" placeholder="e.g., ANY ROOM EXCEPT SUITE OR ABOVE CATEGORY">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>ICU/day</label>
+                                        <input type="text" id="form_icuDay" class="form-control" placeholder="e.g., ACTUAL">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Co-Pay</label>
+                                        <input type="text" id="form_coPay" class="form-control" placeholder="e.g., >60YEARS AGE ENTRY -10%">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Cataract Limits</label>
+                                        <input type="text" id="form_cataractLimits" class="form-control" placeholder="e.g., ACTUAL">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Other Sub Limits</label>
+                                        <input type="text" id="form_otherSubLimits" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                </div>
+
+                                <!-- Renewal Benefits Section -->
+                                <div class="form-section">
+                                    <h4>🎁 Renewal Benefits</h4>
+                                    <div class="form-row">
+                                        <label>No Claim Bonus</label>
+                                        <input type="text" id="form_noclaimBonus" class="form-control" placeholder="e.g., 25% FOR EVERY CLAIM FREE YR MAX 100%">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Free Health Check-up</label>
+                                        <input type="text" id="form_healthCheckup" class="form-control" placeholder="e.g., EVERY YEAR Rs.2,000 IRRESPECTIVE OF CLAIM">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Discounts</label>
+                                        <input type="text" id="form_discounts" class="form-control" placeholder="e.g., 4-20% ON WELLNESS POINTS EARNED">
+                                    </div>
+                                </div>
+
+                                <!-- Special Features Section -->
+                                <div class="form-section">
+                                    <h4>⭐ Special Features & Others</h4>
+                                    <div id="specialFeaturesList" class="dynamic-list">
                                         <div class="list-header">
-                                            <span>Feature</span>
-                                            <span>Coverage Limit</span>
+                                            <span>Feature Number</span>
+                                            <span>Description</span>
                                             <span>Actions</span>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-sm btn-outline" onclick="addCoverageFeature()">
-                                        ➕ Add Coverage Feature
+                                    <button type="button" class="btn btn-sm btn-outline" onclick="addSpecialFeature()">
+                                        ➕ Add Special Feature
                                     </button>
                                 </div>
 
+                                <!-- Maternity Cover Section -->
                                 <div class="form-section">
-                                    <h4>🚫 Exclusions</h4>
-                                    <div id="exclusionsList" class="dynamic-list">
-                                        <div class="list-header">
-                                            <span>Exclusion</span>
-                                            <span>Actions</span>
-                                        </div>
+                                    <h4>👶 Maternity Cover</h4>
+                                    <div class="form-row">
+                                        <label>Available Condition</label>
+                                        <input type="text" id="form_maternityCondition" class="form-control" placeholder="e.g., SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 2 YEARS">
                                     </div>
-                                    <button type="button" class="btn btn-sm btn-outline" onclick="addExclusion()">
-                                        ➕ Add Exclusion
-                                    </button>
+                                    <div class="form-row">
+                                        <label>Waiting Period 1st Delivery</label>
+                                        <input type="text" id="form_firstDeliveryWaiting" class="form-control" placeholder="e.g., FIRST 2 YRS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Waiting Period 2nd Delivery</label>
+                                        <input type="text" id="form_secondDeliveryWaiting" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Delivery charges (NORMAL)</label>
+                                        <input type="text" id="form_normalDelivery" class="form-control" placeholder="e.g., Upto 10% Of SI (Including pre-natal and postnatal expenses)">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Delivery charges (Caesarean)</label>
+                                        <input type="text" id="form_caesareanDelivery" class="form-control" placeholder="e.g., Upto 10% Of SI (Including pre-natal and postnatal expenses)">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>New Born Baby Cover</label>
+                                        <input type="text" id="form_newBornCover" class="form-control" placeholder="e.g., Rs. 2L (AFTER FIRST1YEAR MOTHER COVER MIN 1YR)">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Vaccination Exp For Child</label>
+                                        <input type="text" id="form_vaccinationExp" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Pediatrician Consultations for child</label>
+                                        <input type="text" id="form_pediatricianConsult" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Metabolic Screening</label>
+                                        <input type="text" id="form_metabolicScreening" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Infertility / Asst.Reproduction</label>
+                                        <input type="text" id="form_infertility" class="form-control" placeholder="e.g., Rs.2LAKHS (AFTER FIRST 2 YEARS)">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Miscarriage due to Accident</label>
+                                        <input type="text" id="form_miscarriage" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>In Utero Fetal Surgery / Repair</label>
+                                        <input type="text" id="form_fetalSurgery" class="form-control" placeholder="e.g., upto Sum Insured AFTERFIRST 2 YEARS">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Ante-Natal Care</label>
+                                        <input type="text" id="form_anteNatalCare" class="form-control" placeholder="e.g., NO">
+                                    </div>
+                                    <div class="form-row">
+                                        <label>Voluntary Sterilization Exp.</label>
+                                        <input type="text" id="form_sterilization" class="form-control" placeholder="e.g., NO">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -973,47 +1121,107 @@
 
         function syncFromForm() {
             try {
+                console.log('🔄 Syncing from form...');
+                const companyValue = document.getElementById('form_company').value || "";
+                const planNameValue = document.getElementById('form_planName').value || "";
+                const sumInsuredValue = document.getElementById('form_sumInsured').value || "";
+                
+                console.log('📝 Form values:', {
+                    company: companyValue,
+                    planName: planNameValue,
+                    sumInsured: sumInsuredValue
+                });
+
                 const planData = {
+                    sourceFile: "manual_entry",
+                    extractedAt: new Date().toISOString(),
                     plan_details: {
-                        "Plan Name": document.getElementById('form_planName').value || "",
-                        "Company": document.getElementById('form_company').value || "",
-                        "Sum Insured Range": document.getElementById('form_sumInsured').value || "",
-                        "Plan Type": document.getElementById('form_planType').value || "Individual"
+                        "Company": companyValue,
+                        "Plan Name": planNameValue,
+                        "Adult Age Entry (MIN-MAX)": document.getElementById('form_adultAgeEntry').value || "",
+                        "Child Age Entry": document.getElementById('form_childAgeEntry').value || "",
+                        "Sum Insured Range": sumInsuredValue,
+                        "Policy Duration": document.getElementById('form_policyDuration').value || "",
+                        "payment mode (YLY/HLY/QLY/MLY)": document.getElementById('form_paymentMode').value || "",
+                        "Who all can be covered": document.getElementById('form_whoCanBeCovered').value || "",
+                        "MID TERM INCLUSION": document.getElementById('form_midTermInclusion').value || "",
+                        "Medical Screening Before Policy": document.getElementById('form_medicalScreening').value || ""
                     },
-                    premium_details: {},
-                    coverage_features: {},
-                    exclusions: []
+                    basic_coverages: {
+                        "Pre-Hospitalization": document.getElementById('form_preHospitalization').value || "",
+                        "Post-Hospitalization": document.getElementById('form_postHospitalization').value || "",
+                        "Emergency Ambulance": document.getElementById('form_emergencyAmbulance').value || "",
+                        "DAY CARE (PROCEDURE/SURGERY)": document.getElementById('form_dayCare').value || "",
+                        "Non-Allopathic Treatment (AYUSH)": document.getElementById('form_ayush').value || "",
+                        "Domicilary Expenses": document.getElementById('form_domicilary').value || "",
+                        "Consumables": document.getElementById('form_consumables').value || "",
+                        "SI RESTORE /RECHARGE": document.getElementById('form_siRestore').value || "",
+                        "MODERN TREATMENTS": document.getElementById('form_modernTreatments').value || "",
+                        "ORGAN DONOR EXPENSES": document.getElementById('form_organDonor').value || ""
+                    },
+                    exclusions_waiting_periods: {
+                        "INITIAL WAITING": document.getElementById('form_initialWaiting').value || "",
+                        "SPECIFIC DISEASE": document.getElementById('form_specificDisease').value || "",
+                        "Pre Existing Disease": document.getElementById('form_preExistingDisease').value || ""
+                    },
+                    sub_limits: {
+                        "Room Rent/day": document.getElementById('form_roomRent').value || "",
+                        "ICU/day": document.getElementById('form_icuDay').value || "",
+                        "Co - Pay": document.getElementById('form_coPay').value || "",
+                        "Cataract Limits": document.getElementById('form_cataractLimits').value || "",
+                        "Other Sub Limits": document.getElementById('form_otherSubLimits').value || ""
+                    },
+                    renewal_benefits: {
+                        "No claim bonus": document.getElementById('form_noclaimBonus').value || "",
+                        "Free Health Check-up": document.getElementById('form_healthCheckup').value || "",
+                        "Discounts": document.getElementById('form_discounts').value || ""
+                    },
+                    special_features_others: {},
+                    maternity_cover: {
+                        "AVAILABLE CONDITION": document.getElementById('form_maternityCondition').value || "",
+                        "WAITING PERIOD 1st DELIVERY": document.getElementById('form_firstDeliveryWaiting').value || "",
+                        "WAITING PERIOD 2nd DELIVERY": document.getElementById('form_secondDeliveryWaiting').value || "",
+                        "Delivery charges (NORMAL)": document.getElementById('form_normalDelivery').value || "",
+                        "Delivery charges (Caesarean)": document.getElementById('form_caesareanDelivery').value || "",
+                        "NEW BORN BABY COVER": document.getElementById('form_newBornCover').value || "",
+                        "Vaccination Exp For Child": document.getElementById('form_vaccinationExp').value || "",
+                        "Pediatrician Consultations for child": document.getElementById('form_pediatricianConsult').value || "",
+                        "Metabolic Screening": document.getElementById('form_metabolicScreening').value || "",
+                        "INFERTILITY / ASST.REPRODUCTION": document.getElementById('form_infertility').value || "",
+                        "Miscarriage due to Accident": document.getElementById('form_miscarriage').value || "",
+                        "In Utero Fetal Surgery / Repair": document.getElementById('form_fetalSurgery').value || "",
+                        "Ante-Natal Care": document.getElementById('form_anteNatalCare').value || "",
+                        "Voluntary Sterilization Exp.": document.getElementById('form_sterilization').value || ""
+                    }
                 };
 
-                // Add premium details
-                const premiumAgeGroups = ['18_25', '26_35', '36_45', '46_55', '56_65', '66_plus'];
-                premiumAgeGroups.forEach(group => {
-                    const value = document.getElementById(`form_premium_${group}`).value;
-                    if (value) {
-                        planData.premium_details[group.replace('_', '-')] = parseFloat(value);
+                // Add special features
+                document.querySelectorAll('#specialFeaturesList .list-item').forEach(item => {
+                    const featureNum = item.querySelector('input[placeholder="Feature number"]').value;
+                    const description = item.querySelector('input[placeholder="Feature description"]').value;
+                    if (featureNum && description) {
+                        planData.special_features_others[featureNum] = description;
                     }
                 });
 
-                // Add coverage features
-                document.querySelectorAll('#coverageFeatures .list-item').forEach(item => {
-                    const feature = item.querySelector('input[placeholder="Feature name"]').value;
-                    const limit = item.querySelector('input[placeholder="Coverage limit"]').value;
-                    if (feature) {
-                        planData.coverage_features[feature] = limit || "Covered";
-                    }
-                });
+                // Add metadata fields
+                planData.planName = planData.plan_details["Plan Name"];
+                planData.company = planData.plan_details["Company"];
+                planData.sumInsuredRange = planData.plan_details["Sum Insured Range"];
+                planData.normalizedSumInsured = planData.plan_details["Sum Insured Range"].toLowerCase().replace(/\s+/g, '');
+                planData.generatedFilename = document.getElementById('planFileName').value || "";
 
-                // Add exclusions
-                document.querySelectorAll('#exclusionsList .list-item').forEach(item => {
-                    const exclusion = item.querySelector('input').value;
-                    if (exclusion) {
-                        planData.exclusions.push(exclusion);
-                    }
+                console.log('✅ Final plan data:', planData);
+                console.log('🏢 Company field check:', {
+                    'planData.company': planData.company,
+                    'planData.plan_details.Company': planData.plan_details.Company,
+                    'Company field empty?': !planData.plan_details.Company || planData.plan_details.Company.trim() === ''
                 });
 
                 document.getElementById('planJsonEditor').value = JSON.stringify(planData, null, 2);
                 showNotification('✅ Form data synced to JSON editor', 'success');
             } catch (error) {
+                console.error('❌ Sync error:', error);
                 showNotification('❌ Error syncing form data: ' + error.message, 'error');
             }
         }
@@ -1025,65 +1233,92 @@
 
                 const planData = JSON.parse(jsonValue);
                 
-                // Sync basic details
+                // Sync plan details
                 const details = planData.plan_details || {};
-                document.getElementById('form_planName').value = details['Plan Name'] || '';
                 document.getElementById('form_company').value = details['Company'] || '';
+                document.getElementById('form_planName').value = details['Plan Name'] || '';
+                document.getElementById('form_adultAgeEntry').value = details['Adult Age Entry (MIN-MAX)'] || '';
+                document.getElementById('form_childAgeEntry').value = details['Child Age Entry'] || '';
                 document.getElementById('form_sumInsured').value = details['Sum Insured Range'] || '';
-                document.getElementById('form_planType').value = details['Plan Type'] || 'Individual';
+                document.getElementById('form_policyDuration').value = details['Policy Duration'] || '';
+                document.getElementById('form_paymentMode').value = details['payment mode (YLY/HLY/QLY/MLY)'] || '';
+                document.getElementById('form_whoCanBeCovered').value = details['Who all can be covered'] || '';
+                document.getElementById('form_midTermInclusion').value = details['MID TERM INCLUSION'] || '';
+                document.getElementById('form_medicalScreening').value = details['Medical Screening Before Policy'] || '';
 
-                // Sync premium details
-                const premiums = planData.premium_details || {};
-                Object.entries(premiums).forEach(([ageGroup, premium]) => {
-                    const fieldId = `form_premium_${ageGroup.replace('-', '_')}`;
-                    const field = document.getElementById(fieldId);
-                    if (field) {
-                        field.value = premium;
-                    }
-                });
+                // Sync basic coverages
+                const basicCoverages = planData.basic_coverages || {};
+                document.getElementById('form_preHospitalization').value = basicCoverages['Pre-Hospitalization'] || '';
+                document.getElementById('form_postHospitalization').value = basicCoverages['Post-Hospitalization'] || '';
+                document.getElementById('form_emergencyAmbulance').value = basicCoverages['Emergency Ambulance'] || '';
+                document.getElementById('form_dayCare').value = basicCoverages['DAY CARE (PROCEDURE/SURGERY)'] || '';
+                document.getElementById('form_ayush').value = basicCoverages['Non-Allopathic Treatment (AYUSH)'] || '';
+                document.getElementById('form_domicilary').value = basicCoverages['Domicilary Expenses'] || '';
+                document.getElementById('form_consumables').value = basicCoverages['Consumables'] || '';
+                document.getElementById('form_siRestore').value = basicCoverages['SI RESTORE /RECHARGE'] || '';
+                document.getElementById('form_modernTreatments').value = basicCoverages['MODERN TREATMENTS'] || '';
+                document.getElementById('form_organDonor').value = basicCoverages['ORGAN DONOR EXPENSES'] || '';
 
-                // Sync coverage features
-                const coverageContainer = document.getElementById('coverageFeatures');
-                coverageContainer.querySelectorAll('.list-item').forEach(item => item.remove());
+                // Sync exclusions and waiting periods
+                const exclusionsWaiting = planData.exclusions_waiting_periods || {};
+                document.getElementById('form_initialWaiting').value = exclusionsWaiting['INITIAL WAITING'] || '';
+                document.getElementById('form_specificDisease').value = exclusionsWaiting['SPECIFIC DISEASE'] || '';
+                document.getElementById('form_preExistingDisease').value = exclusionsWaiting['Pre Existing Disease'] || '';
+
+                // Sync sub limits
+                const subLimits = planData.sub_limits || {};
+                document.getElementById('form_roomRent').value = subLimits['Room Rent/day'] || '';
+                document.getElementById('form_icuDay').value = subLimits['ICU/day'] || '';
+                document.getElementById('form_coPay').value = subLimits['Co - Pay'] || '';
+                document.getElementById('form_cataractLimits').value = subLimits['Cataract Limits'] || '';
+                document.getElementById('form_otherSubLimits').value = subLimits['Other Sub Limits'] || '';
+
+                // Sync renewal benefits
+                const renewalBenefits = planData.renewal_benefits || {};
+                document.getElementById('form_noclaimBonus').value = renewalBenefits['No claim bonus'] || '';
+                document.getElementById('form_healthCheckup').value = renewalBenefits['Free Health Check-up'] || '';
+                document.getElementById('form_discounts').value = renewalBenefits['Discounts'] || '';
+
+                // Sync maternity cover
+                const maternityCover = planData.maternity_cover || {};
+                document.getElementById('form_maternityCondition').value = maternityCover['AVAILABLE CONDITION'] || '';
+                document.getElementById('form_firstDeliveryWaiting').value = maternityCover['WAITING PERIOD 1st DELIVERY'] || '';
+                document.getElementById('form_secondDeliveryWaiting').value = maternityCover['WAITING PERIOD 2nd DELIVERY'] || '';
+                document.getElementById('form_normalDelivery').value = maternityCover['Delivery charges (NORMAL)'] || '';
+                document.getElementById('form_caesareanDelivery').value = maternityCover['Delivery charges (Caesarean)'] || '';
+                document.getElementById('form_newBornCover').value = maternityCover['NEW BORN BABY COVER'] || '';
+                document.getElementById('form_vaccinationExp').value = maternityCover['Vaccination Exp For Child'] || '';
+                document.getElementById('form_pediatricianConsult').value = maternityCover['Pediatrician Consultations for child'] || '';
+                document.getElementById('form_metabolicScreening').value = maternityCover['Metabolic Screening'] || '';
+                document.getElementById('form_infertility').value = maternityCover['INFERTILITY / ASST.REPRODUCTION'] || '';
+                document.getElementById('form_miscarriage').value = maternityCover['Miscarriage due to Accident'] || '';
+                document.getElementById('form_fetalSurgery').value = maternityCover['In Utero Fetal Surgery / Repair'] || '';
+                document.getElementById('form_anteNatalCare').value = maternityCover['Ante-Natal Care'] || '';
+                document.getElementById('form_sterilization').value = maternityCover['Voluntary Sterilization Exp.'] || '';
+
+                // Sync special features
+                const specialFeaturesContainer = document.getElementById('specialFeaturesList');
+                specialFeaturesContainer.querySelectorAll('.list-item').forEach(item => item.remove());
                 
-                const features = planData.coverage_features || {};
-                Object.entries(features).forEach(([feature, limit]) => {
-                    addCoverageFeature(feature, limit);
+                const specialFeatures = planData.special_features_others || {};
+                Object.entries(specialFeatures).forEach(([featureNum, description]) => {
+                    addSpecialFeature(featureNum, description);
                 });
 
-                // Sync exclusions
-                const exclusionsContainer = document.getElementById('exclusionsList');
-                exclusionsContainer.querySelectorAll('.list-item').forEach(item => item.remove());
-                
-                const exclusions = planData.exclusions || [];
-                exclusions.forEach(exclusion => {
-                    addExclusion(exclusion);
-                });
-
-                showNotification('✅ JSON data synced to form editor', 'success');
+                showNotification('✅ JSON data synced to form', 'success');
             } catch (error) {
                 showNotification('❌ Error syncing JSON data: ' + error.message, 'error');
+                console.error('Sync to form error:', error);
             }
         }
 
-        function addCoverageFeature(featureName = '', coverageLimit = '') {
-            const container = document.getElementById('coverageFeatures');
+        function addSpecialFeature(featureNum = '', description = '') {
+            const container = document.getElementById('specialFeaturesList');
             const item = document.createElement('div');
             item.className = 'list-item';
             item.innerHTML = `
-                <input type="text" placeholder="Feature name" value="${featureName}" class="form-control">
-                <input type="text" placeholder="Coverage limit" value="${coverageLimit}" class="form-control">
-                <button type="button" class="btn btn-sm btn-danger" onclick="this.parentElement.remove()">🗑️</button>
-            `;
-            container.appendChild(item);
-        }
-
-        function addExclusion(exclusionText = '') {
-            const container = document.getElementById('exclusionsList');
-            const item = document.createElement('div');
-            item.className = 'list-item';
-            item.innerHTML = `
-                <input type="text" placeholder="Exclusion description" value="${exclusionText}" class="form-control">
+                <input type="text" placeholder="Feature number" value="${featureNum}" class="form-control">
+                <input type="text" placeholder="Feature description" value="${description}" class="form-control">
                 <button type="button" class="btn btn-sm btn-danger" onclick="this.parentElement.remove()">🗑️</button>
             `;
             container.appendChild(item);
@@ -1118,59 +1353,108 @@
 
         function generatePlanPreviewHTML(planData) {
             const details = planData.plan_details || {};
-            const premiums = planData.premium_details || {};
-            const features = planData.coverage_features || {};
-            const exclusions = planData.exclusions || [];
+            const basicCoverages = planData.basic_coverages || {};
+            const exclusionsWaiting = planData.exclusions_waiting_periods || {};
+            const subLimits = planData.sub_limits || {};
+            const renewalBenefits = planData.renewal_benefits || {};
+            const specialFeatures = planData.special_features_others || {};
+            const maternityCover = planData.maternity_cover || {};
 
             return `
                 <div class="plan-details">
-                    <div class="detail-item">
-                        <span class="detail-label">Plan Name:</span>
-                        <span class="detail-value">${details['Plan Name'] || 'N/A'}</span>
-                    </div>
+                    <h4>📋 Plan Details</h4>
                     <div class="detail-item">
                         <span class="detail-label">Company:</span>
                         <span class="detail-value">${details['Company'] || 'N/A'}</span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Sum Insured:</span>
+                        <span class="detail-label">Plan Name:</span>
+                        <span class="detail-value">${details['Plan Name'] || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Sum Insured Range:</span>
                         <span class="detail-value">${details['Sum Insured Range'] || 'N/A'}</span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Plan Type:</span>
-                        <span class="detail-value">${details['Plan Type'] || 'N/A'}</span>
+                        <span class="detail-label">Adult Age Entry:</span>
+                        <span class="detail-value">${details['Adult Age Entry (MIN-MAX)'] || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Policy Duration:</span>
+                        <span class="detail-value">${details['Policy Duration'] || 'N/A'}</span>
                     </div>
                 </div>
                 
-                ${Object.keys(premiums).length > 0 ? `
-                <h5 style="margin-top: 1rem; color: #667eea;">💰 Premium Details</h5>
+                ${Object.keys(basicCoverages).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">🏥 Basic Coverages</h5>
                 <div class="plan-details">
-                    ${Object.entries(premiums).map(([age, premium]) => `
+                    ${Object.entries(basicCoverages).map(([coverage, value]) => `
                         <div class="detail-item">
-                            <span class="detail-label">Age ${age}:</span>
-                            <span class="detail-value">₹${premium}</span>
+                            <span class="detail-label">${coverage}:</span>
+                            <span class="detail-value">${value || 'N/A'}</span>
                         </div>
                     `).join('')}
                 </div>
                 ` : ''}
 
-                ${Object.keys(features).length > 0 ? `
-                <h5 style="margin-top: 1rem; color: #667eea;">🏥 Coverage Features</h5>
+                ${Object.keys(exclusionsWaiting).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">⏱️ Exclusions & Waiting Periods</h5>
                 <div class="plan-details">
-                    ${Object.entries(features).map(([feature, limit]) => `
+                    ${Object.entries(exclusionsWaiting).map(([period, value]) => `
                         <div class="detail-item">
-                            <span class="detail-label">${feature}:</span>
-                            <span class="detail-value">${limit}</span>
+                            <span class="detail-label">${period}:</span>
+                            <span class="detail-value">${value || 'N/A'}</span>
                         </div>
                     `).join('')}
                 </div>
                 ` : ''}
 
-                ${exclusions.length > 0 ? `
-                <h5 style="margin-top: 1rem; color: #667eea;">🚫 Exclusions</h5>
-                <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                    ${exclusions.map(exclusion => `<li>${exclusion}</li>`).join('')}
-                </ul>
+                ${Object.keys(subLimits).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">� Sub Limits</h5>
+                <div class="plan-details">
+                    ${Object.entries(subLimits).map(([limit, value]) => `
+                        <div class="detail-item">
+                            <span class="detail-label">${limit}:</span>
+                            <span class="detail-value">${value || 'N/A'}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${Object.keys(renewalBenefits).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">🎁 Renewal Benefits</h5>
+                <div class="plan-details">
+                    ${Object.entries(renewalBenefits).map(([benefit, value]) => `
+                        <div class="detail-item">
+                            <span class="detail-label">${benefit}:</span>
+                            <span class="detail-value">${value || 'N/A'}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${Object.keys(specialFeatures).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">⭐ Special Features</h5>
+                <div class="plan-details">
+                    ${Object.entries(specialFeatures).map(([featureNum, description]) => `
+                        <div class="detail-item">
+                            <span class="detail-label">${featureNum}:</span>
+                            <span class="detail-value">${description || 'N/A'}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${Object.keys(maternityCover).length > 0 ? `
+                <h5 style="margin-top: 1rem; color: #667eea;">👶 Maternity Cover</h5>
+                <div class="plan-details">
+                    ${Object.entries(maternityCover).map(([coverage, value]) => `
+                        <div class="detail-item">
+                            <span class="detail-label">${coverage}:</span>
+                            <span class="detail-value">${value || 'N/A'}</span>
+                        </div>
+                    `).join('')}
+                </div>
                 ` : ''}
             `;
         }
@@ -1473,9 +1757,14 @@
                 document.getElementById('planModal').style.display = 'block';
                 
                 // Hide save/edit buttons in view mode
-                const buttons = document.querySelector('.btn-group').children;
-                for (let i = 0; i < buttons.length - 1; i++) {
-                    buttons[i].style.display = 'none';
+                const btnGroup = document.querySelector('.btn-group');
+                if (btnGroup && btnGroup.children) {
+                    const buttons = btnGroup.children;
+                    for (let i = 0; i < buttons.length - 1; i++) {
+                        if (buttons[i] && buttons[i].style) {
+                            buttons[i].style.display = 'none';
+                        }
+                    }
                 }
                 
             } catch (error) {
@@ -1510,13 +1799,16 @@
                 currentEditingPlan = { filePath, mode: 'edit', absolutePath: planData.absolutePath };
                 document.getElementById('planModal').style.display = 'block';
                 
-                // Show all buttons in edit mode
-                const buttons = document.querySelector('.btn-group').children;
+            // Show all buttons in edit mode
+            const btnGroup = document.querySelector('.btn-group');
+            if (btnGroup && btnGroup.children) {
+                const buttons = btnGroup.children;
                 for (let button of buttons) {
-                    button.style.display = 'flex';
+                    if (button && button.style) {
+                        button.style.display = 'flex';
+                    }
                 }
-                
-            } catch (error) {
+            }            } catch (error) {
                 console.error('Failed to edit plan:', error);
                 showNotification('❌ Failed to load plan for editing: ' + error.message, 'error');
             }
@@ -1602,6 +1894,72 @@
             }
         }
 
+        // Clear all form fields
+        function clearAllFormFields() {
+            // Plan Details
+            document.getElementById('form_company').value = '';
+            document.getElementById('form_planName').value = '';
+            document.getElementById('form_adultAgeEntry').value = '';
+            document.getElementById('form_childAgeEntry').value = '';
+            document.getElementById('form_sumInsured').value = '';
+            document.getElementById('form_policyDuration').value = '';
+            document.getElementById('form_paymentMode').value = '';
+            document.getElementById('form_whoCanBeCovered').value = '';
+            document.getElementById('form_midTermInclusion').value = '';
+            document.getElementById('form_medicalScreening').value = '';
+
+            // Basic Coverages
+            document.getElementById('form_preHospitalization').value = '';
+            document.getElementById('form_postHospitalization').value = '';
+            document.getElementById('form_emergencyAmbulance').value = '';
+            document.getElementById('form_dayCare').value = '';
+            document.getElementById('form_ayush').value = '';
+            document.getElementById('form_domicilary').value = '';
+            document.getElementById('form_consumables').value = '';
+            document.getElementById('form_siRestore').value = '';
+            document.getElementById('form_modernTreatments').value = '';
+            document.getElementById('form_organDonor').value = '';
+
+            // Exclusions & Waiting Periods
+            document.getElementById('form_initialWaiting').value = '';
+            document.getElementById('form_specificDisease').value = '';
+            document.getElementById('form_preExistingDisease').value = '';
+
+            // Sub Limits
+            document.getElementById('form_roomRent').value = '';
+            document.getElementById('form_icuDay').value = '';
+            document.getElementById('form_coPay').value = '';
+            document.getElementById('form_cataractLimits').value = '';
+            document.getElementById('form_otherSubLimits').value = '';
+
+            // Renewal Benefits
+            document.getElementById('form_noclaimBonus').value = '';
+            document.getElementById('form_healthCheckup').value = '';
+            document.getElementById('form_discounts').value = '';
+
+            // Maternity Cover
+            document.getElementById('form_maternityCondition').value = '';
+            document.getElementById('form_firstDeliveryWaiting').value = '';
+            document.getElementById('form_secondDeliveryWaiting').value = '';
+            document.getElementById('form_normalDelivery').value = '';
+            document.getElementById('form_caesareanDelivery').value = '';
+            document.getElementById('form_newBornCover').value = '';
+            document.getElementById('form_vaccinationExp').value = '';
+            document.getElementById('form_pediatricianConsult').value = '';
+            document.getElementById('form_metabolicScreening').value = '';
+            document.getElementById('form_infertility').value = '';
+            document.getElementById('form_miscarriage').value = '';
+            document.getElementById('form_fetalSurgery').value = '';
+            document.getElementById('form_anteNatalCare').value = '';
+            document.getElementById('form_sterilization').value = '';
+
+            // Clear special features
+            const specialFeaturesContainer = document.getElementById('specialFeaturesList');
+            specialFeaturesContainer.querySelectorAll('.list-item').forEach(item => item.remove());
+
+            console.log('✨ All form fields cleared for new plan creation');
+        }
+
         // Show create plan modal
         function showCreatePlanModal() {
             document.getElementById('modalTitle').textContent = 'Create New Plan';
@@ -1609,72 +1967,23 @@
             document.getElementById('planFileName').disabled = false;
             document.getElementById('planBookSelect').value = 'book1';
             document.getElementById('planBookSelect').disabled = false;
+            
+            // Clear all form fields
+            clearAllFormFields();
+            
             document.getElementById('planJsonEditor').value = JSON.stringify({
                 "sourceFile": "Manual Entry",
                 "extractedAt": new Date().toISOString(),
-                "rawData": {
-                    "plan_details": {
-                        "Company": "",
-                        "Plan Name": "",
-                        "Adult Age Entry (MIN-MAX)": "",
-                        "Child  Age Entry": "",
-                        "Sum Insured Range": "",
-                        "Policy Duration": "",
-                        "payment mode (YLY/HLY/QLY/MLY)": "",
-                        "Who all can be covered": "",
-                        "MID TERM INCLUSION": "",
-                        "Medical Screening Before Policy": ""
-                    },
-                    "basic_coverages": {
-                        "Pre-Hospitalization": "",
-                        "Post-Hospitalization": "",
-                        "Emergency Ambulance": "",
-                        "DAY CARE (PROCEDURE/SURGERY)": "",
-                        "Non-Allopathic Treatment (AYUSH)": "",
-                        "Domicilary Expenses": "",
-                        "Consumables": "",
-                        "SI RESTORE /RECHARGE": ""
-                    },
-                    "exclusions_waiting_periods": {
-                        "INITIAL WAITING": "",
-                        "SPECIFIC DISEASE": "",
-                        "Pre Existing Disease": ""
-                    },
-                    "sub_limits": {
-                        "Room Rent/day": "",
-                        "ICU/day": "",
-                        "Co - Pay": "",
-                        "Cataract Limits": "",
-                        "Other Sub Limits": ""
-                    },
-                    "renewal_benefits": {
-                        "No claim bonus": "",
-                        "Free Health Check-up": "",
-                        "Wellness Discount": ""
-                    },
-                    "special_features_others": {
-                        "1": "",
-                        "2": "",
-                        "3": "",
-                        "4": "",
-                        "5": ""
-                    },
-                    "maternity_cover": {
-                        "AVAILABLE CONDITION": "",
-                        "WAITING PERIOD 1st DELIVERY": "",
-                        "WAITING PERIOD 2nd DELIVERY": "",
-                        "Delivery charges (NORMAL)": "",
-                        "Delivery charges (Caesarean)": "",
-                        "NEW BORN BABY COVER": ""
-                    }
-                },
                 "plan_details": {
                     "Company": "",
                     "Plan Name": "",
                     "Adult Age Entry (MIN-MAX)": "",
+                    "Child Age Entry": "",
                     "Sum Insured Range": "",
                     "Policy Duration": "",
+                    "payment mode (YLY/HLY/QLY/MLY)": "",
                     "Who all can be covered": "",
+                    "MID TERM INCLUSION": "",
                     "Medical Screening Before Policy": ""
                 },
                 "basic_coverages": {
@@ -1685,12 +1994,56 @@
                     "Non-Allopathic Treatment (AYUSH)": "",
                     "Domicilary Expenses": "",
                     "Consumables": "",
-                    "SI RESTORE /RECHARGE": ""
+                    "SI RESTORE /RECHARGE": "",
+                    "MODERN TREATMENTS": "",
+                    "ORGAN DONOR EXPENSES": ""
                 },
                 "exclusions_waiting_periods": {
                     "INITIAL WAITING": "",
                     "SPECIFIC DISEASE": "",
                     "Pre Existing Disease": ""
+                },
+                "sub_limits": {
+                    "Room Rent/day": "",
+                    "ICU/day": "",
+                    "Co - Pay": "",
+                    "Cataract Limits": "",
+                    "Other Sub Limits": ""
+                },
+                "renewal_benefits": {
+                    "No claim bonus": "",
+                    "Free Health Check-up": "",
+                    "Discounts": ""
+                },
+                "special_features_others": {
+                    "1": "",
+                    "2": "",
+                    "3": "",
+                    "4": "",
+                    "5": "",
+                    "6": "",
+                    "7": "",
+                    "8": "",
+                    "9": "",
+                    "10": "",
+                    "11": "",
+                    "12": ""
+                },
+                "maternity_cover": {
+                    "AVAILABLE CONDITION": "",
+                    "WAITING PERIOD 1st DELIVERY": "",
+                    "WAITING PERIOD 2nd DELIVERY": "",
+                    "Delivery charges (NORMAL)": "",
+                    "Delivery charges (Caesarean)": "",
+                    "NEW BORN BABY COVER": "",
+                    "Vaccination Exp For Child": "",
+                    "Pediatrician Consultations for child": "",
+                    "Metabolic Screening": "",
+                    "INFERTILITY / ASST.REPRODUCTION": "",
+                    "Miscarriage due to Accident": "",
+                    "In Utero Fetal Surgery / Repair": "",
+                    "Ante-Natal Care": "",
+                    "Voluntary Sterilization Exp.": ""
                 }
             }, null, 2);
             document.getElementById('planJsonEditor').disabled = false;
@@ -1699,17 +2052,31 @@
             document.getElementById('planModal').style.display = 'block';
             
             // Show all buttons in create mode
-            const buttons = document.querySelector('.btn-group').children;
-            for (let button of buttons) {
-                button.style.display = 'flex';
+            const btnGroup = document.querySelector('.btn-group');
+            if (btnGroup && btnGroup.children) {
+                const buttons = btnGroup.children;
+                for (let button of buttons) {
+                    if (button && button.style) {
+                        button.style.display = 'flex';
+                    }
+                }
             }
+            
+            // Switch to form editor tab for easier data entry
+            switchEditorTab('form');
         }
 
         // Close plan modal
         function closePlanModal() {
             document.getElementById('planModal').style.display = 'none';
-            document.getElementById('modalMessage').style.display = 'none';
-            document.getElementById('planPreview').style.display = 'none';
+            const modalMessage = document.getElementById('modalMessage');
+            if (modalMessage) {
+                modalMessage.style.display = 'none';
+            }
+            const planPreview = document.getElementById('planPreview');
+            if (planPreview) {
+                planPreview.style.display = 'none';
+            }
             currentEditingPlan = null;
         }
 
@@ -1891,6 +2258,14 @@
                 const previewDiv = document.getElementById('planPreview');
                 const contentDiv = document.getElementById('planPreviewContent');
                 
+                if (!contentDiv) {
+                    showModalMessage('Preview not available - using preview tab instead', 'warning');
+                    // Switch to preview tab and update it
+                    switchEditorTab('preview');
+                    updatePreview();
+                    return;
+                }
+                
                 contentDiv.innerHTML = `
                     <div class="plan-details">
                         <div class="detail-item">
@@ -1936,7 +2311,9 @@
                     </div>
                 `;
                 
-                previewDiv.style.display = 'block';
+                if (previewDiv) {
+                    previewDiv.style.display = 'block';
+                }
                 
             } catch (error) {
                 showModalMessage(`Failed to preview plan: ${error.message}`, 'error');
@@ -1951,10 +2328,7 @@
                 syncFromForm();
             }
             
-            if (!validatePlanJson()) {
-                return;
-            }
-            
+            // Validate required fields before proceeding
             const fileName = document.getElementById('planFileName').value;
             const book = document.getElementById('planBookSelect').value;
             const jsonText = document.getElementById('planJsonEditor').value;
@@ -1966,6 +2340,36 @@
                     text: 'Please enter a file name before saving.',
                     confirmButtonColor: '#ffc107'
                 });
+                return;
+            }
+
+            // Check if we're using form editor and validate required form fields
+            if (activeTab && activeTab.textContent.includes('Form Editor')) {
+                const companyField = document.getElementById('form_company').value.trim();
+                const planNameField = document.getElementById('form_planName').value.trim();
+                const sumInsuredField = document.getElementById('form_sumInsured').value.trim();
+                
+                if (!companyField || !planNameField || !sumInsuredField) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Missing Required Fields',
+                        html: `
+                            <div style="text-align: left;">
+                                <p>Please fill in all required fields marked with <span style="color: red;">*</span>:</p>
+                                <ul>
+                                    ${!companyField ? '<li>Company</li>' : ''}
+                                    ${!planNameField ? '<li>Plan Name</li>' : ''}
+                                    ${!sumInsuredField ? '<li>Sum Insured Range</li>' : ''}
+                                </ul>
+                            </div>
+                        `,
+                        confirmButtonColor: '#ffc107'
+                    });
+                    return;
+                }
+            }
+            
+            if (!validatePlanJson()) {
                 return;
             }
             
@@ -1983,11 +2387,20 @@
             try {
                 const planData = JSON.parse(jsonText);
                 
+                console.log('💾 Saving plan data:', planData);
+                console.log('🏢 Company validation before save:', {
+                    'planData.plan_details': planData.plan_details,
+                    'Company field': planData.plan_details?.Company,
+                    'Company empty?': !planData.plan_details?.Company || planData.plan_details.Company.trim() === ''
+                });
+                
                 const requestData = {
                     fileName: fileName.endsWith('.json') ? fileName : fileName + '.json',
                     book: book,
                     data: planData
                 };
+                
+                console.log('📤 Sending to API:', requestData);
                 
                 if (currentEditingPlan.mode === 'edit') {
                     requestData.originalFilePath = currentEditingPlan.absolutePath || currentEditingPlan.filePath;

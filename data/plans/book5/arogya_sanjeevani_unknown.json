@@ -1,64 +1,29 @@
 {
-  "sourceFile": "Book5.csv",
-  "extractedAt": "2025-07-13T14:30:21.134Z",
-  "rawData": {
-    "plan_details": {
-      "Company": "STAR",
-      "Plan Name": "Arogya Sanjeevani",
-      "Adult Age Entry (MIN-MAX)": "18- 65 years",
-      "Child  Age Entry": "3Month - 25 yrs",
-      "Policy Duration": "1 YEAR",
-      "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY)",
-      "Medical Screening Before Policy": "ABOVE 50 YRS"
-    },
-    "basic_coverages": {
-      "Pre-Hospitalization": "Upto 30 days",
-      "Post-Hospitalization": "Upto 60 days",
-      "Emergency Ambulance": "Rs.2000/- per hospitalization",
-      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
-      "Non-Allopathic Treatment (AYUSH)": "Upto 100% Sum Insured",
-      "Domicilary Expenses": "NO",
-      "Consumables": "NO",
-      "SI RESTORE /RECHARGE": "NO"
-    },
-    "exclusions_waiting_periods": {
-      "INITIAL WAITING": "FIRST 30 DAYS",
-      "SPECIFIC DISEASE": "FIRST 2 YEARS",
-      "Pre Existing Disease": "FIRST 4 YEARS"
-    },
-    "sub_limits": {
-      "Room Rent/day": "2% Of sum insured max Of Rs.5000",
-      "ICU/day": "5% Of sum insured max Of Rs.10000",
-      "Co - Pay": "5% of Co-pay for all claims",
-      "Cataract Limits": "upto Upto 25% pf sum insured or Rs.40000 whichever is lower per each eye in one policy year"
-    },
-    "renewal_benefits": {
-      "No claim bonus": "FIRST YEAR-5%,  MAX.-50%",
-      "Free Health Check-up": "NO",
-      "Discounts": "20%"
-    },
-    "special_features_others": {
-      "MODERN TREATMENT": "UP TO 50% SI"
-    }
-  },
+  "sourceFile": "book1",
+  "extractedAt": "2025-07-18T09:00:00.000Z",
   "plan_details": {
     "Company": "STAR",
     "Plan Name": "Arogya Sanjeevani",
-    "Adult Age Entry (MIN-MAX)": "18- 65 years",
-    "Child  Age Entry": "3Month - 25 yrs",
+    "Adult Age Entry (MIN-MAX)": "18 - 65 YEARS",
+    "Child Age Entry": "3 MONTHS - 25 YRS",
+    "Sum Insured Range": "NO",
     "Policy Duration": "1 YEAR",
-    "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY)",
+    "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY / 1 YEAR MODE ONLY)",
+    "Who all can be covered": "NO",
+    "MID TERM INCLUSION": "NO",
     "Medical Screening Before Policy": "ABOVE 50 YRS"
   },
   "basic_coverages": {
-    "Pre-Hospitalization": "Upto 30 days",
-    "Post-Hospitalization": "Upto 60 days",
-    "Emergency Ambulance": "Rs.2000/- per hospitalization",
+    "Pre-Hospitalization": "UPTO 30 DAYS",
+    "Post-Hospitalization": "UPTO 60 DAYS",
+    "Emergency Ambulance": "Rs.2,000 PER HOSPITALIZATION",
     "DAY CARE (PROCEDURE/SURGERY)": "ALL",
-    "Non-Allopathic Treatment (AYUSH)": "Upto 100% Sum Insured",
+    "Non-Allopathic Treatment (AYUSH)": "UPTO 100% SUM INSURED",
     "Domicilary Expenses": "NO",
     "Consumables": "NO",
-    "SI RESTORE /RECHARGE": "NO"
+    "SI RESTORE /RECHARGE": "NO",
+    "MODERN TREATMENTS": "NO",
+    "ORGAN DONOR EXPENSES": "NO"
   },
   "exclusions_waiting_periods": {
     "INITIAL WAITING": "FIRST 30 DAYS",
@@ -66,21 +31,44 @@
     "Pre Existing Disease": "FIRST 4 YEARS"
   },
   "sub_limits": {
-    "Room Rent/day": "2% Of sum insured max Of Rs.5000",
-    "ICU/day": "5% Of sum insured max Of Rs.10000",
-    "Co - Pay": "5% of Co-pay for all claims",
-    "Cataract Limits": "upto Upto 25% pf sum insured or Rs.40000 whichever is lower per each eye in one policy year"
+    "Room Rent/day": "2% OF SUM INSURED MAX Rs.5,000",
+    "ICU/day": "5% OF SUM INSURED MAX Rs.10,000",
+    "Co - Pay": "5% OF ALL CLAIMS",
+    "Cataract Limits": "UPTO 25% OF SUM INSURED OR Rs.40,000 WHICHEVER IS LOWER (PER EYE, PER POLICY YEAR)",
+    "Other Sub Limits": "PROPORTION TO ROOM RENT & REASONABLE COST"
   },
   "renewal_benefits": {
-    "No claim bonus": "FIRST YEAR-5%,  MAX.-50%",
+    "No claim bonus": "FIRST YEAR 5%, MAX 50%",
     "Free Health Check-up": "NO",
     "Discounts": "20%"
   },
   "special_features_others": {
-    "MODERN TREATMENT": "UP TO 50% SI"
+    "1": "Organ Donor Expenses",
+    "2": "MODERN TREATMENT UP TO 50% SI",
+    "3": "SECOND MEDICAL OPINION",
+    "4": "AIR AMBULANCE",
+    "5": "Rehabilitation and Pain Management",
+    "6": "Home care treatment"
+  },
+  "maternity_cover": {
+    "AVAILABLE CONDITION": "NO",
+    "WAITING PERIOD 1st DELIVERY": "NO",
+    "WAITING PERIOD 2nd DELIVERY": "NO",
+    "Delivery charges (NORMAL)": "NO",
+    "Delivery charges (Caesarean)": "NO",
+    "NEW BORN BABY COVER": "NO",
+    "Vaccination Exp For Child": "NO",
+    "Pediatrician Consultations for child": "NO",
+    "Metabolic Screening": "NO",
+    "INFERTILITY / ASST.REPRODUCTION": "NO",
+    "Miscarriage due to Accident": "NO",
+    "In Utero Fetal Surgery / Repair": "NO",
+    "Ante-Natal Care": "NO",
+    "Voluntary Sterilization Exp.": "NO"
   },
   "planName": "Arogya Sanjeevani",
   "company": "STAR",
-  "normalizedSumInsured": null,
-  "generatedFilename": "arogya_sanjeevani_unknown.json"
+  "sumInsuredRange": "NO",
+  "normalizedSumInsured": "no",
+  "generatedFilename": "arogya_sanjeevani.json"
 }

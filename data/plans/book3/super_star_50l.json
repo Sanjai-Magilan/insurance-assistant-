@@ -1,82 +1,12 @@
 {
-  "sourceFile": "Book3.csv",
-  "extractedAt": "2025-07-13T07:47:49.915Z",
-  "rawData": {
-    "plan_details": {
-      "Company": "STAR",
-      "Plan Name": "SUPER STAR",
-      "Adult Age Entry (MIN-MAX)": "18 - 99YRS",
-      "Child  Age Entry": "91DAYS -25YRS",
-      "Sum Insured Range": "10/15/20/25/50L/1cr/UNLIMITED",
-      "Policy Duration": "1/2/3/4/5 YRS",
-      "payment mode (YLY/HLY/QLY/MLY)": "(MLY/QLY / HLY /  - 1/2/3 YRS), YLY",
-      "Who all can be covered": "2A+4C",
-      "MID TERM INCLUSION": "SPOUSE/CHILD WITHIN 45DAYS",
-      "Medical Screening Before Policy": "NO"
-    },
-    "basic_coverages": {
-      "Pre-Hospitalization": "Upto 90 days",
-      "Post-Hospitalization": "UPTO 180 DAYS",
-      "Emergency Ambulance": "ACTUAL",
-      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
-      "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
-      "Domicilary Expenses": "UPTO SI",
-      "Consumables": "YES ( AS PER LIST 1)",
-      "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
-    },
-    "exclusions_waiting_periods": {
-      "INITIAL WAITING": "FIRST 30 DAYS",
-      "SPECIFIC DISEASE": "FIRST 2 YEARS",
-      "Pre Existing Disease": "FIRST 3YRS"
-    },
-    "sub_limits": {
-      "Room Rent/day": "ACTUAL",
-      "ICU/day": "ACTUAL",
-      "Co - Pay": "NO",
-      "Cataract Limits": "ACTUAL",
-      "Other Sub Limits": "NO"
-    },
-    "renewal_benefits": {
-      "No claim bonus": "50% FOR EVERY CLAIM FREE YR MAX 100%",
-      "Free Health Check-up": "OPTIONAL 1% OF SI",
-      "Discounts": "4-20% ON WELLNESS POINTS EARNED"
-    },
-    "special_features_others": {
-      "Organ Donor Expenses": "Organ Donor Expenses Upto SI",
-      "MODERN TREATMENT": "MODERN TREATMENT Upto SI",
-      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
-      "AIR AMBULANCE": "AIR AMBULANCE Upto 10% OF SI",
-      "Rehabilitation and Pain Management": "Rehabilitation and Pain Management Upto 20% OFSI",
-      "Home care treatment": "Home care treatment  up to 10% of SI, MAX 5L",
-      "Optional - Reduction in Room Category Single Pvt A/C / Shared": "DENTAL CHECK 2nd,3rd YEARS ONWARDS",
-      "OPTIONAL - VOLUNTARY CO-PAY(10/20/30)": "LOCK THE CLOCK: Pay the premium as per your entry age, till a claim is paid MAX 55 AGE",
-      "OPTIONAL - DEDUCTIBLE PER DAY  (1/2/3/4/5K) / aggregate Basis (25K50K1/2/3/4/5/10L)": "UNLIMITED TELECONSULTATIONS",
-      "Optional - Reduction in Specific Disease Waiting Period 1 Yr": "Premium Waiver Benefit IF PROPOSER DEATH/CI",
-      "Optional - Reduction in Pre-Existing Disease Waiting Period FROM 3Yrs TO 2/1 Yr": "OPTIONAL - SUPER STAR BONUS 100% IRRESPECTIVE OF CLAIM"
-    },
-    "maternity_cover": {
-      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 2 YEARS",
-      "WAITING PERIOD 1st DELIVERY": "FIRST 2 YRS",
-      "WAITING PERIOD 2nd DELIVERY": "NO",
-      "Delivery charges (NORMAL)": "Upto 10% Of SI (Including pre-natal and postnatal expenses)",
-      "Delivery charges (Caesarean)": "Upto 10% Of SI (Including pre-natal and postnatal expenses)",
-      "NEW BORN BABY COVER": "Rs. 2L (AFTER FIRST1YEAR  MOTHER COVER MIN 1YR)",
-      "Vaccination Exp For Child": "NO",
-      "Pediatrician Consultations for child": "NO",
-      "Metabolic Screening": "NO",
-      "INFERTILITY / ASSTREPRODUCTION": "Rs.1L (AFTER FIRST 2 YEARS)",
-      "Miscarriage due to Accident": "NO",
-      "In Utero Fetal Surgery / Repair": "upto Sum Insured AFTERFIRST 2  YEARS",
-      "Ante-Natal Care": "NO",
-      "Voluntary Sterilization Exp.": "NO"
-    }
-  },
+  "sourceFile": "book1",
+  "extractedAt": "2025-07-18T08:45:00.000Z",
   "plan_details": {
     "Company": "STAR",
     "Plan Name": "SUPER STAR",
     "Adult Age Entry (MIN-MAX)": "18 - 99YRS",
-    "Child  Age Entry": "91DAYS -25YRS",
-    "Sum Insured Range": "10/15/20/25/50L/1cr/UNLIMITED",
+    "Child Age Entry": "91DAYS -25YRS",
+    "Sum Insured Range": "10/15/20/25/50L/1Cr/UNLIMITED",
     "Policy Duration": "1/2/3/4/5 YRS",
     "payment mode (YLY/HLY/QLY/MLY)": "(MLY/QLY / HLY /  - 1/2/3 YRS), YLY",
     "Who all can be covered": "2A+4C",
@@ -91,7 +21,9 @@
     "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
     "Domicilary Expenses": "UPTO SI",
     "Consumables": "YES ( AS PER LIST 1)",
-    "SI RESTORE /RECHARGE": "REINSTATEMENT 100%"
+    "SI RESTORE /RECHARGE": "REINSTATEMENT 100%",
+    "MODERN TREATMENTS": "NO",
+    "ORGAN DONOR EXPENSES": "NO"
   },
   "exclusions_waiting_periods": {
     "INITIAL WAITING": "FIRST 30 DAYS",
@@ -111,17 +43,19 @@
     "Discounts": "4-20% ON WELLNESS POINTS EARNED"
   },
   "special_features_others": {
-    "Organ Donor Expenses": "Organ Donor Expenses Upto SI",
-    "MODERN TREATMENT": "MODERN TREATMENT Upto SI",
-    "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
-    "AIR AMBULANCE": "AIR AMBULANCE Upto 10% OF SI",
-    "Rehabilitation and Pain Management": "Rehabilitation and Pain Management Upto 20% OFSI",
-    "Home care treatment": "Home care treatment  up to 10% of SI, MAX 5L",
-    "Optional - Reduction in Room Category Single Pvt A/C / Shared": "DENTAL CHECK 2nd,3rd YEARS ONWARDS",
-    "OPTIONAL - VOLUNTARY CO-PAY(10/20/30)": "LOCK THE CLOCK: Pay the premium as per your entry age, till a claim is paid MAX 55 AGE",
-    "OPTIONAL - DEDUCTIBLE PER DAY  (1/2/3/4/5K) / aggregate Basis (25K50K1/2/3/4/5/10L)": "UNLIMITED TELECONSULTATIONS",
-    "Optional - Reduction in Specific Disease Waiting Period 1 Yr": "Premium Waiver Benefit IF PROPOSER DEATH/CI",
-    "Optional - Reduction in Pre-Existing Disease Waiting Period FROM 3Yrs TO 2/1 Yr": "OPTIONAL - SUPER STAR BONUS 100% IRRESPECTIVE OF CLAIM"
+    "1": "Organ Donor Expenses Upto SI",
+    "2": "MODERN TREATMENT Upto SI",
+    "3": "SECOND MEDICAL OPINION",
+    "4": "AIR AMBULANCE Upto 10% OF SI",
+    "5": "Rehabilitation and Pain Management Upto 20% OFSI",
+    "6": "Home care treatment  up to 10% of SI, MAX 5L",
+    "7": "DENTAL CHECK 2nd,3rd YEARS ONWARDS",
+    "8": "OPTIONAL - LIMITLESS CARE ONE IN LIFE TIME(UNLIMITED CLAIM)",
+    "9": "LOCK THE CLOCK: Pay the premium as per your entry age, till a claim is paid MAX 55 AGE",
+    "10": "OPTIONAL - DEDUCTIBLE PER DAY (1/2/3/4/5K) / Aggregate Basis (25K,50K,1/2/3/4/5/10L)",
+    "11": "UNLIMITED TELECONSULTATIONS",
+    "12": "Premium Waiver Benefit IF PROPOSER DEATH/CI",
+    "13": "OPTIONAL - SUPER STAR BONUS 100% IRRESPECTIVE OF CLAIM"
   },
   "maternity_cover": {
     "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 2 YEARS",
@@ -133,7 +67,7 @@
     "Vaccination Exp For Child": "NO",
     "Pediatrician Consultations for child": "NO",
     "Metabolic Screening": "NO",
-    "INFERTILITY / ASSTREPRODUCTION": "Rs.1L (AFTER FIRST 2 YEARS)",
+    "INFERTILITY / ASST.REPRODUCTION": "Rs.1L (AFTER FIRST 2 YEARS)",
     "Miscarriage due to Accident": "NO",
     "In Utero Fetal Surgery / Repair": "upto Sum Insured AFTERFIRST 2  YEARS",
     "Ante-Natal Care": "NO",
@@ -141,7 +75,7 @@
   },
   "planName": "SUPER STAR",
   "company": "STAR",
-  "sumInsuredRange": "10/15/20/25/50L/1cr/UNLIMITED",
-  "normalizedSumInsured": "50l",
-  "generatedFilename": "super_star_50l.json"
+  "sumInsuredRange": "10/15/20/25/50L/1Cr/UNLIMITED",
+  "normalizedSumInsured": "10_15_20_25_50l_1cr_unlimited",
+  "generatedFilename": "super_star.json"
 }

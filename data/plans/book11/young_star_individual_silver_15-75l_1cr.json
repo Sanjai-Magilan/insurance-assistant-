@@ -3,10 +3,10 @@
   "extractedAt": "2025-07-18T00:00:00.000Z",
   "plan_details": {
     "Company": "STAR",
-    "Plan Name": "YOUNG STAR INDIVIDUAL - GOLD",
+    "Plan Name": "YOUNG STAR INDIVIDUAL - SILVER",
     "Adult Age Entry (MIN-MAX)": "18-40 YEARS",
     "Child Age Entry": "NO",
-    "Sum Insured Range": "10L",
+    "Sum Insured Range": "15/20/25/50/75L/1Cr",
     "Policy Duration": "1/2/3 YEARS",
     "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
     "Who all can be covered": "INDIVIDUAL",
@@ -43,21 +43,14 @@
     "Discounts": "2-10%"
   },
   "special_features_others": {
-    "1": "HOSPITAL CASH (HCB) RS.1000/PER MAXIMUM 7 DAYS, 14DAYS/POLICY PERIOD",
-    "2": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
-    "3": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
-    "4": "Organ Donor Expenses - NO",
-    "5": "MODERN TREATMENT - NO",
-    "6": "SECOND MEDICAL OPINION - NO",
-    "7": "AIR AMBULANCE - NO",
-    "8": "Rehabilitation and Pain Management - NO",
-    "9": "Home care treatment - NO",
-    "10": "NO",
-    "11": "NO",
-    "12": "NO",
-    "13": "NO",
-    "14": "NO",
-    "15": "NO"
+    "1": "10% PREMIUM DISCOUNT LIFE LONG BEFORE ENTRY 36 YEARS",
+    "2": "ADDITIONAL SI FOR RTA 25% OF SI MAX 10 LAKHS",
+    "3": "Organ Donor Expenses - NO",
+    "4": "MODERN TREATMENT - NO",
+    "5": "SECOND MEDICAL OPINION - NO",
+    "6": "AIR AMBULANCE - NO",
+    "7": "Rehabilitation and Pain Management - NO",
+    "8": "Home care treatment - NO"
   },
   "maternity_cover": {
     "AVAILABLE CONDITION": "NO",
@@ -75,9 +68,9 @@
     "Ante-Natal Care": "NO",
     "Voluntary Sterilization Exp.": "NO"
   },
-  "planName": "YOUNG STAR INDIVIDUAL - GOLD",
+  "planName": "YOUNG STAR INDIVIDUAL - SILVER",
   "company": "STAR",
-  "sumInsuredRange": "10L",
-  "normalizedSumInsured": "10l",
-  "generatedFilename": "young_star_individual_gold_10l.json"
+  "sumInsuredRange": "15/20/25/50/75l/1cr",
+  "normalizedSumInsured": "15-75l_1cr",
+  "generatedFilename": "young_star_individual_silver_15-75l_1cr.json"
 }

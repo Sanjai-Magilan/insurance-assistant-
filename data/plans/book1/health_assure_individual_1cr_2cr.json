@@ -1,6 +1,6 @@
 {
-  "sourceFile": "unknown.xlsx",
-  "extractedAt": "2025-07-16T15:45:00.000Z",
+  "sourceFile": "manual_entry",
+  "extractedAt": "2025-07-19T05:05:04.795Z",
   "plan_details": {
     "Company": "STAR",
     "Plan Name": "HEALTH ASSURE - INDIVIDUAL",
@@ -75,6 +75,7 @@
   "planName": "HEALTH ASSURE - INDIVIDUAL",
   "company": "STAR",
   "sumInsuredRange": "1 Cr/ 2 Cr",
-  "normalizedSumInsured": "1cr_2cr",
-  "generatedFilename": "health_assure_individual_1cr_2cr.json"
+  "normalizedSumInsured": "1cr/2cr",
+  "generatedFilename": "health_assure_individual_1cr_2cr.json",
+  "updatedAt": "2025-07-19T05:05:04.824Z"
 }

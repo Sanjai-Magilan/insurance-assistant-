@@ -1,6 +1,6 @@
 {
-  "sourceFile": "unknown.xlsx",
-  "extractedAt": "2025-07-16T11:45:00.000Z",
+  "sourceFile": "manual_entry",
+  "extractedAt": "2025-07-18T05:52:34.572Z",
   "plan_details": {
     "Company": "STAR",
     "Plan Name": "HEALTH ASSURE - INDIVIDUAL",
@@ -76,5 +76,6 @@
   "company": "STAR",
   "sumInsuredRange": "20L",
   "normalizedSumInsured": "20l",
-  "generatedFilename": "health_assure_individual_20l.json"
+  "generatedFilename": "health_assure_individual_20l.json",
+  "updatedAt": "2025-07-18T05:52:34.599Z"
 }

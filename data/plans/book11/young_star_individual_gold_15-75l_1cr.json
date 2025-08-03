@@ -6,7 +6,7 @@
     "Plan Name": "YOUNG STAR INDIVIDUAL - GOLD",
     "Adult Age Entry (MIN-MAX)": "18-40 YEARS",
     "Child Age Entry": "NO",
-    "Sum Insured Range": "10L",
+    "Sum Insured Range": "15/20/25/50/75L/1Cr",
     "Policy Duration": "1/2/3 YEARS",
     "payment mode (YLY/HLY/QLY/MLY)": "YLY/HLY/QLY",
     "Who all can be covered": "INDIVIDUAL",
@@ -51,13 +51,7 @@
     "6": "SECOND MEDICAL OPINION - NO",
     "7": "AIR AMBULANCE - NO",
     "8": "Rehabilitation and Pain Management - NO",
-    "9": "Home care treatment - NO",
-    "10": "NO",
-    "11": "NO",
-    "12": "NO",
-    "13": "NO",
-    "14": "NO",
-    "15": "NO"
+    "9": "Home care treatment - NO"
   },
   "maternity_cover": {
     "AVAILABLE CONDITION": "NO",
@@ -77,7 +71,7 @@
   },
   "planName": "YOUNG STAR INDIVIDUAL - GOLD",
   "company": "STAR",
-  "sumInsuredRange": "10L",
-  "normalizedSumInsured": "10l",
-  "generatedFilename": "young_star_individual_gold_10l.json"
+  "sumInsuredRange": "15/20/25/50/75l/1cr",
+  "normalizedSumInsured": "15-75l_1cr",
+  "generatedFilename": "young_star_individual_gold_15-75l_1cr.json"
 }

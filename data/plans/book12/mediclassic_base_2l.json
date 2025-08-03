@@ -1,63 +1,29 @@
 {
-  "sourceFile": "Book12.csv",
-  "extractedAt": "2025-07-13T14:37:45.941Z",
-  "rawData": {
-    "plan_details": {
-      "Company": "STAR",
-      "Plan Name": "MEDICLASSIC- BASE",
-      "Adult Age Entry (MIN-MAX)": "18-65YEARS",
-      "Child  Age Entry": "5MONTHS",
-      "Sum Insured Range": "2L",
-      "Policy Duration": "1/2 YEARS",
-      "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
-      "Medical Screening Before Policy": "ABOVE 50 YEARS"
-    },
-    "basic_coverages": {
-      "Pre-Hospitalization": "30 DAYS",
-      "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
-      "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
-      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
-      "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
-      "Domicilary Expenses": "NO",
-      "Consumables": "NO",
-      "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%"
-    },
-    "exclusions_waiting_periods": {
-      "INITIAL WAITING": "FIRST 30 DAYS",
-      "SPECIFIC DISEASE": "FIRST 2 YEARS",
-      "Pre Existing Disease": "FIRST 4 YEARS"
-    },
-    "sub_limits": {
-      "Room Rent/day": "2%OF SI, MAX RS.5K/DAY",
-      "ICU/day": "NO",
-      "Co - Pay": ">60YEARS AGE ENTRY -20%",
-      "Cataract Limits": "RS.12K /POLICY"
-    },
-    "renewal_benefits": {
-      "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
-      "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
-      "Discounts": "NO"
-    }
-  },
+  "sourceFile": "book1",
+  "extractedAt": "2025-07-18T10:00:00.000Z",
   "plan_details": {
     "Company": "STAR",
-    "Plan Name": "MEDICLASSIC- BASE",
-    "Adult Age Entry (MIN-MAX)": "18-65YEARS",
-    "Child  Age Entry": "5MONTHS",
+    "Plan Name": "MEDICLASSIC - BASE",
+    "Adult Age Entry (MIN-MAX)": "18-65 YEARS",
+    "Child Age Entry": "5 MONTHS",
     "Sum Insured Range": "2L",
     "Policy Duration": "1/2 YEARS",
-    "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/ PARENT/PARENT IN LAW/SIBILINGS",
+    "payment mode (YLY/HLY/QLY/MLY)": "NO",
+    "Who all can be covered": "SELF/SPOUSE/SON/DAUGHTER/PARENT/PARENT IN LAW/SIBLINGS",
+    "MID TERM INCLUSION": "NO",
     "Medical Screening Before Policy": "ABOVE 50 YEARS"
   },
   "basic_coverages": {
     "Pre-Hospitalization": "30 DAYS",
     "Post-Hospitalization": "60 DAYS / 7% OR MAXIMUM RS.5000/-",
-    "Emergency Ambulance": "Rs.750/- per hospitalization,max Rs.1500/-",
+    "Emergency Ambulance": "Rs.750/- per hospitalization, max Rs.1500/-",
     "DAY CARE (PROCEDURE/SURGERY)": "ALL",
-    "Non-Allopathic Treatment (AYUSH)": "25%OF S.I, MAX25K",
+    "Non-Allopathic Treatment (AYUSH)": "25% OF S.I, MAX 25K",
     "Domicilary Expenses": "NO",
     "Consumables": "NO",
-    "SI RESTORE /RECHARGE": "100% Use same claim , Other claim 200%"
+    "SI RESTORE /RECHARGE": "100% Use same claim, Other claim 200%",
+    "MODERN TREATMENTS": "NO",
+    "ORGAN DONOR EXPENSES": "NO"
   },
   "exclusions_waiting_periods": {
     "INITIAL WAITING": "FIRST 30 DAYS",
@@ -65,17 +31,43 @@
     "Pre Existing Disease": "FIRST 4 YEARS"
   },
   "sub_limits": {
-    "Room Rent/day": "2%OF SI, MAX RS.5K/DAY",
+    "Room Rent/day": "2% OF SI, MAX RS.5K/DAY",
     "ICU/day": "NO",
     "Co - Pay": ">60YEARS AGE ENTRY -20%",
-    "Cataract Limits": "RS.12K /POLICY"
+    "Cataract Limits": "RS.12K /POLICY",
+    "Other Sub Limits": "NO"
   },
   "renewal_benefits": {
-    "No claim bonus": "FIRST YEAR-5%,  MAX.-25%",
-    "Free Health Check-up": "1%OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
+    "No claim bonus": "FIRST YEAR-5%, MAX.-25%",
+    "Free Health Check-up": "1% OF SI, MAX RS.5000/- ONCE IN FOUR CLAIM FREE YEAR",
     "Discounts": "NO"
   },
-  "planName": "MEDICLASSIC- BASE",
+  "special_features_others": {
+    "1": "Organ Donor Expenses - NO",
+    "2": "MODERN TREATMENT - NO",
+    "3": "SECOND MEDICAL OPINION - NO",
+    "4": "AIR AMBULANCE - NO",
+    "5": "Rehabilitation and Pain Management - NO",
+    "6": "Home care treatment - NO",
+    "7": "Bariatric Surgery - NO"
+  },
+  "maternity_cover": {
+    "AVAILABLE CONDITION": "NO",
+    "WAITING PERIOD 1st DELIVERY": "NO",
+    "WAITING PERIOD 2nd DELIVERY": "NO",
+    "Delivery charges (NORMAL)": "NO",
+    "Delivery charges (Caesarean)": "NO",
+    "NEW BORN BABY COVER": "NO",
+    "Vaccination Exp For Child": "NO",
+    "Pediatrician Consultations for child": "NO",
+    "Metabolic Screening": "NO",
+    "INFERTILITY / ASST.REPRODUCTION": "NO",
+    "Miscarriage due to Accident": "NO",
+    "In Utero Fetal Surgery / Repair": "NO",
+    "Ante-Natal Care": "NO",
+    "Voluntary Sterilization Exp.": "NO"
+  },
+  "planName": "MEDICLASSIC - BASE",
   "company": "STAR",
   "sumInsuredRange": "2L",
   "normalizedSumInsured": "2l",

@@ -7,6 +7,8 @@
     "build": "echo 'Build completed'",
     "dev": "node chat-server.js",
     "start": "node chat-server.js",
+    "vercel-dev": "vercel dev",
+    "deploy": "vercel --prod",
     "plan-manager": "node dist/cli/planManager.js",
     "setup": "mkdir -p data/plans data/questions data/knowledge-base data/documents"
   },

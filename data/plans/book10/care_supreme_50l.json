@@ -1,88 +1,22 @@
 {
-  "sourceFile": "Book10.csv",
-  "extractedAt": "2025-07-13T14:34:42.795Z",
-  "rawData": {
-    "plan_details": {
-      "Company": "CARE",
-      "Plan Name": "CARE SUPREME",
-      "Adult Age Entry (MIN-MAX)": "18-99 YRS",
-      "Child  Age Entry": "91DAYS -24 YRS",
-      "Sum Insured Range": "7, 10, 15,25,50L, 1 Cr",
-      "Policy Duration": "1/2/3 YRS",
-      "payment mode (YLY/HLY/QLY/MLY)": "YLY MODE",
-      "Who all can be covered": "2A+ 2C",
-      "MID TERM INCLUSION": "CHILD WITHIN 91DAYS",
-      "Medical Screening Before Policy": "NO"
-    },
-    "basic_coverages": {
-      "Pre-Hospitalization": "Upto 60 days",
-      "Post-Hospitalization": "upto 180 days",
-      "Emergency Ambulance": "LESS THAN 15 L - 10K, =>15L -ACTUALS",
-      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
-      "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
-      "Domicilary Expenses": "UPTO SI",
-      "Consumables": "ACTUAL",
-      "SI RESTORE /RECHARGE": "REINSTATEMENT 100% FOR SAME CLAIM",
-      "MODERN TREATMENTS": "UPTO SI",
-      "ORGAN DONOR EXPENSES": "UPTO SI"
-    },
-    "exclusions_waiting_periods": {
-      "INITIAL WAITING": "FIRST 30 DAYS",
-      "SPECIFIC DISEASE": "FIRST 2 YEARS",
-      "Pre Existing Disease": "FIRST 3YRS ( REDUCTION PED- 1/2/3. ABCD  INSTANT COVER)"
-    },
-    "sub_limits": {
-      "Room Rent/day": "ACTUAL",
-      "ICU/day": "ACTUAL",
-      "Co - Pay": "No",
-      "Cataract Limits": "ACTUAL",
-      "Other Sub Limits": "NO"
-    },
-    "renewal_benefits": {
-      "No claim bonus": "50 % MAX 100%",
-      "Free Health Check-up": "COMPULSORY RIDER",
-      "Discounts": "10% TO 30% - WALKING STEPS - ACTIVE DAY"
-    },
-    "special_features_others": {
-      "Organ Donor Expenses": "AIR AMUBLANCE UPTO 5L",
-      "MODERN TREATMENT": "Bariatric Surgery UP TO SI",
-      "SECOND MEDICAL OPINION": "UNLIMITED E-CONSULTATION",
-      "AIR AMBULANCE": "BE-FIT BENEFIT- GYM ACCESS- SPECIFIED CITIES",
-      "Rehabilitation and Pain Management": "OPTIONAL COVER CUMULATIVE BONUS SUPER-500%",
-      "Home care treatment": "NO"
-    },
-    "maternity_cover": {
-      "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 2 YEARS",
-      "WAITING PERIOD 1st DELIVERY": "NO",
-      "WAITING PERIOD 2nd DELIVERY": "NO",
-      "Delivery charges (NORMAL)  (Caesarean)": "NO",
-      "NEW BORN BABY COVER": "NO",
-      "Vaccination Exp For Child": "NO",
-      "Pediatrician Consultations for child": "NO",
-      "Metabolic Screening": "NO",
-      "INFERTILITY / ASSTREPRODUCTION": "NO",
-      "Miscarriage due to Accident": "NO",
-      "In Utero Fetal Surgery / Repair": "NO",
-      "Ante-Natal Care": "NO",
-      "Voluntary Sterilization Exp.": "NO"
-    }
-  },
+  "sourceFile": "book1",
+  "extractedAt": "2025-07-18T00:00:00.000Z",
   "plan_details": {
     "Company": "CARE",
     "Plan Name": "CARE SUPREME",
     "Adult Age Entry (MIN-MAX)": "18-99 YRS",
-    "Child  Age Entry": "91DAYS -24 YRS",
-    "Sum Insured Range": "7, 10, 15,25,50L, 1 Cr",
+    "Child Age Entry": "91DAYS -24 YRS",
+    "Sum Insured Range": "7, 10, 15, 25, 50L, 1 Cr",
     "Policy Duration": "1/2/3 YRS",
     "payment mode (YLY/HLY/QLY/MLY)": "YLY MODE",
-    "Who all can be covered": "2A+ 2C",
+    "Who all can be covered": "2A+2C",
     "MID TERM INCLUSION": "CHILD WITHIN 91DAYS",
     "Medical Screening Before Policy": "NO"
   },
   "basic_coverages": {
     "Pre-Hospitalization": "Upto 60 days",
-    "Post-Hospitalization": "upto 180 days",
-    "Emergency Ambulance": "LESS THAN 15 L - 10K, =>15L -ACTUALS",
+    "Post-Hospitalization": "Upto 180 days",
+    "Emergency Ambulance": "LESS THAN 15L - 10K, =>15L - ACTUALS",
     "DAY CARE (PROCEDURE/SURGERY)": "ALL",
     "Non-Allopathic Treatment (AYUSH)": "UPTO SI",
     "Domicilary Expenses": "UPTO SI",
@@ -94,38 +28,40 @@
   "exclusions_waiting_periods": {
     "INITIAL WAITING": "FIRST 30 DAYS",
     "SPECIFIC DISEASE": "FIRST 2 YEARS",
-    "Pre Existing Disease": "FIRST 3YRS ( REDUCTION PED- 1/2/3. ABCD  INSTANT COVER)"
+    "Pre Existing Disease": "FIRST 3YRS ( REDUCTION PED- 1/2/3. ABCD INSTANT COVER)"
   },
   "sub_limits": {
     "Room Rent/day": "ACTUAL",
     "ICU/day": "ACTUAL",
-    "Co - Pay": "No",
+    "Co - Pay": "NO",
     "Cataract Limits": "ACTUAL",
     "Other Sub Limits": "NO"
   },
   "renewal_benefits": {
-    "No claim bonus": "50 % MAX 100%",
+    "No claim bonus": "50% MAX 100%",
     "Free Health Check-up": "COMPULSORY RIDER",
     "Discounts": "10% TO 30% - WALKING STEPS - ACTIVE DAY"
   },
   "special_features_others": {
-    "Organ Donor Expenses": "AIR AMUBLANCE UPTO 5L",
-    "MODERN TREATMENT": "Bariatric Surgery UP TO SI",
-    "SECOND MEDICAL OPINION": "UNLIMITED E-CONSULTATION",
-    "AIR AMBULANCE": "BE-FIT BENEFIT- GYM ACCESS- SPECIFIED CITIES",
-    "Rehabilitation and Pain Management": "OPTIONAL COVER CUMULATIVE BONUS SUPER-500%",
-    "Home care treatment": "NO"
+    "1": "Organ Donor Expenses - AIR AMBULANCE UPTO 5L",
+    "2": "MODERN TREATMENT - Bariatric Surgery UP TO SI",
+    "3": "SECOND MEDICAL OPINION - UNLIMITED E-CONSULTATION",
+    "4": "AIR AMBULANCE - BE-FIT BENEFIT (GYM ACCESS - SPECIFIED CITIES)",
+    "5": "Rehabilitation and Pain Management - OPTIONAL COVER CUMULATIVE BONUS SUPER-500%",
+    "6": "Home care treatment - NO",
+    "7": "Bariatric Surgery - UPTO SI"
   },
   "maternity_cover": {
     "AVAILABLE CONDITION": "SELF +SPOUSE COVER IND/FLOATER BASIS IN MIN 2 YEARS",
     "WAITING PERIOD 1st DELIVERY": "NO",
     "WAITING PERIOD 2nd DELIVERY": "NO",
-    "Delivery charges (NORMAL)  (Caesarean)": "NO",
+    "Delivery charges (NORMAL)": "NO",
+    "Delivery charges (Caesarean)": "NO",
     "NEW BORN BABY COVER": "NO",
     "Vaccination Exp For Child": "NO",
     "Pediatrician Consultations for child": "NO",
     "Metabolic Screening": "NO",
-    "INFERTILITY / ASSTREPRODUCTION": "NO",
+    "INFERTILITY / ASST.REPRODUCTION": "NO",
     "Miscarriage due to Accident": "NO",
     "In Utero Fetal Surgery / Repair": "NO",
     "Ante-Natal Care": "NO",
@@ -133,7 +69,7 @@
   },
   "planName": "CARE SUPREME",
   "company": "CARE",
-  "sumInsuredRange": "7, 10, 15,25,50L, 1 Cr",
-  "normalizedSumInsured": "50l",
-  "generatedFilename": "care_supreme_50l.json"
+  "sumInsuredRange": "7, 10, 15, 25, 50L, 1 Cr",
+  "normalizedSumInsured": "7_10_15_25_50l_1cr",
+  "generatedFilename": "care_supreme_7_10_15_25_50l_1cr.json"
 }

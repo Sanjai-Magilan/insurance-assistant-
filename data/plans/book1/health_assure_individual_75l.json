@@ -1,8 +1,8 @@
 {
-  "sourceFile": "unknown.xlsx",
-  "extractedAt": "2025-07-16T14:30:00.000Z",
+  "sourceFile": "manual_entry",
+  "extractedAt": "2025-07-18T05:53:17.546Z",
   "plan_details": {
-    "Company": "STAR",
+    "Company": "STAR HEALTH",
     "Plan Name": "HEALTH ASSURE - INDIVIDUAL",
     "Adult Age Entry (MIN-MAX)": "18 - 75 YRS",
     "Child Age Entry": "91DAYS -17YRS",
@@ -73,8 +73,9 @@
     "Voluntary Sterilization Exp.": "NO"
   },
   "planName": "HEALTH ASSURE - INDIVIDUAL",
-  "company": "STAR",
+  "company": "STAR HEALTH",
   "sumInsuredRange": "75L",
   "normalizedSumInsured": "75l",
-  "generatedFilename": "health_assure_individual_75l.json"
+  "generatedFilename": "health_assure_individual_75l.json",
+  "updatedAt": "2025-07-18T05:53:17.601Z"
 }

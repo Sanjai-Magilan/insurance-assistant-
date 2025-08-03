@@ -1,6 +1,6 @@
 {
-  "sourceFile": "book1",
-  "extractedAt": "2025-07-16T08:42:15.000Z",
+  "sourceFile": "manual_entry",
+  "extractedAt": "2025-07-18T05:49:01.373Z",
   "plan_details": {
     "Company": "STAR",
     "Plan Name": "HEALTH ASSURE - INDIVIDUAL",
@@ -76,5 +76,6 @@
   "company": "STAR",
   "sumInsuredRange": "5L",
   "normalizedSumInsured": "5l",
-  "generatedFilename": "health_assure_individual_5l.json"
+  "generatedFilename": "health_assure_individual_5l.json",
+  "updatedAt": "2025-07-18T05:49:45.113Z"
 }

@@ -655,8 +655,210 @@
             }
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
+
+        /* Smooth transition classes */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .slide-down {
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .scale-in {
+            animation: scaleIn 0.4s ease-out;
+        }
+
+        .bounce-in {
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        /* Chat clearing animation */
+        .chat-clearing {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease-out;
+        }
+
+        .chat-cleared {
+            opacity: 1;
+            transform: translateY(0);
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        /* Enhanced plan selection container */
+        .plan-selection-container {
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .plan-selection-button {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .plan-selection-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Enhanced menu options after responses */
+        .menu-options {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .menu-option {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInLeft 0.5s ease-out forwards;
+        }
+
+        .menu-option:nth-child(1) { animation-delay: 0.1s; }
+        .menu-option:nth-child(2) { animation-delay: 0.2s; }
+        .menu-option:nth-child(3) { animation-delay: 0.3s; }
+        .menu-option:nth-child(4) { animation-delay: 0.4s; }
+        .menu-option:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Smooth message transitions */
+        .message {
+            animation: none; /* Remove old animation */
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .message.user {
+            animation: none; /* Remove old animation */
+        }
+
+        .message.bot {
+            animation: none; /* Remove old animation */
+        }
+
+        .message-entering {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Typing indicator styles */
+        .typing-placeholder {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            margin: 4px 0;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
+            animation: typingDots 1.4s infinite ease-in-out;
+        }
+
+        .typing-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes typingDots {
+            0%, 80%, 100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #667eea;
+            white-space: nowrap;
+            animation: typing 0.5s steps(40, end), blink-caret 1s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #667eea;
+            }
+        }
+
+        /* Smooth scrolling for chat */
+        #chatMessages {
+            scroll-behavior: smooth;
+        }
             .main-content {
                 grid-template-columns: 1fr;
                 gap: 0.5rem;
@@ -817,15 +1019,6 @@
             border-color: #667eea;
         }
 
-        .chat-button.danger {
-            color: #e53e3e;
-            border-color: #fed7d7;
-        }
-
-        .chat-button.danger:hover {
-            background: #fed7d7;
-        }
-
         .status-indicator {
             padding: 0.5rem;
             border-radius: 8px;
@@ -887,16 +1080,40 @@
 
         .chat-messages {
             flex: 1;
-            padding: 1rem;
+            padding: 1.5rem;
             overflow-y: auto;
             max-height: 500px;
             background: #fafafa;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(102, 126, 234, 0.3) transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.3);
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: rgba(102, 126, 234, 0.5);
         }
 
         .message {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: flex;
             gap: 0.75rem;
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform, opacity;
         }
 
         .message.user {
@@ -1155,14 +1372,8 @@
                     <button class="chat-button" onclick="clearCurrentChat()">
                         🗑️ Clear Chat
                     </button>
-                    <button class="chat-button" onclick="showChatHistory()">
-                        📜 Chat History
-                    </button>
                     <button class="chat-button" onclick="exportChat()">
                         💾 Export Chat
-                    </button>
-                    <button class="chat-button danger" onclick="deleteAllChats()">
-                        🗂️ Delete All Chats
                     </button>
                 </div>
             </aside>
@@ -1503,7 +1714,7 @@
             const companies = window.chatPlanHierarchy;
             if (!companies || Object.keys(companies).length === 0) {
                 addBotMessage(`
-                    <div class="structured-response">
+                    <div class="structured-response bounce-in">
                         <div class="response-header">
                             🤖 <strong>Welcome to Insurance Assistant!</strong>
                         </div>
@@ -1515,23 +1726,23 @@
                 return;
             }
 
-            const companyButtons = Object.keys(companies).sort().map(company => 
-                `<button class="plan-selection-button" onclick="selectCompanyInChat('${company}')">${company}</button>`
+            const companyButtons = Object.keys(companies).sort().map((company, index) => 
+                `<button class="plan-selection-button menu-option" style="animation-delay: ${0.1 * (index + 1)}s;" onclick="selectCompanyInChat('${company}')">${company}</button>`
             ).join('');
 
             const welcomeMessage = `
-                <div class="structured-response">
+                <div class="structured-response bounce-in">
                     <div class="response-header">
                         🤖 <strong>Welcome to Insurance Assistant!</strong>
                     </div>
                     <div class="response-section">
-                        <div class="section-title">📋 Please Select Your Insurance Company</div>
-                        <p>Choose your insurance company to get started with personalized assistance:</p>
-                        <div class="plan-selection-buttons">
+                        <div class="section-title slide-down">📋 Please Select Your Insurance Company</div>
+                        <p class="fade-in" style="animation-delay: 0.3s;">Choose your insurance company to get started with personalized assistance:</p>
+                        <div class="plan-selection-buttons plan-selection-container">
                             ${companyButtons}
                         </div>
                     </div>
-                    <div class="response-footer">
+                    <div class="response-footer fade-in" style="animation-delay: 0.5s;">
                         Click on your insurance company to continue
                     </div>
                 </div>
@@ -1557,23 +1768,23 @@
                 return;
             }
 
-            const planButtons = Object.keys(plans).sort().map(planName => 
-                `<button class="plan-option-button" onclick="selectPlanInChat('${company}', '${planName}')">${planName}</button>`
+            const planButtons = Object.keys(plans).sort().map((planName, index) => 
+                `<button class="plan-option-button menu-option" style="animation-delay: ${0.1 * (index + 1)}s;" onclick="selectPlanInChat('${company}', '${planName}')">${planName}</button>`
             ).join('');
 
             const planMessage = `
-                <div class="structured-response">
+                <div class="structured-response scale-in">
                     <div class="response-header">
                         ✅ <strong>${company} Selected!</strong>
                     </div>
                     <div class="response-section">
-                        <div class="section-title">📋 Please Select Your Insurance Plan</div>
-                        <p>Great choice! Now please select your specific insurance plan:</p>
-                        <div class="plan-option-grid">
+                        <div class="section-title slide-down">📋 Please Select Your Insurance Plan</div>
+                        <p class="fade-in" style="animation-delay: 0.2s;">Great choice! Now please select your specific insurance plan:</p>
+                        <div class="plan-option-grid plan-selection-container">
                             ${planButtons}
                         </div>
                     </div>
-                    <div class="response-footer">
+                    <div class="response-footer fade-in" style="animation-delay: 0.4s;">
                         Click on your insurance plan to continue
                     </div>
                 </div>
@@ -1599,23 +1810,23 @@
                 return;
             }
 
-            const variantButtons = variants.map(variant => 
-                `<button class="plan-option-button" onclick="selectVariantInChat('${company}', '${planName}', '${variant.sumInsured}', '${variant.filePath}')">${variant.sumInsured}</button>`
+            const variantButtons = variants.map((variant, index) => 
+                `<button class="plan-option-button menu-option" style="animation-delay: ${0.1 * (index + 1)}s;" onclick="selectVariantInChat('${company}', '${planName}', '${variant.sumInsured}', '${variant.filePath}')">${variant.sumInsured}</button>`
             ).join('');
 
             const variantMessage = `
-                <div class="structured-response">
+                <div class="structured-response scale-in">
                     <div class="response-header">
                         ✅ <strong>${planName} Selected!</strong>
                     </div>
                     <div class="response-section">
-                        <div class="section-title">💰 Please Select Your Coverage Amount</div>
-                        <p>Perfect! Now please select your sum insured amount:</p>
-                        <div class="plan-option-grid">
+                        <div class="section-title slide-down">💰 Please Select Your Coverage Amount</div>
+                        <p class="fade-in" style="animation-delay: 0.2s;">Perfect! Now please select your sum insured amount:</p>
+                        <div class="plan-option-grid plan-selection-container">
                             ${variantButtons}
                         </div>
                     </div>
-                    <div class="response-footer">
+                    <div class="response-footer fade-in" style="animation-delay: 0.4s;">
                         Click on your desired coverage amount
                     </div>
                 </div>
@@ -1924,13 +2135,26 @@
             
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message user';
+            messageDiv.style.opacity = '0';
+            messageDiv.style.transform = 'translateX(-20px)';
             messageDiv.innerHTML = `
                 <div class="message-avatar">👤</div>
                 <div class="message-content">${escapeHtml(message)}</div>
             `;
             
             chatMessages.appendChild(messageDiv);
-            scrollToBottom();
+            
+            // Smooth entrance animation for user messages
+            setTimeout(() => {
+                messageDiv.style.transition = 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                messageDiv.style.opacity = '1';
+                messageDiv.style.transform = 'translateX(0)';
+                
+                // Smooth scroll after animation
+                setTimeout(() => {
+                    smoothScrollToBottom();
+                }, 200);
+            }, 50);
             
             if (saveHistory) {
                 conversationHistory.push({
@@ -1949,26 +2173,52 @@
             const enhancedMessage = enhanceMessageContent(message);
             
             const messageDiv = document.createElement('div');
-            messageDiv.className = 'message bot';
+            messageDiv.className = 'message bot message-entering';
+            messageDiv.style.opacity = '0';
+            messageDiv.style.transform = 'translateY(30px)';
             messageDiv.innerHTML = `
                 <div class="message-avatar">🤖</div>
-                <div class="message-content ${isError ? 'error' : ''}">${enhancedMessage}</div>
+                <div class="message-content ${isError ? 'error' : ''}" style="opacity: 0;">
+                    <div class="typing-placeholder">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
             `;
             
             chatMessages.appendChild(messageDiv);
             
-            // Add smooth scroll animation
+            // Smooth entrance animation
             setTimeout(() => {
-                scrollToBottom();
-                // Add entrance animation
-                messageDiv.style.opacity = '0';
-                messageDiv.style.transform = 'translateY(20px)';
-                messageDiv.style.transition = 'all 0.3s ease';
+                messageDiv.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                messageDiv.style.opacity = '1';
+                messageDiv.style.transform = 'translateY(0)';
                 
-                requestAnimationFrame(() => {
-                    messageDiv.style.opacity = '1';
-                    messageDiv.style.transform = 'translateY(0)';
-                });
+                // Start typing animation after entrance
+                setTimeout(() => {
+                    const messageContent = messageDiv.querySelector('.message-content');
+                    messageContent.style.transition = 'opacity 0.4s ease';
+                    messageContent.style.opacity = '1';
+                    
+                    // Show typing indicator first
+                    setTimeout(() => {
+                        // Replace with actual content with typewriter effect
+                        if (enhancedMessage.includes('<div class="structured-response')) {
+                            // For structured responses, fade in directly
+                            messageContent.innerHTML = enhancedMessage;
+                            messageContent.classList.add('fade-in');
+                        } else {
+                            // For text responses, use typewriter effect
+                            startTypewriterEffect(messageContent, enhancedMessage);
+                        }
+                    }, 800);
+                }, 400);
+                
+                // Smooth scroll to bottom
+                smoothScrollToBottom();
             }, 100);
             
             if (saveHistory) {
@@ -2172,6 +2422,72 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
+        // Smooth scrolling function
+        function smoothScrollToBottom() {
+            const chatMessages = document.getElementById('chatMessages');
+            const start = chatMessages.scrollTop;
+            const end = chatMessages.scrollHeight - chatMessages.clientHeight;
+            const distance = end - start;
+            const duration = 600;
+            let startTime = null;
+
+            function animate(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+                
+                // Ease-out cubic function for smooth deceleration
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                
+                chatMessages.scrollTop = start + (distance * easeOut);
+                
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // Typewriter effect function
+        function startTypewriterEffect(element, content) {
+            // Remove typing indicator
+            element.innerHTML = '';
+            
+            // Strip HTML for plain text typewriter effect
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            const plainText = tempDiv.textContent || tempDiv.innerText || '';
+            
+            let index = 0;
+            const speed = 30; // Milliseconds per character
+            
+            function typeCharacter() {
+                if (index < plainText.length) {
+                    element.textContent = plainText.substring(0, index + 1);
+                    index++;
+                    
+                    // Add cursor effect
+                    if (index < plainText.length) {
+                        element.textContent += '|';
+                    }
+                    
+                    setTimeout(() => {
+                        if (index <= plainText.length) {
+                            element.textContent = plainText.substring(0, index);
+                        }
+                        typeCharacter();
+                    }, speed);
+                } else {
+                    // Remove cursor and show final content
+                    element.innerHTML = content;
+                    element.classList.add('fade-in');
+                }
+            }
+            
+            typeCharacter();
+        }
+
         // Plan info display functions
         function showPlanInfo(planData) {
             const planInfo = document.getElementById('planInfo');
@@ -2200,13 +2516,13 @@
             if (!planData) return '';
             
             return `
-                <div class="structured-response">
+                <div class="structured-response bounce-in">
                     <div class="response-header">
                         🎉 <strong>Welcome to Your AI Assistant!</strong>
                     </div>
                     <div class="response-section">
-                        <div class="section-title">✅ Your Selected Plan</div>
-                        <table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+                        <div class="section-title slide-down">✅ Your Selected Plan</div>
+                        <table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;" class="fade-in" style="animation-delay: 0.2s;">
                             <tr><th>Detail</th><th>Information</th></tr>
                             <tr><td><strong>Company</strong></td><td>${planData.company}</td></tr>
                             <tr><td><strong>Plan</strong></td><td>${planData.planName}</td></tr>
@@ -2215,29 +2531,29 @@
                         </table>
                     </div>
                     <div class="response-section">
-                        <div class="section-title">🤖 What I Can Help You With</div>
-                        <table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+                        <div class="section-title slide-down" style="animation-delay: 0.3s;">🤖 What I Can Help You With</div>
+                        <table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;" class="fade-in" style="animation-delay: 0.4s;">
                             <tr><th>Category</th><th>Examples</th></tr>
                             <tr><td>🏥 <strong>Insurance & Claims</strong></td><td>Claim eligibility, policy terms, coverage details</td></tr>
                             <tr><td>💊 <strong>Health & Medical</strong></td><td>Medical conditions, treatments, health advice</td></tr>
                             <tr><td>💻 <strong>Technology</strong></td><td>Programming, software, troubleshooting</td></tr>
-                            <tr><td>� <strong>Education</strong></td><td>Learning resources, explanations, research</td></tr>
+                            <tr><td>📚 <strong>Education</strong></td><td>Learning resources, explanations, research</td></tr>
                             <tr><td>💰 <strong>Finance</strong></td><td>Financial planning, investments, budgeting</td></tr>
                             <tr><td>🌟 <strong>General Knowledge</strong></td><td>Science, history, current events, facts</td></tr>
                         </table>
                     </div>
                     <div class="response-section">
-                        <div class="section-title">💡 Quick Start Examples</div>
-                        <ul class="feature-list">
-                            <li>💬 "What is covered under my insurance plan?"</li>
-                            <li>🔍 "How do I file a claim for surgery?"</li>
-                            <li>🏥 "What are the symptoms of diabetes?"</li>
-                            <li>� "How do I learn Python programming?"</li>
-                            <li>📈 "What are good investment options?"</li>
-                            <li>🌍 "Tell me about climate change effects"</li>
+                        <div class="section-title slide-down" style="animation-delay: 0.5s;">💡 Quick Start Examples</div>
+                        <ul class="feature-list menu-options">
+                            <li class="menu-option">💬 "What is covered under my insurance plan?"</li>
+                            <li class="menu-option">🔍 "How do I file a claim for surgery?"</li>
+                            <li class="menu-option">🏥 "What are the symptoms of diabetes?"</li>
+                            <li class="menu-option">📚 "How do I learn Python programming?"</li>
+                            <li class="menu-option">📈 "What are good investment options?"</li>
+                            <li class="menu-option">🌍 "Tell me about climate change effects"</li>
                         </ul>
                     </div>
-                    <div class="response-footer">
+                    <div class="response-footer fade-in" style="animation-delay: 0.8s;">
                         Ask me anything! I'm designed to provide structured, comprehensive answers on a wide range of topics.
                     </div>
                 </div>
@@ -2303,37 +2619,44 @@
         function clearCurrentChat() {
             if (confirm('Are you sure you want to clear the current chat? This action cannot be undone.')) {
                 const chatMessages = document.getElementById('chatMessages');
-                chatMessages.innerHTML = `
-                    <div class="empty-chat">
-                        <div class="empty-chat-icon">💬</div>
-                        <h3>Chat Cleared</h3>
-                        <p>Start a new conversation by typing a message below.</p>
-                    </div>
-                `;
                 
-                conversationHistory = [];
-                saveConversationHistory();
-                showStatus('Chat cleared', 'connected');
+                // Add clearing animation
+                chatMessages.classList.add('chat-clearing');
+                
+                setTimeout(() => {
+                    // Clear the chat
+                    chatMessages.innerHTML = '';
+                    
+                    // Reset conversation and plan data
+                    conversationHistory = [];
+                    currentPlan = '';
+                    
+                    // Reset hidden selects
+                    document.getElementById('companySelect').value = '';
+                    document.getElementById('planSelect').value = '';
+                    document.getElementById('planSelect').disabled = true;
+                    document.getElementById('variantSelect').value = '';
+                    document.getElementById('variantSelect').disabled = true;
+                    hidePlanInfo();
+                    
+                    // Hide current plan display
+                    document.getElementById('currentPlanInfo').style.display = 'none';
+                    
+                    saveConversationHistory();
+                    
+                    // Remove clearing animation and add cleared animation
+                    chatMessages.classList.remove('chat-clearing');
+                    chatMessages.classList.add('chat-cleared');
+                    
+                    // Show status with animation
+                    showStatus('Chat cleared - Starting fresh!', 'connected');
+                    
+                    // Automatically show plan selection with delay for smooth transition
+                    setTimeout(() => {
+                        showPlanSelectionInChat();
+                    }, 500);
+                }, 400);
             }
-        }
-
-        function showChatHistory() {
-            const sessions = getAllChatSessions();
-            
-            if (sessions.length === 0) {
-                alert('No chat history found.');
-                return;
-            }
-            
-            let historyHtml = 'Recent Chat Sessions:\n\n';
-            sessions.slice(-10).forEach((session, index) => {
-                const date = new Date(session.timestamp).toLocaleDateString();
-                const time = new Date(session.timestamp).toLocaleTimeString();
-                const messageCount = session.messages.length;
-                historyHtml += `${index + 1}. ${date} ${time} - ${messageCount} messages\n`;
-            });
-            
-            alert(historyHtml);
         }
 
         function exportChat() {
@@ -2357,15 +2680,6 @@
             a.click();
             
             URL.revokeObjectURL(url);
-        }
-
-        function deleteAllChats() {
-            if (confirm('Are you sure you want to delete ALL chat history? This action cannot be undone.')) {
-                localStorage.removeItem('chatHistory');
-                localStorage.removeItem('chatSessions');
-                clearCurrentChat();
-                showStatus('All chats deleted', 'connected');
-            }
         }
 
         // Storage functions
