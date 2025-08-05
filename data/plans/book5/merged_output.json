@@ -1,0 +1,113 @@
+{
+  "sourceFile": "Book5.csv",
+  "extractedAt": "2025-07-13T14:30:21.115Z",
+  "plan_details": {
+    "Company": "STAR",
+    "Plan Name": "SENIOR CITIZEN",
+    "Adult Age Entry (MIN-MAX)": "60-75 Yrs",
+    "Child  Age Entry": "NO",
+    "Policy Duration": "1/2/3 YEARS",
+    "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY)",
+    "Medical Screening Before Policy": "NO"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 30 days",
+    "Post-Hospitalization": "(Max Rs.5,000 )7% OF HOSPITALISATION WITHOT ROOM RENT",
+    "Emergency Ambulance": "UPTO 4L-Rs.600/- per hospitalization,max Rs.1,200/- 5L-7.5L-Rs.1,000/- per hospitalization,max Rs.2,000/",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "NO",
+    "Domicilary Expenses": "NO",
+    "Consumables": "NO",
+    "SI RESTORE /RECHARGE": "NO"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "ONE YR"
+  },
+  "sub_limits": {
+    "Room Rent/day": "1-5L -1% OF SI, 7.5L-Rs.6,000/-",
+    "ICU/day": "2% OF SI",
+    "Co - Pay": "30%,  IF PED-50%",
+    "Cataract Limits": "1&2L-15K,4L-20K,5K-21.5K,7.5L-23K",
+    "Other Sub Limits": "Surgeon, Anesthetist, Medical Practitioner, Consultants and Specialist's fees up to 25%, Anesthesia, Blood, Oxygen, Operation Theatre charges, Cost of Pacemaker etc up to"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "NO",
+    "Free Health Check-up": "5-7.5L-Rs.1,000/-,",
+    "Discounts": "NO"
+  },
+  "special_features_others": {
+    "Organ Donor Expenses": "NO",
+    "MODERN TREATMENT": "NO",
+    "SECOND MEDICAL OPINION": "NO",
+    "AIR AMBULANCE": "NO",
+    "Rehabilitation and Pain Management": "NO",
+    "Home care treatment": "NO"
+  },
+  "maternity_cover": {
+    "AVAILABLE CONDITION": "NO",
+    "WAITING PERIOD 1st DELIVERY": "NO",
+    "WAITING PERIOD 2nd DELIVERY": "YES",
+    "Delivery charges (Caesarean)": "SAME PREMIUM LIFELONG",
+    "Vaccination Exp For Child": "SAME PREMIUM LIFELONG"
+  },
+  "planName": "SENIOR CITIZEN",
+  "company": "STAR",
+  "sumInsuredRange": "NO",
+  "normalizedSumInsured": null,
+  "generatedFilename": "senior_citizen_unknown.json",
+  "rawData": {
+    "plan_details": {
+      "Company": "STAR",
+      "Plan Name": "SENIOR CITIZEN",
+      "Adult Age Entry (MIN-MAX)": "60-75 Yrs",
+      "Child  Age Entry": "NO",
+      "Policy Duration": "1/2/3 YEARS",
+      "payment mode (YLY/HLY/QLY/MLY)": "(QLY / HLY /  1 YEAR MODE ONLY)",
+      "Medical Screening Before Policy": "NO"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Upto 30 days",
+      "Post-Hospitalization": "(Max Rs.5,000 )7% OF HOSPITALISATION WITHOT ROOM RENT",
+      "Emergency Ambulance": "UPTO 4L-Rs.600/- per hospitalization,max Rs.1,200/- 5L-7.5L-Rs.1,000/- per hospitalization,max Rs.2,000/",
+      "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+      "Non-Allopathic Treatment (AYUSH)": "NO",
+      "Domicilary Expenses": "NO",
+      "Consumables": "NO",
+      "SI RESTORE /RECHARGE": "NO"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "FIRST 30 DAYS",
+      "SPECIFIC DISEASE": "FIRST 2 YEARS",
+      "Pre Existing Disease": "ONE YR"
+    },
+    "sub_limits": {
+      "Room Rent/day": "1-5L -1% OF SI, 7.5L-Rs.6,000/-",
+      "ICU/day": "2% OF SI",
+      "Co - Pay": "30%,  IF PED-50%",
+      "Cataract Limits": "1&2L-15K,4L-20K,5K-21.5K,7.5L-23K",
+      "Other Sub Limits": "Surgeon, Anesthetist, Medical Practitioner, Consultants and Specialist's fees up to 25%, Anesthesia, Blood, Oxygen, Operation Theatre charges, Cost of Pacemaker etc up to"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "NO",
+      "Free Health Check-up": "5-7.5L-Rs.1,000/-,",
+      "Discounts": "NO"
+    },
+    "special_features_others": {
+      "Organ Donor Expenses": "NO",
+      "MODERN TREATMENT": "NO",
+      "SECOND MEDICAL OPINION": "NO",
+      "AIR AMBULANCE": "NO",
+      "Rehabilitation and Pain Management": "NO",
+      "Home care treatment": "NO"
+    },
+    "maternity_cover": {
+      "AVAILABLE CONDITION": "NO",
+      "WAITING PERIOD 1st DELIVERY": "NO",
+      "WAITING PERIOD 2nd DELIVERY": "YES",
+      "Delivery charges (Caesarean)": "SAME PREMIUM LIFELONG",
+      "Vaccination Exp For Child": "SAME PREMIUM LIFELONG"
+    }
+  }
+}
