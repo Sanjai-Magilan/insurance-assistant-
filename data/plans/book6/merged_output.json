@@ -1,0 +1,130 @@
+{
+  "sourceFile": "book1",
+  "extractedAt": "2025-07-18T12:45:00.000Z",
+  "rawData": {
+    "plan_details": {
+      "Company": "Company",
+      "Plan Name": "Plan Name",
+      "Adult Age Entry (MIN-MAX)": "Adult Age Entry (MIN-MAX)",
+      "Child  Age Entry": "Child  Age Entry",
+      "Sum Insured Range": "Sum Insured Range",
+      "Policy Duration": "Policy Duration",
+      "payment mode (YLY/HLY/QLY/MLY)": "payment mode (YLY/HLY/QLY/MLY)",
+      "Who all can be covered": "Who all can be covered",
+      "MID TERM INCLUSION": "MID TERM INCLUSION",
+      "Medical Screening Before Policy": "Medical Screening Before Policy"
+    },
+    "basic_coverages": {
+      "Pre-Hospitalization": "Pre-Hospitalization",
+      "Post-Hospitalization": "Post-Hospitalization",
+      "Emergency Ambulance": "Emergency Ambulance",
+      "DAY CARE (PROCEDURE/SURGERY)": "DAY CARE (PROCEDURE/SURGERY)",
+      "Non-Allopathic Treatment (AYUSH)": "Non-Allopathic Treatment (AYUSH)",
+      "Domicilary Expenses": "Domicilary Expenses",
+      "Consumables": "Consumables",
+      "SI RESTORE /RECHARGE": "SI RESTORE /RECHARGE",
+      "MODERN TREATMENTS": "MODERN TREATMENTS",
+      "ORGAN DONOR EXPENSES": "ORGAN DONOR EXPENSES"
+    },
+    "exclusions_waiting_periods": {
+      "INITIAL WAITING": "INITIAL WAITING",
+      "SPECIFIC DISEASE": "SPECIFIC DISEASE",
+      "Pre Existing Disease": "Pre Existing Disease"
+    },
+    "sub_limits": {
+      "Room Rent/day": "Room Rent/day",
+      "ICU/day": "ICU/day",
+      "Co - Pay": "Co - Pay",
+      "Cataract Limits": "Cataract Limits",
+      "Other Sub Limits": "Other Sub Limits"
+    },
+    "renewal_benefits": {
+      "No claim bonus": "No claim bonus",
+      "Free Health Check-up": "Free Health Check-up",
+      "Discounts": "Discounts"
+    },
+    "special_features_others": {
+      "Organ Donor Expenses": "Organ Donor Expenses",
+      "MODERN TREATMENT": "MODERN TREATMENT",
+      "SECOND MEDICAL OPINION": "SECOND MEDICAL OPINION",
+      "AIR AMBULANCE": "AIR AMBULANCE",
+      "Rehabilitation and Pain Management": "Rehabilitation and Pain Management",
+      "Home care treatment": "Home care treatment"
+    }
+  },
+  "plan_details": {
+    "Company": "STAR",
+    "Plan Name": "STAR HEALTH PREMIER",
+    "Adult Age Entry (MIN-MAX)": "50Y - Whole Life",
+    "Child Age Entry": "91 DAYS - 25 YEARS",
+    "Sum Insured Range": "Rs.75 LAKHS and Rs.1 CR",
+    "Policy Duration": "1 / 2 / 3 YEARS",
+    "payment mode (YLY/HLY/QLY/MLY)": "YLY / HLY / QLY",
+    "Who all can be covered": "2A+3C",
+    "MID TERM INCLUSION": "YES",
+    "Medical Screening Before Policy": "NO"
+  },
+  "basic_coverages": {
+    "Pre-Hospitalization": "Upto 60 days",
+    "Post-Hospitalization": "Upto 90 days",
+    "Emergency Ambulance": "ACTUALS",
+    "DAY CARE (PROCEDURE/SURGERY)": "ALL",
+    "Non-Allopathic Treatment (AYUSH)": "100%",
+    "Domicilary Expenses": "YES",
+    "Consumables": "YES",
+    "SI RESTORE /RECHARGE": "100% Refill Use Same Claim",
+    "MODERN TREATMENTS": "NO",
+    "ORGAN DONOR EXPENSES": "NO"
+  },
+  "exclusions_waiting_periods": {
+    "INITIAL WAITING": "FIRST 30 DAYS",
+    "SPECIFIC DISEASE": "FIRST 2 YEARS",
+    "Pre Existing Disease": "FIRST 2 YEARS"
+  },
+  "sub_limits": {
+    "Room Rent/day": "MAX Rs.20,000/-",
+    "ICU/day": "ACTUALS",
+    "Co - Pay": ">65 YEARS AGE ENTRY - 20%",
+    "Cataract Limits": "Upto Rs.60,000 per eye, Rs.1,00,000 per policy",
+    "Other Sub Limits": "NO"
+  },
+  "renewal_benefits": {
+    "No claim bonus": "20% FOR EVERY CLAIM FREE YEAR, MAX 100%",
+    "Free Health Check-up": "IND: Rs.7,000 / Floater: Rs.10,000 every claim-free year",
+    "Discounts": "2% to 10%"
+  },
+  "special_features_others": {
+    "1": "Organ Donor Expenses Upto SI",
+    "2": "MODERN TREATMENT Upto 50% of SI",
+    "3": "SECOND MEDICAL OPINION - NO",
+    "4": "AIR AMBULANCE Up to Rs.2.5L per hospitalisation, max Rs.5L",
+    "5": "Rehabilitation and Pain Management Upto 10% of SI",
+    "6": "Home care treatment Upto 10% of SI",
+    "7": "Hospice Care Upto 10% of SI",
+    "8": "Outpatient Medical Expenses IND-7K / Floater-10K",
+    "9": "Bariatric Surgery Upto Rs.5L",
+    "10": "Younger Age Discount 10% if Spouse Age <50Y",
+    "11": "10% Premium Discount for submitting health checkup reports"
+  },
+  "planName": "STAR HEALTH PREMIER",
+  "company": "STAR",
+  "sumInsuredRange": "75L_1CR",
+  "normalizedSumInsured": "75l_1cr",
+  "generatedFilename": "star_health_premier_75l_1cr.json",
+  "maternity_cover": {
+    "AVAILABLE CONDITION": "NO",
+    "WAITING PERIOD 1st DELIVERY": "NO",
+    "WAITING PERIOD 2nd DELIVERY": "NO",
+    "Delivery charges (NORMAL)": "NO",
+    "Delivery charges (Caesarean)": "NO",
+    "NEW BORN BABY COVER": "NO",
+    "Vaccination Exp For Child": "NO",
+    "Pediatrician Consultations for child": "NO",
+    "Metabolic Screening": "NO",
+    "INFERTILITY / ASST.REPRODUCTION": "NO",
+    "Miscarriage due to Accident": "NO",
+    "In Utero Fetal Surgery / Repair": "NO",
+    "Ante-Natal Care": "NO",
+    "Voluntary Sterilization Exp.": "NO"
+  }
+}
